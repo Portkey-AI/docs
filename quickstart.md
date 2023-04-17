@@ -50,9 +50,19 @@ response = openai.ChatCompletion.create(
 ### 2.3 Using Langchain
 Add the following code in your langchain initialisation to enable portkey.
 
-```
-Coming Soon
+```python
+from langchain.llms import OpenAI
+import openai
+openai.api_base = "https://api.portkey.ai/v1/proxy"
+
+llm = OpenAI(temperature=0.2, headers={
+    "x-portkey-api-key": "<YOUR PORTKEY API KEY>",
+    "x-portkey-mode": "proxy openai"
+})
+text = "Create a 5 day trip plan for Laos."
+print(llm(text))
 ```
 
 3. View real-time activity in your account
 If the connection works, you’ll start to see activity happening on your account instantly.
+
