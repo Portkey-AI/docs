@@ -31,7 +31,7 @@ const openai = new OpenAIApi(configuration);
 
 For Python
 ```python
-openai.api_base = "https://api.portkeydev.com/v1/proxy" # Replace openai with portkey's endpoint
+openai.api_base = "https://api.portkey.ai/v1/proxy" # Replace openai with portkey's endpoint
 
 response = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
