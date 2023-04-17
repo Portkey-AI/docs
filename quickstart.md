@@ -63,6 +63,6 @@ text = "Create a 5 day trip plan for Laos."
 print(llm(text))
 ```
 
-3. View real-time activity in your account
-If the connection works, you’ll start to see activity happening on your account instantly.
+## 3. View real-time activity in your account
+As the API requests start flowing in, you’ll see the activity in your account instantly.
 
