@@ -14,12 +14,37 @@ Change the API endpoint to the portkey API endpoint and add the authentication h
 ### 2.2 Using the OpenAI SDKs for Node.js or Python
 You can change the basepath of the SDK to integrate portkey.
 
-```
-Coming Soon - Before
+For Javascript
+```javascript
+import { Configuration, OpenAIApi } from "openai";
+const configuration = new Configuration({
+    organization: "YOUR_ORG_ID",
+    apiKey: process.env.OPENAI_API_KEY,
+    basePath: "https://app.portkey.ai/v1/proxy", // Replace openai with portkey's endpoint
+    headers: {
+        "x-portkey-api-key": "<YOUR PORTKEY API KEY>", // Can be got from your account
+        "x-portkey-mode": "proxy openai" // Tells portkey to proxy your request to openai
+    }
+});
+const openai = new OpenAIApi(configuration);
 ```
 
-```
-Coming Soon - After
+For Python
+```python
+openai.api_base = "https://api.portkeydev.com/v1/proxy" # Replace openai with portkey's endpoint
+
+response = openai.ChatCompletion.create(
+  model="gpt-3.5-turbo",
+  messages=[
+        {"role": "system", "content": "You are a helpful assistant"},
+        {"role": "user", "content": "Create a 5 day trip plan for Laos."},
+    ],
+  temperature=0.2,
+  headers={ # Add portkey headers for auth and proxy mode
+    "x-portkey-api-key": "<YOUR PORTKEY API KEY>",
+    "x-portkey-mode": "proxy openai"
+  }
+)
 ```
 
 ### 2.3 Using Langchain
