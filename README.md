@@ -12,7 +12,7 @@ Portkey wants to make it easy to work with Large Models that expose an API by of
 
 Imagine portkey as a hop away from the LLMs enabling you with a lot of functionality out of the box.
 
-<Insert image of middleware diagram>
+![Portkey diagram](roh26it/portkey-quick-start/images/portkey-middleware.png)
 
 #PromptOps #LLMOps #LMOps
 
