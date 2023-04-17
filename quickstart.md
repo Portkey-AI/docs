@@ -1,5 +1,7 @@
 # Quickstart
 
+The best part about Portkey is that you can get started with minimal effort. Just replace your OpenAI (or any other provider’s) endpoint to the portkey proxy and we’ll get you setup within minutes!
+
 This guide allows you to integrate with Portkey in a minute.
 
 ## 1. Create an account
