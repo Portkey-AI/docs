@@ -22,7 +22,7 @@ import { Configuration, OpenAIApi } from "openai";
 const configuration = new Configuration({
     organization: "YOUR_ORG_ID",
     apiKey: process.env.OPENAI_API_KEY,
-    basePath: "https://app.portkey.ai/v1/proxy", // Replace openai with portkey's endpoint
+    basePath: "https://api.portkey.ai/v1/proxy", // Replace openai with portkey's endpoint
     headers: {
         "x-portkey-api-key": "<YOUR PORTKEY API KEY>", // Can be got from your account
         "x-portkey-mode": "proxy openai" // Tells portkey to proxy your request to openai
