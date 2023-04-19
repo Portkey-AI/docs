@@ -70,3 +70,5 @@ print(llm(text))
 ## 3. View real-time activity in your account
 As the API requests start flowing in, you’ll see the activity in your account instantly.
 
+## Metadata in Requests
+If you'd like to send additional metadata with your requests, you can add it as part of the headers. [Read more here](https://github.com/Portkey-AI/quick-start/blob/main/metadata.md).
