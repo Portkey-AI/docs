@@ -8,7 +8,7 @@ This guide allows you to integrate with Portkey in a minute.
 You can create an account on Portkey with your work email address and get the authentication key needed later in the integration.
 
 You can get your API key from the profile dropdown
-![Portkey copy API key](Portkey-AI/quick-start/images/copy-api-key.png)
+![Portkey copy API key](https://github.com/Portkey-AI/quick-start/blob/main/images/copy-api-key.png)
 
 ## 2. Insert the Portkey endpoint
 Replace the OpenAI (or any other provider’s) endpoint to the portkey proxy endpoint and add the portkey authentication headers.
