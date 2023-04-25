@@ -17,7 +17,7 @@ const configuration = new Configuration({
     baseOptions: {
       headers: {
         "x-portkey-api-key": "<YOUR PORTKEY API KEY>", // Can be got from your account
-        "x-portkey-mode": "proxy openai" // Tells portkey to proxy your request to openai
+        "x-portkey-mode": "proxy openai", // Tells portkey to proxy your request to openai
         "x-portkey-meta": JSON.stringify({"foo": "abc", "bar": "def"}) // Enables filtering on `foo` and `bar`
       }
     }
