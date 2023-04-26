@@ -6,14 +6,14 @@ This could be useful if you have fixed input prompts or are testing the app with
 
 ### Enabling cache
 
-To enable caching, pass the following header in your requests.
+To enable caching, pass the following headers in your requests.
 
 ```
     "x-portkey-cache": true
     "Cache-Control": "max-age:1000"
 ```
 
-The `x-portkey-cache` enables or disables cache storage and retrieval. The `Cache-Control` header takes a `max-age` in seconds. The minimum value for `Cache-Control` is 30. If you don't provide this header, we will automatically cache requests for `7*24*60*60 seconds` (7 days).
+The `x-portkey-cache` enables or disables cache storage and retrieval. The `Cache-Control` header accepts `max-age` in seconds. The minimum value for `Cache-Control` is 30. If you don't provide this header, we will automatically cache requests for `7*24*60*60 seconds` (7 days) when the `x-portkey-cache` is set to `true`.
 
 ### Invalidating Cache
 
