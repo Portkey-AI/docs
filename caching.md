@@ -2,7 +2,7 @@
 
 Portkey supports caching across text & chat completions. When the exact same request comes in to Portkey, we can return the response from our cache.
 
-This could be useful if you have fixed input prompts or are developing your app. Why waste precious OpenAI tokens.
+This could be useful if you have fixed input prompts or are testing the app with the same inputs.
 
 ### Enabling cache
 
