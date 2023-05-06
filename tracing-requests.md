@@ -1,14 +1,14 @@
 # Tracing Requests through Portkey
 
-Portkey supports tracing natively to allow applications to monitor their generative AI apps end-to-end. To enable tracing, you can pass the trace-id in the header of any proxy request and it can then be tracked through the journey of the request.
+Portkey supports tracing that allows you to monitor your generative AI apps end-to-end. To enable tracing, you can pass a `trace-id` in the header of any Portkey request (proxy or otherwise) and it will be tracked through the journey of the request.
 
 ```
 HEADER:
 x-portkey-trace-id: "enter_your_trace_id_here"
 ```
 
-### Adding a trace id to any proxy request
-Pass `x-portkey-trace-id` in the request header for portkey to link requests.
+### Adding a Trace ID to any proxy request
+Pass `x-portkey-trace-id` in the request header for Portkey to link requests.
 
 For Python
 ```python
@@ -40,8 +40,8 @@ const configuration = new Configuration({
 });
 ```
 
-### Using tracing with Langchain Agents
-A common use case of tracing can be capturing the flow of a langchain agent request. When using portkey with langchain, you can pass your trace-id in the headers and all the embeddings & completion requests will get tagged with the same trace-id.
+### Using Tracing with Langchain Agents
+A common use case of tracing is to capture the flow of a langchain agent request. When using Portkey with langchain, you can pass your Trace ID in the headers and all the embeddings & completion requests will get tagged with the same Trace ID.
 
 Sample Langchain Agent Code with Tracing Enabled
 ```python
@@ -66,9 +66,11 @@ agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION
 agent.run("What is 56 multiplied by 17654 to the 0.43 power?")
 ```
 
-When we run this, we get the following logs on Portkey
+When we run this, we get view following logs on Portkey
 
 ![Trace Logs in Portkey](https://github.com/Portkey-AI/quick-start/blob/main/images/trace-logs.gif)
 
 ### Managing user feedback via Trace IDs
+Trace IDs can also be used to link user feedback to generations. You can implement a thumbs up / thumbs down user feedback system or something more complex with our feedback APIs. This feedback can be linked to traces which can span over 1 generation or multiple ones.
 
+You can read about implementing user feedback in Portkey [here](https://github.com/Portkey-AI/quick-start/blob/main/feedback.md).
