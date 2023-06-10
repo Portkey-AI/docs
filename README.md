@@ -12,7 +12,7 @@ Portkey wants to make it easy to work with Large Models that expose an API by of
 
 Imagine portkey as a hop away from the LLMs enabling you with a lot of functionality out of the box.
 
-![Portkey diagram](https://github.com/roh26it/portkey-quick-start/blob/main/images/portkey-middleware.png?raw=true)
+![Portkey diagram](/images/portkey-middleware-v2.jpeg)
 
 #PromptOps #LLMOps #LMOps
 
@@ -40,4 +40,4 @@ We’re adding more features fast, but key areas of focus for Portkey will be hi
 
 The best part about Portkey is that you can get started with minimal effort. Just replace your OpenAI (or any other provider’s) endpoint to the portkey proxy and we’ll get you setup within minutes!
 
-Read the [Quickstart Guide](https://github.com/roh26it/portkey-quick-start/blob/main/quickstart.md) next
+Get Started with the [Quickstart Guide](https://github.com/roh26it/portkey-quick-start/blob/main/quickstart.md)

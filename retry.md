@@ -1,9 +1,9 @@
 # Automatic Retries with Portkey
 
-Portkey has an in-built retry mechanism that makes sure your requests get fulfilled. We implement a retry mechanism with exponential backoff. This can be managed by the `x-portkey-retry-count` header. 
+Portkey has an in-built retry mechanism that makes sure your requests get fulfilled. We implement a retry mechanism with exponential backoff. This can be managed by the `x-portkey-retry-count` header.
 
-```
-HEADER:
+```sh
+# HEADER:
 x-portkey-retry-count: "number of times you want the API to be retried (max 5)"
 ```
 
@@ -25,7 +25,7 @@ response = openai.ChatCompletion.create(
 ```
 
 For Javascript
-```javascript
+```js
 const configuration = new Configuration({
     organization: "YOUR_ORG_ID",
     apiKey: process.env.OPENAI_API_KEY,
@@ -66,4 +66,5 @@ agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION
 agent.run("What is 56 multiplied by 17654 to the 0.43 power?")
 ```
 
-Note: The max value of retries available is 5.
+> NOTE: The max value of retries available is 5
+

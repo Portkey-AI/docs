@@ -19,12 +19,10 @@ curl --location 'https://api.portkey.ai/v1/feedback/' \
 }'
 ```
 **URL**: `https://api.portkey.ai/v1/feedback/`
-<br>
 **Method**: `POST`
-
 **Request Body**<br>
 The request body should contain a `Feedback object` or an array of `Feedback objects`
-<br>
+
 
 | Key | Description | Options |
 |---|---|---|
@@ -37,13 +35,13 @@ The request body should contain a `Feedback object` or an array of `Feedback obj
 
 ### Examples
 
-#### 1. Implementing a 👍🏻 / 👎🏻 feedback
+#### Implementing a 👍🏻 / 👎🏻 feedback
 
 In many UI implementations, you would request a user to rate a generation with a simple thumbs up or thumbs down. You can use the `/feedback` endpoint to capture this user intent along with the generation's trace-id so you can aggregate the data at your end.
 
 You can make an API call as the user clicks a thumbs up button like this
 
-```
+```sh
 curl --location 'https://api.portkey.ai/v1/feedback/' \
 --header 'x-portkey-api-key: <YOUR PORTKEY API KEY>' \
 --header 'Content-Type: application/json' \
@@ -52,6 +50,6 @@ curl --location 'https://api.portkey.ai/v1/feedback/' \
     "value": 1
 }'
 ```
-Thumbs up can have a `value` of 1 and thumbs down can have a value of of -1. We're not adding any weights since both the values should be weighted equally.
+- Thumbs up can have a `value` of 1 and thumbs down can have a value of of -1. We're not adding any weights since both the values should be weighted equally.
 
-If the user also decides to leave a comment with their selection, you can add the `text` parameter to capture the user's comment.
+- If the user also decides to leave a comment with their selection, you can add the `text` parameter to capture the user's comment.
