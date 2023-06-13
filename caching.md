@@ -8,7 +8,7 @@ This could be useful if you have fixed input prompts or are testing the app with
 
 To enable caching, pass the following headers in your requests.
 
-```
+```sh
     "x-portkey-cache": true
     "Cache-Control": "max-age:1000"
 ```
@@ -19,6 +19,6 @@ The `x-portkey-cache` enables or disables cache storage and retrieval. The `Cach
 
 You can choose to force refresh cache by using the `x-portkey-cache-force-refresh` header. Setting it to `true` ensures that the cache is invalidated, and a new value is stored in the cache.
 
-```
+```sh
     "x-portkey-cache-force-refresh": true
 ```

@@ -66,4 +66,4 @@ print(llm(text))
 
 ## Model completion metadata
 
-Coming soon
+_Coming soon_

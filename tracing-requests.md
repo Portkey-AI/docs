@@ -2,8 +2,8 @@
 
 Portkey supports tracing that allows you to monitor your generative AI apps end-to-end. To enable tracing, you can pass a `trace-id` in the header of any Portkey request (proxy or otherwise) and it will be tracked through the journey of the request.
 
-```
-HEADER:
+```sh
+# HEADER:
 x-portkey-trace-id: "enter_your_trace_id_here"
 ```
 
@@ -43,9 +43,9 @@ const configuration = new Configuration({
 ### Using Tracing with Langchain Agents
 A common use case of tracing is to capture the flow of a langchain agent request. When using Portkey with langchain, you can pass your Trace ID in the headers and all the embeddings & completion requests will get tagged with the same Trace ID.
 
-Sample Langchain Agent Code with Tracing Enabled
+##### Sample Langchain Agent Code with Tracing Enabled
 ```python
-rom langchain.agents import load_tools
+from langchain.agents import load_tools
 from langchain.agents import initialize_agent
 from langchain.agents import AgentType
 from langchain.llms import OpenAI
@@ -68,7 +68,7 @@ agent.run("What is 56 multiplied by 17654 to the 0.43 power?")
 
 When we run this, we get view following logs on Portkey
 
-![Trace Logs in Portkey](https://github.com/Portkey-AI/quick-start/blob/main/images/trace-logs.gif)
+![Trace Logs in Portkey](/images/trace-logs.gif)
 
 ### Managing user feedback via Trace IDs
 Trace IDs can also be used to link user feedback to generations. You can implement a thumbs up / thumbs down user feedback system or something more complex with our feedback APIs. This feedback can be linked to traces which can span over 1 generation or multiple ones.
