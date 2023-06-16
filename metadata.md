@@ -6,7 +6,7 @@ All predefined keys should be of type String, with max-length as 128 characters.
 
 ## Proxy Metadata
 
-To include metadata in the proxy requests, you can add an `x-portkey-meta` header with a JSON string containing your metadata. Portkey will parse the JSON object and make it available for filtering.
+To include metadata in the proxy requests, you can add an `x-portkey-metadata` header with a JSON string containing your metadata. Portkey will parse the JSON object and make it available for filtering.
 
 For the JavaScript library, use the following sample code:
 
@@ -20,7 +20,7 @@ const configuration = new Configuration({
       headers: {
         "x-portkey-api-key": "<YOUR PORTKEY API KEY>", // Can be obtained from your account
         "x-portkey-mode": "proxy openai", // Instructs Portkey to proxy your request to OpenAI
-        "x-portkey-meta": JSON.stringify({"_environment": "production", "foo": "abc", "bar": "def"}) //Enables filtering on _environment
+        "x-portkey-metadata": JSON.stringify({"_environment": "production", "foo": "abc", "bar": "def"}) //Enables filtering on _environment
       }
     }
 });
@@ -44,7 +44,7 @@ response = openai.ChatCompletion.create(
     headers={  # Add Portkey headers for authentication and proxy mode
         "x-portkey-api-key": "<YOUR PORTKEY API KEY>",
         "x-portkey-mode": "proxy openai",
-        "x-portkey-meta": json.dumps({"_environment": "production", "foo": "abc", "bar": "def"})  # Enables filtering on _environment
+        "x-portkey-metadata": json.dumps({"_environment": "production", "foo": "abc", "bar": "def"})  # Enables filtering on _environment
     }
 )
 ```
