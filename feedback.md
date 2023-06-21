@@ -15,7 +15,7 @@ curl --location 'https://api.portkey.ai/v1/feedback/' \
 --data '{
     "trace_id": "insert_trace_id_here",
     "value": 1,
-    "weight": 1,
+    "weight": 1
 }'
 ```
 **URL**: `https://api.portkey.ai/v1/feedback/`
