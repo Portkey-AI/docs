@@ -63,7 +63,7 @@ openai.api_base = "https://api.portkey.ai/v1/proxy"
 llm = OpenAI(temperature=0.2, headers={
     "x-portkey-api-key": "<YOUR PORTKEY API KEY>",
     "x-portkey-mode": "proxy openai",
-    "x-portkey-meta": json.dumps({"_environment": "production", "foo": "abc", "bar": "def"})  # Enables filtering on _environment
+    "x-portkey-metadata": json.dumps({"_environment": "production", "foo": "abc", "bar": "def"})  # Enables filtering on _environment
 })
 text = "Create a 5-day trip plan for Laos."
 print(llm(text))
