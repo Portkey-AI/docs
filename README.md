@@ -40,4 +40,4 @@ We’re adding more features fast, but key areas of focus for Portkey will be hi
 
 The best part about Portkey is that you can get started with minimal effort. Just replace your OpenAI (or any other provider’s) endpoint to the portkey proxy and we’ll get you setup within minutes!
 
-Get Started with the [Quickstart Guide](https://github.com/roh26it/portkey-quick-start/blob/main/quickstart.md)
+Get Started with the [Quickstart Guide](./quickstart.md)
