@@ -1,14 +1,63 @@
-# Sending Metadata Along with Your Requests
+# 🔖Advanced Tagging - Custom Metadata
 
-You can send custom metadata along with your API requests in Portkey, which can be later used for auditing or filtering logs. Portkey provides four predefined keys: `_environment`, `_user`, `_organisation`, and `_prompt`. These predefined keys are indexed and allow for filtering data in Portkey analytics and logs sections. You can still pass any other metadata key you desire, but these four predefined keys will be indexed and will be available for filtering data in Portkey.
+Advanced tagigng allows you to track each user interaction in your app in high detail. You can tag requests with **predefined** OR **custom metadata** tags and then audit them with the help of the Portkey dashboard. 
 
-All predefined keys should be of type String, with max-length as 128 characters.
+## **🔑 Add to Request Header**
+To pass metadata, just add the below params to your API request header. Don't forget to change `base URL` or set `API path` to `Portkey proxy`. (Check here for details).
 
-## Proxy Metadata
+If you are deploying your prompts through Portkey directly (which we recommend), you can add `metadata headers` to those API requests as well.
 
-To include metadata in the proxy requests, you can add an `x-portkey-metadata` header with a JSON string containing your metadata. Portkey will parse the JSON object and make it available for filtering.
+### **Enabling Predefined + Custom Keys**
+```py
+'x-portkey-metadata': json.dumps({"_environment": "production", "_user": "a@b.com", "_organisation": "acme", "_prompt": "prompt_1", "foo": "abc", "bar": "def"})
+```
 
-For the JavaScript library, use the following sample code:
+### **🎫 Predefined Keys**
+Predefined keys are indexed automatically, so you can filter them in Portkey logs directly.
+
+| Key | Usage | Type | Max Length |
+| -- | -- | -- | -- |
+| `_environment` | Pass environment name. For example, `staging` or `production` | `string` | 128 chars |
+| `_user` | Pass the user name or email | `string` | 128 chars |
+| `_organisation` | Pass the org name | `string` | 128 chars | 
+| `_prompt` | Pass prompt id from your context | `string` | 128 chars | 
+
+### **🛠️ Custom Keys**
+
+Other than the predefined keys, you can also pass **any custom `{'key':'value'}` pair** to your request. All keys & values should be of type `string`. These keys do not have to be prefixed with **`underscore(_)`**.
+
+Custom keys are not indexed on Portkey logs and hence are not searchable. You can export all the logs to perform analysis.
+
+
+## **💡 Examples**
+
+### **Implementing Predefined + Custom Keys with `Python`**
+
+#### Portkey Header: Remains same across all providers
+```py
+import json
+
+openai.api_base = "https://api.portkey.ai/v1/proxy"
+
+portkey_header = {
+    'x-portkey-api-key' :  'PORTKEY_API_KEY',
+    'x-portkey-mode' : 'proxy openai',
+    'x-portkey-metadata': json.dumps({"_environment": "production", "_user": "a@b.com", "_organisation": "acme", "_prompt": "prompt_1", "foo": "abc", "bar": "def"})
+}
+```
+#### Provider: OpenAI, Model: GPT3
+```py
+response = openai.Completion.create( 
+    model="text-davinci-003", 
+    prompt="What colour do we get if we mix yellow & blue?",
+    headers = portkey_headers, #This is where we pass our Portkey headers
+    max_tokens=1024
+    )
+
+print (response['choices'][0]['text'])
+```
+
+### **Implementing Predefined + Custom Keys with `Javascript` & OpenAI GPT3.5**
 
 ```javascript
 import { Configuration, OpenAIApi } from "openai";
@@ -18,7 +67,7 @@ const configuration = new Configuration({
     basePath: "https://api.portkey.ai/v1/proxy", // Replace openai with portkey's endpoint
     baseOptions: {
       headers: {
-        "x-portkey-api-key": "<YOUR PORTKEY API KEY>", // Can be obtained from your account
+        "x-portkey-api-key": "PORTKEY_API_KEY", // Can be obtained from your account
         "x-portkey-mode": "proxy openai", // Instructs Portkey to proxy your request to OpenAI
         "x-portkey-metadata": JSON.stringify({"_environment": "production", "foo": "abc", "bar": "def"}) //Enables filtering on _environment
       }
@@ -27,33 +76,8 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 ```
 
-For Python:
-
-```python
-import json
-
-openai.api_base = "https://api.portkey.ai/v1/proxy"  # Replace openai with Portkey's endpoint
-
-response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant"},
-        {"role": "user", "content": "Create a 5-day trip plan for Laos."},
-    ],
-    temperature=0.2,
-    headers={  # Add Portkey headers for authentication and proxy mode
-        "x-portkey-api-key": "<YOUR PORTKEY API KEY>",
-        "x-portkey-mode": "proxy openai",
-        "x-portkey-metadata": json.dumps({"_environment": "production", "foo": "abc", "bar": "def"})  # Enables filtering on _environment
-    }
-)
-```
-
-### Using Langchain
-
-To enable Portkey in your Langchain initialization, add the following code:
-
-```python
+### **Implementing Predefined + Custom Keys with `Langchain Python Package`**
+```py
 from langchain.llms import OpenAI
 import openai
 import json
@@ -61,7 +85,7 @@ import json
 openai.api_base = "https://api.portkey.ai/v1/proxy"
 
 llm = OpenAI(temperature=0.2, headers={
-    "x-portkey-api-key": "<YOUR PORTKEY API KEY>",
+    "x-portkey-api-key": "PORTKEY_API_KEY",
     "x-portkey-mode": "proxy openai",
     "x-portkey-metadata": json.dumps({"_environment": "production", "foo": "abc", "bar": "def"})  # Enables filtering on _environment
 })
@@ -69,6 +93,9 @@ text = "Create a 5-day trip plan for Laos."
 print(llm(text))
 ```
 
-#### NOTE : When using the **_user** predefined key, the following behavior applies:
+## **🖥️ Portkey Dashboard Guide**
 
-If you pass the `user` key in the OpenAI request body, it will be automatically stored in `_user`. If both the OpenAI request body `user` key and the metadata `_user` key are passed, the metadata `_user` key will be stored.
+Simple cache hits will show up as **"HIT"** & semantic cache hits will show up as **"SEMANTIC HIT"** on your Portkey logs. We also calculate and show the response time and how much money you saved with each hit.
+
+![Metadata 1](./images/Metadata%201.png)
+![Metadata 2](./images/Metadata%202.png)
