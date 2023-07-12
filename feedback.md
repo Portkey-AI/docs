@@ -1,55 +1,79 @@
-# Feedback APIs
+# 📝 Feedback API
 
-When evaluating an LLM system, an important metric to record is real human feedback coming in. In your application you can collect feedback with a simple thumbs up / thumbs down or go deeper with weighted feedback on actions that the user takes.
+Feedback API provides a simple way to get weighted feedback from customers on any request you served, at any stage in your app. You can capture this feedback on a generation or conversation level and analyze it based on custom tags by adding meta data to the relevant request.
 
-Portkey allows you to capture this feedback on a generation or conversation level. The feedback can then be analysed on a prompt, user or environment level.
 
-Feedbacks in Portkey are collected on a `trace-id` which can be configured by you.
+## **🔑 Two Steps to Add Feedback**
 
-You can collect feedback using the `/feedback` endpoint. Here's a cURL request to add feedback.
+### **1️⃣ Adding trace-id**
 
+ Pass the following param in your request header. Add any string for the `trace_id` you would like. We will append feedback to all requests with the same trace-id.
+
+```sh
+"x-portkey-trace-id": "<YOUR TRACE ID>"
 ```
+### **2️⃣ Passing feedback**
+
+You can append feedback to a request with the `/feedback` endpoint like this:
+```sh
 curl --location 'https://api.portkey.ai/v1/feedback/' \
 --header 'x-portkey-api-key: <YOUR PORTKEY API KEY>' \
 --header 'Content-Type: application/json' \
 --data '{
     "trace_id": "insert_trace_id_here",
-    "value": 1,
-    "weight": 1
+    "value": -10,
+    "weight": 0.5,
+    "text" : "title was irrelevant"
 }'
 ```
-**URL**: `https://api.portkey.ai/v1/feedback/`
-**Method**: `POST`
-**Request Body**<br>
-The request body should contain a `Feedback object` or an array of `Feedback objects`
+The **Payload** takes the following keys: `trace_id, value, weight, text`
 
 
-| Key | Description | Options |
-|---|---|---|
-| trace_id | The trace_id on which the feedback will be logged. This is usually sent as a header along with requests to Portkey. | string, required |
-| value | A numeric value for the feedback. Can be any integer value between -10 and 10 | integer, required |
-| weight | Optional parameter to determine the weight of this feedback's value. Especially helpful if you're collecting multiple feedback for a single trace_id. This is a floating point number between 0 and 1 | float, optional, defaults to 1.0 |
-| text | Free form text that can be attached to a feedback object. Helpful when users leave comments. | string, optional |
+| Key | Required? | Description | Type |
+|---|---|---| --- |
+| `trace_id` | ✅ Required | The trace_id on which the feedback will be logged | `string` | 
+| `value` | ✅ Required | Feedback value | `integer` between `[-10,10]` |
+| `weight` | ❔ Optional | Add weight value to feedback value. Helpful if you're collecting multiple feedback for a single `trace_id` | `float` between `[0,1]`, Default = `1.0` |
+| `text` | ❔ Optional | Free form text to append comments to any feedback | `string` | ❔ Optional |
 
-<br>
 
-### Examples
+## **💡 Examples**
 
-#### Implementing a 👍🏻 / 👎🏻 feedback
+One simple & effective feedback you can get from the user is a simple thumbs up or thumbs down. Just set `value` to `1` for 👍 and `0` for 👎. `Weight` would be default `1.0`.
 
-In many UI implementations, you would request a user to rate a generation with a simple thumbs up or thumbs down. You can use the `/feedback` endpoint to capture this user intent along with the generation's trace-id so you can aggregate the data at your end.
 
-You can make an API call as the user clicks a thumbs up button like this
+### **Implementing 👍🏻 / 👎🏻 Feedback with `cURL`**
 
 ```sh
 curl --location 'https://api.portkey.ai/v1/feedback/' \
 --header 'x-portkey-api-key: <YOUR PORTKEY API KEY>' \
 --header 'Content-Type: application/json' \
 --data '{
-    "trace_id": "trace_id_for_the_generation",
-    "value": 1
+    'trace_id': 'REQUEST_TRACE_ID',
+    'value': 1
 }'
 ```
-- Thumbs up can have a `value` of 1 and thumbs down can have a value of of -1. We're not adding any weights since both the values should be weighted equally.
 
-- If the user also decides to leave a comment with their selection, you can add the `text` parameter to capture the user's comment.
+### **Implementing 👍🏻 / 👎🏻 Feedback with `Python`**
+```py
+import requests
+
+portkey_feedback_header = {
+    'x-portkey-api-key' : 'PORTKEY_API_KEY',
+    'Content-Type': 'application/json',
+}
+
+feedback_data = {
+    'trace_id': 'REQUEST_TRACE_ID',
+    'value': 0, #For thumbs down
+}
+
+response = requests.post('https://api.portkey.ai/v1/feedback/', headers=portkey_feedback_header, json=feedback_data)
+```
+
+## **🖥️ Portkey Dashboard Guide**
+
+You can see the `Feedback Count` for each `trace-id` on the logs page.
+
+![Feedback 1](./images/Feedback%201.png)
+![Feedback 2](./images/Feedback%202.png)
