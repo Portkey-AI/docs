@@ -20,7 +20,7 @@
 
 ## Key Features
 
-* [🎨 Request Caching](key-features/request-caching.md)
+* [🚀 Request Caching](key-features/request-caching.md)
 * [⏮ Request Tracing](key-features/request-tracing.md)
 * [💫 Automatic Retries](key-features/automatic-retries.md)
 * [📃 Custom Metadata](key-features/custom-metadata.md)
