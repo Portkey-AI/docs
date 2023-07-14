@@ -8,3 +8,5 @@ Portkey leverages cutting-edge LMOps stack to launch production-ready applicatio
 
 Moreover, Portkey ensures compliance with GDPR and ISO standards, making it a reliable choice for businesses.
 
+<figure><img src="../.gitbook/assets/portkey-middleware-v2.jpeg" alt=""><figcaption></figcaption></figure>
+

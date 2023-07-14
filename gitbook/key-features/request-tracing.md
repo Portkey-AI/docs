@@ -18,4 +18,10 @@ To enable tracing, include the `x-portkey-trace-id` in your request header.
 
 Trace IDs can also be used to link user feedback to specific generations. This can be used in a system where users provide feedback, like a thumbs up or thumbs down, or something more complex via our feedback APIs. This feedback can be linked to traces which can span over a single generation or multiple ones.
 
-You can read more about implementing user feedback in Portkey [here](https://github.com/Portkey-AI/quick-start/blob/main/feedback.md).
+You can read more about implementing user feedback in Portkey [here](feedback-api.md).
+
+### **🖥️ Portkey Dashboard Guide**
+
+You can view all the requests with a common `trace-id` easily on the logs page.
+
+<figure><img src="../.gitbook/assets/Tracing.gif" alt=""><figcaption></figcaption></figure>

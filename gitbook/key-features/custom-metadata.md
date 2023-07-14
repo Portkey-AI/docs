@@ -31,3 +31,10 @@ To include metadata in the proxy requests, you can add an `x-portkey-metadata` h
 If you pass the `user` key in the OpenAI request body, it will be automatically stored in `_user`. If both the OpenAI request body `user` key and the metadata `_user` key are passed, the metadata `_user` key will be stored.
 {% endhint %}
 
+### **🖥️ Portkey Dashboard Guide**
+
+You can filter your logs with the predefined keys (`_environment`, `_user`, `_organisation`, `_prompt)` easily on the Portkey logs.
+
+<figure><img src="../.gitbook/assets/Metadata 1.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Metadata 2.png" alt=""><figcaption></figcaption></figure>

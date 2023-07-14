@@ -1,6 +1,6 @@
 # 📪 Setup Your Account
 
-## Getting Started
+Getting Started
 
 Welcome to Portkey! This guide will walk you through the steps to create your account, retrieve your API key, and perform a quick integration using Middleware Mode.
 
@@ -20,3 +20,5 @@ To interact with Portkey's API, you'll need your unique API key. Here's how you 
 2. From the dropdown menu, click on "Copy API Key"
 
 Your API key should now be copied to your clipboard.
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>

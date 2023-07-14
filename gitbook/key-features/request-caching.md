@@ -1,4 +1,4 @@
-# 🎨 Request Caching
+# 🚀 Request Caching
 
 In the quest for enhancing performance and optimizing response retrieval, Portkey offers two unique types of caching - Fixed String Matching Cache (Simple Cache) and Semantic Cache.
 
@@ -54,9 +54,15 @@ If you need to force a cache refresh, use the `x-portkey-cache-force-refresh` he
 }
 ```
 
-
-
 By using Semantic Cache, you can optimize the caching process by considering the contextual similarity of input prompts, leading to more efficient response retrieval.
 
 Choosing the right caching mechanism based on your specific use case can greatly enhance performance and minimize unnecessary model executions, making Portkey an effective tool for managing your Generative AI applications.
+
+### **🖥️ Portkey Dashboard Guide**
+
+Simple cache hits will show up as **"HIT"** & semantic cache hits will show up as **"SEMANTIC HIT"** on your Portkey logs. We also calculate and show the response time and how much money you saved with each hit.
+
+<figure><img src="../.gitbook/assets/Cache 1 (3).png" alt=""><figcaption><p>See cache status directly on your Portkey logs</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Cache 2.png" alt=""><figcaption><p>Each log also shows the response time for cache hit</p></figcaption></figure>
 

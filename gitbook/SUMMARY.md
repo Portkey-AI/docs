@@ -26,6 +26,7 @@
 * [📃 Custom Metadata](key-features/custom-metadata.md)
 * [🤖 Fallbacks on LLMs](key-features/fallbacks-on-llms.md)
 * [🪝 Load Balancing](key-features/load-balancing.md)
+* [📝 Feedback API](key-features/feedback-api.md)
 * [📊 Logs & Analytics](key-features/logs-and-analytics.md)
 * [⚡ Prompt Management](key-features/prompt-management.md)
 
