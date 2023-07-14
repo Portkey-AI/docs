@@ -34,6 +34,7 @@
 
 * [➡ Open AI SDK](integration-guides/open-ai-sdk.md)
 * [➡ Langchain](integration-guides/langchain.md)
+* [➡ Cohere](integration-guides/cohere.md)
 * [➡ Anthropic SDK](integration-guides/anthropic-sdk.md)
 * [➡ Microsoft Guidance](integration-guides/microsoft-guidance.md)
 * [➡ Rest API](integration-guides/rest-api.md)

@@ -1,5 +1,5 @@
 # ➡ Microsoft Guidance
 
-{% hint style="info" %}
+{% hint style="warning" %}
 **TBD**
 {% endhint %}

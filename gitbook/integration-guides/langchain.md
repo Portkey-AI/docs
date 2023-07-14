@@ -2,7 +2,56 @@
 
 **Open AI**
 
+{% tabs %}
+{% tab title="Python" %}
+```python
+import openai
 
+# Set Portkey as the base path
+openai.api_base = "https://api.portkey.ai/v1/proxy"
+
+response = openai.Completion.create(
+  model="text-davinci-003",
+  prompt="Translate the following English text to French: '{}'",
+  temperature=0.5,
+  headers={
+    "x-portkey-api-key": "<PORTKEY_API_KEY>",
+    "x-portkey-mode": "proxy openai"
+  }
+)
+
+print(response.choices[0].text.strip())
+```
+{% endtab %}
+
+{% tab title="NodeJS" %}
+```typescript
+import { OpenAI } from "langchain/llms/openai";
+
+const model = new OpenAI({
+  modelName: "text-davinci-003", 
+  temperature: 0.9,
+  openAIApiKey: "<OPENAI_API_KEY>",
+  configuration: {
+    basePath: "https://api.portkey.ai/v1/proxy",
+    baseOptions: {
+      headers: {
+        'x-portkey-api-key': '<PORTKEY_API_KEY>',
+        'x-portkey-mode': 'proxy openai',
+        'x-portkey-trace-id' : 'langchain_demo'
+      }
+    }
+  }
+});
+
+async function main() {
+  const res = await model.call("Describe the world as written by Herodotus.");
+  console.log(res);
+}
+main();
+```
+{% endtab %}
+{% endtabs %}
 
 **Azure Open AI**
 
@@ -20,7 +69,7 @@ from langchain.llms import AzureOpenAI
 
 llm = AzureOpenAI(
     headers = {
-        "x-portkey-api-key": "PORTKEY_API_KEY",
+        "x-portkey-api-key": "<PORTKEY_API_KEY>",
         "x-portkey-mode": "proxy azure-openai"
     },
     deployment_name="DEPLOYMENT_NAME",
@@ -31,11 +80,3 @@ llm("Tell me a joke")
 ```
 {% endtab %}
 {% endtabs %}
-
-
-
-**Cohere**
-
-
-
-**Anthropic**

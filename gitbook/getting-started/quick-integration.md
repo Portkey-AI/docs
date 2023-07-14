@@ -2,15 +2,14 @@
 
 ### Quick Integration
 
-In this section, we'll show you how to perform a quick integration with Portkey using Middleware Mode. We'll take an example of an OpenAI request, and show you how to route it through Portkey using different methods.
+In this section, we'll show you how to perform a quick integration with Portkey using Middleware Mode. We'll take an example of an OpenAI request, and show you how to route it through Portkey using different methods. ([Click here](broken-reference) for integration examples with other providers like Anthropic, Cohere etc.)
 
 * **OpenAI SDK**
 
 {% tabs %}
 {% tab title="Python" %}
-```python
-import openai
-
+<pre class="language-python"><code class="lang-python"><strong>import openai
+</strong>
 # Set Portkey as the base path
 openai.api_base = "https://api.portkey.ai/v1/proxy"
 
@@ -19,44 +18,43 @@ response = openai.Completion.create(
   prompt="Translate the following English text to French: '{}'",
   temperature=0.5,
   headers={
-    "x-portkey-api-key": "<YOUR PORTKEY API KEY>",
+    "x-portkey-api-key": "&#x3C;PORTKEY_API_KEY>",
     "x-portkey-mode": "proxy openai"
   }
 )
 
 print(response.choices[0].text.strip())
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="NodeJS" %}
 ```javascript
-const { OpenAIAPI } = require('openai');
+const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
-    organization: "YOUR_ORG_ID",
-    apiKey: "<OPENAI_API_KEY>",
-    basePath: "https://api.portkey.ai/v1/proxy",
+  apiKey: "<OPENAI_API_KEY>",
+  basePath: "https://api.portkey.ai/v1/proxy",
     baseOptions: {
       headers: {
-        "x-portkey-api-key": "<YOUR PORTKEY API KEY>",
+        "x-portkey-api-key": "<PORTKEY_API_KEY>",
         "x-portkey-mode": "proxy openai"
       }
     }
 });
 
-const openai = new OpenAIAPI(configuration);
+const openai = new OpenAIApi(configuration);
 
-const prompt = "Translate the following English text to French: '{}'";
+async function generateCompletion() {
+  const response = await openai.createCompletion({
+    model: "text-davinci-003",
+    prompt: "Two roads diverged in the yellow woods",
+    max_tokens: 512,
+    temperature: 0,
+  });
 
-async function getCompletion() {
-    const completion = await openai.complete({
-        model: "text-davinci-003",
-        prompt: prompt,
-        temperature: 0.5,
-    });
-    console.log(completion.data.choices[0].text);
+  console.log(response.data.choices[0].text);
 }
 
-getCompletion();
+generateCompletion();
 ```
 {% endtab %}
 {% endtabs %}
@@ -66,38 +64,49 @@ getCompletion();
 {% tabs %}
 {% tab title="Python" %}
 ```python
+import os
 from langchain.llms import OpenAI
-import openai
 
-# Set Portkey as the base path
-openai.api_base = "https://api.portkey.ai/v1/proxy"
+os.environ["OPENAI_API_BASE"] = "https://api.portkey.ai/v1/proxy"
+os.environ["OPENAI_API_KEY"] = "<OPENAI_API_KEY>"
 
-llm = OpenAI(temperature=0, headers={
-    "x-portkey-api-key": "<PORTKEY API KEY>",
-    "x-portkey-mode": "proxy openai"
-}, user="demo_user")
+portkey_headers = {
+    "x-portkey-api-key": "<PORTKEY_API_KEY>",
+    "x-portkey-mode": "proxy openai",
+    "x-portkey-trace-id": "langchain_agent",
+}
 
-response = llm.generate(prompt="Write an essay on global warming", tokens=500)
+llm = OpenAI(temperature=0.9, headers=portkey_headers)
+
+print(llm("Hello, here's the first sentence of Illiad: "))
 ```
 {% endtab %}
 
 {% tab title="NodeJS" %}
-```javascript
-const { OpenAI } = require('langchain');
+```typescript
+import { OpenAI } from "langchain/llms/openai";
 
-const openai = new OpenAI({
-  apiKey: '<OPENAI API KEY>',
-  basePath: 'https://api.portkey.ai/v1/proxy',
-  headers: {
-    'x-portkey-api-key': '<PORTKEY API KEY>',
-    'x-portkey-mode': 'proxy openai'
+const model = new OpenAI({
+  modelName: "text-davinci-003", 
+  temperature: 0.9,
+  openAIApiKey: "<OPENAI_API_KEY>",
+  configuration: {
+    basePath: "https://api.portkey.ai/v1/proxy",
+    baseOptions: {
+      headers: {
+        'x-portkey-api-key': '<PORTKEY_API_KEY>',
+        'x-portkey-mode': 'proxy openai',
+        'x-portkey-trace-id' : 'langchain_demo'
+      }
+    }
   }
 });
 
-const prompt = 'Write an essay on global warming';
-const tokens = 500;
-
-const response = await openai.generate({ prompt, tokens });
+async function main() {
+  const res = await model.call("Describe the world as written by Herodotus.");
+  console.log(res);
+}
+main();
 ```
 {% endtab %}
 {% endtabs %}
@@ -107,10 +116,10 @@ const response = await openai.generate({ prompt, tokens });
 {% tabs %}
 {% tab title="cURL" %}
 ```bash
-curl --location 'http://192.168.1.91:49875/v1/proxy/completions' \
---header 'x-portkey-api-key: <PORTKEY API KEY>' \
+curl --location 'http://api.portkey.ai/v1/proxy/completions' \
+--header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
 --header 'x-portkey-mode: proxy openai' \
---header 'Authorization: OPENAI API KEY' \
+--header 'Authorization: <OPENAI_API_KEY>' \
 --header 'Content-Type: application/json' \
 --data '{
     "n": 1,
