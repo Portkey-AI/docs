@@ -8,10 +8,10 @@ It serves as a robust platform for launching production-ready applications using
 
 ## Quick links
 
-{% content-ref url="overview/product-introduction.md" %}
-[product-introduction.md](overview/product-introduction.md)
+{% content-ref url="overview/introduction.md" %}
+[introduction.md](overview/introduction.md)
 {% endcontent-ref %}
 
-{% content-ref url="overview/key-features-and-overview.md" %}
-[key-features-and-overview.md](overview/key-features-and-overview.md)
+{% content-ref url="overview/features-overview.md" %}
+[features-overview.md](overview/features-overview.md)
 {% endcontent-ref %}

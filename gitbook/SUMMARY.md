@@ -4,19 +4,19 @@
 
 ## Overview
 
-* [ℹ Product Introduction](overview/product-introduction.md)
-* [✨ Key Features & Overview](overview/key-features-and-overview.md)
+* [ℹ Introduction](overview/introduction.md)
+* [✨ Features Overview](overview/features-overview.md)
+
+## Getting Started
+
+* [📪 Setup Your Account](getting-started/setup-your-account.md)
+* [📎 Quick Integration](getting-started/quick-integration.md)
 
 ## How Portkey Works
 
 * [📪 Portkey Modes](how-portkey-works/portkey-modes.md)
 * [📎 Portkey Headers](how-portkey-works/portkey-headers.md)
 * [🌈 Supported LLMs](how-portkey-works/supported-llms.md)
-
-## Getting Started
-
-* [📪 Setup Your Account](getting-started/setup-your-account.md)
-* [📎 Quick Integration](getting-started/quick-integration.md)
 
 ## Key Features
 
@@ -45,7 +45,7 @@
 * [🎭 Lower Cost & Latency](why-portkey/lower-cost-and-latency.md)
 * [⛅ Improve LLM success rate](why-portkey/improve-llm-success-rate.md)
 * [✅ Optimise generation quality](why-portkey/optimise-generation-quality.md)
-* [🚫 Hide PII form LLMs](why-portkey/hide-pii-form-llms.md)
+* [🚫 Hide PII from LLMs](why-portkey/hide-pii-from-llms.md)
 
 ## Troubleshooting & Support
 

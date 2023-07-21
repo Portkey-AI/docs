@@ -1,18 +1,16 @@
 # 📪 Portkey Modes
 
-Portkey's goal is to simplify and enhance your experience when deploying and managing Generative AI applications. It can be integrated into your applications in two distinctive ways, each designed to cater to your specific needs:
+Portkey simplifies your experience when deploying and managing Generative AI applications. It can be integrated in two ways:
 
-1.  **Middleware Mode**: This mode is ideal for clients who want to maintain their existing LLM setup, while adding the robust capabilities that Portkey provides. Here's how it works:
+1.  **Middleware Mode**: This mode is ideal if you want to maintain your existing LLM setup, while adding the robust capabilities that Portkey provides. Here's how it works:
 
-    * The client modifies their LLM base path to route all requests via Portkey.
-    * Portkey acts as a reverse proxy, a mediator that intercepts the client's requests.
-    * Once a request is received, Portkey forwards it to the original LLM URL, becoming a 'hop' in the process.
+    * Modify your LLM base path to route all requests via Portkey.
+    * Once a request is received, Portkey forwards it to the original LLM with an extremely low latency (\~20ms)
     * Throughout this process, Portkey offers its extensive suite of features such as request tracing, caching, automatic retries, custom metadata, load balancing, and observability.
-    * The responses from the LLM are then passed back to the client through Portkey, maintaining the integrity and transparency of the process.
 
 
 2. **Managed Models Mode**: This mode is for customers who prefer a hands-off approach, allowing Portkey to handle the intricacies of managing the LLMs:
-   * Customers define and save their LLM prompts and all the associated parameters on Portkey.
+   * Customers define and save their LLM prompts and all the associated parameters on the Portkey UI.
    * Portkey then creates an API endpoint specific to this model.
    * Users can directly call this API, which handles all the interactions with the LLM behind the scenes.
    * This model not only simplifies the process of working with LLMs but also ensures that the customers can leverage all the features of Portkey without worrying about the complexities of directly handling the LLM.
