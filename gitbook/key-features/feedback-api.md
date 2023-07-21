@@ -24,8 +24,7 @@ curl --location 'https://api.portkey.ai/v1/feedback/' \
     "trace_id": "insert_trace_id_here",
     "value": -10,
     "weight": 0.5,
-    "text" : "title was irrelevant",
-    "metadata": '{"user": "fef653", "organisation": "o9876", "prompt": "test_prompt", "environment": "production"}'
+    "metadata": '{"_user": "fef653", "_organisation": "o9876", "_prompt": "test_prompt", "_environment": "production", "text" : "title was irrelevant"}'
 }'
 ```
 
@@ -36,7 +35,6 @@ The **Payload** takes the following keys: `trace_id, value, weight, text`
 | `trace_id` | ✅ Required | The trace\_id on which the feedback will be logged                                                                                                                                                                       | `string`                                 |
 | `value`    | ✅ Required | Feedback value                                                                                                                                                                                                           | `integer` between `[-10,10]`             |
 | `weight`   | ❔ Optional | Add weight value to feedback value. Helpful if you're collecting multiple feedback for a single `trace_id`                                                                                                               | `float` between `[0,1]`, Default = `1.0` |
-| `text`     | ❔ Optional | Free form text to append comments to any feedback                                                                                                                                                                        | `string`                                 |
 | metadata   | ❔ Optional | <p>JSON string of any metadata you want to send along with the feedback.<br><br><code>user</code>, <code>organisation</code>, <code>prompt</code> and <code>environment</code> are special fields indexed by default</p> | `string`                                 |
 
 ### **💡 Examples**
