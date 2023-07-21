@@ -66,19 +66,32 @@ generateCompletion();
 ```python
 import os
 from langchain.llms import OpenAI
+import langchain.utilities import Portkey
 
-os.environ["OPENAI_API_BASE"] = "https://api.portkey.ai/v1/proxy"
 os.environ["OPENAI_API_KEY"] = "<OPENAI_API_KEY>"
+PORTKEY_API_KEY = "<PORTKEY_API_KEY>" # Set Portkey API key here
+TRACE_ID = "portkey_langchain_demo"  # Set trace id here
 
-portkey_headers = {
-    "x-portkey-api-key": "<PORTKEY_API_KEY>",
-    "x-portkey-mode": "proxy openai",
-    "x-portkey-trace-id": "langchain_agent",
-}
+# Since Portkey is integrated with Langchain, Portkey.Config() takes care of defining headers
 
-llm = OpenAI(temperature=0.9, headers=portkey_headers)
+headers = Portkey.Config(
+    api_key=PORTKEY_API_KEY,
+    trace_id=TRACE_ID,
+)
 
-print(llm("Hello, here's the first sentence of Illiad: "))
+# Now, let's pass these headers
+
+llm = OpenAI(headers=headers)
+
+tools = load_tools(["serpapi", "llm-math"], llm=llm)
+agent = initialize_agent(
+    tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
+)
+
+# Let's test it out!
+agent.run(
+    "What was the high temperature in SF yesterday in Fahrenheit? What is that number raised to the .023 power?"
+)
 ```
 {% endtab %}
 

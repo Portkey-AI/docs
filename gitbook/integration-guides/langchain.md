@@ -2,25 +2,43 @@
 
 **Open AI**
 
+Using Portkey with Langchain is as simple as just choosing which Portkey features you want, enabling them via `headers=Portkey.Config` and passing it in your LLM calls.&#x20;
+
+For more, checkout [Portkey's Langchain documentation](https://python.langchain.com/docs/ecosystem/integrations/portkey/).
+
 {% tabs %}
 {% tab title="Python" %}
 ```python
-import openai
+# Tracing agent calls across different requests
 
-# Set Portkey as the base path
-openai.api_base = "https://api.portkey.ai/v1/proxy"
+import os
+from langchain.llms import OpenAI
+import langchain.utilities import Portkey
 
-response = openai.Completion.create(
-  model="text-davinci-003",
-  prompt="Translate the following English text to French: '{}'",
-  temperature=0.5,
-  headers={
-    "x-portkey-api-key": "<PORTKEY_API_KEY>",
-    "x-portkey-mode": "proxy openai"
-  }
+os.environ["OPENAI_API_KEY"] = "<OPENAI_API_KEY>"
+PORTKEY_API_KEY = "<PORTKEY_API_KEY>" # Set Portkey API key here
+TRACE_ID = "portkey_langchain_demo"  # Set trace id here
+
+# Since Portkey is integrated with Langchain, Portkey.Config() takes care of defining headers
+
+headers = Portkey.Config(
+    api_key=PORTKEY_API_KEY,
+    trace_id=TRACE_ID,
 )
 
-print(response.choices[0].text.strip())
+# Now, let's pass these headers
+
+llm = OpenAI(headers=headers)
+
+tools = load_tools(["serpapi", "llm-math"], llm=llm)
+agent = initialize_agent(
+    tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
+)
+
+# Let's test it out!
+agent.run(
+    "What was the high temperature in SF yesterday in Fahrenheit? What is that number raised to the .023 power?"
+)
 ```
 {% endtab %}
 
