@@ -24,7 +24,7 @@ curl --location 'https://api.portkey.ai/v1/feedback/' \
     "trace_id": "insert_trace_id_here",
     "value": -10,
     "weight": 0.5,
-    "metadata": '{"_user": "fef653", "_organisation": "o9876", "_prompt": "test_prompt", "_environment": "production", "text" : "title was irrelevant"}'
+    "metadata": '{"text" : "title was irrelevant", "_user": "fef653", "_organisation": "o9876", "_prompt": "test_prompt", "_environment": "production"}'
 }'
 ```
 
