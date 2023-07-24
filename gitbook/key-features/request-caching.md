@@ -38,7 +38,7 @@ The `Cache-Control` header specifies the maximum age of the cached response in s
 
 ```json
 {
-    "Cache-Control": "max-age:1000"
+    "Cache-Control": "max-age=1000"
 }
 ```
 
