@@ -34,7 +34,7 @@ To enable the Semantic Cache, use the `x-portkey-cache` header in your requests,
 
 **Cache TTL**
 
-The `Cache-Control` header specifies the maximum age of the cached response in seconds. If the `Cache-Control` header is not provided, Portkey automatically caches requests for 604800 seconds (7 days).
+The `Cache-Control` header specifies the maximum age of the cached response in seconds. If the `Cache-Control` header is not provided, Portkey automatically caches requests for 604800 seconds (7 days). Minimum max-age allowed is 60 seconds.
 
 ```json
 {
