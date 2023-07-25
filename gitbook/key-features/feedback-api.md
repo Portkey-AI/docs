@@ -17,7 +17,7 @@ Pass the following param in your request header. Add any string for the `trace_i
 You can append feedback to a request with the `/feedback` endpoint like this:
 
 ```sh
-curl --location 'https://api.portkey.ai/v1/feedback/' \
+curl --location 'https://api.portkey.ai/v1/feedback' \
 --header 'x-portkey-api-key: <YOUR PORTKEY API KEY>' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -28,14 +28,14 @@ curl --location 'https://api.portkey.ai/v1/feedback/' \
 }'
 ```
 
-The **Payload** takes the following keys: `trace_id, value, weight, text`
+The **Payload** takes the following keys: `trace_id, value, weight, metadata`
 
-| Key        | Required?  | Description                                                                                                                                                                                                              | Type                                     |
-| ---------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- |
-| `trace_id` | ✅ Required | The trace\_id on which the feedback will be logged                                                                                                                                                                       | `string`                                 |
-| `value`    | ✅ Required | Feedback value                                                                                                                                                                                                           | `integer` between `[-10,10]`             |
-| `weight`   | ❔ Optional | Add weight value to feedback value. Helpful if you're collecting multiple feedback for a single `trace_id`                                                                                                               | `float` between `[0,1]`, Default = `1.0` |
-| metadata   | ❔ Optional | <p>JSON string of any metadata you want to send along with the feedback.<br><br><code>user</code>, <code>organisation</code>, <code>prompt</code> and <code>environment</code> are special fields indexed by default</p> | `string`                                 |
+| Key        | Required?  | Description                                                                                                                                                                                                                  | Type                                     |
+| ---------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `trace_id` | ✅ Required | The trace\_id on which the feedback will be logged                                                                                                                                                                           | `string`                                 |
+| `value`    | ✅ Required | Feedback value                                                                                                                                                                                                               | `integer` between `[-10,10]`             |
+| `weight`   | ❔ Optional | Add weight value to feedback value. Helpful if you're collecting multiple feedback for a single `trace_id`                                                                                                                   | `float` between `[0,1]`, Default = `1.0` |
+| `metadata` | ❔ Optional | <p>JSON string of any metadata you want to send along with the feedback.<br><br><code>_user</code>, <code>_organisation</code>, <code>_prompt</code> and <code>_environment</code> are special fields indexed by default</p> | `string`                                 |
 
 ### **💡 Examples**
 
@@ -44,7 +44,7 @@ One simple & effective feedback you can get from the user is a simple thumbs up 
 #### **Implementing 👍🏻 / 👎🏻 Feedback with `cURL`**
 
 ```sh
-curl --location 'https://api.portkey.ai/v1/feedback/' \
+curl --location 'https://api.portkey.ai/v1/feedback' \
 --header 'x-portkey-api-key: <YOUR PORTKEY API KEY>' \
 --header 'Content-Type: application/json' \
 --data '{
