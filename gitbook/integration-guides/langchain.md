@@ -2,9 +2,7 @@
 
 **Open AI**
 
-Using Portkey with Langchain is as simple as just choosing which Portkey features you want, enabling them via `headers=Portkey.Config` and passing it in your LLM calls.&#x20;
-
-For more, checkout [Portkey's Langchain documentation](https://python.langchain.com/docs/ecosystem/integrations/portkey/).
+Using Portkey with Langchain is as simple as just choosing which Portkey features you want, enabling them via `headers=Portkey.Config` and passing it in your LLM calls.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -71,6 +69,10 @@ main();
 {% endtab %}
 {% endtabs %}
 
+**Check out the list of config keys you can set with `Portkey.Config` on Langchain:**
+
+<table><thead><tr><th width="191">Feature</th><th width="225">Config Key</th><th width="129">Value (Type)</th><th>Required/Optional</th></tr></thead><tbody><tr><td>API Key</td><td><code>api_key</code></td><td>API Key (<code>string</code>)</td><td>✅ Required</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/request-tracing">Tracing Requests</a></td><td><code>trace_id</code></td><td>Custom <code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/automatic-retries">Automatic Retries</a></td><td><code>retry_count</code></td><td><code>integer</code> [1,2,3,4,5]</td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/request-caching">Enabling Cache</a></td><td><code>cache</code></td><td><code>simple</code> OR <code>semantic</code></td><td>❔ Optional</td></tr><tr><td>Cache Force Refresh</td><td><code>cache_force_refresh</code></td><td><code>True</code></td><td>❔ Optional</td></tr><tr><td>Set Cache Expiry</td><td><code>cache_age</code></td><td><code>integer</code> (in seconds)</td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add User</a></td><td><code>user</code></td><td><code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add Organisation</a></td><td><code>organisation</code></td><td><code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add Environment</a></td><td><code>environment</code></td><td><code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add Prompt (version/id/string)</a></td><td><code>prompt</code></td><td><code>string</code></td><td>❔ Optional</td></tr></tbody></table>
+
 **Azure Open AI**
 
 {% tabs %}
@@ -98,3 +100,5 @@ llm("Tell me a joke")
 ```
 {% endtab %}
 {% endtabs %}
+
+For more, checkout [Portkey's Langchain documentation](https://python.langchain.com/docs/ecosystem/integrations/portkey/).
