@@ -14,7 +14,7 @@ To include metadata in the proxy requests, you can add an `x-portkey-metadata` h
 {    
     "x-portkey-metadata": JSON.stringify({
         "_environment": "production",
-        "_user": "userid123"
+        "_user": "userid123",
         "_organisation": "orgid123",
         "_prompt": "summarisationPrompt",
         "foo": "abc",
