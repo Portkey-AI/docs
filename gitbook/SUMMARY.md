@@ -28,7 +28,8 @@
 * [🪝 Load Balancing](key-features/load-balancing.md)
 * [📝 Feedback API](key-features/feedback-api.md)
 * [📊 Logs & Analytics](key-features/logs-and-analytics.md)
-* [⚡ Prompt Management](key-features/prompt-management.md)
+* [⚡ Prompt Management](key-features/prompt-management/README.md)
+  * [Few-Shot Learning](key-features/prompt-management/few-shot-learning.md)
 
 ## Integration Guides
 

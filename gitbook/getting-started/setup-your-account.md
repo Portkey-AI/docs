@@ -21,4 +21,4 @@ To interact with Portkey's API, you'll need your unique API key. Here's how you 
 
 Your API key should now be copied to your clipboard.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
