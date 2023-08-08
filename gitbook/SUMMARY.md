@@ -29,7 +29,7 @@
 * [📝 Feedback API](key-features/feedback-api.md)
 * [📊 Logs & Analytics](key-features/logs-and-analytics.md)
 * [⚡ Prompt Management](key-features/prompt-management/README.md)
-  * [Few-Shot Learning](key-features/prompt-management/few-shot-learning.md)
+  * [Few-Shot Prompting](key-features/prompt-management/few-shot-prompting.md)
 
 ## Integration Guides
 

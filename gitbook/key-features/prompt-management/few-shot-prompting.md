@@ -1,4 +1,4 @@
-# Few-Shot Learning
+# Few-Shot Prompting
 
 LLMs are highly capable of following a given structure. By providing a few examples of how the assistant should respond to a given prompt, the LLM can generate responses that closely follow the format of these examples.
 
@@ -35,7 +35,7 @@ profile = "An experienced data scientist with a PhD in Computer Science and 5 ye
 jd = "We are seeking a seasoned data scientist with a strong background in machine learning, ideally with experience in the healthcare sector. The ideal candidate should have a PhD or Master's degree in a relevant field and a minimum of 5 years of industry experience."
 ```
 
-#### And now let's add some examples with the expected JSON structure in our few\_shot\_examples variable:
+#### And now let's add some examples with the expected JSON structure:
 
 <pre><code>few_shot_examples = 
 [
@@ -67,7 +67,7 @@ In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-3. Click on it and paste the [raw prompt code from above](few-shot-learning.md#this-is-how-our-raw-prompt-would-look). And that's it! You have your **dynamically updatable** few shot learning prompt template ready to deploy.
+3. Click on it and paste the [raw prompt code from above](few-shot-prompting.md#this-is-how-our-raw-prompt-would-look). And that's it! You have your **dynamically updatable** few shot learning prompt template ready to deploy.
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
@@ -90,6 +90,10 @@ axios.post('https://api.portkey.ai/v1/prompts/<PROMPT_ID>/generate', {
 ```
 
 You can pass your dynamic few shot learning examples with the `few_shot_examples` variable, and start using the prompt template in production.
+
+### Detailed Guide on Few-Shot Prompting
+
+We recommend [this guide](https://www.promptingguide.ai/techniques/fewshot) detailing the research as well as edge cases for few-shot prompting.&#x20;
 
 ### Support
 
