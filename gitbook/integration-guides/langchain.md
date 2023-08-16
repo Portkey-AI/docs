@@ -11,7 +11,7 @@ Using Portkey with Langchain is as simple as just choosing which Portkey feature
 
 import os
 from langchain.llms import OpenAI
-import langchain.utilities import Portkey
+from langchain.utilities import Portkey
 
 os.environ["OPENAI_API_KEY"] = "<OPENAI_API_KEY>"
 PORTKEY_API_KEY = "<PORTKEY_API_KEY>" # Set Portkey API key here
