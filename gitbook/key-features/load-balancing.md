@@ -5,30 +5,74 @@ Portkey's Load Balancing feature is designed to efficiently distribute network t
 The Load Balancing feature allows you to specify a list of Language Model APIs (LLMs) and a corresponding list of weights. Portkey will then distribute the requests among these LLMs based on the given weights.
 
 {% hint style="danger" %}
-**Please note:** As of now, the Load Balancing feature is in beta and available by invite only. If you wish to have this feature enabled for your organization, please reach out to Portkey support.
+**Please note:** As of now, the Load Balancing feature is in beta. Please reach out to Portkey support, if you face any issues.
 {% endhint %}
 
 ### Enabling Load Balancing
 
-To enable Load Balancing, you need to include two headers in your requests: `x-portkey-balance` and `x-portkey-balance-weights`.
+To enable Load Balancing, you can modify the `config` object of your `complete` or `chatComplete` API request to include the `loadbalance` mode.
 
-The `x-portkey-balance` header should contain a string representing a comma-separated list of LLMs.
+Here's a quick example to **load balance equally** between OpenAI's `gpt-3.5-turbo` and Anthropic's `claude-v1`
 
-The `x-portkey-balance-weights` header should contain a string representing a comma-separated list of weights corresponding to each LLM. These weights determine the proportion of traffic that will be directed to each LLM.
-
-For example, if you want to distribute requests between OpenAI and Azure's OpenAI with a 70:30 ratio, your request might look something like this:
-
-```python
-headers = {
-    "x-portkey-api-key": "<YOUR_PORTKEY_API_KEY>",
-    "x-portkey-balance": "openai,azure_openai",
-    "x-portkey-balance-weights": "0.7,0.3"
-}
-
-response = requests.post('https://api.portkey.ai/v1/models', headers=headers, data=payload)
+```powershell
+# Load balance 50-50 between gpt-3.5-turbo and claude-v1
+curl --location 'https://api.portkey.ai/v1/complete' \
+--header 'Content-Type: application/json' \
+--header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
+--data '{
+    "config": {
+        "mode": "loadbalance",
+        "options": [{
+            "provider": "openai",
+            "apiKey": "<API_KEY>",
+            "weight": 0.5,
+            "params_to_override": { "model": "gpt-3.5-turbo" }
+        }, {
+            "provider": "anthropic",
+            "apiKey": "<API_KEY>",
+            "weight": 0.5,
+            "params_to_override": { "model": "claude-v1" }
+        }]
+    },
+    "params": {
+        "messages": {"role": "user","content":"What are the top 10 happiest countries in the world?"},
+        "max_tokens": 50,
+        "user": "jbu3470"
+    }
+}'
 ```
 
-In this scenario, approximately 70% of the requests will be directed to OpenAI and 30% to Azure's OpenAI.
+Here's another example to load balance between **OpenAI and an Azure deployment**.
+
+```
+# Load balance 70-30 between azure and openai
+curl --location 'https://api.portkey.ai/v1/complete' \
+--header 'Content-Type: application/json' \
+--header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
+--data '{
+    "config": {
+        "mode": "loadbalance",
+        "options": [{
+            "provider": "azure-openai",
+	    "apiKey": "<AZURE_API_KEY>",
+	    "resourceName": "portkey",
+	    "deploymentId": "gpt-35-model",
+	    "apiVersion": "2022-12-01",
+	    "weight": 0.7
+        }, {
+            "provider": "openai",
+            "apiKey": "<OPENAI_API_KEY>",
+            "weight": 0.3
+        }]
+    },
+    "params": {
+        "messages": {"role": "user","content":"What are the top 10 happiest countries in the world?"},
+        "max_tokens": 50,
+        "user": "jbu3470",
+        "model": "gpt-3.5-turbo"
+    }
+}'
+```
 
 ### Caveats and Considerations
 

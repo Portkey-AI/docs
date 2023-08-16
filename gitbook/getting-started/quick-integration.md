@@ -1,10 +1,83 @@
+---
+description: Let's connect your LLM providers to Portkey, fast.
+---
+
 # 📎 Quick Integration
 
-### Quick Integration
+You can integrate Portkey to your LLM provider via REST APIs, the provider's SDKs and even via Langchain. We'll take an example of an OpenAI request, and show you how to route it through Portkey using different methods. ([Click here](broken-reference) for integration examples with other providers like Anthropic, Cohere etc.)
 
-In this section, we'll show you how to perform a quick integration with Portkey using Middleware Mode. We'll take an example of an OpenAI request, and show you how to route it through Portkey using different methods. ([Click here](broken-reference) for integration examples with other providers like Anthropic, Cohere etc.)
 
-* **OpenAI SDK**
+
+### **Rest API**
+
+{% tabs %}
+{% tab title="cURL - Chat Completion" %}
+```powershell
+curl --location 'https://api.portkey.ai/v1/complete' \
+    --header 'x-portkey-api-key: PORTKEY_API_KEY' \
+    --header 'Content-Type: application/json' \
+    --data '{ 
+        "config": { 
+            provider: "openai",
+            apiKey: "OPENAI_API_KEY", # Needs apiKey or providerKey
+            providerKey: "PROVIDER_KEY"
+        }, 
+        "params": {
+            "messages": [{"role": "user","content":"What are the ten tallest buildings in India?"}],
+            "max_tokens": 100,
+            "user": "jbu3470",
+            "model": "gpt-3.5-turbo"
+        }
+    }'
+```
+{% endtab %}
+
+{% tab title="cURL - Completion" %}
+{% code overflow="wrap" %}
+```powershell
+curl --location 'https://api.portkey.ai/v1/complete' \
+    --header 'x-portkey-api-key: PORTKEY_API_KEY' \
+    --header 'Content-Type: application/json' \
+    --data '{ 
+        "config": { 
+            provider: "openai",
+            apiKey: "OPENAI_API_KEY", # Needs apiKey or providerKey
+            providerKey: "PROVIDER_KEY"
+        }, 
+        "params": { 
+            "prompt": "What are the top 10 tallest buildings in Bhutan?",                 
+            "max_tokens": 50, 
+            "model": "text-davinci-003", 
+            "user": "jbu749" 
+        } 
+    }'
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="curl - Proxy" %}
+```powershell
+curl --location 'http://api.portkey.ai/v1/proxy/completions' \
+    --header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
+    --header 'x-portkey-mode: proxy openai' \
+    --header 'Authorization: <OPENAI_API_KEY>' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "n": 1,
+        "model": "text-davinci-003",
+        "prompt": "Top 20 tallest buildings in the world"
+    }'
+```
+{% endtab %}
+{% endtabs %}
+
+In the above cURL requests replace&#x20;
+
+1. `PORTKEY_API_KEY` with Portkey's API Key (Found in your account dashboard)
+2. `OPENAI_API_KEY` with your OpenAI API key (Optional, not recommended)
+3. `PROVIDER_KEY` with the [AI provider's key](https://app.portkey.ai/organisation/472d2804-d054-4226-b4ae-9d4e2e61e69e/settings/ai-providers) created through Portkey (Optional, recommended)
+
+### **OpenAI SDK**
 
 {% tabs %}
 {% tab title="Python" %}
@@ -59,7 +132,7 @@ generateCompletion();
 {% endtab %}
 {% endtabs %}
 
-* **Langchain**
+### **Langchain**
 
 {% tabs %}
 {% tab title="Python" %}
@@ -120,25 +193,6 @@ async function main() {
   console.log(res);
 }
 main();
-```
-{% endtab %}
-{% endtabs %}
-
-* **Rest API**
-
-{% tabs %}
-{% tab title="cURL" %}
-```bash
-curl --location 'http://api.portkey.ai/v1/proxy/completions' \
---header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
---header 'x-portkey-mode: proxy openai' \
---header 'Authorization: <OPENAI_API_KEY>' \
---header 'Content-Type: application/json' \
---data '{
-    "n": 1,
-    "model": "text-davinci-003",
-    "prompt": "Top 20 tallest buildings in the world"
-}'
 ```
 {% endtab %}
 {% endtabs %}

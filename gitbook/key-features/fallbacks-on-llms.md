@@ -1,29 +1,46 @@
 # 🤖 Fallbacks on LLMs
 
-With an array of Language Model APIs available on the market, each with its own strengths and specialties, wouldn't it be great if you could seamlessly switch between them based on their performance or availability? Portkey's Fallback on LLMs feature is designed to do exactly that.
+With an array of Language Model APIs available on the market, each with its own strengths and specialties, wouldn't it be great if you could seamlessly switch between them based on their performance or availability? Portkey's Fallback capability is designed to do exactly that.
 
-The Fallback on LLMs feature allows you to specify a list of Language Model APIs (LLMs) in a prioritized order. If the primary LLM fails to respond or encounters an error, Portkey will automatically fallback to the next LLM in the list, ensuring your application's robustness and reliability.
+The Fallback feature allows you to specify a list of Language Model APIs (LLMs) in a prioritized order. If the primary LLM fails to respond or encounters an error, Portkey will automatically fallback to the next LLM in the list, ensuring your application's robustness and reliability.
 
 {% hint style="danger" %}
-**Please note:** As of now, the Fallback on LLMs feature is in beta and available by invite only. If you wish to have this feature enabled for your organization, please reach out to Portkey support.
+**Please note:** As of now, the Fallback on LLMs feature is in beta, please reach out to [Portkey support](mailto:support@portkey.ai) if you face issues or have questions.
 {% endhint %}
 
 ### Enabling Fallback on LLMs
 
-To enable the Fallback on LLMs feature, you need to include the `x-portkey-fallback` header in your requests. The value of this header should be a string representing a comma-separated list of LLMs, ordered by priority.
+To enable Load Balancing, you can modify the `config` object of your `complete` or `chatComplete` API request to include the `fallback` mode.
 
-For example, if you want to prioritize OpenAI, but fallback to Azure's OpenAI if the former fails, your request might look something like this:
+Here's a quick example to **fallback** to Anthropic's `claude-v1` if OpenAI's `gpt-3.5-turbo` fails.
 
-```python
-headers = {
-    "x-portkey-api-key": "<YOUR_PORTKEY_API_KEY>",
-    "x-portkey-fallback": "openai,azure_openai"
-}
-
-response = requests.post('https://api.portkey.ai/v1/models', headers=headers, data=payload)
+```powershell
+# Load balance 50-50 between gpt-3.5-turbo and claude-v1
+curl --location 'https://api.portkey.ai/v1/complete' \
+--header 'Content-Type: application/json' \
+--header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
+--data '{
+    "config": {
+        "mode": "fallback",
+        "options": [{
+            "provider": "openai",
+            "apiKey": "<API_KEY>",
+            "params_to_override": { "model": "gpt-3.5-turbo" }
+        }, {
+            "provider": "anthropic",
+            "apiKey": "<API_KEY>",
+            "params_to_override": { "model": "claude-v1" }
+        }]
+    },
+    "params": {
+        "messages": {"role": "user","content":"What are the top 10 happiest countries in the world?"},
+        "max_tokens": 50,
+        "user": "jbu3470"
+    }
+}'
 ```
 
-In this scenario, if the OpenAI model encounters an error or fails to respond, Portkey will automatically retry the request with Azure's OpenAI model.
+In this scenario, if the OpenAI model encounters an error or fails to respond, Portkey will automatically retry the request with Anthropic.
 
 ### Caveats and Considerations
 
