@@ -71,9 +71,9 @@ In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-### Deploying with Portkey
+### Deploying the Prompt with Portkey
 
-Deploying is extremely easy with Portkey. Head over to the API tab and copy the code.
+Deploying your prompt template to an API is extremely easy with Portkey. Head over to the API tab and copy the code. It will look something like this:
 
 ```javascript
 axios.post('https://api.portkey.ai/v1/prompts/<PROMPT_ID>/generate', {
@@ -89,7 +89,7 @@ axios.post('https://api.portkey.ai/v1/prompts/<PROMPT_ID>/generate', {
 }) 
 ```
 
-You can pass your dynamic few shot learning examples with the `few_shot_examples` variable, and start using the prompt template in production.
+You can pass your dynamic few shot learning examples with the `few_shot_examples` variable, and start using the prompt template in production!
 
 ### Detailed Guide on Few-Shot Prompting
 
