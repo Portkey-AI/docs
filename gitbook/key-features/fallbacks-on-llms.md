@@ -15,8 +15,8 @@ To enable Load Balancing, you can modify the `config` object of your `complete` 
 Here's a quick example to **fallback** to Anthropic's `claude-v1` if OpenAI's `gpt-3.5-turbo` fails.
 
 ```powershell
-# Load balance 50-50 between gpt-3.5-turbo and claude-v1
-curl --location 'https://api.portkey.ai/v1/complete' \
+# Fallback to claude-v1 if gpt-3.5-turbo fails
+curl --location 'https://api.portkey.ai/v1/chatComplete' \
 --header 'Content-Type: application/json' \
 --header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
 --data '{
@@ -25,15 +25,15 @@ curl --location 'https://api.portkey.ai/v1/complete' \
         "options": [{
             "provider": "openai",
             "apiKey": "<API_KEY>",
-            "params_to_override": { "model": "gpt-3.5-turbo" }
+            "override_params": { "model": "gpt-3.5-turbo" }
         }, {
             "provider": "anthropic",
             "apiKey": "<API_KEY>",
-            "params_to_override": { "model": "claude-v1" }
+            "override_params": { "model": "claude-v1" }
         }]
     },
     "params": {
-        "messages": {"role": "user","content":"What are the top 10 happiest countries in the world?"},
+        "messages": [{"role": "user","content":"What are the top 10 happiest countries in the world?"}],
         "max_tokens": 50,
         "user": "jbu3470"
     }

@@ -15,8 +15,8 @@ To enable Load Balancing, you can modify the `config` object of your `complete` 
 Here's a quick example to **load balance equally** between OpenAI's `gpt-3.5-turbo` and Anthropic's `claude-v1`
 
 ```powershell
-# Load balance 50-50 between gpt-3.5-turbo and claude-v1
-curl --location 'https://api.portkey.ai/v1/complete' \
+# Load balance 50-50 between text-davinci-003 and claude-v1
+curl --location 'https://api.portkey.ai/v1/chatComplete' \
 --header 'Content-Type: application/json' \
 --header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
 --data '{
@@ -26,16 +26,16 @@ curl --location 'https://api.portkey.ai/v1/complete' \
             "provider": "openai",
             "apiKey": "<API_KEY>",
             "weight": 0.5,
-            "params_to_override": { "model": "gpt-3.5-turbo" }
+            "override_params": { "model": "gpt-3.5-turbo" }
         }, {
             "provider": "anthropic",
             "apiKey": "<API_KEY>",
             "weight": 0.5,
-            "params_to_override": { "model": "claude-v1" }
+            "override_params": { "model": "claude-v1" }
         }]
     },
     "params": {
-        "messages": {"role": "user","content":"What are the top 10 happiest countries in the world?"},
+        "messages": [{"role": "user","content":"What are the top 10 happiest countries in the world?"}],
         "max_tokens": 50,
         "user": "jbu3470"
     }
@@ -44,9 +44,9 @@ curl --location 'https://api.portkey.ai/v1/complete' \
 
 Here's another example to load balance between **OpenAI and an Azure deployment**.
 
-```
+```powershell
 # Load balance 70-30 between azure and openai
-curl --location 'https://api.portkey.ai/v1/complete' \
+curl --location 'https://api.portkey.ai/v1/chatComplete' \
 --header 'Content-Type: application/json' \
 --header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
 --data '{
@@ -55,9 +55,9 @@ curl --location 'https://api.portkey.ai/v1/complete' \
         "options": [{
             "provider": "azure-openai",
 	    "apiKey": "<AZURE_API_KEY>",
-	    "resourceName": "portkey",
-	    "deploymentId": "gpt-35-model",
-	    "apiVersion": "2022-12-01",
+	    "resourceName": "<AZURE_RESOURCE_NAME>",
+	    "deploymentId": "<AZURE_DEPLOYMENT_NAME>",
+	    "apiVersion": "<AZURE_API_VERSION>",
 	    "weight": 0.7
         }, {
             "provider": "openai",
@@ -66,7 +66,7 @@ curl --location 'https://api.portkey.ai/v1/complete' \
         }]
     },
     "params": {
-        "messages": {"role": "user","content":"What are the top 10 happiest countries in the world?"},
+        "messages": [{"role": "user","content":"What are the top 10 happiest countries in the world?"}],
         "max_tokens": 50,
         "user": "jbu3470",
         "model": "gpt-3.5-turbo"
