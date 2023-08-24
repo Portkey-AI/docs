@@ -28,6 +28,7 @@
 * [🪝 Load Balancing](key-features/load-balancing.md)
 * [📝 Feedback API](key-features/feedback-api.md)
 * [📊 Logs & Analytics](key-features/logs-and-analytics.md)
+* [🔑 AI Provider Keys](key-features/ai-provider-keys.md)
 * [⚡ Prompt Management](key-features/prompt-management/README.md)
   * [Few-Shot Prompting](key-features/prompt-management/few-shot-prompting.md)
 
