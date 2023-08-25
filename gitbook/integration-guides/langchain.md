@@ -99,6 +99,36 @@ llm = AzureOpenAI(
 llm("Tell me a joke")
 ```
 {% endtab %}
+
+{% tab title="NodeJS" %}
+```typescript
+import { ChatOpenAI } from "langchain/chat_models/openai";
+
+const model = new ChatOpenAI({
+  azureOpenAIApiKey: process.env.AZURE_OPENAI_API_KEY
+  azureOpenAIApiVersion: process.env.AZURE_OPENAI_API_VERSION
+  azureOpenAIApiInstanceName: process.env.AZURE_OPENAI_API_INSTANCE_NAME
+  azureOpenAIApiDeploymentName: process.env.AZURE_OPENAI_API_DEPLOYMENT_NAME
+  azureOpenAIBasePath: "https://api.portkey.ai/v1/proxy/${process.env.AZURE_OPENAI_API_INSTANCE_NAME}.openai.azure.com/openai/deployments",
+},
+{
+    baseOptions: {
+        headers: {
+            "x-portkey-api-key": "<PORTKEY_API_KEY>",
+            "x-portkey-mode": "proxy azure-openai"
+        },
+      },
+}
+);
+
+async function main() {
+  const message = await model.invoke("Tell me a joke");
+  console.log(message);
+}
+
+main();
+```
+{% endtab %}
 {% endtabs %}
 
-For more, checkout [Portkey's Langchain documentation](https://python.langchain.com/docs/ecosystem/integrations/portkey/).
+For more, checkout [Portkey's Langchain documentation for Python](https://python.langchain.com/docs/integrations/providers/portkey).
