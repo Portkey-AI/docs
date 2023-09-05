@@ -4,6 +4,8 @@ description: Building Resilient Llamaindex Apps
 
 # ➡ Llamaindex
 
+[![\\"Open](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jerryjliu/llama\_index/blob/main/docs/examples/llm/portkey.ipynb)
+
 Portkey adds core production capabilities to any Llamaindex app.
 
 #### Key Features of the Portkey Integration: <a href="#key-features-of-portkeys-integration-with-llamaindex" id="key-features-of-portkeys-integration-with-llamaindex"></a>
@@ -116,5 +118,7 @@ print("Testing Portkey Llamaindex integration:")
 response = pk_llm.chat(messages)
 print(response)
 ```
+
+#### Test all functionalities easily: [![\\"Open](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jerryjliu/llama\_index/blob/main/docs/examples/llm/portkey.ipynb)
 
 ### Next: [🔁 Implementing Fallbacks and Retries](implementing-fallbacks-and-retries.md)
