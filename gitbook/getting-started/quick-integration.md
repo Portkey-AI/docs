@@ -197,5 +197,39 @@ main();
 {% endtab %}
 {% endtabs %}
 
+### **Llamaindex**
 
+Portkey natively adds 4 core production capabilities to any Llamaindex app: Load balancing, Fallbacks, Semantic caching, and Observability.
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+import os
+from llama_index.llms import Portkey, ChatMessage
+from rubeus import LLMBase
+
+os.environ["OPENAI_API_KEY"] = "<OPENAI_API_KEY>"
+PORTKEY_API_KEY = "<PORTKEY_API_KEY>" # Set Portkey API key here
+os.environ["ANTHROPIC_API_KEY"] = "" 
+
+pk_llm = Portkey(
+    mode="fallback",
+    cache_status="semantic",
+    cache_force_refresh=True,
+    cache_age=1000,
+    trace_id="portkey_llamaindex",
+    retry=5,
+)
+
+llm1 = LLMBase(provider="openai", model="gpt-4")
+llm2 = LLMBase(provider="openai", model="gpt-3.5-turbo")
+
+pk_llm.add_llms(llm_params=[llm1, llm2])
+
+print("Testing Fallback & Retry functionality:")
+response = pk_llm.chat(messages)
+print(response)
+```
+{% endtab %}
+{% endtabs %}
 

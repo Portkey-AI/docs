@@ -35,6 +35,11 @@
 ## Integration Guides
 
 * [➡ Open AI SDK](integration-guides/open-ai-sdk.md)
+* [➡ Llamaindex](integration-guides/llamaindex/README.md)
+  * [🔁 Implementing Fallbacks and Retries](integration-guides/llamaindex/implementing-fallbacks-and-retries.md)
+  * [⚖ Implementing Load Balancing](integration-guides/llamaindex/implementing-load-balancing.md)
+  * [🧠 Implementing Semantic Caching](integration-guides/llamaindex/implementing-semantic-caching.md)
+  * [🔬 Observability](integration-guides/llamaindex/observability.md)
 * [➡ Langchain](integration-guides/langchain.md)
 * [➡ Cohere](integration-guides/cohere.md)
 * [➡ Anthropic SDK](integration-guides/anthropic-sdk.md)
