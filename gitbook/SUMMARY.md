@@ -59,3 +59,4 @@
 * [⁉ Common Errors and Resolutions](troubleshooting-and-support/common-errors-and-resolutions.md)
 * [📥 Reporting Issues](troubleshooting-and-support/reporting-issues.md)
 * [📧 Contacting Support](troubleshooting-and-support/contacting-support.md)
+* [🚀 Join Portkey on Discord](troubleshooting-and-support/join-portkey-on-discord.md)
