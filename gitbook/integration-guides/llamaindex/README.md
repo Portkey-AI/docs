@@ -1,5 +1,16 @@
 ---
 description: Building Resilient Llamaindex Apps
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # ➡ Llamaindex
@@ -7,6 +18,8 @@ description: Building Resilient Llamaindex Apps
 [![\\"Open](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jerryjliu/llama\_index/blob/main/docs/examples/llm/portkey.ipynb)
 
 Portkey adds core production capabilities to any Llamaindex app.
+
+<figure><img src="../../.gitbook/assets/Colab Version 2.png" alt=""><figcaption></figcaption></figure>
 
 #### Key Features of the Portkey Integration: <a href="#key-features-of-portkeys-integration-with-llamaindex" id="key-features-of-portkeys-integration-with-llamaindex"></a>
 
