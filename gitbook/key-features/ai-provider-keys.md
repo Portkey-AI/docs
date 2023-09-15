@@ -7,7 +7,7 @@ Deploy your prompt templates through Portkey and seamlessly integrate with your 
 * **Step 1**: Navigate to the "Virtual Keys" page and hit the "Add Key" button located at the top right corner.
 * **Step 2**: Choose your AI provider, assign a unique name to your key, and, if needed, jot down any relevant usage notes.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/virtual_keys.png" alt=""><figcaption></figcaption></figure>
 
 **Did You Know?** You can add multiple keys for the same provider **and** also add the same key under different names for ease of identification.
 
