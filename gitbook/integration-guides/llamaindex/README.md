@@ -136,7 +136,7 @@ The above code illustrates how to utilize the `LLMOptions` function to set up an
 
 **Step 4: Activate the Portkey LLM**
 
-Once you've constructed the LLM using the `LLMBase` function, the next step is to activate it with Portkey. This step is essential to ensure that all the Portkey features are available for your LLM.
+Once you’ve constructed the LLM using the `LLMOptions` function, the next step is to activate it with Portkey. This step is essential to ensure that all the Portkey features are available for your LLM.
 
 ```
 pk_llm.add_llms(openai_llm)
