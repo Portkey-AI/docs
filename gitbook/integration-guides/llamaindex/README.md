@@ -23,38 +23,66 @@ Portkey adds core production capabilities to any Llamaindex app.
 
 #### Key Features of the Portkey Integration: <a href="#key-features-of-portkeys-integration-with-llamaindex" id="key-features-of-portkeys-integration-with-llamaindex"></a>
 
-1. **AI Gateway**:
+1. **🚪 AI Gateway**:
    * **Automated Fallbacks & Retries**: Ensure your application remains functional even if a primary service fails.
    * **Load Balancing**: Efficiently distribute incoming requests among multiple models.
    * **Semantic Caching**: Reduce costs and latency by intelligently caching results.
-2. **Observability**:
+2. **🔬 Observability**:
    * **Logging**: Keep track of all requests for monitoring and debugging.
    * **Requests Tracing**: Understand the journey of each request for optimization.
    * **Custom Tags**: Segment and categorize requests for better insights.
+3. **📝 Continuous Improvement with User Feedback**:
+   * **Feedback Collection**: Seamlessly gather feedback on any served request, be it on a generation or conversation level.
+   * **Weighted Feedback**: Obtain nuanced information by attaching weights to user feedback values.
+   * **Feedback Metadata**: Incorporate custom metadata with the feedback to provide context, allowing for richer insights and analyses.
+4. **🔑 Secure Key Management**:
+   * **Virtual Keys**: Portkey transforms original provider keys into virtual keys, ensuring your primary credentials remain untouched.
+   * **Multiple Identifiers**: Ability to add multiple keys for the same provider or the same key under different names for easy identification without compromising security.
 
 To harness these features, just start with:
 
 ```
-# Installing the Rubeus AI gateway developed by the Portkey team
-$ pip install rubeus
-$ pip install llama_index
+# Installing Llamaindex & Portkey SDK
+!pip install -U llama_index
+!pip install -U portkey-ai
 
 # Importing necessary libraries and modules
 from llama_index.llms import Portkey, ChatMessage
-from rubeus import LLMBase
+import portkey as pk
 ```
 
 You do not need to install **any** other SDKs or import them in your Llamaindex app.\
 
 
-**Step 1: Get your Portkey API key**
+**Step 1: Get your Portkey API Key and your Virtual Keys for AI Providers**
 
-Log into [Portkey here](https://app.portkey.ai/), then click on the profile icon on top right and "Copy API Key". Let's also set OpenAI & Anthropic API keys.
+Log into [Portkey here](https://app.portkey.ai/), then click on the profile icon on top right and "Copy API Key".&#x20;
 
 ```
 import os
-
 os.environ["PORTKEY_API_KEY"] = ""
+```
+
+[**Virtual Keys**](https://docs.portkey.ai/key-features/ai-provider-keys)
+
+1. Navigate to the “Virtual Keys” page on [Portkey dashboard](https://app.portkey.ai/) and hit the “Add Key” button located at the top right corner.
+2. Choose your AI provider (OpenAI, Anthropic, Cohere, HuggingFace, etc.), assign a unique name to your key, and, if needed, jot down any relevant usage notes. Your virtual key is ready!
+3. Now copy and paste the keys below - you can use them anywhere within the Portkey ecosystem and keep your original key secure and untouched.
+
+```
+openai_virtual_key_a = ""
+openai_virtual_key_b = ""
+
+anthropic_virtual_key_a = ""
+anthropic_virtual_key_b = ""
+
+cohere_virtual_key_a = ""
+cohere_virtual_key_b = ""
+```
+
+If you don’t want to use Portkey’s Virtual keys, you can also use your AI provider keys directly.
+
+```
 os.environ["OPENAI_API_KEY"] = ""
 os.environ["ANTHROPIC_API_KEY"] = ""
 ```
@@ -75,24 +103,18 @@ To harness the full potential of Portkey's integration with Llamaindex, you can 
 | Metadata            | `metadata`            | `json object` [More info](https://docs.portkey.ai/key-features/custom-metadata) | ❔ Optional                         |
 | Base URL            | `base_url`            | `url`                                                                           | ❔ Optional                         |
 
-Here's an example of how to set up some of these features:
+* `api_key` and `mode` are required values.
+* You can set your Portkey API key using the Portkey constructor or you can also set it as an environment variable.
+* There are **3** modes - Single, Fallback, Loadbalance.
+  * **Single** - This is the standard mode. Use it if you do not want Fallback OR Loadbalance features.
+  * **Fallback** - Set this mode if you want to enable the Fallback feature. Check out the guide here.
+  * **Loadbalance** - Set this mode if you want to enable the Loadbalance feature. Check out the guide here.
+
+Here’s an example of how to set up some of these features:
 
 ```
-metadata = {
-    "_environment": "production",
-    "_prompt": "test",
-    "_user": "user",
-    "_organisation": "acme",
-}
-
-pk_llm = Portkey(
+portkey_client = Portkey(
     mode="single",
-    cache_status="semantic",
-    cache_force_refresh=True,
-    cache_age=1000,
-    trace_id="portkey_llamaindex",
-    retry=5,
-    metadata=metadata,
 )
 
 # Since we have defined the Portkey API Key with os.environ, we do not need to set api_key again here
@@ -100,13 +122,17 @@ pk_llm = Portkey(
 
 **Step 3: Constructing the LLM**
 
-With the Portkey integration, constructing an LLM is simplified. Use the `LLMBase` function for all providers, with the exact same keys you're accustomed to in your OpenAI or Anthropic constructors. The only new key is `weight`, essential for the load balancing feature.
+With the Portkey integration, constructing an LLM is simplified. Use the `LLMOptions` function for all providers, with the exact same keys you’re accustomed to in your OpenAI or Anthropic constructors. The only new key is `weight`, essential for the load balancing feature.
 
 ```
-openai_llm = LLMBase(provider="openai", model="gpt-4")
+openai_llm = pk.LLMOptions(
+    provider="openai",
+    model="gpt-4",
+    virtual_key=openai_virtual_key_a,
+)
 ```
 
-The above code illustrates how to utilize the `LLMBase` function to set up an LLM with the OpenAI provider and the GPT-4 model. This same function can be used for other providers as well, making the integration process streamlined and consistent across various providers.
+The above code illustrates how to utilize the `LLMOptions` function to set up an LLM with the OpenAI provider and the GPT-4 model. This same function can be used for other providers as well, making the integration process streamlined and consistent across various providers.
 
 **Step 4: Activate the Portkey LLM**
 
@@ -128,7 +154,7 @@ messages = [
     ChatMessage(role="user", content="What can you do?"),
 ]
 print("Testing Portkey Llamaindex integration:")
-response = pk_llm.chat(messages)
+response = portkey_client.chat(messages)
 print(response)
 ```
 

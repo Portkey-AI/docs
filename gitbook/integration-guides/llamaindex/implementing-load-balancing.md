@@ -9,32 +9,32 @@ With Portkey, implementing load balancing is simple. You need to:
 
 Here's an example of setting up load balancing with Portkey:
 
-First install,
-
-<pre><code># Installing the Rubeus AI gateway developed by the Portkey team
-<strong>$ pip install rubeus
-</strong>$ pip install llama_index
-</code></pre>
-
 ```
-# Importing necessary libraries and modules
-from llama_index.llms import Portkey, ChatMessage
-from rubeus import LLMBase
+portkey_client = Portkey(mode="ab_test")
 
-import os
+messages = [
+    ChatMessage(role="system", content="You are a helpful assistant"),
+    ChatMessage(role="user", content="What can you do?"),
+]
 
-os.environ["PORTKEY_API_KEY"] = ""
-os.environ["OPENAI_API_KEY"] = ""
+llm1 = pk.LLMOptions(
+    provider="openai",
+    model="gpt-4",
+    virtual_key=openai_virtual_key_a,
+    weight=0.2,
+)
 
-pk_llm = Portkey(mode="loadbalance")
+llm2 = pk.LLMOptions(
+    provider="openai",
+    model="gpt-3.5-turbo",
+    virtual_key=openai_virtual_key_a,
+    weight=0.8,
+)
 
-llm1 = LLMBase(provider="openai", model="gpt-4", weight=0.2)
-llm2 = LLMBase(provider="openai", model="gpt-3.5-turbo", weight=0.8)
-
-pk_llm.add_llms(llm_params=[llm1, llm2])
+portkey_client.add_llms(llm_params=[llm1, llm2])
 
 print("Testing Loadbalance functionality:")
-response = pk_llm.chat(messages)
+response = portkey_client.chat(messages)
 print(response)
 ```
 

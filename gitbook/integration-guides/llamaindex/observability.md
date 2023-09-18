@@ -12,14 +12,21 @@ metadata = {
     "_organisation": "acme",
 }
 
-pk_llm = Portkey(
-    mode="single",
-    trace_id="portkey_llamaindex_test",
+trace_id = "llamaindex_portkey"
+
+portkey_client = Portkey(mode="single")
+
+openai_llm = pk.LLMOptions(
+    provider="openai",
+    model="gpt-3.5-turbo",
+    virtual_key=openai_virtual_key_a,
     metadata=metadata,
+    trace_id=trace_id,
 )
-pk_llm.add_llms(llm1)
+
+portkey_client.add_llms(openai_llm)
 
 print("Testing Observability functionality:")
-response = pk_llm.chat(messages)
+response = portkey_client.chat(messages)
 print(response)
 ```

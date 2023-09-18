@@ -4,26 +4,19 @@ Semantic caching is a smart caching mechanism that understands the context of a 
 
 Let's see how to implement semantic caching with Portkey:
 
-First install,
+```
+import time
 
-<pre><code># Installing the Rubeus AI gateway developed by the Portkey team
-<strong>$ pip install rubeus
-</strong>$ pip install llama_index
-</code></pre>
+portkey_client = Portkey(mode="single")
 
-<pre><code># Importing necessary libraries and modules
-from llama_index.llms import Portkey, ChatMessage
-from rubeus import LLMBase
+openai_llm = pk.LLMOptions(
+    provider="openai",
+    model="gpt-3.5-turbo",
+    virtual_key=openai_virtual_key_a,
+    cache_status="semantic",
+)
 
-import os
-
-os.environ["PORTKEY_API_KEY"] = ""
-os.environ["OPENAI_API_KEY"] = ""
-<strong>
-</strong><strong>import time
-</strong>
-pk_llm = Portkey(mode="single", cache_status="semantic")
-pk_llm.add_llms(llm1)
+portkey_client.add_llms(openai_llm)
 
 current_messages = [
     ChatMessage(role="system", content="You are a helpful assistant"),
@@ -33,31 +26,26 @@ current_messages = [
 print("Testing Portkey Semantic Cache:")
 
 start = time.time()
-response = pk_llm.chat(current_messages)
+response = portkey_client.chat(current_messages)
 end = time.time() - start
 
 print(response)
-print("\n--------------------------------------\n")
-print(f"Served in {end} seconds.")
-print("\n--------------------------------------\n")
+print(f"{'-'*50}\nServed in {end} seconds.\n{'-'*50}")
 
 new_messages = [
     ChatMessage(role="system", content="You are a helpful assistant"),
     ChatMessage(role="user", content="Ingredients of pizza"),
 ]
 
-
 print("Testing Portkey Semantic Cache:")
 
 start = time.time()
-response = pk_llm.chat(new_messages)
+response = portkey_client.chat(new_messages)
 end = time.time() - start
 
 print(response)
-print("\n--------------------------------------\n")
-print(f"Served in {end} seconds.")
-print("\n--------------------------------------\n")
-</code></pre>
+print(f"{'-'*50}\nServed in {end} seconds.\n{'-'*50}")
+```
 
 Portkey's cache supports two more cache-critical functions - Force Refresh and Age.
 
@@ -66,8 +54,13 @@ Portkey's cache supports two more cache-critical functions - Force Refresh and A
 Here's how you can use it:
 
 ```
-pk_llm = Portkey(
-    mode="single", cache_status="semantic", cache_age=1000, cache_force_refresh=True
+# Setting the cache status as `semantic` and cache_age as 60s.
+openai_llm = pk.LLMOptions(
+    provider="openai",
+    model="gpt-3.5-turbo",
+    virtual_key=openai_virtual_key_a,
+    cache_force_refresh=True,
+    cache_age=60,
 )
 ```
 
