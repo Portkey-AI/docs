@@ -35,6 +35,6 @@ If you pass the `user` key in the OpenAI request body, it will be automatically 
 
 You can filter your logs with the predefined keys (`_environment`, `_user`, `_organisation`, `_prompt)` easily on the Portkey logs.
 
-<figure><img src="../.gitbook/assets/Metadata 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Metadata 1.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Metadata 2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Metadata 2.png" alt=""><figcaption></figcaption></figure>

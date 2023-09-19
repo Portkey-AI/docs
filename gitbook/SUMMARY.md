@@ -1,62 +1,67 @@
 # Table of contents
 
 * [👋 Welcome to Portkey!](README.md)
+  * [✨ Features](welcome-to-portkey/features.md)
+  * [🌈 Integrations](welcome-to-portkey/integrations.md)
+  * [💼 Setup Your Account](welcome-to-portkey/setup-your-account.md)
+  * [🔥 Quick Start](welcome-to-portkey/quick-start.md)
+  * [🤔 Why Portkey](welcome-to-portkey/why-portkey/README.md)
+    * [👀 Observability](welcome-to-portkey/why-portkey/observability.md)
+    * [🎭 Lower Cost & Latency](welcome-to-portkey/why-portkey/lower-cost-and-latency.md)
+    * [⛅ Improve LLM success rate](welcome-to-portkey/why-portkey/improve-llm-success-rate.md)
+    * [✅ Optimise generation quality](welcome-to-portkey/why-portkey/optimise-generation-quality.md)
+    * [🚫 Hide PII from LLMs](welcome-to-portkey/why-portkey/hide-pii-from-llms.md)
 
-## Overview
+## Guide to Portkey Dashboard
 
-* [ℹ Introduction](overview/introduction.md)
-* [✨ Features Overview](overview/features-overview.md)
+* [📊 Logs & Analytics](guide-to-portkey-dashboard/logs-and-analytics.md)
+* [🔑 Keys](guide-to-portkey-dashboard/keys.md)
+* [📝 Configs](guide-to-portkey-dashboard/configs.md)
+* [⚡ Prompt Management](guide-to-portkey-dashboard/prompt-management.md)
 
-## Getting Started
+## Features
 
-* [📪 Setup Your Account](getting-started/setup-your-account.md)
-* [📎 Quick Integration](getting-started/quick-integration.md)
+* [🚪 AI Gateway](features/ai-gateway/README.md)
+  * [🚀 Request Caching](features/ai-gateway/request-caching.md)
+  * [💫 Automatic Retries](features/ai-gateway/automatic-retries.md)
+  * [🤖 Fallbacks on LLMs](features/ai-gateway/fallbacks-on-llms.md)
+  * [🪝 Load Balancing](features/ai-gateway/load-balancing.md)
+* [🔬 Observability](features/observability/README.md)
+  * [⏮ Request Tracing](features/observability/request-tracing.md)
+  * [📃 Custom Metadata](features/observability/custom-metadata.md)
+* [📚 Model Management](features/model-management.md)
+* [⚔ Security & Compliance](features/security-and-compliance.md)
+* [☺ Feedback](features/feedback.md)
 
-## How Portkey Works
+***
 
-* [📪 Portkey Modes](how-portkey-works/portkey-modes.md)
-* [📎 Portkey Headers](how-portkey-works/portkey-headers.md)
-* [🌈 Supported LLMs](how-portkey-works/supported-llms.md)
+* [Integrations](integrations/README.md)
+  * [LLMs](integrations/llms/README.md)
+    * [➡ Open AI SDK](integrations/llms/open-ai-sdk.md)
+    * [➡ Cohere](integrations/llms/cohere.md)
+    * [➡ Anthropic SDK](integrations/llms/anthropic-sdk.md)
+  * [➡ Llamaindex](integrations/llamaindex/README.md)
+    * [🔁 Implementing Fallbacks and Retries](integrations/llamaindex/implementing-fallbacks-and-retries.md)
+    * [⚖ Implementing Load Balancing](integrations/llamaindex/implementing-load-balancing.md)
+    * [🧠 Implementing Semantic Caching](integrations/llamaindex/implementing-semantic-caching.md)
+    * [🔬 Observability](integrations/llamaindex/observability.md)
+  * [➡ Langchain](integrations/langchain.md)
+  * [➡ Microsoft Guidance](integrations/microsoft-guidance.md)
+  * [➡ Rest API](integrations/rest-api/README.md)
+    * [📎 Portkey Headers](integrations/rest-api/portkey-headers.md)
+* [SDK](sdk/README.md)
+  * [Python](sdk/python.md)
+  * [Node](sdk/node.md)
+* [Cookbook](cookbook/README.md)
+  * [Few-Shot Prompting](cookbook/few-shot-prompting.md)
+* [Open Source](open-source/README.md)
+  * [Rubeus](open-source/rubeus.md)
 
-## Key Features
+## Support & FAQ
 
-* [🚀 Request Caching](key-features/request-caching.md)
-* [⏮ Request Tracing](key-features/request-tracing.md)
-* [💫 Automatic Retries](key-features/automatic-retries.md)
-* [📃 Custom Metadata](key-features/custom-metadata.md)
-* [🤖 Fallbacks on LLMs](key-features/fallbacks-on-llms.md)
-* [🪝 Load Balancing](key-features/load-balancing.md)
-* [📝 Feedback API](key-features/feedback-api.md)
-* [📊 Logs & Analytics](key-features/logs-and-analytics.md)
-* [🔑 AI Provider Keys](key-features/ai-provider-keys.md)
-* [⚡ Prompt Management](key-features/prompt-management/README.md)
-  * [Few-Shot Prompting](key-features/prompt-management/few-shot-prompting.md)
-
-## Integration Guides
-
-* [➡ Open AI SDK](integration-guides/open-ai-sdk.md)
-* [➡ Llamaindex](integration-guides/llamaindex/README.md)
-  * [🔁 Implementing Fallbacks and Retries](integration-guides/llamaindex/implementing-fallbacks-and-retries.md)
-  * [⚖ Implementing Load Balancing](integration-guides/llamaindex/implementing-load-balancing.md)
-  * [🧠 Implementing Semantic Caching](integration-guides/llamaindex/implementing-semantic-caching.md)
-  * [🔬 Observability](integration-guides/llamaindex/observability.md)
-* [➡ Langchain](integration-guides/langchain.md)
-* [➡ Cohere](integration-guides/cohere.md)
-* [➡ Anthropic SDK](integration-guides/anthropic-sdk.md)
-* [➡ Microsoft Guidance](integration-guides/microsoft-guidance.md)
-* [➡ Rest API](integration-guides/rest-api.md)
-
-## Why Portkey
-
-* [👀 Observability](why-portkey/observability.md)
-* [🎭 Lower Cost & Latency](why-portkey/lower-cost-and-latency.md)
-* [⛅ Improve LLM success rate](why-portkey/improve-llm-success-rate.md)
-* [✅ Optimise generation quality](why-portkey/optimise-generation-quality.md)
-* [🚫 Hide PII from LLMs](why-portkey/hide-pii-from-llms.md)
-
-## Troubleshooting & Support
-
-* [⁉ Common Errors and Resolutions](troubleshooting-and-support/common-errors-and-resolutions.md)
-* [📥 Reporting Issues](troubleshooting-and-support/reporting-issues.md)
-* [📧 Contacting Support](troubleshooting-and-support/contacting-support.md)
-* [🚀 Join Portkey on Discord](troubleshooting-and-support/join-portkey-on-discord.md)
+* [👥 About Us](support-and-faq/about-us.md)
+* [🚀 Join Portkey on Discord](support-and-faq/join-portkey-on-discord.md)
+* [🍃 Release Notes](support-and-faq/release-notes.md)
+* [⁉ Common Errors and Resolutions](support-and-faq/common-errors-and-resolutions.md)
+* [📥 Reporting Issues](support-and-faq/reporting-issues.md)
+* [📧 Contacting Support](support-and-faq/contacting-support.md)

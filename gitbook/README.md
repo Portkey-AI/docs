@@ -1,17 +1,10 @@
 # 👋 Welcome to Portkey!
 
-Portkey is a comprehensive, ambitious, and innovative solution designed to facilitate the seamless deployment of Generative AI applications.&#x20;
+Portkey is a full-stack LLMOps platform that empowers AI builders to productionize their Gen AI apps reliably and securely.
 
-It serves as a robust platform for launching production-ready applications using the cutting-edge LMOps stack. This sophisticated technology stack includes crucial components for monitoring, model management, and various other features to enhance and optimize your AI application's performance.
+Portkey productionizes your AI app with critical components like monitoring and model management. It also includes other essential features such as **Request Tracing**, **Request** **Caching**, **Automatic Retries** in case of LLM failure, **Custom** **Metadata**, **Fallbacks** **on** **LLMs**, **Load Balancing,** and **more**.
 
-<figure><img src=".gitbook/assets/Screenshot 2023-07-11 at 7.06.58 PM.png" alt=""><figcaption></figcaption></figure>
+Moreover, Portkey ensures compliance with **GDPR**, **SOC2** and **ISO** standards, making it a reliable choice for businesses.
 
-## Quick links
+<figure><img src=".gitbook/assets/portkey-middleware-v2.jpeg" alt=""><figcaption></figcaption></figure>
 
-{% content-ref url="overview/introduction.md" %}
-[introduction.md](overview/introduction.md)
-{% endcontent-ref %}
-
-{% content-ref url="overview/features-overview.md" %}
-[features-overview.md](overview/features-overview.md)
-{% endcontent-ref %}

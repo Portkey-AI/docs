@@ -1,4 +1,4 @@
-# 📝 Feedback API
+# ☺ Feedback
 
 Feedback API provides a simple way to get weighted feedback from customers on any request you served, at any stage in your app. You can capture this feedback on a generation or conversation level and analyze it based on custom tags by adding meta data to the relevant request.
 

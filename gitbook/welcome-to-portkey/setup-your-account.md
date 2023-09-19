@@ -1,4 +1,4 @@
-# 📪 Setup Your Account
+# 💼 Setup Your Account
 
 Getting Started
 

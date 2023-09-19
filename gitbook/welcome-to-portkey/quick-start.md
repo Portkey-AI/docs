@@ -2,7 +2,7 @@
 description: Let's connect your LLM providers to Portkey, fast.
 ---
 
-# 📎 Quick Integration
+# 🔥 Quick Start
 
 You can integrate Portkey to your LLM provider via REST APIs, the provider's SDKs and even via Langchain. We'll take an example of an OpenAI request, and show you how to route it through Portkey using different methods. ([Click here](broken-reference) for integration examples with other providers like Anthropic, Cohere etc.)
 
