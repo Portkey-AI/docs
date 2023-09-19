@@ -14,11 +14,11 @@
 
 ## Features
 
-* [💻 Guide to Portkey Dashboard](features/guide-to-portkey-dashboard/README.md)
-  * [📊 Logs & Analytics](features/guide-to-portkey-dashboard/logs-and-analytics.md)
-  * [🔑 Keys](features/guide-to-portkey-dashboard/keys.md)
-  * [📝 Configs](features/guide-to-portkey-dashboard/configs.md)
-  * [⚡ Prompt Management](features/guide-to-portkey-dashboard/prompt-management.md)
+* [💻 Portkey Dashboard](features/portkey-dashboard/README.md)
+  * [📊 Logs & Analytics](features/portkey-dashboard/logs-and-analytics.md)
+  * [🔑 Keys](features/portkey-dashboard/keys.md)
+  * [📝 Configs](features/portkey-dashboard/configs.md)
+  * [⚡ Prompt Management](features/portkey-dashboard/prompt-management.md)
 * [🚪 AI Gateway](features/ai-gateway/README.md)
   * [🚀 Request Caching](features/ai-gateway/request-caching.md)
   * [💫 Automatic Retries](features/ai-gateway/automatic-retries.md)
@@ -54,12 +54,10 @@
   * [Few-Shot Prompting](cookbook/few-shot-prompting.md)
 * [Open Source](open-source/README.md)
   * [Rubeus](open-source/rubeus.md)
-
-## Support & FAQ
-
-* [👥 About Us](support-and-faq/about-us.md)
-* [🚀 Join Portkey on Discord](support-and-faq/join-portkey-on-discord.md)
-* [🍃 Release Notes](support-and-faq/release-notes.md)
-* [⁉ Common Errors and Resolutions](support-and-faq/common-errors-and-resolutions.md)
-* [📥 Reporting Issues](support-and-faq/reporting-issues.md)
-* [📧 Contacting Support](support-and-faq/contacting-support.md)
+* [Support & FAQ](support-and-faq/README.md)
+  * [👥 About Us](support-and-faq/about-us.md)
+  * [🚀 Join Portkey on Discord](support-and-faq/join-portkey-on-discord.md)
+  * [🍃 Release Notes](support-and-faq/release-notes.md)
+  * [⁉ Common Errors and Resolutions](support-and-faq/common-errors-and-resolutions.md)
+  * [📥 Reporting Issues](support-and-faq/reporting-issues.md)
+  * [📧 Contacting Support](support-and-faq/contacting-support.md)
