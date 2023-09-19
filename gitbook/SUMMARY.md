@@ -12,15 +12,13 @@
     * [✅ Optimise generation quality](welcome-to-portkey/why-portkey/optimise-generation-quality.md)
     * [🚫 Hide PII from LLMs](welcome-to-portkey/why-portkey/hide-pii-from-llms.md)
 
-## Guide to Portkey Dashboard
-
-* [📊 Logs & Analytics](guide-to-portkey-dashboard/logs-and-analytics.md)
-* [🔑 Keys](guide-to-portkey-dashboard/keys.md)
-* [📝 Configs](guide-to-portkey-dashboard/configs.md)
-* [⚡ Prompt Management](guide-to-portkey-dashboard/prompt-management.md)
-
 ## Features
 
+* [💻 Guide to Portkey Dashboard](features/guide-to-portkey-dashboard/README.md)
+  * [📊 Logs & Analytics](features/guide-to-portkey-dashboard/logs-and-analytics.md)
+  * [🔑 Keys](features/guide-to-portkey-dashboard/keys.md)
+  * [📝 Configs](features/guide-to-portkey-dashboard/configs.md)
+  * [⚡ Prompt Management](features/guide-to-portkey-dashboard/prompt-management.md)
 * [🚪 AI Gateway](features/ai-gateway/README.md)
   * [🚀 Request Caching](features/ai-gateway/request-caching.md)
   * [💫 Automatic Retries](features/ai-gateway/automatic-retries.md)
