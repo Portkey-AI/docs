@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: false
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # ℹ Introduction
 
 Portkey is a platform designed to streamline the deployment and management of Generative AI applications. It provides comprehensive features for **monitoring**, **managing models**, and **improving the performance** of your AI applications.
