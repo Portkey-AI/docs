@@ -1,2 +1,0 @@
-# 🍃 Release Notes
-
