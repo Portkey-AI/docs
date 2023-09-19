@@ -201,33 +201,41 @@ main();
 
 Portkey natively adds 4 core production capabilities to any Llamaindex app: Load balancing, Fallbacks, Semantic caching, and Observability.
 
+Here's an example of how to implement Fallback & Retries with Portkey in your Llamaindex app:
+
 {% tabs %}
 {% tab title="Python" %}
 ```python
 import os
 from llama_index.llms import Portkey, ChatMessage
-from rubeus import LLMBase
+import portkey as pk
 
 os.environ["OPENAI_API_KEY"] = "<OPENAI_API_KEY>"
-PORTKEY_API_KEY = "<PORTKEY_API_KEY>" # Set Portkey API key here
-os.environ["ANTHROPIC_API_KEY"] = "" 
+os.environ["PORTKEY_API_KEY"] = "<PORTKEY_API_KEY>" # Set Portkey API key here
+os.environ["ANTHROPIC_API_KEY"] = "<ANTHROPIC_API_KEY>"
 
-pk_llm = Portkey(
-    mode="fallback",
-    cache_status="semantic",
-    cache_force_refresh=True,
-    cache_age=1000,
-    trace_id="portkey_llamaindex",
-    retry=5,
+portkey_client = Portkey(mode="fallback")
+
+messages = [
+    ChatMessage(role="system", content="You are a helpful assistant"),
+    ChatMessage(role="user", content="What can you do?"),
+]
+
+llm1 = pk.LLMOptions(
+    provider="openai",
+    model="gpt-4",
+    retry_settings={"on_status_codes": [429, 500], "attempts": 2},
 )
 
-llm1 = LLMBase(provider="openai", model="gpt-4")
-llm2 = LLMBase(provider="openai", model="gpt-3.5-turbo")
+llm2 = pk.LLMOptions(
+    provider="openai",
+    model="gpt-3.5-turbo",
+)
 
-pk_llm.add_llms(llm_params=[llm1, llm2])
+portkey_client.add_llms(llm_params=[llm1, llm2])
 
 print("Testing Fallback & Retry functionality:")
-response = pk_llm.chat(messages)
+response = portkey_client.chat(messages)
 print(response)
 ```
 {% endtab %}
