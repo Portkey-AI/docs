@@ -23,6 +23,6 @@ Your API key should now be copied to your clipboard.
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/API Key.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/API Key.png" alt=""><figcaption></figcaption></figure>
 
 </div>
