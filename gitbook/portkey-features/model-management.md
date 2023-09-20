@@ -1,4 +1,4 @@
-# ⚡ Prompt Management
+# 📚 Model Management
 
 Portkey's Prompt Management is the user interface arm of the Managed Model feature, which allows you to define, save, and manage model prompts along with all of its parameters. It acts as a playground for you to try different combinations of parameters, see the output, and iterate on your prompts.
 

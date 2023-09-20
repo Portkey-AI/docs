@@ -1,4 +1,4 @@
-# 🌈 Supported LLMs
+# 🌈 Integrations
 
 ### Supported LLM Providers
 
@@ -14,13 +14,7 @@
 
 The table below provides a more detailed look at which functions (generate, embed, classify, etc.) are supported by each LLM provider against each Portkey mode (middleware or managed models).
 
-| Provider     | Middleware Mode                                                                            | Managed Models Mode |
-| ------------ | ------------------------------------------------------------------------------------------ | ------------------- |
-| OpenAI       | Chat, Completions, Embed, Images, Embeddings, Audio, Files, Fine-tunes, Moderations, Edits | Chat, Completions   |
-| Azure OpenAI | Chat, Completions, Embed, Images, Embeddings, Audio, Files, Fine-tunes, Moderations, Edits | (coming soon)       |
-| Anthropic    | Completions                                                                                | Completions         |
-| Cohere       | Generate, Embed, Classify, Tokenize, Detokenize, Detect-language, Summarise, Rerank        | (coming soon)       |
-| Hugging Face | Inference                                                                                  | (coming soon)       |
+<table><thead><tr><th width="193">Provider</th><th>Middleware Mode</th><th>Managed Models Mode</th></tr></thead><tbody><tr><td>OpenAI</td><td>Chat, Completions, Embed, Images, Embeddings, Audio, Files, Fine-tunes, Moderations, Edits</td><td>Chat, Completions</td></tr><tr><td>Azure OpenAI</td><td>Chat, Completions, Embed, Images, Embeddings, Audio, Files, Fine-tunes, Moderations, Edits</td><td>(coming soon)</td></tr><tr><td>Anthropic</td><td>Completions</td><td>Completions</td></tr><tr><td>Cohere</td><td>Generate, Embed, Classify, Tokenize, Detokenize, Detect-language, Summarise, Rerank</td><td>(coming soon)</td></tr><tr><td>Hugging Face</td><td>Inference</td><td>(coming soon)</td></tr></tbody></table>
 
 
 
