@@ -1,11 +1,13 @@
 # Table of contents
 
-* [👋 Welcome to Portkey!](README.md)
-  * [✨ Features](welcome-to-portkey/features.md)
-  * [🌈 How to Use](welcome-to-portkey/how-to-use.md)
-  * [🔧 How Portkey Works](welcome-to-portkey/how-portkey-works.md)
+## Introduction
 
-## ✨ Portkey Features
+* [👋 Welcome to Portkey!](README.md)
+* [✨ Features](introduction/features.md)
+* [🌈 How to Use](introduction/how-to-use.md)
+* [🔧 How Portkey Works](introduction/how-portkey-works.md)
+
+## Portkey Features
 
 * [🚪 AI Gateway](portkey-features/ai-gateway/README.md)
   * [💫 Automatic Retries](portkey-features/ai-gateway/automatic-retries.md)
