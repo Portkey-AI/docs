@@ -50,5 +50,3 @@ Here’s a detailed overview of how each feature contributes to productionizing 
 * **Redact Sensitive Data**: Automatically remove sensitive data from your requests to prevent indavertent exposure.
 * **Access Control & Inbound Rules**: Control which IPs and Geos can connect to your Portkey deployments and stay compliant with your SOC2 policies.
 * **Compliant with Global Standards**: Portkey complies with security and privacy best practices with standard certifications.
-
-### Get started with Portkey in your apps below 👇
