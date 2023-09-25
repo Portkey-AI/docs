@@ -1,32 +1,84 @@
 # 🔑 Virtual Keys
 
-Deploy your prompt templates through Portkey and seamlessly integrate with your preferred AI provider. Simply add your API keys to Portkey, and you're ready to roll!
+### Creating Virtual Keys:
 
-### How to Add Virtual Keys
+* **Step 1**: Go to the "Virtual Keys" page and click "Add Key" button in the top right corner.
+* **Step 2**: Select your AI provider, name your key uniquely, and note any usage specifics if needed.
 
-* **Step 1**: Navigate to the "Virtual Keys" page and hit the "Add Key" button located at the top right corner.
-* **Step 2**: Choose your AI provider, assign a unique name to your key, and, if needed, jot down any relevant usage notes.
+<figure><img src="../../.gitbook/assets/virtual_keys.png" alt="" width="563"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/virtual_keys.png" alt=""><figcaption></figcaption></figure>
+{% hint style="info" %}
+**Tip:** You can register multiple keys for one provider or use different names for the same key for easy identification.
+{% endhint %}
 
-**Did You Know?** You can add multiple keys for the same provider **and** also add the same key under different names for ease of identification.
+## Using Virtual Keys
 
-Currently, Portkey supports:
+### 1. SDK and Langchain/Llamaindex apps:
 
-* OpenAI
-* Anthropic
-* Cohere
-* Azure OpenAI
-* **Coming Soon**: HuggingFace 🚀
+Directly add the virtual key while constructing your LLM:
 
-### **Understanding Virtual Keys:**
+```python
+llm = LLMOptions(
+        provider="", 
+        virtual_key="open-ai-key-xxxx", # Your Virtual Key
+        model=""
+)
+```
 
-Safety first! Portkey transforms your provider key into a virtual key to use within the Portkey ecosystem. This ensures that your original provider keys remain secure and untouched.
+### 2. Prompt templates
 
-### What's on the Horizon?
+Select your Virtual Key in Portkey’s prompt templates; it’s automatically fetched and ready to use.
 
-Portkey's virtual keys are about to get even more powerful:
+<figure><img src="../../.gitbook/assets/config_prompt.gif" alt=""><figcaption></figcaption></figure>
 
-* **Cost Limits**: Set expenditure caps on each virtual key. Once the limit's hit, the key deactivates.
-* **Role-Based Access**: Define who in your organization gets to use which key. Keep everything in the right hands.
-* **Usage Settings**: Want a key for a specific function? You'll soon be able to define exact use cases for each key.
+### 3. Client SDKs or Proxy
+
+#### **Step 1: Create config**&#x20;
+
+Add your virtual key while adding your provider under "options" key.
+
+```json
+{
+    "mode": "single", 
+    "options": [ 
+        {
+            "provider": "openai",
+            "virtual_key": "open-ai-key-fb040b"
+        }
+    ]
+}
+```
+
+#### **Step 2: Use config**
+
+Pass the Config id using the 'x-portkey-config' header in your calls.
+
+#### **OpenAI**
+
+```python
+import openai
+
+openai.api_base = "https://api.portkey.ai/v1/proxy"
+
+portkey_headers = {
+    "x-portkey-api-key": "<PORTKEY_API_KEY>",
+    "x-portkey-mode": "proxy openai",
+    "x-portkey-config": "pc-test-xxx", # Add the Config ID here
+}
+
+r = openai.Completion.create(model=model, prompt=prompt, headers=portkey_headers)
+```
+
+#### **Rest API**
+
+```bash
+curl --location 'http://api.portkey.ai/v1/proxy/completions' \
+--header 'x-portkey-api-key: <PORTKEY_API_KEY>' \
+--header 'x-portkey-mode: proxy openai' \
+--header 'x-portkey-config: pc-test-xxx' \ # Add the Config ID here
+--header 'Content-Type: application/json' \
+--data '{
+    "model": "model",
+    "prompt": "prompt"
+}'
+```

@@ -1,21 +1,23 @@
 ---
-description: Never expose your keys or data and stay compliant across the world.
+description: Safeguarding Keys and Data; Ensuring Global Compliance
 ---
 
 # ⚔ Security & Compliance
 
-### [Virtual Keys for AI Providers](virtual-keys.md)
+Portkey provides essential security and compliance features, ensuring reliability and security at production scale:
 
-Connect a provider's API key and create multiple virtual keys enabling security, rotation, individual limits & tracking.
+#### 1. [Virtual Keys](virtual-keys.md)
 
-### Access Control & Inbound Rules
+Generate multiple virtual keys by connecting a provider's API key. This safeguards the original keys while allowing tailored usage patterns, spending limits, and refined access control, enhancing governance. Use virtual keys throughout the Portkey ecosystem
 
-Control which IPs and Geos can connect to your Portkey deployments and stay compliant with your SOC2 policies.
+#### 2. Access Control & Inbound Rules
 
-### Redact Sensitive Data
+Manage connection permissions based on IPs and Geos to align with SOC2 policies in your Portkey deployments.
 
-Automatically remove sensitive data from your requests to prevent indavertent exposure.
+#### 3. Redact Sensitive Data
 
-### Compliant with Global Standards
+Automatically eliminate sensitive data from requests, avoiding unintended exposure.
 
-Portkey complies with security and privacy best practices with standard certifications.
+#### 4. Compliant with Global Standards
+
+Maintain adherence to recognized security and privacy standards and certifications, ensuring best practices are in place.
