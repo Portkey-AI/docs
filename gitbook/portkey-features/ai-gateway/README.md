@@ -18,4 +18,8 @@ In cases of primary model being down, automatically send your request to a fallb
 
 [**Load Balancing**](load-balancing.md)
 
-This unique feature helps you stay within your rate limit and queuing thresholds by distributing your requests across different model/providers **and** different accounts of the same providers&#x20;
+This unique feature helps you stay within your rate limit and queuing thresholds by distributing your requests across different model/providers **and** different accounts of the same providers
+
+**Unified Interface**
+
+Connect to all AI providers through a unified API. Simplify interactions and minimize integration hassles.

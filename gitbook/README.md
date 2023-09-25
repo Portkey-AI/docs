@@ -22,9 +22,7 @@ layout:
 
 # 👋 Welcome to Portkey!
 
-Building prototypes on top of LLMs is a **very different** problem from scaling them to production
-
-As your app starts to scale, you are likely to encounter challenges you haven't seen before. Challenges like:
+Scaling LLM apps to production is laden with unexpected and often unprecedented challenges such as:
 
 * Increasing latencies
 * Request failures with unexplainable errors
@@ -39,4 +37,4 @@ Portkey is engineered to address **all** these challenges and augment your LLM s
 
 <figure><img src=".gitbook/assets/portkey-middleware-v2.jpeg" alt=""><figcaption><p>Snapshot of how Portkey works</p></figcaption></figure>
 
-#### **Dive into Portkey's production-grade features below or use ⌘+K (or Ctrl+K) for immediate assistance.**
+**Discover how easily you can integrate Portkey in your workflows below 👇** (or use ⌘+K or Ctrl+K for immediate assistance!)

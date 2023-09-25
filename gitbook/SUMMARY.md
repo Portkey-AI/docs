@@ -3,9 +3,8 @@
 ## Introduction
 
 * [👋 Welcome to Portkey!](README.md)
+* [🚀 Getting Started](introduction/getting-started.md)
 * [✨ Features](introduction/features.md)
-* [🌈 How to Use](introduction/how-to-use.md)
-* [🔧 How Portkey Works](introduction/how-portkey-works.md)
 
 ## Portkey Features
 
