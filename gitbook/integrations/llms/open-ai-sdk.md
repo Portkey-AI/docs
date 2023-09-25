@@ -2,7 +2,7 @@
 
 In the following code snippets, the `api_base` is changed to Portkey's base path.
 
-The Portkey API key and mode are passed in the request headers. You need to replace `<PORTKEY_API_KEY>` with your actual Portkey API key. The mode is set as **`proxy openai`** which is the Portkey middleware mode for OpenAI.
+The Portkey API key and mode are passed in the request headers. You need to replace `<PORTKEY_API_KEY>` with your actual Portkey API key. The mode is set as **`proxy openai`**.
 
 {% tabs %}
 {% tab title="Python" %}

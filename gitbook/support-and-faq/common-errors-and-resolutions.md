@@ -6,9 +6,7 @@ While using Portkey, you may encounter various types of errors. An essential par
 
 Errors can originate either from the Portkey platform itself or from the Language Learning Models (LLMs) provider. **To make this distinction, remember that any error originating from Portkey is prefixed with "Portkey Error:".** If you encounter an error message without this prefix, it is likely that the error has occurred at the LLM provider's end.
 
-### Troubleshooting Tip for Middleware Mode
-
-If you are facing issues specifically when using the middleware mode, a good troubleshooting step would be to try running the same request without Portkey. If the request executes successfully without Portkey, then the error is likely due to the integration with Portkey.
+If you are facing issues specifically when using Portkey through rest API or integrations, a good troubleshooting step would be to try running the same request without Portkey. If the request executes successfully without Portkey, then the error is likely due to the integration with Portkey.
 
 ### Common Portkey Errors
 

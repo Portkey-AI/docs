@@ -25,7 +25,7 @@ In this example, if the request fails due to an LLM error, Portkey will automati
 
 The only mandatory header is `x-portkey-api-key`. Without this header all requests would return with 401 error.
 
-If you're using Middleware mode, `x-portkey-mode` header with the appropriate value is required. To understand the value of mode, please refer to the integration guides.
+If you're using using Portkey with any other LLM, `x-portkey-mode` header with the appropriate value is required. To understand the value of mode, please refer to the integration guides.
 
 ### Further Reading
 
