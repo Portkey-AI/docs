@@ -1,8 +1,8 @@
-# 🔑 Keys
+# 🔑 Virtual Keys
 
 Deploy your prompt templates through Portkey and seamlessly integrate with your preferred AI provider. Simply add your API keys to Portkey, and you're ready to roll!
 
-### How to Add Provider Keys
+### How to Add Virtual Keys
 
 * **Step 1**: Navigate to the "Virtual Keys" page and hit the "Add Key" button located at the top right corner.
 * **Step 2**: Choose your AI provider, assign a unique name to your key, and, if needed, jot down any relevant usage notes.

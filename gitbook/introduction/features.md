@@ -46,7 +46,7 @@ Here’s a detailed overview of how each feature contributes to productionizing 
 
 #### 🔐 **Security & Compliance**
 
-* [**Virtual Keys**](../portkey-features/security-and-compliance/keys.md): Portkey transforms original provider keys into virtual keys, ensuring your primary credentials remain untouched.
+* [**Virtual Keys**](../portkey-features/security-and-compliance/virtual-keys.md): Portkey transforms original provider keys into virtual keys, ensuring your primary credentials remain untouched.
 * **Redact Sensitive Data**: Automatically remove sensitive data from your requests to prevent indavertent exposure.
 * **Access Control & Inbound Rules**: Control which IPs and Geos can connect to your Portkey deployments and stay compliant with your SOC2 policies.
 * **Compliant with Global Standards**: Portkey complies with security and privacy best practices with standard certifications.

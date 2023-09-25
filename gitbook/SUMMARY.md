@@ -22,10 +22,12 @@
 * [📚 Model Management](portkey-features/model-management.md)
 * [☺ Feedback](portkey-features/feedback.md)
 * [⚔ Security & Compliance](portkey-features/security-and-compliance/README.md)
-  * [🔑 Keys](portkey-features/security-and-compliance/keys.md)
+  * [🔑 Virtual Keys](portkey-features/security-and-compliance/virtual-keys.md)
 
 ***
 
+* [SDK](sdk/README.md)
+  * [Python](sdk/python.md)
 * [Integrations](integrations/README.md)
   * [LLMs](integrations/llms/README.md)
     * [➡ Open AI SDK](integrations/llms/open-ai-sdk.md)
@@ -39,8 +41,6 @@
   * [➡ Langchain](integrations/langchain.md)
   * [➡ Rest API](integrations/rest-api/README.md)
     * [📎 Portkey Headers](integrations/rest-api/portkey-headers.md)
-* [SDK](sdk/README.md)
-  * [Python](sdk/python.md)
 * [Cookbook](cookbook/README.md)
   * [Few-Shot Prompting](cookbook/few-shot-prompting.md)
 * [Open Source](open-source/README.md)
