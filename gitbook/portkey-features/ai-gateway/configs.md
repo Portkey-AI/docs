@@ -1,8 +1,6 @@
 # 📝 Configs
 
-Configs streamline the management and setting of Portkey features, enabling you to programmatically control various aspects like fallbacks, load balancing, and retries. Access and adjust these settings via the Portkey UI and invoke them in your LLM code through the REST API. (SDK support anticipated soon.)
-
-Configs allow you to efficiently manage and set **all** Portkey features through a single interface. You can set features such as fallbacks, load balancing, retries, and more, programmatically. These settings are accessible and adjustable through the Portkey UI and can be invoked in any LLM code via the REST API. (SDK support is coming soon)
+Configs streamline the management and setting of **all** Portkey features, enabling you to programmatically control various aspects like fallbacks, load balancing, retries, caching, and more - all through a single interface. Access and adjust these settings via the Portkey UI and invoke them in your LLM code through the REST API. (SDK support is coming soon.)
 
 ### **Setting Configs**
 
