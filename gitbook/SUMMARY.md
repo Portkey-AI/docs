@@ -27,6 +27,7 @@
 
 * [SDK](sdk/README.md)
   * [Python](sdk/python.md)
+  * [Node](sdk/node.md)
 * [Integrations](integrations/README.md)
   * [LLMs](integrations/llms/README.md)
     * [➡ Open AI SDK](integrations/llms/open-ai-sdk.md)

@@ -1,6 +1,10 @@
-# Python
+---
+description: >-
+  Portkey SDK is the best way to interact with Portkey and bring your LLMs to
+  production.
+---
 
-#### Portkey SDK is the best way to interact with Portkey and bring your LLMs to production.
+# Python
 
 {% code fullWidth="true" %}
 ```bash
@@ -12,7 +16,7 @@ pip install portkey-ai
 
 ***
 
-**Here's a step-by-step guide to integrating the Portkey SDK in your LLM app:**
+## **4-Step Guide**
 
 ### **Step 1️⃣ : Get your Portkey API Key and your Virtual Keys for AI providers**
 

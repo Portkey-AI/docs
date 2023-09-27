@@ -2,23 +2,20 @@
 
 Portkey supports two official libraries:
 
-### Python
+## Python
 
-```
+{% code fullWidth="true" %}
+```bash
 pip install portkey-ai
 ```
+{% endcode %}
 
-#### Guides
+[**4-Step guide to start using Portkey's Python SDK**](python.md) **|** [**Github Repo**](https://github.com/Portkey-AI/portkey-python-sdk)
 
-* [4-Step Guide to integrating Portkey](python.md)
-* [Making Llamaindex apps production-grade with Portkey](https://gpt-index.readthedocs.io/en/latest/examples/llm/portkey.html)
+## Node
 
-***
-
-### Node
-
-```
+```bash
 npm i portkey-ai
 ```
 
-(in beta)
+[**4-Step guide to start using Portkey's Node SDK** ](node.md)**|** [**Github Repo**](https://github.com/Portkey-AI/portkey-node-sdk)
