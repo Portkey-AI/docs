@@ -1,8 +1,54 @@
 # ➡ Whisper
 
-Portkey makes logging Whisper requests absolutely easy. Whisper endpoints are supported with HTTP-based requests. Follow the steps below to integrate:
+Portkey makes logging Whisper requests easy and effortless with its integration.&#x20;
 
-### Step 1: **Set Up the Request URL**
+## Node SDK
+
+Integrate Portkey in OpenAI's Node SDK in just two steps:
+
+**Step 1**: In openai configuration, set `baseURL` to Portkey proxy (`https://api.portkey.ai/v1/proxy`)
+
+**Step 2**: Add Portkey API key & mode in `defaultHeaders`.
+
+Here's how:
+
+{% tabs %}
+{% tab title="Node SDK" %}
+```javascript
+import fs from "fs";
+import OpenAI from "openai";
+
+const configuration = {
+  apiKey: '<OPENAI_API_KEY>',
+
+  // Portkey specific additions
+  baseURL: 'https://api.portkey.ai/v1/proxy', // Change base URL to Portkey
+  defaultHeaders: {
+    'x-portkey-api-key': '<PORTKEY_API_KEY>', // Add Portkey API key
+    'x-portkey-mode': 'proxy openai' // Setting mode to use OpenAI via Portkey
+  }
+};
+
+const openai = new OpenAI(configuration);
+
+async function main() {
+  const transcription = await openai.audio.transcriptions.create({
+    file: fs.createReadStream("audio.mp3"),
+    model: "whisper-1",
+  });
+
+  console.log(transcription.text);
+}
+main();
+```
+{% endtab %}
+{% endtabs %}
+
+## Rest API
+
+Portkey supports Whisper endpoints with HTTP-based requests as well:
+
+#### Step 1: **Set Up the Request URL**
 
 * Base Portkey URL: `https://api.portkey.ai/v1/proxy`
 * Whisper Endpoint: `/audio/transcriptions`&#x20;
@@ -13,7 +59,7 @@ Concatenate the Base Portkey URL with the Whisper Endpoint:
 https://api.portkey.ai/v1/proxy/audio/transcriptions
 ```
 
-### Step 2: **Configure Portkey Headers**
+#### Step 2: **Configure Portkey Headers**
 
 Add the following default Portkey headers to your request:
 
@@ -21,11 +67,7 @@ Add the following default Portkey headers to your request:
 
 `x-portkey-mode` : `proxy openai` (For Whisper integration)
 
-#### Additional Features
-
-Refer to the [features.md](../../introduction/features.md "mention") to leverage advanced Portkey production features such as semantic caching, custom metadata, retries, and more.
-
-### Code Examples
+#### Example:
 
 {% tabs %}
 {% tab title="cURL" %}
@@ -51,79 +93,8 @@ curl https://api.portkey.ai/v1/proxy/audio/transcriptions \
   -F model="whisper-1"
 ```
 {% endtab %}
-
-{% tab title="Python" %}
-```python
-import requests
-
-# Set the API keys
-OPENAI_API_KEY = "<OPENAI_API_KEY>"
-PORTKEY_API_KEY = "<PORTKEY_API_KEY>"
-
-# Set up the URL
-url = "https://api.portkey.ai/v1/proxy/audio/transcriptions"
-
-# Define Headers including Portkey headers
-headers = {
-    "Authorization": f"Bearer {OPENAI_API_KEY}",
-    "x-portkey-api-key": PORTKEY_API_KEY,
-    "x-portkey-mode": "proxy openai",
-    "x-portkey-trace-id": "whisper_portkey",
-}
-
-# Set up the file and model data
-file_path = "./audio.mp3"
-model = "whisper-1"
-
-# Making a POST request to Portkey
-with open(file_path, 'rb') as f:
-    response = requests.post(url, headers=headers, files={"file": f}, data={"model": model})
-
-# Handle the response
-if response.status_code == 200:
-    print("Request was successful!")
-    print(response.json())
-else:
-    print(f"Failed with status code: {response.status_code}")
-    print(response.text)
-```
-{% endtab %}
-
-{% tab title="Node" %}
-```javascript
-const axios = require('axios');
-const fs = require('fs');
-const FormData = require('form-data');
-
-// Set the API keys
-const OPENAI_API_KEY = "<OPENAI_API_KEY>";
-const PORTKEY_API_KEY = "<PORTKEY_API_KEY>";
-
-// Set up the URL
-const url = "https://api.portkey.ai/v1/proxy/audio/transcriptions";
-
-// Define Portkey Headers
-const headers = {
-    Authorization: `Bearer ${OPENAI_API_KEY}`,
-    "x-portkey-api-key": PORTKEY_API_KEY,
-    "x-portkey-mode": "proxy openai",
-    "x-portkey-trace-id": "whisper_portkey",
-};
-
-// Create a new FormData object
-let form = new FormData();
-
-// Append the file and model to the form object
-form.append('file', fs.createReadStream('./audio.mp3'));
-form.append('model', 'whisper-1');
-
-// Make the request
-axios.post(url, form, { headers: { ...form.getHeaders(), ...headers } })
-  .then(response => console.log(response.data))
-  .catch(error => {
-    console.error(`Failed with status code: ${error.response.status}`);
-    console.error(error.response.data);
-  });
-```
-{% endtab %}
 {% endtabs %}
+
+## Additional Features
+
+Refer to the [features.md](../../introduction/features.md "mention") to leverage advanced Portkey production features such as semantic caching, custom metadata, retries, and more.
