@@ -84,8 +84,8 @@ curl --location 'https://api.portkey.ai/v1/proxy' \ # Send your request to Portk
 {% endtab %}
 {% endtabs %}
 
-{% content-ref url="../integrations/llms/" %}
-[llms](../integrations/llms/)
+{% content-ref url="../integrations/llm-providers/" %}
+[llm-providers](../integrations/llm-providers/)
 {% endcontent-ref %}
 
 ### 2. Official **SDK (⭐️ Recommended)**

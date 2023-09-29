@@ -6,12 +6,12 @@ Portkey effortlessly melds with a host of major LLM providers, such as OpenAI an
 
 Integrating Portkey is a straightforward process. Choose your preferred method below and follow the instructions.
 
-{% content-ref url="llms/open-ai-sdk.md" %}
-[open-ai-sdk.md](llms/open-ai-sdk.md)
+{% content-ref url="llm-providers/open-ai-sdk.md" %}
+[open-ai-sdk.md](llm-providers/open-ai-sdk.md)
 {% endcontent-ref %}
 
-{% content-ref url="llms/anthropic-sdk.md" %}
-[anthropic-sdk.md](llms/anthropic-sdk.md)
+{% content-ref url="llm-providers/anthropic-sdk.md" %}
+[anthropic-sdk.md](llm-providers/anthropic-sdk.md)
 {% endcontent-ref %}
 
 {% content-ref url="langchain.md" %}
