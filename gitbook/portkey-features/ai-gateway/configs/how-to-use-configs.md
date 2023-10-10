@@ -42,7 +42,7 @@ curl -X POST \
 
 #### Configs radically simplify how you can use Portkey SDK.&#x20;
 
-You can use the Portkey UI to set your **fallback, load balancing, caching, logging logic** and then just **pass the config id** while constructing your **Portkey client**.
+You can use the Portkey UI to set your **fallback, load balancing, caching, logging logic** and then just **set the config id** with **Portkey client**.
 
 {% tabs %}
 {% tab title="Python" %}
@@ -50,8 +50,8 @@ You can use the Portkey UI to set your **fallback, load balancing, caching, logg
 import portkey
 os.environ["PORTKEY_API_KEY"] = "PORTKEY_API_KEY"
 
-# Directly pass the config id while constructing the Portkey client
-portkey.config = portkey.Config(config = "<CONFIG_ID>")
+# Directly set the Config ID
+portkey.config = "<CONFIG_ID>"
 
 response = portkey.ChatCompletions.create(
   model="gpt-3.5-turbo",
@@ -69,7 +69,7 @@ print(response.choices[0].message)
 ```typescript
 import { Portkey } from "portkey-ai";
 
-// Directly pass the config id while constructing the Portkey client
+// Directly set the Config ID
 const portkey = new Portkey({ config: "<CONFIG_ID>" })
 
 const response = await portkey.chatCompletions.create({
