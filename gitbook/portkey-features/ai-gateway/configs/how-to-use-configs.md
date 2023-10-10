@@ -40,7 +40,7 @@ curl -X POST \
 
 ## Portkey SDK
 
-#### Configs radically simplifies how you can use Portkey SDK.&#x20;
+#### Configs radically simplify how you can use Portkey SDK.&#x20;
 
 You can use the Portkey UI to set your **fallback, load balancing, caching, logging logic** and then just **pass the config id** while constructing your **Portkey client**.
 

@@ -6,7 +6,7 @@ Configs streamline the management and setting of **all** Portkey features, enabl
 
 Navigate to the ‘Configs’ page in the Portkey app to set and manage your Configs. Start typing, and you will see type hints and suggestions for the keys.
 
-<figure><img src="../../../.gitbook/assets/config_1 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/config_1 (1).gif" alt=""><figcaption></figcaption></figure>
 
 #### There, you can set the following features:
 
@@ -18,7 +18,7 @@ Navigate to the ‘Configs’ page in the Portkey app to set and manage your Con
 | options | Array of LLM options                            |
 
 * **`retry`** - Set the automatic retry count. Minimum retry count is 0, and maximum is 5.
-* **`cache`** - Enable caching. Portkey provides two types of caches - simple & semantic. (More on that [here](../request-caching.md))
+* **`cache`** - Enable caching. Portkey provides two types of caches - simple & semantic. (More on that [here](request-caching.md))
 * **`mode`** - Set the orchestrattion method for your reuqests.&#x20;
   * **"fallback"**: Enable model fallback for primary failure scenarios.
   * **"loadbalance"**: Distribute your request load among multiple providers or accounts.
@@ -73,6 +73,6 @@ Here's an example Config putting everything together, that sets fallback between
 }
 ```
 
-{% content-ref url="how-to-use-configs.md" %}
-[how-to-use-configs.md](how-to-use-configs.md)
+{% content-ref url="configs/how-to-use-configs.md" %}
+[how-to-use-configs.md](configs/how-to-use-configs.md)
 {% endcontent-ref %}
