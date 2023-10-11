@@ -2,7 +2,7 @@
 description: Portkey adds core production capabilities to any Langchain app.
 ---
 
-# ➡ Langchain
+# 🦜 Langchain
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
@@ -26,7 +26,9 @@ description: Portkey adds core production capabilities to any Langchain app.
    * **Virtual Keys**: Portkey transforms original provider keys into virtual keys, ensuring your primary credentials remain untouched.
    * **Multiple Identifiers**: Ability to add multiple keys for the same provider or the same key under different names for easy identification without compromising security.
 
-#### To harness these features, just start with:
+## Example Code
+
+#### Using Portkey to load balance requests to GPT-3.5 & GPT-4
 
 {% tabs %}
 {% tab title="Python" %}
@@ -38,7 +40,7 @@ description: Portkey adds core production capabilities to any Langchain app.
 # Importing necessary libraries and modules
 from langchain.chat_models import ChatPortkey
 from langchain.schema import HumanMessage, SystemMessage
-import portkey as pk
+import portkey
 import os
 
 # Set the Portkey API key
@@ -53,13 +55,13 @@ portkey = ChatPortkey(mode="loadbalance")
 
 # Construct two LLMs using portkey's LLMOptions
 
-llm_a = pk.LLMOptions(
+llm_a = portkey.LLMOptions(
     provider="openai",
     model="gpt-3.5-turbo",
     virtual_key=openai_virtual_key_a,
 )
 
-llm_b = pk.LLMOptions(
+llm_b = portkey.LLMOptions(
     provider="openai",
     model="gpt-4",
     virtual_key=openai_virtual_key_b,
@@ -81,9 +83,11 @@ print(response.content)
 {% endtab %}
 {% endtabs %}
 
-## Portkey Client (Portkey or ChatPortkey)
+## Using Portkey Module (Portkey or ChatPortkey)
 
-**`api_key`** and **`mode`** are required values.
+Portkey module is used to construct the client that will orchestrate all LLM requests in your Langchain app. It takes**`api_key`** and **`mode`** as required values.
+
+Use **`ChatPortkey`** for ChatLLMs in Langchain and **`Portkey`** for LLMs
 
 * **`api_key`**
   * You can set your Portkey API key using the Portkey constructor or you can also set it as an environment variable.
@@ -92,7 +96,9 @@ print(response.content)
   * **Fallback** - Set this mode if you want to enable the Fallback feature.
   * **Loadbalance** - Set this mode if you want to enable the Loadbalance feature.
 
-## LLMOptions
+## Using LLMOptions
+
+LLMOptions is imported directly from the portkey SDK - it is used to construct the LLM, and enable Portkey's production features like virtual keys, caching, tracing, and more.
 
 | Feature                  | Config Key                     | Value(Type)                                                                                                                                                | Required   |
 | ------------------------ | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
