@@ -41,7 +41,7 @@ Portkey adds core production capabilities to any Llamaindex app.
 
 To harness these features, just start with:
 
-```
+```python
 # Installing Llamaindex & Portkey SDK
 !pip install -U llama_index
 !pip install -U portkey-ai
@@ -58,7 +58,7 @@ You do not need to install **any** other SDKs or import them in your Llamaindex 
 
 Log into [Portkey here](https://app.portkey.ai/), then click on the profile icon on top right and "Copy API Key".&#x20;
 
-```
+```python
 import os
 os.environ["PORTKEY_API_KEY"] = ""
 ```
@@ -69,7 +69,7 @@ os.environ["PORTKEY_API_KEY"] = ""
 2. Choose your AI provider (OpenAI, Anthropic, Cohere, HuggingFace, etc.), assign a unique name to your key, and, if needed, jot down any relevant usage notes. Your virtual key is ready!
 3. Now copy and paste the keys below - you can use them anywhere within the Portkey ecosystem and keep your original key secure and untouched.
 
-```
+```python
 openai_virtual_key_a = ""
 openai_virtual_key_b = ""
 
@@ -82,7 +82,7 @@ cohere_virtual_key_b = ""
 
 If you don’t want to use Portkey’s Virtual keys, you can also use your AI provider keys directly.
 
-```
+```python
 os.environ["OPENAI_API_KEY"] = ""
 os.environ["ANTHROPIC_API_KEY"] = ""
 ```
@@ -112,7 +112,7 @@ To harness the full potential of Portkey's integration with Llamaindex, you can 
 
 Here’s an example of how to set up some of these features:
 
-```
+```python
 portkey_client = Portkey(
     mode="single",
 )
@@ -124,7 +124,7 @@ portkey_client = Portkey(
 
 With the Portkey integration, constructing an LLM is simplified. Use the `LLMOptions` function for all providers, with the exact same keys you’re accustomed to in your OpenAI or Anthropic constructors. The only new key is `weight`, essential for the load balancing feature.
 
-```
+```python
 openai_llm = pk.LLMOptions(
     provider="openai",
     model="gpt-4",
@@ -138,7 +138,7 @@ The above code illustrates how to utilize the `LLMOptions` function to set up an
 
 Once you’ve constructed the LLM using the `LLMOptions` function, the next step is to activate it with Portkey. This step is essential to ensure that all the Portkey features are available for your LLM.
 
-```
+```python
 pk_llm.add_llms(openai_llm)
 ```
 
@@ -148,7 +148,7 @@ And, that's it! In just 4 steps, you have infused your Llamaindex app with sophi
 
 Let's ensure that everything is set up correctly. Below, we create a simple chat scenario and pass it through our Portkey-enhanced LLM to see the response.
 
-```
+```python
 messages = [
     ChatMessage(role="system", content="You are a helpful assistant"),
     ChatMessage(role="user", content="What can you do?"),

@@ -1,134 +1,114 @@
+---
+description: Portkey adds core production capabilities to any Langchain app.
+---
+
 # ➡ Langchain
 
-**Open AI**
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-Using Portkey with Langchain is as simple as just choosing which Portkey features you want, enabling them via `headers=Portkey.Config` and passing it in your LLM calls.
+[![\\"Open](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19LFG4az9j-0pUixiVhhtHLpmLSZlz1Ei?usp=sharing)
 
-{% tabs %}
-{% tab title="Python" %}
-```python
-# Tracing agent calls across different requests
+#### Key Features of the Portkey Integration: <a href="#key-features-of-portkeys-integration-with-llamaindex" id="key-features-of-portkeys-integration-with-llamaindex"></a>
 
-import os
-from langchain.llms import OpenAI
-from langchain.utilities import Portkey
+1. **🚪 AI Gateway**:
+   * **Automated Fallbacks & Retries**: Ensure your application remains functional even if a primary service fails.
+   * **Load Balancing**: Efficiently distribute incoming requests among multiple models.
+   * **Semantic Caching**: Reduce costs and latency by intelligently caching results.
+2. **🔬 Observability**:
+   * **Logging**: Keep track of all requests for monitoring and debugging.
+   * **Requests Tracing**: Understand the journey of each request for optimization.
+   * **Custom Tags**: Segment and categorize requests for better insights.
+3. **📝 Continuous Improvement with User Feedback**:
+   * **Feedback Collection**: Seamlessly gather feedback on any served request, be it on a generation or conversation level.
+   * **Weighted Feedback**: Obtain nuanced information by attaching weights to user feedback values.
+   * **Feedback Metadata**: Incorporate custom metadata with the feedback to provide context, allowing for richer insights and analyses.
+4. **🔑 Secure Key Management**:
+   * **Virtual Keys**: Portkey transforms original provider keys into virtual keys, ensuring your primary credentials remain untouched.
+   * **Multiple Identifiers**: Ability to add multiple keys for the same provider or the same key under different names for easy identification without compromising security.
 
-os.environ["OPENAI_API_KEY"] = "<OPENAI_API_KEY>"
-PORTKEY_API_KEY = "<PORTKEY_API_KEY>" # Set Portkey API key here
-TRACE_ID = "portkey_langchain_demo"  # Set trace id here
-
-# Since Portkey is integrated with Langchain, Portkey.Config() takes care of defining headers
-
-headers = Portkey.Config(
-    api_key=PORTKEY_API_KEY,
-    trace_id=TRACE_ID,
-)
-
-# Now, let's pass these headers
-
-llm = OpenAI(headers=headers)
-
-tools = load_tools(["serpapi", "llm-math"], llm=llm)
-agent = initialize_agent(
-    tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
-)
-
-# Let's test it out!
-agent.run(
-    "What was the high temperature in SF yesterday in Fahrenheit? What is that number raised to the .023 power?"
-)
-```
-{% endtab %}
-
-{% tab title="NodeJS" %}
-```typescript
-import { OpenAI } from "langchain/llms/openai";
-
-const model = new OpenAI({
-  modelName: "text-davinci-003", 
-  temperature: 0.9,
-  openAIApiKey: "<OPENAI_API_KEY>",
-  configuration: {
-    basePath: "https://api.portkey.ai/v1/proxy",
-    baseOptions: {
-      headers: {
-        'x-portkey-api-key': '<PORTKEY_API_KEY>',
-        'x-portkey-mode': 'proxy openai',
-        'x-portkey-trace-id' : 'langchain_demo'
-      }
-    }
-  }
-});
-
-async function main() {
-  const res = await model.call("Describe the world as written by Herodotus.");
-  console.log(res);
-}
-main();
-```
-{% endtab %}
-{% endtabs %}
-
-**Check out the list of config keys you can set with `Portkey.Config` on Langchain:**
-
-<table><thead><tr><th width="191">Feature</th><th width="225">Config Key</th><th width="129">Value (Type)</th><th>Required/Optional</th></tr></thead><tbody><tr><td>API Key</td><td><code>api_key</code></td><td>API Key (<code>string</code>)</td><td>✅ Required</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/request-tracing">Tracing Requests</a></td><td><code>trace_id</code></td><td>Custom <code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/automatic-retries">Automatic Retries</a></td><td><code>retry_count</code></td><td><code>integer</code> [1,2,3,4,5]</td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/request-caching">Enabling Cache</a></td><td><code>cache</code></td><td><code>simple</code> OR <code>semantic</code></td><td>❔ Optional</td></tr><tr><td>Cache Force Refresh</td><td><code>cache_force_refresh</code></td><td><code>True</code></td><td>❔ Optional</td></tr><tr><td>Set Cache Expiry</td><td><code>cache_age</code></td><td><code>integer</code> (in seconds)</td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add User</a></td><td><code>user</code></td><td><code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add Organisation</a></td><td><code>organisation</code></td><td><code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add Environment</a></td><td><code>environment</code></td><td><code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add Prompt (version/id/string)</a></td><td><code>prompt</code></td><td><code>string</code></td><td>❔ Optional</td></tr></tbody></table>
-
-**Azure Open AI**
+#### To harness these features, just start with:
 
 {% tabs %}
 {% tab title="Python" %}
 ```python
+# Installing Langchain & Portkey SDK
+!pip install langchain
+!pip install -U portkey-ai
+
+# Importing necessary libraries and modules
+from langchain.chat_models import ChatPortkey
+from langchain.schema import HumanMessage, SystemMessage
+import portkey as pk
 import os
 
-os.environ["OPENAI_API_TYPE"] = "azure"
-os.environ["OPENAI_API_VERSION"] = "2023-03-15-preview"
-os.environ["OPENAI_API_BASE"] = "https://api.portkey.ai/v1/proxy/RESOURCE_NAME.openai.azure.com/"
-os.environ["OPENAI_API_KEY"] = "AZURE_API_KEY"
+# Set the Portkey API key
+os.environ["PORTKEY_API_KEY"] = ""
 
-from langchain.llms import AzureOpenAI
+# Set virtual keys for providers
+openai_virtual_key_a = ""
+openai_virtual_key_b = ""
 
-llm = AzureOpenAI(
-    headers = {
-        "x-portkey-api-key": "<PORTKEY_API_KEY>",
-        "x-portkey-mode": "proxy azure-openai"
-    },
-    deployment_name="DEPLOYMENT_NAME",
-    model_name="MODEL_NAME",
+# Now construct your Portkey client
+portkey = ChatPortkey(mode="loadbalance")
+
+# Construct two LLMs using portkey's LLMOptions
+
+llm_a = pk.LLMOptions(
+    provider="openai",
+    model="gpt-3.5-turbo",
+    virtual_key=openai_virtual_key_a,
 )
 
-llm("Tell me a joke")
-```
-{% endtab %}
+llm_b = pk.LLMOptions(
+    provider="openai",
+    model="gpt-4",
+    virtual_key=openai_virtual_key_b,
+)
 
-{% tab title="NodeJS" %}
-```typescript
-import { ChatOpenAI } from "langchain/chat_models/openai";
+# Add the defined LLMs to the Portkey client
+portkey.add_llms(llm_params=[llm_a,llm_b])
 
-const model = new ChatOpenAI({
-  azureOpenAIApiKey: process.env.AZURE_OPENAI_API_KEY
-  azureOpenAIApiVersion: process.env.AZURE_OPENAI_API_VERSION
-  azureOpenAIApiInstanceName: process.env.AZURE_OPENAI_API_INSTANCE_NAME
-  azureOpenAIApiDeploymentName: process.env.AZURE_OPENAI_API_DEPLOYMENT_NAME
-  azureOpenAIBasePath: "https://api.portkey.ai/v1/proxy/${process.env.AZURE_OPENAI_API_INSTANCE_NAME}.openai.azure.com/openai/deployments",
-},
-{
-    baseOptions: {
-        headers: {
-            "x-portkey-api-key": "<PORTKEY_API_KEY>",
-            "x-portkey-mode": "proxy azure-openai"
-        },
-      },
-}
-);
+# Creating the prompt
+messages = [
+    SystemMessage(content="You are a helpful assistant that translates English to French."),
+    HumanMessage(content="Translate this sentence from English to French. I love programming."),
+]
 
-async function main() {
-  const message = await model.invoke("Tell me a joke");
-  console.log(message);
-}
-
-main();
+# We are ready to generate a response by calling Portkey client!
+response = portkey(messages)
+print(response.content)
 ```
 {% endtab %}
 {% endtabs %}
 
-For more, checkout [Portkey's Langchain documentation for Python](https://python.langchain.com/docs/integrations/providers/portkey).
+## Portkey Client (Portkey or ChatPortkey)
+
+**`api_key`** and **`mode`** are required values.
+
+* **`api_key`**
+  * You can set your Portkey API key using the Portkey constructor or you can also set it as an environment variable.
+* **`mode`** There are **3** modes - Single, Fallback, Loadbalance.
+  * **Single** - This is the standard mode. Use it if you do not want Fallback OR Loadbalance features.
+  * **Fallback** - Set this mode if you want to enable the Fallback feature.
+  * **Loadbalance** - Set this mode if you want to enable the Loadbalance feature.
+
+## LLMOptions
+
+| Feature                  | Config Key                     | Value(Type)                                                                                                                                                | Required   |
+| ------------------------ | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| API Key OR Virtual Key   | `api_key` **OR** `virtual_key` | `string`                                                                                                                                                   | ✅ Required |
+| Provider                 | `provider`                     | <p><code>openai</code>, <br><code>cohere</code>,<br><code>anthropic, huggingface</code>,<br><code>azure-openai</code></p>                                  | ✅ Required |
+| Model                    | `model`                        | <p>The relevant model name from the provider. For example,<br><strong><code>gpt-3.5-turbo</code></strong> OR<br><strong><code>claude-2</code></strong></p> | ❔ Optional |
+| Weight (For Loadbalance) | `weight`                       | `integer`                                                                                                                                                  | ❔ Optional |
+| Cache Type               | `cache_status`                 | `simple`, `semantic`                                                                                                                                       | ❔ Optional |
+| Force Cache Refresh      | `cache_force_refresh`          | `True`, `False`                                                                                                                                            | ❔ Optional |
+| Cache Age                | `cache_age`                    | `integer` (in seconds)                                                                                                                                     | ❔ Optional |
+| Trace ID                 | `trace_id`                     | `string`                                                                                                                                                   | ❔ Optional |
+| Retries                  | `retry`                        | `integer` \[0,5]                                                                                                                                           | ❔ Optional |
+| Metadata                 | `metadata`                     | `json object` [More info](https://docs.portkey.ai/key-features/custom-metadata)                                                                            | ❔ Optional |
+| All Model Params         | As per the model/provider      | This is params like **`top_p`**, **`temperature`**, etc                                                                                                    | ❔ Optional |
+
+LLMs constructed through LLMOptions can be added to the Portkey client with **`portkey.add_llms(llm_params=[llm_a])`**
+
+### Test all functionalities easily: [![\\"Open](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19LFG4az9j-0pUixiVhhtHLpmLSZlz1Ei?usp=sharing)
+

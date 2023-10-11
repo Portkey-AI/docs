@@ -50,13 +50,13 @@
 
 ## Support & FAQ
 
-* [🚀 Join Portkey on Discord](support-and-faq/join-portkey-on-discord.md)
-* [📧 Contacting Support](support-and-faq/contacting-support.md)
-* [📥 Reporting Issues](support-and-faq/reporting-issues.md)
-* [⁉ Common Errors and Resolutions](support-and-faq/common-errors-and-resolutions.md)
 * [🤔 Why Portkey](support-and-faq/why-portkey/README.md)
   * [👀 Observability](support-and-faq/why-portkey/observability.md)
   * [🎭 Lower Cost & Latency](support-and-faq/why-portkey/lower-cost-and-latency.md)
   * [⛅ Improve LLM success rate](support-and-faq/why-portkey/improve-llm-success-rate.md)
   * [✅ Optimise generation quality](support-and-faq/why-portkey/optimise-generation-quality.md)
   * [🚫 Hide PII from LLMs](support-and-faq/why-portkey/hide-pii-from-llms.md)
+* [🚀 Join Portkey on Discord](support-and-faq/join-portkey-on-discord.md)
+* [📧 Contacting Support](support-and-faq/contacting-support.md)
+* [📥 Reporting Issues](support-and-faq/reporting-issues.md)
+* [⁉ Common Errors and Resolutions](support-and-faq/common-errors-and-resolutions.md)
