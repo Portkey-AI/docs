@@ -1,4 +1,4 @@
-# Integrations
+# 🤝 Integrations
 
 Portkey effortlessly melds with a host of major LLM providers, such as OpenAI and Anthropic, and is seamlessly compatible with projects like Langchain and Llamaindex. Our native integrations enable you to harness Portkey’s robust features, bringing your apps to production with enriched capabilities like load balancing, fallbacks, observability, caching, and many more.
 
@@ -14,8 +14,8 @@ Integrating Portkey is a straightforward process. Choose your preferred method b
 [anthropic-sdk.md](llm-providers/anthropic-sdk.md)
 {% endcontent-ref %}
 
-{% content-ref url="langchain.md" %}
-[langchain.md](langchain.md)
+{% content-ref url="langchain-coming-soon.md" %}
+[langchain-coming-soon.md](langchain-coming-soon.md)
 {% endcontent-ref %}
 
 {% content-ref url="llamaindex/" %}

@@ -2,9 +2,13 @@
 description: Portkey adds core production capabilities to any Langchain app.
 ---
 
-# 🦜 Langchain
+# 🦜 Langchain (Coming Soon)
 
 <figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="warning" %}
+<mark style="color:red;">**Please Note:**</mark> Portkey + Langchain integration is not live yet. Please check back in a few days as we expect the PR to get merged soon.
+{% endhint %}
 
 [![\\"Open](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/19LFG4az9j-0pUixiVhhtHLpmLSZlz1Ei?usp=sharing)
 

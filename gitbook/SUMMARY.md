@@ -40,7 +40,7 @@
     * [⚖ Implementing Load Balancing](integrations/llamaindex/implementing-load-balancing.md)
     * [🧠 Implementing Semantic Caching](integrations/llamaindex/implementing-semantic-caching.md)
     * [🔬 Observability](integrations/llamaindex/observability.md)
-  * [🦜 Langchain](integrations/langchain.md)
+  * [🦜 Langchain (Coming Soon)](integrations/langchain-coming-soon.md)
   * [➡ Rest API](integrations/rest-api/README.md)
     * [📎 Portkey Headers](integrations/rest-api/portkey-headers.md)
 * [Cookbook](cookbook/README.md)

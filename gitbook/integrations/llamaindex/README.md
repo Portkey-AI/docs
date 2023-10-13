@@ -13,7 +13,7 @@ layout:
     visible: true
 ---
 
-# ➡ Llamaindex
+# 🦙 Llamaindex
 
 [![\\"Open](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jerryjliu/llama\_index/blob/main/docs/examples/llm/portkey.ipynb)
 

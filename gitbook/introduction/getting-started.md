@@ -134,8 +134,8 @@ Portkey offers deep, user-friendly integrations with platforms like Langchain & 
 [llamaindex](../integrations/llamaindex/)
 {% endcontent-ref %}
 
-{% content-ref url="../integrations/langchain.md" %}
-[langchain.md](../integrations/langchain.md)
+{% content-ref url="../integrations/langchain-coming-soon.md" %}
+[langchain-coming-soon.md](../integrations/langchain-coming-soon.md)
 {% endcontent-ref %}
 
 [^1]: 
