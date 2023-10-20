@@ -60,4 +60,27 @@ const portkey = new Portkey({
 })
 ```
 {% endtab %}
+
+{% tab title="OpenAI SDK (Python)" %}
+Add `x-portkey-retry-count` to OpenAI request header
+
+```python
+import openai
+
+openai.api_base = "https://api.portkey.ai/v1/proxy"
+
+r = openai.Completion.create(
+  model="gpt-3.5-turbo-instruct",
+  prompt="Once upon a time, Cinderella",
+  headers={
+    "x-portkey-api-key": "PORTKEY_API_KEY",
+    "x-portkey-mode": "proxy openai",
+    "x-portkey-retry-count": "5"
+  }
+)
+
+print(r.choices[0].text)
+```
+{% endtab %}
 {% endtabs %}
+
