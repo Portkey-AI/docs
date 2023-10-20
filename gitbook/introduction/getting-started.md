@@ -16,64 +16,61 @@ Log into [Portkey](https://app.portkey.ai/), then click on the profile icon on t
 
 ## 3 Ways to Integrate Portkey:
 
-### 1. **Rest API (🏎️ Fastest)**
+### 1. **Client SDKs or Rest APIs (🏎️ Fastest)**
 
 Integrate Portkey's API within client SDKs of OpenAI, Anthropic, etc, or alternatively, invoke it through a direct cURL request. If you want to quickly experiment with Portkey and explore its value and capabilities, this is the method to get started!
 
 {% tabs %}
-{% tab title="OpenAI" %}
-<pre><code>import openai
+{% tab title="OpenAI (Python)" %}
+<pre class="language-python"><code class="lang-python">import openai
 
-# Set Portkey as the base path
 openai.api_base = "https://api.portkey.ai/v1/proxy"
 
-response = openai.Completion.create(
-  model="text-davinci-003",
-  prompt="Translate the following English text to French: '{}'",
+r = openai.Completion.create(
+  model="gpt-3.5-turbo-instruct",
+  prompt="Once upon a time, Cinderella",
   headers=<a data-footnote-ref href="#user-content-fn-1">{</a>
-    "x-portkey-api-key": "&#x3C;PORTKEY_API_KEY>",
+    "x-portkey-api-key": "PORTKEY_API_KEY",
     "x-portkey-mode": "proxy openai"
   }
 )
 
-print(response.choices[0].text.strip())
+print(r.choices[0].text)
 </code></pre>
 {% endtab %}
 
-{% tab title="Anthropic" %}
-```
+{% tab title="Anthropic (Python)" %}
+```python
 from anthropic import Anthropic, HUMAN_PROMPT, AI_PROMPT
 
-headers = {
-    "x-portkey-api-key": <PORTKEY_API_KEY>,
-    "x-portkey-mode": "proxy anthropic",
-}
-
 anthropic = Anthropic(
-    api_key=<ANTHROPIC_API_KEY>,
-    default_headers=headers,
+    api_key="ANTHROPIC_API_KEY",
     base_url="https://api.portkey.ai/v1/proxy",
+    default_headers={
+        "x-portkey-api-key": "PORTKEY_API_KEY",
+        "x-portkey-mode": "proxy anthropic",
+    }
 )
 
-completion = anthropic.completions.create(
+r = anthropic.completions.create(
     model="claude-2",
     max_tokens_to_sample=300,
     prompt=f"{HUMAN_PROMPT} how does a court case get to the Supreme Court? {AI_PROMPT}",
 )
 
-print(completion.completion)
+print(r.completion)
 ```
 {% endtab %}
 
 {% tab title="cURL" %}
-```
-curl --location 'https://api.portkey.ai/v1/proxy' \ # Send your request to Portkey proxy
-    --header 'x-portkey-api-key: PORTKEY_API_KEY' \ # Add Portkey API key
-    --header 'Content-Type: application/json' \
-    --data '{ 
+```bash
+curl -L 'https://api.portkey.ai/v1/chatComplete' \
+     -H 'x-portkey-api-key: PORTKEY_API_KEY' \
+     -H 'Content-Type: application/json' \
+     -d '{ 
         "config": { 
-            provider: "openai",
-            apiKey: "OPENAI_API_KEY",
+            "provider": "openai",
+            "apiKey": "OPENAI_API_KEY"
         },
         "params": {
             "messages": [{"role": "user","content":"What are the ten tallest buildings in India?"}],
@@ -92,35 +89,28 @@ curl --location 'https://api.portkey.ai/v1/proxy' \ # Send your request to Portk
 
 The best way to interact with Portkey and bring your LLMs to production. Use the same params you use for your LLM calls with OpenAI/Anthropic etc, and make them interoperable while adding production features like fallbacks, load balancing, a/b tests, caching, and more.
 
-{% code fullWidth="true" %}
-```python
-# Install the SDK:
+<pre class="language-python" data-full-width="true"><code class="lang-python"># Install the SDK:
 # pip install -U portkey-ai
 
-# Doing a simple GPT-4 call:
-
-import os
 import portkey
 from portkey import Config, LLMOptions
 
-os.environ["PORTKEY_API_KEY"] = "YOUR_PORTKEY_API_KEY"
-
 # Construct the Portkey Config
-llm = LLMOptions(provider="openai", api_key="YOUR_OPENAI_API_KEY")
-portkey.config = Config(mode="single", llms=[llm])
+portkey.config = Config(
+    api_key="PORTKEY_API_KEY",
+    mode="single",
+    llms=LLMOptions(provider="openai", api_key="YOUR_OPENAI_API_KEY")
+)
 
-# Your Prompt
-messages = [{
-    "role": "user", 
-    "content": "What is the meaning of life, universe and everything?"
-}]
-
-# Making a chat completion call
-response = portkey.ChatCompletions.create(model="gpt-4", messages=messages)
-
+response = portkey.ChatCompletions.create(
+    model="gpt-4", 
+    messages=[
+        {"role": "user","content": "What is the meaning of life, universe and everything?"}
+<strong>    ]
+</strong><strong>)
+</strong>
 print(response)
-```
-{% endcode %}
+</code></pre>
 
 {% content-ref url="../sdk/" %}
 [sdk](../sdk/)
