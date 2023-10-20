@@ -89,7 +89,9 @@ curl -L 'https://api.portkey.ai/v1/chatComplete' \
 
 The best way to interact with Portkey and bring your LLMs to production. Use the same params you use for your LLM calls with OpenAI/Anthropic etc, and make them interoperable while adding production features like fallbacks, load balancing, a/b tests, caching, and more.
 
-<pre class="language-python" data-full-width="true"><code class="lang-python"># Install the SDK:
+{% tabs %}
+{% tab title="Python" %}
+```python
 # pip install -U portkey-ai
 
 import portkey
@@ -102,15 +104,38 @@ portkey.config = Config(
     llms=LLMOptions(provider="openai", api_key="YOUR_OPENAI_API_KEY")
 )
 
-response = portkey.ChatCompletions.create(
+r = portkey.ChatCompletions.create(
     model="gpt-4", 
     messages=[
         {"role": "user","content": "What is the meaning of life, universe and everything?"}
-<strong>    ]
-</strong><strong>)
-</strong>
-print(response)
-</code></pre>
+    ]
+)
+```
+{% endtab %}
+
+{% tab title="Node" %}
+```typescript
+// npm i portkey-ai
+
+import { Portkey } from "portkey-ai";
+
+const portkey = new Portkey({
+    api_key: "PORTKEY_API_KEY",
+    mode: "single",
+    llms: [{ provider: "openai", virtual_key: "open-ai-xxx" }]
+});
+
+async function main() {
+    const r = await portkey.chat.completions.create({
+        model: 'gpt-4',
+        messages: [{ role: 'user', content: 'Say this is a test' }]
+    });
+};
+
+main();
+```
+{% endtab %}
+{% endtabs %}
 
 {% content-ref url="../sdk/" %}
 [sdk](../sdk/)
@@ -124,8 +149,8 @@ Portkey offers deep, user-friendly integrations with platforms like Langchain & 
 [llamaindex](../integrations/llamaindex/)
 {% endcontent-ref %}
 
-{% content-ref url="../integrations/langchain-coming-soon.md" %}
-[langchain-coming-soon.md](../integrations/langchain-coming-soon.md)
+{% content-ref url="../integrations/langchain.md" %}
+[langchain.md](../integrations/langchain.md)
 {% endcontent-ref %}
 
 [^1]: 

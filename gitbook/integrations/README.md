@@ -14,8 +14,8 @@ Integrating Portkey is a straightforward process. Choose your preferred method b
 [anthropic-sdk.md](llm-providers/anthropic-sdk.md)
 {% endcontent-ref %}
 
-{% content-ref url="langchain-coming-soon.md" %}
-[langchain-coming-soon.md](langchain-coming-soon.md)
+{% content-ref url="langchain.md" %}
+[langchain.md](langchain.md)
 {% endcontent-ref %}
 
 {% content-ref url="llamaindex/" %}

@@ -2,7 +2,7 @@
 
 ### Supported Providers
 
-Portkey supports multiple providers through its [official SDK](../../sdk/) as well as the SDKs of the respective providers. Along with this, Portkey also natively integrates with multiple LLM providers through its [rest API](../rest-api/) and through integrations with projects like [Langchain](../langchain-coming-soon.md) and [Llamaindex](../llamaindex/).
+Portkey supports multiple providers through its [official SDK](../../sdk/) as well as the SDKs of the respective providers. Along with this, Portkey also natively integrates with multiple LLM providers through its [rest API](../rest-api/) and through integrations with projects like [Langchain](../langchain.md) and [Llamaindex](../llamaindex/).
 
 <table><thead><tr><th>Provider</th><th>Portkey SDK</th><th>Client SDK (Python)</th><th>Client SDK (Node)</th><th data-hidden>Portkey SDK</th><th data-hidden>Client SDK (Python)</th><th data-hidden>Client SDK (Node)</th><th data-hidden>Proxy API</th></tr></thead><tbody><tr><td>OpenAI</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td></td></tr><tr><td>Azure OpenAI</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td></td></tr><tr><td>Anthropic</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>Cohere</td><td>✅</td><td>🚧</td><td>🚧</td><td>✅</td><td>🚧</td><td>🚧</td><td>✅</td></tr><tr><td>Hugging Face (invite-only)</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Anyscale (invite-only)</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr></tbody></table>
 
