@@ -11,33 +11,22 @@ Using Portkey with Langchain is as simple as just choosing which Portkey feature
 {% tabs %}
 {% tab title="Python" %}
 ```python
-# Tracing agent calls across different requests
-
-import os
 from langchain.llms import OpenAI
 from langchain.utilities import Portkey
 
-os.environ["OPENAI_API_KEY"] = "OPENAI_API_KEY"
-PORTKEY_API_KEY = "PORTKEY_API_KEY"
-TRACE_ID = "portkey_langchain_demo" 
-
-headers = Portkey.Config(
-    api_key=PORTKEY_API_KEY,
-    trace_id=TRACE_ID,
+llm = OpenAI(
+    openai_api_key = "OPENAI_API_KEY", 
+    headers = Portkey.Config(
+        api_key="PORTKEY_API_KEY",
+        trace_id="TRACE_ID",
+    )
 )
 
-llm = OpenAI(headers=headers)
-
+# Tracing agent calls across different requests
 tools = load_tools(["serpapi", "llm-math"], llm=llm)
+agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION)
 
-agent = initialize_agent(
-    tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
-)
-
-# Let's test it out!
-agent.run(
-    "What was the high temperature in SF yesterday in Fahrenheit? What is that number raised to the .023 power?"
-)
+agent.run("What was the high temperature in SF yesterday in Fahrenheit? What is that number raised to the .023 power?")
 ```
 {% endtab %}
 
@@ -69,7 +58,7 @@ main();
 {% endtab %}
 {% endtabs %}
 
-### **Config Keys you can set with `Portkey.Config`**
+### **List of Config Keys (Set through `Portkey.Config`)**
 
 <table><thead><tr><th width="191">Feature</th><th width="225">Config Key</th><th width="129">Value (Type)</th><th>Required/Optional</th></tr></thead><tbody><tr><td>API Key</td><td><code>api_key</code></td><td>API Key (<code>string</code>)</td><td>✅ Required</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/request-tracing">Tracing Requests</a></td><td><code>trace_id</code></td><td>Custom <code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/automatic-retries">Automatic Retries</a></td><td><code>retry_count</code></td><td><code>integer</code> [1,2,3,4,5]</td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/request-caching">Enabling Cache</a></td><td><code>cache</code></td><td><code>simple</code> OR <code>semantic</code></td><td>❔ Optional</td></tr><tr><td>Cache Force Refresh</td><td><code>cache_force_refresh</code></td><td><code>True</code></td><td>❔ Optional</td></tr><tr><td>Set Cache Expiry</td><td><code>cache_age</code></td><td><code>integer</code> (in seconds)</td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add User</a></td><td><code>user</code></td><td><code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add Organisation</a></td><td><code>organisation</code></td><td><code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add Environment</a></td><td><code>environment</code></td><td><code>string</code></td><td>❔ Optional</td></tr><tr><td><a href="https://docs.portkey.ai/key-features/custom-metadata">Add Prompt (version/id/string)</a></td><td><code>prompt</code></td><td><code>string</code></td><td>❔ Optional</td></tr></tbody></table>
 
@@ -79,7 +68,6 @@ main();
 {% tab title="Python" %}
 ```python
 import os
-
 os.environ["OPENAI_API_TYPE"] = "azure"
 os.environ["OPENAI_API_VERSION"] = "2023-03-15-preview"
 os.environ["OPENAI_API_BASE"] = "https://api.portkey.ai/v1/proxy/RESOURCE_NAME.openai.azure.com/"
@@ -89,7 +77,7 @@ from langchain.llms import AzureOpenAI
 
 llm = AzureOpenAI(
     headers = {
-        "x-portkey-api-key": "<PORTKEY_API_KEY>",
+        "x-portkey-api-key": "PORTKEY_API_KEY",
         "x-portkey-mode": "proxy azure-openai"
     },
     deployment_name="DEPLOYMENT_NAME",
