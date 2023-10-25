@@ -34,7 +34,7 @@
     * [➡ Open AI SDK](integrations/llm-providers/open-ai-sdk.md)
     * [➡ Anthropic SDK](integrations/llm-providers/anthropic-sdk.md)
     * [➡ Whisper](integrations/llm-providers/whisper.md)
-    * [➡ Anyscale](integrations/llm-providers/anyscale.md)
+    * [➡ Anyscale (Llama 2 & Mistral 7B)](integrations/llm-providers/anyscale-llama-2-and-mistral-7b.md)
     * [➡ Cohere](integrations/llm-providers/cohere.md)
   * [🦙 Llamaindex](integrations/llamaindex/README.md)
     * [🔁 Implementing Fallbacks and Retries](integrations/llamaindex/implementing-fallbacks-and-retries.md)
