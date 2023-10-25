@@ -138,3 +138,11 @@ print(response)
 ```
 {% endtab %}
 {% endtabs %}
+
+### Prompt Templates
+
+You can also use Anyscale endpoints with Portkey prompt templates
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Add Anyscale keys to your Portkey account and head over to the **Models** page - you should see Anyscale options in the AI Provider & Models dropdown.
