@@ -65,11 +65,11 @@ In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot
 1. Go to "Models" page on [https://app.portkey.ai/](https://app.portkey.ai/organisation/4e501cb0-512d-4dd3-b480-8b6af7ef4993/9eec4ebc-1c88-41a2-ae5d-ed0610d33b06/collection/17b7d29e-4318-4b4b-a45b-1d5a70ed1e8f) and **Create** a new prompt template with **AI org** as OpenAI and **Mode** as Chat.&#x20;
 2. Selecting Chat mode will enable the Raw Prompt feature:
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Click on it and paste the [raw prompt code from above](few-shot-prompting.md#this-is-how-our-raw-prompt-would-look). And that's it! You have your **dynamically updatable** few shot learning prompt template ready to deploy.
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Deploying the Prompt with Portkey
 

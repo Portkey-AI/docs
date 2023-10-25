@@ -6,7 +6,7 @@ description: >-
 
 # Python
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 pip install portkey-ai
 ```
@@ -106,6 +106,3 @@ You have integrated Portkey's Python SDK in just 4 steps!
 | Retries                | `retry`                    | `integer` \[0,5]                                                                | ❔ Optional                         |
 | Metadata               | `metadata`                 | `json object` [More info](https://docs.portkey.ai/key-features/custom-metadata) | ❔ Optional                         |
 
-### **🤝 Supported Providers**
-
-<table><thead><tr><th width="67"></th><th>Provider</th><th>Support Status</th><th>Supported Endpoints</th></tr></thead><tbody><tr><td><a href="https://github.com/Portkey-AI/portkey-python-sdk/blob/main/docs/images/openai.png"><img src="https://github.com/Portkey-AI/portkey-python-sdk/raw/main/docs/images/openai.png" alt="" data-size="line"></a></td><td>OpenAI</td><td>✅ Supported</td><td><code>/completion</code>, <code>/embed</code></td></tr><tr><td><a href="https://github.com/Portkey-AI/portkey-python-sdk/blob/main/docs/images/azure.png"><img src="https://github.com/Portkey-AI/portkey-python-sdk/raw/main/docs/images/azure.png" alt="" data-size="line"></a></td><td>Azure OpenAI</td><td>✅ Supported</td><td><code>/completion</code>, <code>/embed</code></td></tr><tr><td><a href="https://github.com/Portkey-AI/portkey-python-sdk/blob/main/docs/images/anthropic.png"><img src="https://github.com/Portkey-AI/portkey-python-sdk/raw/main/docs/images/anthropic.png" alt="" data-size="line"></a></td><td>Anthropic</td><td>✅ Supported</td><td><code>/complete</code></td></tr><tr><td><a href="https://github.com/Portkey-AI/portkey-python-sdk/blob/main/docs/images/cohere.png"><img src="https://github.com/Portkey-AI/portkey-python-sdk/raw/main/docs/images/cohere.png" alt="" data-size="line"></a></td><td>Cohere</td><td>🚧 Coming Soon</td><td><code>generate</code>, <code>embed</code></td></tr></tbody></table>

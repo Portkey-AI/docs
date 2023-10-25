@@ -63,14 +63,34 @@ print(r.completion)
 {% endtab %}
 
 {% tab title="cURL" %}
+Portkey supports Mistral & Llama 2 models through Anyscale endpoints. Here's an example call:
+
 ```bash
-curl -L 'https://api.portkey.ai/v1/chatComplete' \
+curl 'https://api.portkey.ai/v1/chatComplete' \
+     -H 'x-portkey-api-key: PORTKEY_API_KEY' \
+     -H 'Content-Type: application/json' \
+     -d '{ 
+        "config": { 
+            "provider": "anyscale",
+            "api_key": "ANYSCALE_API_KEY"
+        },
+        "params": {
+            "messages": [{"role": "user","content":"What are the ten tallest buildings in India?"}],
+            "model": "mistralai/Mistral-7B-Instruct-v0.1"
+        }
+    }'
+```
+
+For OpenAI:
+
+```bash
+curl 'https://api.portkey.ai/v1/chatComplete' \
      -H 'x-portkey-api-key: PORTKEY_API_KEY' \
      -H 'Content-Type: application/json' \
      -d '{ 
         "config": { 
             "provider": "openai",
-            "apiKey": "OPENAI_API_KEY"
+            "api_key": "OPENAI_API_KEY"
         },
         "params": {
             "messages": [{"role": "user","content":"What are the ten tallest buildings in India?"}],
