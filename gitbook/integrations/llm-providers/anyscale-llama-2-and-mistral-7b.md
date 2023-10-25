@@ -1,4 +1,4 @@
-# ➡ Anyscale
+# ➡ Anyscale (Llama 2 & Mistral 7B)
 
 ### Models Supported
 
@@ -83,17 +83,17 @@ main();
 You can also make a direct curl request through Portkey API
 
 ```bash
-curl -L 'https://api.portkey.ai/v1/chatComplete' \
+curl 'https://api.portkey.ai/v1/chatComplete' \
      -H 'x-portkey-api-key: PORTKEY_API_KEY' \
      -H 'Content-Type: application/json' \
      -d '{ 
         "config": { 
-            "provider": "openai",
-            "apiKey": "OPENAI_API_KEY"
+            "provider": "anyscale",
+            "api_key": "ANYSCALE_API_KEY"
         },
         "params": {
             "messages": [{"role": "user","content":"What are the ten tallest buildings in India?"}],
-            "model": "gpt-4"
+            "model": "mistralai/Mistral-7B-Instruct-v0.1"
         }
     }'
 ```
