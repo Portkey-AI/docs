@@ -6,14 +6,20 @@ This feature does not require any additional headers to be passed in your reques
 
 The Logs and Analytics section is split into two parts:
 
-### 1. Analytics
+## 📊 Analytics
 
 The Analytics section of the Portkey dashboard provides a visual and interactive interface for understanding your LLM application  Here, you can see various graphs and metrics related to requests to different LLMs, costs, latencies, tokens, user activity, feedback, cache hits, errors, and much more.
 
 The metrics in the Analytics section can help you understand the overall efficiency of your application, discover patterns, identify areas of optimization, and much more.
 
-### 2. Logs
+## 📋 Logs
 
 The Logs section presents a chronological list of all the requests processed through Portkey. Each log entry provides useful data such as the timestamp, request type, LLM used, tokens generated, and cost. By clicking on an entry, a side panel opens up, revealing the entire raw data with the request and response objects.
 
 This detailed log can be invaluable when troubleshooting issues or understanding specific interactions. It provides full transparency into each request and response, enabling you to see exactly what data was sent and received.
+
+### **🤝 Share Logs with Teammates**
+
+Each log on Portkey has a unique URL. You can just copy the link from the address bar and directly share it with anyone in your org.
+
+<figure><img src="../../.gitbook/assets/share_logs.gif" alt=""><figcaption></figcaption></figure>
