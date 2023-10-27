@@ -17,7 +17,6 @@
   * [🪝 Load Balancing](portkey-features/ai-gateway/load-balancing.md)
 * [🔬 Observability](portkey-features/observability/README.md)
   * [📊 Logs & Analytics](portkey-features/observability/logs-and-analytics.md)
-  * [Share Logs](portkey-features/observability/share-logs.md)
   * [⏮ Request Tracing](portkey-features/observability/request-tracing.md)
   * [📃 Custom Metadata](portkey-features/observability/custom-metadata.md)
 * [📚 Model Management](portkey-features/model-management.md)
