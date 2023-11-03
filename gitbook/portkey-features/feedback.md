@@ -18,14 +18,20 @@ You can append feedback to a request with the `/feedback` endpoint like this:
 
 ```sh
 curl --location 'https://api.portkey.ai/v1/feedback' \
---header 'x-portkey-api-key: <YOUR PORTKEY API KEY>' \
---header 'Content-Type: application/json' \
---data '{
-    "trace_id": "insert_trace_id_here",
-    "value": -10,
-    "weight": 0.5,
-    "metadata": '{"text" : "title was irrelevant", "_user": "fef653", "_organisation": "o9876", "_prompt": "test_prompt", "_environment": "production"}'
-}'
+    --header 'x-portkey-api-key: YOUR_API_KEY' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "trace_id": "YOUR_TRACE_ID",
+        "value": -10,
+        "weight": 0.5,
+        "metadata": {
+            "text": "title was irrelevant",
+            "_user": "fef653",
+            "_organisation": "o9876",
+            "_prompt": "test_prompt",
+            "_environment": "production"
+        }
+    }'
 ```
 
 The **Payload** takes the following keys: `trace_id, value, weight, metadata`
