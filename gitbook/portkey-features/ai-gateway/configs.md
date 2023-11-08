@@ -73,6 +73,10 @@ Here's an example Config putting everything together, that sets fallback between
 }
 ```
 
+### Maximum Number of Options
+
+You can add **upto 25** options in your Portkey config. (Each option can have same or different providers, models, and other params)
+
 {% content-ref url="configs/how-to-use-configs.md" %}
 [how-to-use-configs.md](configs/how-to-use-configs.md)
 {% endcontent-ref %}
