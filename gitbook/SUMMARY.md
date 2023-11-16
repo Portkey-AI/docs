@@ -23,6 +23,7 @@
 * [☺ Feedback](portkey-features/feedback.md)
 * [⚔ Security & Compliance](portkey-features/security-and-compliance/README.md)
   * [🔑 Virtual Keys](portkey-features/security-and-compliance/virtual-keys.md)
+* [🔧 Continuous Fine-Tuning \[Beta\]](portkey-features/continuous-fine-tuning-beta.md)
 
 ***
 
