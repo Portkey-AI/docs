@@ -11,7 +11,7 @@ With Portkey, it becomes very easy to 1️) Curate & create data for fine-tuning
 
 ## Supported Models
 
-<table><thead><tr><th>Provider</th><th data-hidden width="363">Model</th></tr></thead><tbody><tr><td>OpenAI</td><td><ul><li>gpt-3.5-turbo</li><li>gpt-4 (if your key has access)</li></ul></td></tr><tr><td>Anyscale</td><td><ul><li>Llama-2-7b</li><li>Llama-2-13b</li></ul></td></tr></tbody></table>
+<table><thead><tr><th>Model</th><th>Provider</th><th data-hidden>Model</th></tr></thead><tbody><tr><td><ul><li>gpt-3.5-turbo</li><li>gpt-4 (<code>if you have access</code>)</li></ul></td><td>OpenAI</td><td><ul><li>gpt-3.5-turbo</li><li>gpt-4 (if your key has access)</li></ul></td></tr><tr><td><ul><li>Llama2-7b</li><li>Llama2-13b</li><li>Llama2-70b</li></ul></td><td>Anyscale</td><td><ul><li>Llama-2-7b</li><li>Llama-2-13b</li></ul></td></tr></tbody></table>
 
 ## Join the Beta
 
