@@ -11,10 +11,7 @@ With Portkey, it becomes very easy to 1️) Curate & create data for fine-tuning
 
 ## Supported Models
 
-| Provider | Model                                                                  |
-| -------- | ---------------------------------------------------------------------- |
-| OpenAI   | <ul><li>gpt-3.5-turbo</li><li>gpt-4 (if your key has access)</li></ul> |
-| Anyscale | <ul><li>Llama-2-7b</li><li>Llama-2-13b</li></ul>                       |
+<table><thead><tr><th>Provider</th><th data-hidden width="363">Model</th></tr></thead><tbody><tr><td>OpenAI</td><td><ul><li>gpt-3.5-turbo</li><li>gpt-4 (if your key has access)</li></ul></td></tr><tr><td>Anyscale</td><td><ul><li>Llama-2-7b</li><li>Llama-2-13b</li></ul></td></tr></tbody></table>
 
 ## Join the Beta
 
