@@ -10,7 +10,7 @@ The Fallback feature allows you to specify a list of Language Model APIs (LLMs) 
 
 ### Enabling Fallback on LLMs
 
-To enable Load Balancing, you can modify the `config` object of your `complete` or `chatComplete` API request to include the `fallback` mode.
+To enable fallbacks, you can modify the `config` object of your `complete` or `chatComplete` API request to include the `fallback` mode.
 
 Here's a quick example to **fallback** to Anthropic's `claude-v1` if OpenAI's `gpt-3.5-turbo` fails.
 
