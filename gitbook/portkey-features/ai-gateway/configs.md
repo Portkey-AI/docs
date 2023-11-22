@@ -18,7 +18,7 @@ Navigate to the ‘Configs’ page in the Portkey app to set and manage your Con
 | options | Array of LLM options                            |
 
 * **`retry`** - Set the automatic retry count. Minimum retry count is 0, and maximum is 5.
-* **`cache`** - Enable caching. Portkey provides two types of caches - simple & semantic. (More on that [here](request-caching.md))
+* **`cache`** - Enable caching. Portkey provides two types of caches - simple & semantic. (More on that [here](simple-and-semantic-cache.md))
 * **`mode`** - Set the orchestrattion method for your reuqests.&#x20;
   * **"fallback"**: Enable model fallback for primary failure scenarios.
   * **"loadbalance"**: Distribute your request load among multiple providers or accounts.

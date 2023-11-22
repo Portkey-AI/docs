@@ -28,7 +28,7 @@ Each log on Portkey has a unique URL. You can just copy the link from the addres
 
 Wondering how your requests are being handled by Portkey? The Status column on the Logs page gives you a snapshot of the gateway activity for every request.
 
-Portkey’s gateway features—[Cache](../ai-gateway/request-caching.md), [Retries](../ai-gateway/automatic-retries.md), [Fallback](../ai-gateway/fallbacks-on-llms.md), [Loadbalance](../ai-gateway/load-balancing.md)—are all tracked here with their exact states (`disabled`, `triggered`, etc.), making it a breeze to monitor and optimize your usage.
+Portkey’s gateway features—[Cache](../ai-gateway/simple-and-semantic-cache.md), [Retries](../ai-gateway/automatic-retries.md), [Fallback](../ai-gateway/fallbacks-on-llms.md), [Loadbalance](../ai-gateway/load-balancing.md)—are all tracked here with their exact states (`disabled`, `triggered`, etc.), making it a breeze to monitor and optimize your usage.
 
 **Common Queries Answered:**
 

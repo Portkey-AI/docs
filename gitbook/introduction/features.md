@@ -19,7 +19,7 @@ Here’s a detailed overview of how each feature contributes to productionizing 
 
 * [**Automated Fallbacks & Retries**](../portkey-features/ai-gateway/fallbacks-on-llms.md): Ensure your application remains functional even if a primary service fails.
 * [**Load Balancing**](../portkey-features/ai-gateway/load-balancing.md): Efficiently distribute incoming requests among multiple models.
-* [**Semantic Caching**](../portkey-features/ai-gateway/request-caching.md): Reduce costs and latency by intelligently caching results.
+* [**Semantic Caching**](../portkey-features/ai-gateway/simple-and-semantic-cache.md): Reduce costs and latency by intelligently caching results.
 
 #### **🔬 Observability**:
 

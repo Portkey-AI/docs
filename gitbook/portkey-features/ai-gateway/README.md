@@ -8,7 +8,7 @@ This is the most important functionality that Portkey provides, and also where P
 
 When your requests fail for no reason or due to server overload, Portkey automatically retries your requests with exponential backoff, ensuring that the request gets served.
 
-[**Simple & Semantic Caching**](request-caching.md)
+[**Simple & Semantic Caching**](simple-and-semantic-cache.md)
 
 When your app is running at scale, you are likely to encounter identical requests you have already served previously. By caching, you can save up on costs for such requests and serve them 20x times faster.&#x20;
 

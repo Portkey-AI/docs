@@ -12,7 +12,7 @@
   * [🔁 Automatic Retries](portkey-features/ai-gateway/automatic-retries.md)
   * [📝 Configs](portkey-features/ai-gateway/configs.md)
     * [🔧 How to Use Configs](portkey-features/ai-gateway/configs/how-to-use-configs.md)
-  * [🚀 Request Caching](portkey-features/ai-gateway/request-caching.md)
+  * [🧠 Simple & Semantic Cache](portkey-features/ai-gateway/simple-and-semantic-cache.md)
   * [🤖 Fallbacks on LLMs](portkey-features/ai-gateway/fallbacks-on-llms.md)
   * [🪝 Load Balancing](portkey-features/ai-gateway/load-balancing.md)
 * [🔬 Observability](portkey-features/observability/README.md)
