@@ -30,7 +30,8 @@ client = OpenAI(
     base_url="https://api.portkey.ai/v1/proxy",
     default_headers= {
         "x-portkey-api-key": "PORTKEY_API_KEY",
-        "x-portkey-mode": "proxy openai"
+        "x-portkey-mode": "proxy openai",
+        "Content-Type": "application/json"
     }
 )
 
