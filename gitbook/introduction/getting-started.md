@@ -22,21 +22,25 @@ Integrate Portkey's API within client SDKs of OpenAI, Anthropic, etc, or alterna
 
 {% tabs %}
 {% tab title="OpenAI (Python)" %}
-<pre class="language-python"><code class="lang-python">import openai
+```python
+from openai import OpenAI
 
-openai.api_base = "https://api.portkey.ai/v1/proxy"
-
-r = openai.Completion.create(
-  model="gpt-3.5-turbo-instruct",
-  prompt="Once upon a time, Cinderella",
-  headers=<a data-footnote-ref href="#user-content-fn-1">{</a>
-    "x-portkey-api-key": "PORTKEY_API_KEY",
-    "x-portkey-mode": "proxy openai"
-  }
+client = OpenAI(
+    api_key="OPENAI_API_KEY", # defaults to os.environ.get("OPENAI_API_KEY")
+    base_url="https://api.portkey.ai/v1/proxy",
+    default_headers= {
+        "x-portkey-api-key": "PORTKEY_API_KEY",
+        "x-portkey-mode": "proxy openai"
+    }
 )
 
-print(r.choices[0].text)
-</code></pre>
+chat_complete = client.chat.completions.create(
+    model="gpt-4",
+    messages=[{"role": "user", "content": "Say this is a test"}],
+)
+
+print(chat_complete.choices[0].message.content)
+```
 {% endtab %}
 
 {% tab title="Anthropic (Python)" %}
@@ -172,5 +176,3 @@ Portkey offers deep, user-friendly integrations with platforms like Langchain & 
 {% content-ref url="../integrations/langchain.md" %}
 [langchain.md](../integrations/langchain.md)
 {% endcontent-ref %}
-
-[^1]: 
