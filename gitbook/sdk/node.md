@@ -36,9 +36,9 @@ export PORTKEY_API_KEY="PORTKEY_API_KEY"
 
 ### **Step 3 : Construct the Portkey Client** <a href="#user-content-steo-3-construct-the-portkey-client" id="user-content-steo-3-construct-the-portkey-client"></a>
 
-Portkey client's config takes 3 params: `api_key`, `mode`, `llms`.
+Portkey client's config takes 3 params: `apiKey`, `mode`, `llms`.
 
-* `api_key`: You can set your Portkey API key here or with `bash script` as done above.
+* `apiKey`: You can set your Portkey API key here or with `bash script` as done above.
 * `mode`: There are **3** modes - Single, Fallback, Loadbalance.
   * **Single** - This is the standard mode. Use it if you do not want Fallback OR Loadbalance features.
   * **Fallback** - Set this mode if you want to enable the Fallback feature.
@@ -91,14 +91,14 @@ main().catch((err) => {
 
 ### [**📔 Full List of Portkey Config**](https://github.com/Portkey-AI/portkey-node-sdk#-full-list-of-portkey-config) <a href="#user-content--full-list-of-portkey-config" id="user-content--full-list-of-portkey-config"></a>
 
-| Feature                | Config Key                 | Value(Type)                                                                     | Required                           |
-| ---------------------- | -------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- |
-| Provider Name          | `provider`                 | `string`                                                                        | ✅ Required                         |
-| Model Name             | `model`                    | `string`                                                                        | ✅ Required                         |
-| Virtual Key OR API Key | `virtual_key` or `api_key` | `string`                                                                        | ✅ Required (can be set externally) |
-| Cache Type             | `cache_status`             | `simple`, `semantic`                                                            | ❔ Optional                         |
-| Force Cache Refresh    | `cache_force_refresh`      | `True`, `False` (Boolean)                                                       | ❔ Optional                         |
-| Cache Age              | `cache_age`                | `integer` (in seconds)                                                          | ❔ Optional                         |
-| Trace ID               | `trace_id`                 | `string`                                                                        | ❔ Optional                         |
-| Retries                | `retry`                    | `integer` \[0,5]                                                                | ❔ Optional                         |
-| Metadata               | `metadata`                 | `json object` [More info](https://docs.portkey.ai/key-features/custom-metadata) | ❔ Optional                         |
+| Feature                | Config Key                | Value(Type)                                                                     | Required                           |
+| ---------------------- | ------------------------- | ------------------------------------------------------------------------------- | ---------------------------------- |
+| Provider Name          | `provider`                | `string`                                                                        | ✅ Required                         |
+| Model Name             | `model`                   | `string`                                                                        | ✅ Required                         |
+| Virtual Key OR API Key | `virtual_key` or `apiKey` | `string`                                                                        | ✅ Required (can be set externally) |
+| Cache Type             | `cache_status`            | `simple`, `semantic`                                                            | ❔ Optional                         |
+| Force Cache Refresh    | `cache_force_refresh`     | `True`, `False` (Boolean)                                                       | ❔ Optional                         |
+| Cache Age              | `cache_age`               | `integer` (in seconds)                                                          | ❔ Optional                         |
+| Trace ID               | `trace_id`                | `string`                                                                        | ❔ Optional                         |
+| Retries                | `retry`                   | `integer` \[0,5]                                                                | ❔ Optional                         |
+| Metadata               | `metadata`                | `json object` [More info](https://docs.portkey.ai/key-features/custom-metadata) | ❔ Optional                         |
