@@ -5,6 +5,7 @@
 * [👋 Welcome to Portkey!](README.md)
 * [🚀 Getting Started](introduction/getting-started.md)
 * [✨ Features](introduction/features.md)
+* [👷 Portkey Headers](introduction/portkey-headers.md)
 
 ## Portkey Features
 
