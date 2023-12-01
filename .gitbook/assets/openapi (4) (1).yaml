@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: Portkey AI Gateway API
+  description: A unified API gateway to interact with various Large Language Models (LLMs) including OpenAI, Anthropic, Cohere, Google Palm, Anyscale, and self-hosted models.
+  version: 1.0.0
+servers:
+  - url: https://api.portkey.ai/v1
+
+paths:
+  /chat/completions:
+    post:
+      summary: Generate a chat completion using various LLMs
+      description: >
+        This endpoint allows you to generate chat completions from various Large Language Models. 
+        It mimics the OpenAI chat completions API, so the request and response formats are similar.
+      operationId: createChatCompletion
+      tags:
+        - Chat
+      security:
+        - apiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatCompletionsRequest'
+            example: # An example can be provided here or omitted for brevity
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatCompletionsResponse'
+  
+  /completions:
+    post:
+      summary: Generate a text completion using various LLMs
+      description: >
+        This endpoint allows you to generate text completions from various Large Language Models. 
+        It mimics the OpenAI completions API, with a similar request and response format.
+      operationId: createTextCompletion
+      tags:
+        - Text Completion
+      security:
+        - apiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompletionsRequest'
+            example: # An example can be provided here or omitted for brevity
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompletionsResponse'
+  /embeddings:
+    post:
+      summary: Generate embeddings using various LLMs
+      description: >
+        This endpoint allows you to generate embeddings from various Large Language Models. 
+        It mimics the OpenAI embeddings API, with a similar request and response format.
+      operationId: createEmbeddings
+      tags:
+        - Embeddings
+      security:
+        - apiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmbeddingsRequest'
+            example: # An example can be provided here or omitted for brevity
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmbeddingsResponse'
+
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-portkey-api-key
+  schemas:
+    ChatCompletionsRequest:
+      type: object
+      description: >
+        The request format for chat completions. For details on this object, please refer to the 
+        OpenAI documentation at https://platform.openai.com/docs/api-reference/chat/create.
+    ChatCompletionsResponse:
+      type: object
+      description: >
+        The response format for chat completions. This object structure is similar to the one provided by OpenAI. 
+        For more details, please refer to the OpenAI documentation.
+    CompletionsRequest:
+      type: object
+      description: >
+        The request format for text completions. For details on this object, please refer to the 
+        OpenAI documentation at https://platform.openai.com/docs/api-reference/completions/create.
+    CompletionsResponse:
+      type: object
+      description: >
+        The response format for text completions. This object structure is similar to the one provided by OpenAI. 
+        For more details, please refer to the OpenAI documentation.
+    EmbeddingsRequest:
+      type: object
+      description: >
+        The request format for generating embeddings. For details on this object, please refer to the 
+        OpenAI documentation at https://platform.openai.com/docs/api-reference/embeddings/create.
+    EmbeddingsResponse:
+      type: object
+      description: >
+        The response format for embeddings. This object structure is similar to the one provided by OpenAI. 
+        For more details, please refer to the OpenAI documentation.
+
