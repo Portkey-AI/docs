@@ -48,30 +48,27 @@ You can now incorporate the `llm` or `chat_model` in any of your chains and Port
 
 If you prefer to use Langchain's OpenAI model,&#x20;
 
-* Update OpenAI's baseURL to the Portkey Gateway
-* And add Portkey's headers
+* Update OpenAI's \`base\_url\` to the Portkey Gateway
+* And add Portkey's headers to the `default_headers` parameter
 
 The same example using the OpenAI model in Langchain would look like this
 
-<pre class="language-python"><code class="lang-python"><strong>from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
-</strong>
-from langchain.llms import OpenAI
+<pre class="language-python"><code class="lang-python">from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
-import openai
-<strong>openai.api_base = PORTKEY_GATEWAY_URL
+from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
+
+<strong>portkeyHeaders = createHeaders(
+</strong><strong>    mode="openai",
+</strong><strong>    api_key="PORTKEY_API_KEY"
+</strong><strong>)
 </strong>
-<strong>portkeyHeaders = createHeaders({
-</strong><strong>    mode: "openai",
-</strong><strong>    apiKey: "PORTKEY_API_KEY"
-</strong><strong>})
-</strong>
-<strong>llm = OpenAI(headers=portkeyHeaders)
-</strong><strong>chat_model = ChatOpenAI(headers=portkeyHeaders)
+<strong>llm = OpenAI(base_url=PORTKEY_GATEWAY_URL,default_headers=portkeyHeaders)
+</strong><strong>chat = ChatOpenAI(base_url=PORTKEY_GATEWAY_URL,default_headers=portkeyHeaders)
 </strong>
 llm.predict("hi!")
 >>> "Hi"
 
-chat_model.predict("hi!")
+chat.predict("hi!")
 >>> "Hi"
 </code></pre>
 
