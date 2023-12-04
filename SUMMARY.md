@@ -47,7 +47,7 @@
   * [Overview](product/autonomous-fine-tuning/overview.md)
   * [Create a fine-tune](product/autonomous-fine-tuning/create-a-fine-tune.md)
   * [Using Fine-tunes](product/autonomous-fine-tuning/using-fine-tunes.md)
-* [Plug-ins](product/plug-ins.md)
+* [🚧 Plug-ins](product/plug-ins.md)
 
 ## API Reference
 
@@ -68,16 +68,16 @@
   * [Delete a Prompt](api-reference/prompts/delete-a-prompt.md)
 * [Configs](api-reference/configs.md)
 * [Virtual Keys](api-reference/virtual-keys.md)
-* [Fine-tunes](api-reference/fine-tunes.md)
+* [Fine-Tuning](api-reference/fine-tuning.md)
 * [Evals](api-reference/evals.md)
 * [Gateway for other APIs](api-reference/gateway-for-other-apis.md)
-* [Errors](api-reference/errors.md)
+* [🚧 Errors](api-reference/errors.md)
 
 ## Advanced Guides
 
-* [Build & Test RAG](advanced-guides/build-and-test-rag.md)
+* [🚧 Build & Test RAG](advanced-guides/build-and-test-rag.md)
 
 ## Integrations
 
-* [Langchain](integrations/langchain.md)
-* [Llama Index](integrations/llama-index.md)
+* [🚧 Langchain](integrations/langchain.md)
+* [🚧 Llama Index](integrations/llama-index.md)
