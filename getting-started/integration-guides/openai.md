@@ -202,6 +202,7 @@ print(prompt_completion.data)
 ```bash
 curl -X POST "https://api.portkey.ai/v1/prompts/9218b4e6-52db-41a4-b963-4ee6505ed758/create" \
 -H "Content-Type: application/json" \
+-H "x-portkey-api-key: $PORTKEY_API_KEY" \
 -d '{
     "variables": {
         "title": "The impact of AI on middle school teachers",
