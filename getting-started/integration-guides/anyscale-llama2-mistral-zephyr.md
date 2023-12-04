@@ -348,6 +348,6 @@ Portkey supports the complete host of it's functionality via the OpenAI SDK so y
 Please find more information in the relevant sections:
 
 1. [Add metadata to your requests](../../product/observability-modern-monitoring-for-llms/metadata.md)
-2. [Add gateway configs to the OpenAI client or a single request](../../product/ai-gateway-streamline-llm-integrations/configs.md)
-3. [Tracing OpenAI requests](../../product/observability-modern-monitoring-for-llms/traces.md)
+2. [Add gateway configs to the client or a single request](../../product/ai-gateway-streamline-llm-integrations/configs.md)
+3. [Trace Anyscale requests](../../product/observability-modern-monitoring-for-llms/traces.md)
 4. [Setup a fallback to Azure OpenAI](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md)
