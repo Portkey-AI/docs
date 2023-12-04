@@ -119,3 +119,18 @@ const response = portkey.post({
   ]
 })
 ```
+
+## Next Steps
+
+The complete list of features supported in the SDK are available on the link below.
+
+{% content-ref url="../../api-reference/portkey-sdk-client.md" %}
+[portkey-sdk-client.md](../../api-reference/portkey-sdk-client.md)
+{% endcontent-ref %}
+
+You'll find more information in the relevant sections:
+
+1. [Add metadata to your requests](../../product/observability-modern-monitoring-for-llms/metadata.md)
+2. [Add gateway configs to your Cohere requests](../../product/ai-gateway-streamline-llm-integrations/configs.md)
+3. [Tracing Cohere requests](../../product/observability-modern-monitoring-for-llms/traces.md)
+4. [Setup a fallback from OpenAI to Cohere APIs](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md)

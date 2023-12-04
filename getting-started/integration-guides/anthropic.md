@@ -89,3 +89,18 @@ print(completion.choices)
 You can manage all prompts to Anthropic in the [Prompt Library](../../product/prompt-library.md). All the current models of Anthropic are supported and you can easily start testing different prompts.
 
 Once you're ready with your prompt, you can use the `portkey.prompts.completions.create` interface to use the prompt in your application.
+
+## Next Steps
+
+The complete list of features supported in the SDK are available on the link below.
+
+{% content-ref url="../../api-reference/portkey-sdk-client.md" %}
+[portkey-sdk-client.md](../../api-reference/portkey-sdk-client.md)
+{% endcontent-ref %}
+
+You'll find more information in the relevant sections:
+
+1. [Add metadata to your requests](../../product/observability-modern-monitoring-for-llms/metadata.md)
+2. [Add gateway configs to your Anthropic requests](../../product/ai-gateway-streamline-llm-integrations/configs.md)
+3. [Tracing Anthropic requests](../../product/observability-modern-monitoring-for-llms/traces.md)
+4. [Setup a fallback from OpenAI to Anthropic's Claude APIs](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md)

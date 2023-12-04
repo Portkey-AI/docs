@@ -94,3 +94,18 @@ print(completion.choices)
 You can manage all prompts to Azure OpenAI in the [Prompt Library](../../product/prompt-library.md). All the current models of OpenAI are supported and you can easily start testing different prompts.
 
 Once you're ready with your prompt, you can use the `portkey.prompts.completions.create` interface to use the prompt in your application.
+
+## Next Steps
+
+The complete list of features supported in the SDK are available on the link below.
+
+{% content-ref url="../../api-reference/portkey-sdk-client.md" %}
+[portkey-sdk-client.md](../../api-reference/portkey-sdk-client.md)
+{% endcontent-ref %}
+
+You'll find more information in the relevant sections:
+
+1. [Add metadata to your requests](../../product/observability-modern-monitoring-for-llms/metadata.md)
+2. [Add gateway configs to your Azure OpenAI requests](../../product/ai-gateway-streamline-llm-integrations/configs.md)
+3. [Tracing Azure OpenAI requests](../../product/observability-modern-monitoring-for-llms/traces.md)
+4. [Setup a fallback from OpenAI to Azure OpenAI APIs](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md)
