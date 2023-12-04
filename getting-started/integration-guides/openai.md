@@ -18,7 +18,7 @@ layout:
 
 # OpenAI
 
-Portkey seamlessly integrates with OpenAI SDKs for Node.js, Python, and REST APIs. For OpenAI integration using other frameworks, explore our partnerships, including [Langchain](langchain-python.md), [LlamaIndex](llama-index.md), among [others](./).
+Portkey seamlessly integrates with OpenAI SDKs for Node.js, Python, and REST APIs. For OpenAI integration using other frameworks, explore our partnerships, including [Langchain](langchain-python.md), [LlamaIndex](llama-index-python.md), among [others](./).
 
 ## Using the Portkey Gateway
 

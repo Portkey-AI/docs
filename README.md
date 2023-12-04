@@ -26,4 +26,4 @@ Here's a product walkthrough (3 mins).
 
 [Langchain](getting-started/integration-guides/langchain-python.md)
 
-[LlamaIndex](getting-started/integration-guides/llama-index.md)
+[LlamaIndex](getting-started/integration-guides/llama-index-python.md)

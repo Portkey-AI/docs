@@ -17,7 +17,7 @@
   * [OpenAI](getting-started/integration-guides/openai.md)
   * [Azure OpenAI](getting-started/integration-guides/azure-openai.md)
   * [Langchain (Python)](getting-started/integration-guides/langchain-python.md)
-  * [Llama Index](getting-started/integration-guides/llama-index.md)
+  * [Llama Index (Python)](getting-started/integration-guides/llama-index-python.md)
   * [Anthropic](getting-started/integration-guides/anthropic.md)
   * [Cohere](getting-started/integration-guides/cohere.md)
   * [Google Palm](getting-started/integration-guides/google-palm.md)

@@ -16,6 +16,6 @@ Portkey supports all the models hosted by the following AI providers. Click to r
 
 Portkey has native integrations with the following frameworks. Click to read their getting started guides.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Langchain</td><td><a href="../../.gitbook/assets/8.png">8.png</a></td><td><a href="langchain-python.md">langchain-python.md</a></td></tr><tr><td>LlamaIndex</td><td><a href="../../.gitbook/assets/9.png">9.png</a></td><td><a href="llama-index.md">llama-index.md</a></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Langchain</td><td><a href="../../.gitbook/assets/8.png">8.png</a></td><td><a href="langchain-python.md">langchain-python.md</a></td></tr><tr><td>LlamaIndex</td><td><a href="../../.gitbook/assets/9.png">9.png</a></td><td><a href="llama-index-python.md">llama-index-python.md</a></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
 
 Have a suggestion for an integration with Portkey? Tell us on [Discord](https://discord.gg/DD7vgKK299), or drop a message on support@portkey.ai.

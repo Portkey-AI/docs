@@ -38,7 +38,7 @@ Once, the integration is ready you can view the requests reflect on your Portkey
 
 ### Other Integration Guides
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Azure OpenAI</h4></td><td><a href="integration-guides/azure-openai.md">azure-openai.md</a></td></tr><tr><td><h4>Anthropic</h4></td><td><a href="integration-guides/anthropic.md">anthropic.md</a></td></tr><tr><td><h4>Langchain</h4></td><td><a href="integration-guides/langchain-python.md">langchain-python.md</a></td></tr><tr><td><h4>LlamaIndex</h4></td><td><a href="integration-guides/llama-index.md">llama-index.md</a></td></tr><tr><td><h4>Cohere</h4></td><td><a href="integration-guides/cohere.md">cohere.md</a></td></tr><tr><td><h4>Others</h4></td><td><a href="integration-guides/">integration-guides</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Azure OpenAI</h4></td><td><a href="integration-guides/azure-openai.md">azure-openai.md</a></td></tr><tr><td><h4>Anthropic</h4></td><td><a href="integration-guides/anthropic.md">anthropic.md</a></td></tr><tr><td><h4>Langchain</h4></td><td><a href="integration-guides/langchain-python.md">langchain-python.md</a></td></tr><tr><td><h4>LlamaIndex</h4></td><td><a href="integration-guides/llama-index-python.md">llama-index-python.md</a></td></tr><tr><td><h4>Cohere</h4></td><td><a href="integration-guides/cohere.md">cohere.md</a></td></tr><tr><td><h4>Others</h4></td><td><a href="integration-guides/">integration-guides</a></td></tr></tbody></table>
 
 ## 3. Next Steps
 

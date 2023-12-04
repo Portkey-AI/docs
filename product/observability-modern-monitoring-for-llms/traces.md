@@ -19,7 +19,7 @@ or pass it as request config parameter when using the Portkey or OpenAI SDKs.
 {% tabs %}
 {% tab title="NodeJS" %}
 ```javascript
-const requestOptions = {traceId: "YOUR TRACE ID"}
+const requestOptions = {traceID: "YOUR TRACE ID"}
 const chatCompletion = await portkey.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
     model: 'gpt-3.5-turbo',
@@ -41,7 +41,7 @@ completion = portkey.with_options(
 {% endtab %}
 
 {% tab title="OpenAI NodeJS" %}
-<pre class="language-javascript"><code class="lang-javascript">const reqHeaders = {headers: <a data-footnote-ref href="#user-content-fn-1">createHeaders</a>({"traceId": "TRACE ID"})}
+<pre class="language-javascript"><code class="lang-javascript">const reqHeaders = {headers: <a data-footnote-ref href="#user-content-fn-1">createHeaders</a>({"traceID": "TRACE ID"})}
 const chatCompletion = await openai.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
     model: 'gpt-3.5-turbo',
