@@ -140,15 +140,14 @@ Portkey also supports creating and managing prompt templates in the [prompt libr
 import Portkey from 'portkey-ai'
 
 const portkey = new Portkey({
-    apiKey: "PORTKEY_API_KEY", // defaults to process.env["PORTKEY_API_KEY"]
+    apiKey: "PORTKEY_API_KEY",
 })
 
 // Make the prompt creation call with the variables
 const promptCompletion = portkey.prompts.completions.create({
-    promptID: "9218b4e6-52db-41a4-b963-4ee6505ed758",
+    promptID: "Your Prompt ID",
     variables: {
-        "title": "The impact of AI on middle school teachers",
-        "num_sections": "5"
+       // The variables specified in the prompt
     }
 })
 ```
@@ -156,10 +155,9 @@ const promptCompletion = portkey.prompts.completions.create({
 ```javascript
 // We can also override the hyperparameters
 const promptCompletion = portkey.prompts.completions.create({
-    promptID: "9218b4e6-52db-41a4-b963-4ee6505ed758",
+    promptID: "Your Prompt ID",
     variables: {
-        "title": "The impact of AI on middle school teachers",
-        "num_sections": "5"
+       // The variables specified in the prompt
     },
     max_tokens: 250,
     presence_penalty: 0.2
@@ -168,45 +166,43 @@ const promptCompletion = portkey.prompts.completions.create({
 {% endtab %}
 
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python"><strong>from portkey_ai import Portkey
-</strong>
+```python
+from portkey_ai import Portkey
+
 client = Portkey(
     api_key="PORTKEY_API_KEY",  # defaults to os.environ.get("PORTKEY_API_KEY")
 )
 
-prompt_completion = client.prompt.completions.create(
-    prompt_id="9218b4e6-52db-41a4-b963-4ee6505ed758",
+prompt_completion = client.prompts.completions.create(
+    prompt_id="Your Prompt ID",
     variables={
-        "title": "The impact of AI on middle school teachers",
-        "num_sections": "5"
+       # The variables specified in the prompt
     }
 )
 
-print(prompt_completion.data)
+print(prompt_completion)
 
 # We can also override the hyperparameters
-prompt_completion = client.prompt.completions.create(
-    prompt_id="9218b4e6-52db-41a4-b963-4ee6505ed758",
+prompt_completion = client.prompts.completions.create(
+    prompt_id="Your Prompt ID",
     variables={
-        "title": "The impact of AI on middle school teachers",
-        "num_sections": "5"
+       # The variables specified in the prompt
     },
     max_tokens=250,
     presence_penalty=0.2
 )
-print(prompt_completion.data)
-</code></pre>
+print(prompt_completion)
+```
 {% endtab %}
 
 {% tab title="REST API" %}
 ```bash
-curl -X POST "https://api.portkey.ai/v1/prompts/9218b4e6-52db-41a4-b963-4ee6505ed758/create" \
+curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/create" \
 -H "Content-Type: application/json" \
 -H "x-portkey-api-key: $PORTKEY_API_KEY" \
 -d '{
     "variables": {
-        "title": "The impact of AI on middle school teachers",
-        "num_sections": "5"
+        # The variables to use
     },
     "max_tokens": 250, # Optional
     "presence_penalty": 0.2 # Optional
