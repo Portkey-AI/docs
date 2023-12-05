@@ -47,7 +47,7 @@
   * [Overview](product/autonomous-fine-tuning/overview.md)
   * [Create a fine-tune](product/autonomous-fine-tuning/create-a-fine-tune.md)
   * [Using Fine-tunes](product/autonomous-fine-tuning/using-fine-tunes.md)
-* [🚧 Plug-ins](product/plug-ins.md)
+* [Plug-ins](product/plug-ins.md)
 
 ## API Reference
 
