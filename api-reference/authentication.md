@@ -78,7 +78,7 @@ import { PORTKEY_GATEWAY_URL, createHeaders } from 'portkey-ai';
 openai.api_base = PORTKEY_GATEWAY_URL;
 
 const headers = createHeaders({
-    mode: "openai",
+    provider: "openai",
 <strong>    apiKey: "PORTKEY_API_KEY" // Replace with your actual Portkey API key
 </strong>});
 
