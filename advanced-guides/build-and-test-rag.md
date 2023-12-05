@@ -1,3 +1,0 @@
-# 🚧 Build & Test RAG
-
-TBD

@@ -1,3 +1,3 @@
-# 🚧 Plug-ins
+# Plug-ins
 
 Coming Soon!

@@ -71,11 +71,13 @@
 * [Fine-Tuning](api-reference/fine-tuning.md)
 * [Evals](api-reference/evals.md)
 * [Gateway for other APIs](api-reference/gateway-for-other-apis.md)
-* [🚧 Errors](api-reference/errors.md)
+* [Errors](api-reference/errors.md)
 
-## Advanced Guides
+## Cookbooks
 
-* [🚧 Build & Test RAG](advanced-guides/build-and-test-rag.md)
+* [Few-shot Prompting](cookbooks/few-shot-prompting.md)
+* [Fallbacks & Load Balancing with Azure](https://github.com/Portkey-AI/portkey-python-sdk/blob/main/examples/azure\_fallback\_loadbalance.ipynb)
+* [LlamaIndex Apps in Production](https://github.com/run-llama/llama\_index/blob/main/docs/examples/llm/portkey.ipynb)
 
 ## Integrations
 
