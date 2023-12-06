@@ -13,7 +13,7 @@ Here are some sample config objects:
     "max_age": 10000
   },
   "retry": { // Optional
-    "count": 5,
+    "attempts": 5,
     "on_status_codes": []
   }
 }
@@ -67,7 +67,7 @@ You can find more examples of schemas [below](config-object.md#examples).
 
 | Key Name          | Description                     | Type             | Required | Enum Values | Additional Info |
 | ----------------- | ------------------------------- | ---------------- | -------- | ----------- | --------------- |
-| `count`           | Number of retry attempts        | integer          | Yes      | -           | -               |
+| `attempts`        | Number of retry attempts        | integer          | Yes      | -           | -               |
 | `on_status_codes` | Status codes to trigger retries | array of strings | No       | -           | Optional        |
 
 ### Notes
@@ -115,7 +115,7 @@ You can find more examples of schemas [below](config-object.md#examples).
     "max_age": 10000
   },
   "retry": {
-    "count": 5,
+    "attempts": 5,
     "on_status_codes": ["429"]
   }
 }
