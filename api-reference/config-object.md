@@ -116,7 +116,7 @@ You can find more examples of schemas [below](config-object.md#examples).
   },
   "retry": {
     "attempts": 5,
-    "on_status_codes": ["429"]
+    "on_status_codes": [429]
   }
 }
 ```
@@ -164,7 +164,7 @@ You can find more examples of schemas [below](config-object.md#examples).
     {
       "strategy": {
           "mode": "fallback",
-          "on_status_codes": ["429", "241"]
+          "on_status_codes": [429, 241]
         },
       "targets": [
         {
