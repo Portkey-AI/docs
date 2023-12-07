@@ -4,7 +4,7 @@ This documentation provides detailed information about the various ways you can 
 
 Whether you're integrating directly with OpenAI, using a framework like Langchain or LlamaIndex, or building standalone applications, Portkey offers a flexible, secure, and efficient way to manage and deploy AI-powered features.
 
-## 3 Ways to Integration Portkey
+## 3 Ways to Integrate Portkey
 
 Portkey can be accessed through three primary methods, each catering to different use cases and integration requirements:
 
@@ -36,6 +36,8 @@ pip install portkey_ai
 
 Once installed, you can use the SDK to make calls to LLMs, manage prompts, handle keys, and more, all through a simple and intuitive API.
 
+Learn more [here](portkey-sdk-client.md).
+
 ### **2. OpenAI SDK through the Portkey Gateway**
 
 **Ideal for:** if you're currently utilizing OpenAI's Python or Node.js SDKs. By changing the base URL and adding Portkey-specific headers, you can quickly integrate Portkey's features into your existing setup.
@@ -46,3 +48,4 @@ Learn more [here](../welcome/integration-guides/openai.md).
 
 **Ideal for:** applications that prefer RESTful services. The base URL for all REST API requests is `https://api.portkey.ai/v1`, with an [authentication](authentication.md) header.
 
+Learn more [here](chat-completions.md).

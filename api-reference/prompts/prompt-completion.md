@@ -58,79 +58,73 @@ prompts.completions.create(promptParams)
 
 {% tabs %}
 {% tab title="NodeJS" %}
-```javascript
-import Portkey from 'portkey-ai'
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
 
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",
 })
 
 // Make the prompt creation call with the variables
-const promptCompletion = portkey.prompts.completions.create({
-    promptID: "Your Prompt ID",
-    variables: {
-       // The variables specified in the prompt
-    }
-})
+<strong>const promptCompletion = portkey.prompts.completions.create({
+</strong><strong>    promptID: "Your Prompt ID",
+</strong><strong>    variables: {
+</strong><strong>       // The variables specified in the prompt
+</strong><strong>    }
+</strong>})
 
 // We can also override the hyperparameters
-const promptCompletion = portkey.prompts.completions.create({
-    promptID: "Your Prompt ID",
-    variables: {
-       // The variables specified in the prompt
-    },
-    max_tokens: 250,
-    presence_penalty: 0.2
-})
-```
+<strong>const promptCompletion = portkey.prompts.completions.create({
+</strong><strong>    promptID: "Your Prompt ID",
+</strong><strong>    variables: {
+</strong><strong>       // The variables specified in the prompt
+</strong><strong>    },
+</strong><strong>    max_tokens: 250,
+</strong><strong>    presence_penalty: 0.2
+</strong>})
+</code></pre>
 {% endtab %}
 
 {% tab title="Python" %}
-```python
-from portkey_ai import Portkey
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
 
 client = Portkey(
     api_key="PORTKEY_API_KEY",  # defaults to os.environ.get("PORTKEY_API_KEY")
 )
 
-prompt_completion = client.prompts.completions.create(
-    prompt_id="Your Prompt ID",
-    variables={
-       # The variables specified in the prompt
-    }
-)
+<strong>prompt_completion = client.prompts.completions.create(
+</strong><strong>    prompt_id="Your Prompt ID",
+</strong><strong>    variables={
+</strong><strong>       # The variables specified in the prompt
+</strong><strong>    }
+</strong>)
 
 print(prompt_completion)
-```
+</code></pre>
 
-```python
-# We can also override the hyperparameters
-prompt_completion = client.prompts.completions.create(
-    prompt_id="Your Prompt ID",
-    variables={
-       # The variables specified in the prompt
-    },
-    max_tokens=250,
-    presence_penalty=0.2
-)
+<pre class="language-python"><code class="lang-python"># We can also override the hyperparameters
+<strong>prompt_completion = client.prompts.completions.create(
+</strong><strong>    prompt_id="Your Prompt ID",
+</strong><strong>    variables={
+</strong><strong>       # The variables specified in the prompt
+</strong><strong>    },
+</strong><strong>    max_tokens=250,
+</strong><strong>    presence_penalty=0.2
+</strong>)
 print(prompt_completion)
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="REST" %}
-{% code overflow="wrap" %}
-```bash
-curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/create" \
--H "Content-Type: application/json" \
+<pre class="language-bash" data-overflow="wrap"><code class="lang-bash"><strong>curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/create" \
+</strong>-H "Content-Type: application/json" \
 -H "x-portkey-api-key: $PORTKEY_API_KEY" \
--d '{
-    "variables": {
-        # variables to pass
-    },
-    "max_tokens": 250, # Optional
-    "presence_penalty": 0.2 # Optional
-}'
-```
-{% endcode %}
+<strong>-d '{
+</strong><strong>    "variables": {
+</strong><strong>        # variables to pass
+</strong><strong>    },
+</strong><strong>    "max_tokens": 250, # Optional
+</strong><strong>    "presence_penalty": 0.2 # Optional
+</strong>}'
+</code></pre>
 {% endtab %}
 {% endtabs %}

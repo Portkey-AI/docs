@@ -80,24 +80,23 @@ Deploying your prompt template to an API is extremely easy with Portkey. You can
 
 {% tabs %}
 {% tab title="Python" %}
-```python
-from portkey_ai import Portkey
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
 
 client = Portkey(
     api_key="PORTKEY_API_KEY",  # defaults to os.environ.get("PORTKEY_API_KEY")
 )
 
-prompt_completion = client.prompts.completions.create(
-    prompt_id="Your Prompt ID", # Add the prompt ID we just created
-    variables={
-       few_shot_examples: fseObj,
-       profile: "",
-       jd: ""
-    }
+<strong>prompt_completion = client.prompts.completions.create(
+</strong><strong>    prompt_id="Your Prompt ID", # Add the prompt ID we just created
+</strong><strong>    variables={
+</strong><strong>       few_shot_examples: fseObj,
+</strong><strong>       profile: "",
+</strong><strong>       jd: ""
+</strong>    }
 )
 
 print(prompt_completion)
-```
+</code></pre>
 
 ```python
 # We can also override the hyperparameters
@@ -116,23 +115,22 @@ print(prompt_completion)
 {% endtab %}
 
 {% tab title="NodeJS" %}
-```javascript
-import Portkey from 'portkey-ai'
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
 
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",
 })
 
 // Make the prompt creation call with the variables
-const promptCompletion = portkey.prompts.completions.create({
-    promptID: "Your Prompt ID",
-    variables: {
-       few_shot_examples: fseObj,
-       profile: "",
-       jd: ""
-    }
+<strong>const promptCompletion = portkey.prompts.completions.create({
+</strong><strong>    promptID: "Your Prompt ID",
+</strong><strong>    variables: {
+</strong><strong>       few_shot_examples: fseObj,
+</strong><strong>       profile: "",
+</strong><strong>       jd: ""
+</strong>    }
 })
-```
+</code></pre>
 
 ```javascript
 // We can also override the hyperparameters
@@ -150,20 +148,19 @@ const promptCompletion = portkey.prompts.completions.create({
 {% endtab %}
 
 {% tab title="REST" %}
-```bash
-curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/create" \
+<pre class="language-bash"><code class="lang-bash">curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/create" \
 -H "Content-Type: application/json" \
 -H "x-portkey-api-key: $PORTKEY_API_KEY" \
--d '{
-       "variables": {
-              few_shot_examples: fseObj,
-              profile: "",
-              jd: ""
-    },
-    "max_tokens": 250, # Optional
+<strong>-d '{
+</strong><strong>       "variables": {
+</strong><strong>              few_shot_examples: fseObj,
+</strong><strong>              profile: "",
+</strong><strong>              jd: ""
+</strong><strong>    },
+</strong>    "max_tokens": 250, # Optional
     "presence_penalty": 0.2 # Optional
 }'
-```
+</code></pre>
 {% endtab %}
 {% endtabs %}
 

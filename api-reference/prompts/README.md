@@ -1,12 +1,12 @@
 # Prompts
 
-Prompts in Portkey allow you to create and manage prompt templates collaboratively. [Read more](../../product/prompt-library.md).
+Prompts in Portkey allow you to create and manage prompt templates collaboratively.&#x20;
 
 The `portkey.prompts` APIs allow you to&#x20;
 
-* [Trigger a Prompt completion](prompt-completion.md)
+* [Trigger a prompt completion](prompt-completion.md)
 
-The following methods are in private beta
+While, the following methods are in private beta
 
 * List all Prompts
 * Get a Prompt

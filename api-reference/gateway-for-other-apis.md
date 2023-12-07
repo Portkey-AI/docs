@@ -1,8 +1,8 @@
-# Gateway for other APIs
+# Gateway for Other APIs
 
 The LLM providers you're using might support other endpoints than the one's supported by Portkey. The gateway support directly proxying the requests for them.
 
-You can call the endpoint by adding it after `https://api.portkey.ai/v1`
+#### You can call the endpoint by adding it after `https://api.portkey.ai/v1`
 
 We identify the provider and parameters needed based on the `mode` or the `virtual_key` passed in the header or the config object.
 
@@ -77,8 +77,7 @@ Make these calls with the relevant headers and configParams as all other request
 
 {% tabs %}
 {% tab title="NodeJS" %}
-```javascript
-import Portkey from 'portkey-ai';
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai';
 
 // Initialize the Portkey client
 const portkey = new Portkey({
@@ -87,8 +86,8 @@ const portkey = new Portkey({
 })
 // Generate a text completion
 async function getRerank() {
-    const rerank = await portkey.post('/rerank', {
-        return_documents: false,
+<strong>    const rerank = await portkey.post('/rerank', {
+</strong>        return_documents: false,
         max_chunks_per_doc: 10,
         model: "rerank-english-v2.0",
         query: "What is the capital of the United States?",
@@ -103,12 +102,11 @@ async function getRerank() {
     console.log(rerank);
 }
 getRerank();
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Python" %}
-```python
-from portkey_ai import Portkey
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
 
 # Initialize the Portkey client
 portkey = Portkey(
@@ -118,8 +116,8 @@ portkey = Portkey(
 
 # Generate a text completion
 def get_rerank():
-    completion = portkey.post(
-        '/rerank',
+<strong>    completion = portkey.post(
+</strong>        '/rerank',
         return_documents=False,
         max_chunks_per_doc=10,
         model="rerank-english-v2.0",
@@ -135,11 +133,10 @@ def get_rerank():
 
 get_rerank()
 
-```
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
 {% hint style="warning" %}
 These response objects are **not** transformed by Portkey and are returned exactly as received from the LLM provider.
 {% endhint %}
-

@@ -47,10 +47,9 @@
 * [Completions](api-reference/completions.md)
 * [Embeddings](api-reference/embeddings.md)
 * [Feedback](api-reference/feedback.md)
-* [Gateway for other APIs](api-reference/gateway-for-other-apis.md)
+* [Gateway for Other APIs](api-reference/gateway-for-other-apis.md)
 * [Prompts](api-reference/prompts/README.md)
   * [Prompt Completion](api-reference/prompts/prompt-completion.md)
-* [Configs](api-reference/configs.md)
 * [Evals](api-reference/evals.md)
 
 ## Cookbooks
