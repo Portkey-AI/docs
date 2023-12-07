@@ -256,7 +256,7 @@ client = OpenAI(
     api_key="OPENAI_API_KEY",  # defaults to os.environ.get("OPENAI_API_KEY")
     base_url=PORTKEY_GATEWAY_URL,
     default_headers=createHeaders(
-        mode="openai",
+        provider="openai",
         api_key="PORTKEY_API_KEY" # defaults to os.environ.get("PORTKEY_API_KEY")
     )
 )
