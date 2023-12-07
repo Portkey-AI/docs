@@ -65,7 +65,7 @@ const chatCompletion = await portkey.chat.completions.create({
 completion = portkey.with_options(virtual_key="...").chat.completions.create(
     messages = [{ "role": 'user', "content": 'Say this is a test' }],
     model = 'gpt-3.5-turbo'
-})
+)
 ```
 {% endtab %}
 {% endtabs %}
