@@ -1,3 +1,0 @@
-# Plug-ins
-
-Coming Soon!

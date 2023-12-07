@@ -4,9 +4,8 @@
 
 * [What is Portkey?](README.md)
 * [Make Your First Request](getting-started/make-your-first-request.md)
-* [🚧 Migrating to the New SDKs](getting-started/migrating-to-the-new-sdks.md)
+* [Migrating to the New SDKs](getting-started/migrating-to-the-new-sdks.md)
 * [Integration Guides](getting-started/integration-guides/README.md)
-  * [How to pick an integration?](getting-started/integration-guides/how-to-pick-an-integration.md)
   * [OpenAI](getting-started/integration-guides/openai.md)
   * [Azure OpenAI](getting-started/integration-guides/azure-openai.md)
   * [Langchain (Python)](getting-started/integration-guides/langchain-python.md)
@@ -35,12 +34,8 @@
   * [Load Balancing](product/ai-gateway-streamline-llm-integrations/load-balancing.md)
   * [Canary Testing](product/ai-gateway-streamline-llm-integrations/canary-testing.md)
   * [Virtual Keys](product/ai-gateway-streamline-llm-integrations/virtual-keys.md)
-* [🚧 Prompt Library](product/prompt-library.md)
-* [Autonomous Fine-tuning](product/autonomous-fine-tuning/README.md)
-  * [Overview](product/autonomous-fine-tuning/overview.md)
-  * [Create a fine-tune](product/autonomous-fine-tuning/create-a-fine-tune.md)
-  * [Using Fine-tunes](product/autonomous-fine-tuning/using-fine-tunes.md)
-* [Plug-ins](product/plug-ins.md)
+* [Prompt Library](product/prompt-library.md)
+* [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
 
 ## API Reference
 
@@ -52,22 +47,12 @@
 * [Completions](api-reference/completions.md)
 * [Embeddings](api-reference/embeddings.md)
 * [Feedback](api-reference/feedback.md)
+* [Gateway for other APIs](api-reference/gateway-for-other-apis.md)
 * [Prompts](api-reference/prompts/README.md)
   * [Prompt Completion](api-reference/prompts/prompt-completion.md)
-  * [List Prompts](api-reference/prompts/list-prompts.md)
-  * [Get a Prompt](api-reference/prompts/get-a-prompt.md)
-  * [Create a Prompt](api-reference/prompts/create-a-prompt.md)
-  * [Update a Prompt](api-reference/prompts/update-a-prompt.md)
-  * [Delete a Prompt](api-reference/prompts/delete-a-prompt.md)
 * [Configs](api-reference/configs.md)
-* [Virtual Keys](api-reference/virtual-keys.md)
-* [Fine-Tuning](api-reference/fine-tuning.md)
 * [Evals](api-reference/evals.md)
-* [Gateway for other APIs](api-reference/gateway-for-other-apis.md)
-* [Errors](api-reference/errors.md)
 
 ## Cookbooks
 
 * [Few-shot Prompting](cookbooks/few-shot-prompting.md)
-* [Fallbacks & Load Balancing with Azure](https://github.com/Portkey-AI/portkey-python-sdk/blob/main/examples/azure\_fallback\_loadbalance.ipynb)
-* [LlamaIndex Apps in Production](https://github.com/run-llama/llama\_index/blob/main/docs/examples/llm/portkey.ipynb)

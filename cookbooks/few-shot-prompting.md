@@ -37,11 +37,12 @@ jd = "We are seeking a seasoned data scientist with a strong background in machi
 
 #### And now let's add some examples with the expected JSON structure:
 
-<pre><code>few_shot_examples = 
+```
+few_shot_examples = 
 [
-<strong> {
-</strong><strong>  "role": "user",
-</strong>  "content": "Candidate Profile: Experienced software engineer with a background in developing scalable web applications using Python. Job Description: We’re looking for a Python developer to help us build and scale our web platform.",
+ {
+  "role": "user",
+  "content": "Candidate Profile: Experienced software engineer with a background in developing scalable web applications using Python. Job Description: We’re looking for a Python developer to help us build and scale our web platform.",
  },
  {
   "role": "assistant",
@@ -56,7 +57,7 @@ jd = "We are seeking a seasoned data scientist with a strong background in machi
   "content": "{'one-line-intro': 'Recent computer science graduate with a focus on data analysis.', 'move-forward': 'Maybe', 'priority': 'P2', 'pros': '1. Has a strong educational background in computer science. 2. Specialized focus on data analysis.', 'cons': '1. Lack of professional experience. 2. Job requires a seasoned data scientist.' }"
   }
 ]
-</code></pre>
+```
 
 In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot learning examples, which are dynamically provided and can be updated as needed. This allows the LLM to adapt its responses to the provided examples, facilitating versatile and context-aware outputs.
 
@@ -65,7 +66,11 @@ In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot
 1. Go to the "Prompts" page on [https://app.portkey.ai/](https://app.portkey.ai/organisation/4e501cb0-512d-4dd3-b480-8b6af7ef4993/9eec4ebc-1c88-41a2-ae5d-ed0610d33b06/collection/17b7d29e-4318-4b4b-a45b-1d5a70ed1e8f) and **Create** a new Prompt template with your preferred AI provider.&#x20;
 2. Selecting Chat mode will enable the Raw Prompt feature:
 
+<div align="left">
+
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 3. Click on it and paste the [raw prompt code from above](few-shot-prompting.md#this-is-how-our-raw-prompt-would-look). And that's it! You have your **dynamically updatable** few shot prompt template ready to deploy.
 

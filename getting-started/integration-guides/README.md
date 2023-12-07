@@ -1,4 +1,5 @@
 ---
+description: Portkey connects with all major LLM providers and orchestration frameworks.
 layout:
   title:
     visible: true
@@ -14,15 +15,9 @@ layout:
 
 # Integration Guides
 
-Portkey connects with all major LLM providers and orchestration frameworks.
+### Supported AI Providers
 
-{% content-ref url="how-to-pick-an-integration.md" %}
-[how-to-pick-an-integration.md](how-to-pick-an-integration.md)
-{% endcontent-ref %}
-
-## Supported AI Providers
-
-Portkey supports all the models hosted by the following AI providers. Click to read their getting started guides.
+Click to read their getting started guides.
 
 <table data-view="cards" data-full-width="false"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>OpenAI</td><td><a href="../../.gitbook/assets/1.png">1.png</a></td><td><a href="openai.md">openai.md</a></td></tr><tr><td>Azure OpenAI</td><td><a href="../../.gitbook/assets/Untitled design (7).png">Untitled design (7).png</a></td><td><a href="azure-openai.md">azure-openai.md</a></td></tr><tr><td>Anthropic</td><td><a href="../../.gitbook/assets/2.png">2.png</a></td><td><a href="anthropic.md">anthropic.md</a></td></tr><tr><td>Cohere</td><td><a href="../../.gitbook/assets/3.png">3.png</a></td><td><a href="cohere.md">cohere.md</a></td></tr><tr><td>Anyscale</td><td><a href="../../.gitbook/assets/4.png">4.png</a></td><td><a href="anyscale-llama2-mistral-zephyr.md">anyscale-llama2-mistral-zephyr.md</a></td></tr><tr><td>AWS Bedrock</td><td><a href="../../.gitbook/assets/5 (1).png">5 (1).png</a></td><td></td></tr><tr><td>Google Palm</td><td><a href="../../.gitbook/assets/6.png">6.png</a></td><td><a href="google-palm.md">google-palm.md</a></td></tr></tbody></table>
 

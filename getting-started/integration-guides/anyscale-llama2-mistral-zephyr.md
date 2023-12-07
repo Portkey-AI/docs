@@ -333,7 +333,7 @@ for chunk in chat_complete:
 
 ### Fine-tuning
 
-Please refer to our fine-tuning guides to take advantage of Portkey's advanced [continuous fine-tuning](../../product/autonomous-fine-tuning/) capabilities.
+Please refer to our fine-tuning guides to take advantage of Portkey's advanced [continuous fine-tuning](../../product/autonomous-fine-tuning.md) capabilities.
 
 <figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 

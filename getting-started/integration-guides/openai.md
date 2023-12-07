@@ -282,7 +282,7 @@ Additionally, you can define functions within your prompts and invoke the `portk
 
 ### Fine-tuning
 
-Please refer to our fine-tuning guides to take advantage of Portkey's advanced [continuous fine-tuning](../../product/autonomous-fine-tuning/) capabilities.
+Please refer to our fine-tuning guides to take advantage of Portkey's advanced [continuous fine-tuning](../../product/autonomous-fine-tuning.md) capabilities.
 
 ### Portkey Features
 
