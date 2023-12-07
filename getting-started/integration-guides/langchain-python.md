@@ -33,13 +33,12 @@ messages = [
 ]
 
 <strong>llm = PortkeyLLM(api_key="PORTKEY_API_KEY",virtual_key="VIRTUAL_KEY")
+</strong>llm_response = llm.predict_messages(messages)
+print(llm_response)
+<strong>
 </strong>chat_model = ChatPortkey(api_key="PORTKEY_API_KEY",virtual_key="VIRTUAL_KEY")
-
-llm.predict_messages(messages)
->>> The purpose of mode...
-
-chat_model.invoke(messages)
->>> AIMessage(content="The purpose of mode...
+chat_response = chat_model.invoke(messages)
+print(chat_response)
 </code></pre>
 
 You can now incorporate the `llm` or `chat_model` in any of your chains and Portkey will log all your requests + offer enhanced production features.

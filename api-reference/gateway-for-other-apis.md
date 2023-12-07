@@ -84,7 +84,7 @@ import Portkey from 'portkey-ai';
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",  // Replace with your Portkey API key
     virtualKey: "VIRTUAL_KEY"   // Pass cohere's virtual key
-
+})
 // Generate a text completion
 async function getRerank() {
     const rerank = await portkey.post('/rerank', {
@@ -108,7 +108,7 @@ getRerank();
 
 {% tab title="Python" %}
 ```python
-from portkey import Portkey
+from portkey_ai import Portkey
 
 # Initialize the Portkey client
 portkey = Portkey(
@@ -118,18 +118,19 @@ portkey = Portkey(
 
 # Generate a text completion
 def get_rerank():
-    completion = portkey.post('/rerank', {
-        return_documents: false,
-        max_chunks_per_doc: 10,
-        model: "rerank-english-v2.0",
-        query: "What is the capital of the United States?",
-        documents: [
-          "Carson City is the capital city of the American state of Nevada.",
-          "The Commonwealth of the Northern Mariana Islands is a group of islands in the Pacific Ocean. Its capital is Saipan.",
-          "Washington, D.C. (also known as simply Washington or D.C., and officially as the District of Columbia) is the capital of the United States. It is a federal district.",
-          "Capital punishment (the death penalty) has existed in the United States since beforethe United States was a country. As of 2017, capital punishment is legal in 30 of the 50 states."
+    completion = portkey.post(
+        '/rerank',
+        return_documents=False,
+        max_chunks_per_doc=10,
+        model="rerank-english-v2.0",
+        query="What is the capital of the United States?",
+        documents=[
+            "Carson City is the capital city of the American state of Nevada.",
+            "The Commonwealth of the Northern Mariana Islands is a group of islands in the Pacific Ocean. Its capital is Saipan.",
+            "Washington, D.C. (also known as simply Washington or D.C., and officially as the District of Columbia) is the capital of the United States. It is a federal district.",
+            "Capital punishment (the death penalty) has existed in the United States since beforethe United States was a country. As of 2017, capital punishment is legal in 30 of the 50 states."
         ]
-    })
+    )
     print(completion)
 
 get_rerank()

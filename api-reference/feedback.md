@@ -51,7 +51,7 @@ const portkey = new Portkey({
 // Send feedback
 const sendFeedback = async () => {
     await portkey.feedback.create({
-        trace_id: "REQUEST_TRACE_ID",
+        traceID: "REQUEST_TRACE_ID",
         value: 1  // For thumbs up
     });
 }
