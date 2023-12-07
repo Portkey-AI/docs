@@ -40,7 +40,7 @@ client = Portkey(
 </strong>    virtual_key="VIRTUAL_KEY"   # Optional: Use if virtual keys are set up
 )
 
-chat_completion = client.chat.complete.create(
+chat_completion = client.chat.completions.create(
     messages=[{"role": "user", "content": "Say this is a test"}],
     model='gpt-3.5-turbo'
 )
@@ -90,10 +90,14 @@ const headers = createHeaders({
 {% tab title="Python" %}
 ```python
 from openai import OpenAI
-from portkey_ai import PORTKEY_GATEWAY_URL
+from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
 
 openai_client = OpenAI(
-    base_url=PORTKEY_GATEWAY_URL
+    base_url=PORTKEY_GATEWAY_URL,
+    default_headers=createHeaders(
+        api_key="PORTKEY-API-KEY",
+        provider="openai"
+    )
 )
 response = openai_client.chat.completions.create(
         messages=[{'role': 'user', 'content': 'Say this is a test'}],

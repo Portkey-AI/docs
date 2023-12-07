@@ -57,13 +57,13 @@ Find more info on what's available through [configs here](config-object.md).
 {% tab title="Python" %}
 ```python
 # Construct a client with a virtual key
-const portkey = Portkey(
+portkey = Portkey(
     api_key="PORTKEY_API_KEY",
     virtual_key="VIRTUAL_KEY"
 )
 
 # Construct a client with provider and provider API key
-const portkey = Portkey(
+portkey = Portkey(
     api_key="PORTKEY_API_KEY",
     config="cf-***" # Supports a string config slug or a config object
 )
@@ -117,7 +117,7 @@ console.log(chatCompletion.choices);
 completion = portkey.chat.completions.create(
     messages = [{ "role": 'user', "content": 'Say this is a test' }],
     model = 'gpt-3.5-turbo'
-})
+)
 ```
 {% endtab %}
 {% endtabs %}
@@ -142,12 +142,12 @@ console.log(chatCompletion.choices);
 {% tab title="Python" %}
 ```python
 completion = portkey.with_options(
-    trace_id = "39e2a60c-b47c-45d8", 
-    metadata = {"_user": "432erf6"}
+    trace_id = "TRACE_ID", 
+    metadata = {"_user": "USER_IDENTIFIER"}
 ).chat.completions.create(
     messages = [{ "role": 'user', "content": 'Say this is a test' }],
     model = 'gpt-3.5-turbo'
-})
+)
 ```
 {% endtab %}
 {% endtabs %}
