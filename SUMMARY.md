@@ -4,13 +4,6 @@
 
 * [What is Portkey?](README.md)
 * [Make Your First Request](getting-started/make-your-first-request.md)
-* [🚧 Quickstart Guides](getting-started/quickstart-guides/README.md)
-  * [😻 Visualise your App's Performance](getting-started/quickstart-guides/visualise-your-apps-performance.md)
-  * [📈 Scale Beyond Rate-limits](getting-started/quickstart-guides/scale-beyond-rate-limits.md)
-  * [🐞 Decrease Error Rates](getting-started/quickstart-guides/decrease-error-rates.md)
-  * [📚 Create a Prompt Library](getting-started/quickstart-guides/create-a-prompt-library.md)
-  * [🕵 Test and Iterate Prompts](getting-started/quickstart-guides/test-and-iterate-prompts.md)
-  * [🏎 Test New Models, Fast](getting-started/quickstart-guides/test-new-models-fast.md)
 * [🚧 Migrating to the New SDKs](getting-started/migrating-to-the-new-sdks.md)
 * [Integration Guides](getting-started/integration-guides/README.md)
   * [How to pick an integration?](getting-started/integration-guides/how-to-pick-an-integration.md)
@@ -78,8 +71,3 @@
 * [Few-shot Prompting](cookbooks/few-shot-prompting.md)
 * [Fallbacks & Load Balancing with Azure](https://github.com/Portkey-AI/portkey-python-sdk/blob/main/examples/azure\_fallback\_loadbalance.ipynb)
 * [LlamaIndex Apps in Production](https://github.com/run-llama/llama\_index/blob/main/docs/examples/llm/portkey.ipynb)
-
-## Integrations
-
-* [🚧 Langchain](integrations/langchain.md)
-* [🚧 Llama Index](integrations/llama-index.md)

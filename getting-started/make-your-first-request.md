@@ -42,9 +42,7 @@ Once, the integration is ready you can view the requests reflect on your Portkey
 
 ## 3. Next Steps
 
-Now that you're up and running with Portkey, check out one of our [quick start guides](quickstart-guides/) to try the superpowers of Portkey.
-
-Or, you can dive into the [API Reference](../api-reference/introduction.md) to learn about all of the supported functionality.
+Now that you're up and running with Portkey, you can dive into the [API Reference](../api-reference/introduction.md) to learn about all of the supported functionality.
 
 ***
 
