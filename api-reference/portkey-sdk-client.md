@@ -96,6 +96,67 @@ Find more info on what's available through [configs here](config-object.md).
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="NodeJS" %}
+```javascript
+// Construct a client with a virtual key
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY",
+    virtualKey: "VIRTUAL_KEY"
+})
+
+// Construct a client with a config id
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY",
+    config: "cf-***" // Supports a string config slug or a config object
+})
+```
+
+Find more info on what's available through [configs here](config-object.md).
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+# Construct a client with a virtual key
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+    virtual_key="VIRTUAL_KEY"
+)
+
+# Construct a client with provider and provider API key
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+    config="cf-***" # Supports a string config slug or a config object
+)
+```
+
+Find more info on what's available through [configs here](config-object.md).
+{% endtab %}
+
+{% tab title="cURL" %}
+<pre class="language-bash"><code class="lang-bash">curl https://api.portkey.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+<strong>  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+</strong><strong>  -H "x-portkey-virtual-key: $VIRTUAL_KEY" \ 
+</strong>  -d '{
+    "model": "gpt-3.5-turbo",
+    "messages": [{"role": "user","content": "Hello!"}]
+  }'
+
+curl https://api.portkey.ai/v1/chat/completions \
+  -H 'Content-Type: application/json' \
+  -H 'x-portkey-api-key: $PORTKEY_API_KEY' \
+  -H 'x-portkey-config: cf-***' \ 
+  -d '{
+    "model": "gpt-3.5-turbo",
+    "messages": [{"role": "user","content": "Hello!"}]
+  }'
+</code></pre>
+
+Find more info on what's available through [configs here](config-object.md).
+{% endtab %}
+{% endtabs %}
+
 ## Making a Request
 
 You can then use the client to make completion and other calls like this
@@ -122,7 +183,57 @@ completion = portkey.chat.completions.create(
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="NodeJS" %}
+```javascript
+const chatCompletion = await portkey.chat.completions.create({
+    messages: [{ role: 'user', content: 'Say this is a test' }],
+    model: 'gpt-3.5-turbo',
+});
+
+console.log(chatCompletion.choices);
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+completion = portkey.chat.completions.create(
+    messages = [{ "role": 'user', "content": 'Say this is a test' }],
+    model = 'gpt-3.5-turbo'
+)
+```
+{% endtab %}
+{% endtabs %}
+
 You can choose to override the configuration in individual requests as well. This is specifically used when passing trace IDs or metadata.
+
+{% tabs %}
+{% tab title="NodeJS" %}
+```javascript
+const chatCompletion = await portkey.chat.completions.create({
+    messages: [{ role: 'user', content: 'Say this is a test' }],
+    model: 'gpt-3.5-turbo',
+}, {
+    traceId: "39e2a60c-b47c-45d8", 
+    metadata: {"_user": "432erf6"}
+});
+
+console.log(chatCompletion.choices);
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+completion = portkey.with_options(
+    trace_id = "TRACE_ID", 
+    metadata = {"_user": "USER_IDENTIFIER"}
+).chat.completions.create(
+    messages = [{ "role": 'user', "content": 'Say this is a test' }],
+    model = 'gpt-3.5-turbo'
+)
+```
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="NodeJS" %}
