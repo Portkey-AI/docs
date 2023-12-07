@@ -47,8 +47,8 @@ const portkey = new Portkey({
 from portkey_ai import Portkey
 
 portkey = Portkey(
-    apiKey="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    virtualKey="VIRTUAL_KEY"   # Replace with your virtual key for Cohere
+    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
+    virtual_key="VIRTUAL_KEY"   # Replace with your virtual key for Cohere
 )
 ```
 {% endtab %}
@@ -72,10 +72,10 @@ console.log(chatCompletion.choices);
 
 {% tab title="Python SDK" %}
 ```python
-completion = portkey.chat.completions.create(
-    messages= [{ role: 'user', content: 'Say this is a test' }],
-    model= 'claude-2'
-})
+chat_completion = portkey.chat.completions.create(
+    messages= [{ "role": 'user', "content": 'Say this is a test' }],
+    model= 'command'
+)
 ```
 {% endtab %}
 {% endtabs %}
@@ -94,8 +94,7 @@ Embedding endpoints are natively supported within Portkey like this:
 
 ```javascript
 const embedding = await portkey.embeddings.create({
-    input: 'Name the tallest buildings in Hawaii',
-    model: 'command',
+    input: 'Name the tallest buildings in Hawaii'
 });
 
 console.log(embedding);
@@ -105,8 +104,12 @@ console.log(embedding);
 
 You can use cohere reranking the `portkey.post` method with the body expected by [Cohere's reranking API](https://docs.cohere.com/reference/rerank-1).
 
-```python
-const response = portkey.post({
+{% tabs %}
+{% tab title="NodeJS SDK" %}
+```javascript
+const response = portkey.post(
+"/rerank",
+{
   "return_documents": false,
   "max_chunks_per_doc": 10,
   "model": "rerank-english-v2.0",
@@ -119,6 +122,26 @@ const response = portkey.post({
   ]
 })
 ```
+{% endtab %}
+
+{% tab title="Python SDK" %}
+```python
+response = portkey.post(
+        "/rerank",
+        return_documents=False,
+        max_chunks_per_doc=10,
+        model="rerank-english-v2.0",
+        query="What is the capital of the United States?",
+        documents=[
+            "Carson City is the capital city of the American state of Nevada.",
+            "The Commonwealth of the Northern Mariana Islands is a group of islands in the Pacific Ocean. Its capital is Saipan.",
+            "Washington, D.C. (also known as simply Washington or D.C., and officially as the District of Columbia) is the capital of the United States. It is a federal district.",
+            "Capital punishment (the death penalty) has existed in the United States since beforethe United States was a country. As of 2017, capital punishment is legal in 30 of the 50 states."
+        ]
+    )
+```
+{% endtab %}
+{% endtabs %}
 
 ## Next Steps
 

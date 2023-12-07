@@ -23,7 +23,7 @@ If you're using Langchain for your app, **Portkey can help take it to production
 
 Portkey is available as a Custom LLM integration in Langchain. Using this, you can connect to multiple LLM providers (Anthropic, Azure, Huggingface, Anyscale, etc) through Portkey's powerful AI gateway.
 
-<pre class="language-python"><code class="lang-python">from portkey_ai.llms.langchain import PortkeyChat, PortkeyLLM
+<pre class="language-python"><code class="lang-python">from portkey_ai.llms.langchain import ChatPortkey, PortkeyLLM
 from langchain.schema.messages import HumanMessage, SystemMessage
 
 # The messages to be sent to the LLM
@@ -33,12 +33,12 @@ messages = [
 ]
 
 <strong>llm = PortkeyLLM(api_key="PORTKEY_API_KEY",virtual_key="VIRTUAL_KEY")
-</strong>chat_model = PortkeyChat(api_key="PORTKEY_API_KEY",virtual_key="VIRTUAL_KEY")
+</strong>chat_model = ChatPortkey(api_key="PORTKEY_API_KEY",virtual_key="VIRTUAL_KEY")
 
 llm.predict_messages(messages)
 >>> The purpose of mode...
 
-chat.invoke(messages)
+chat_model.invoke(messages)
 >>> AIMessage(content="The purpose of mode...
 </code></pre>
 
@@ -53,12 +53,12 @@ If you prefer to use Langchain's OpenAI model,&#x20;
 
 The same example using the OpenAI model in Langchain would look like this
 
-<pre class="language-python"><code class="lang-python">from langchain.llms import OpenAI
+<pre class="language-python"><code class="lang-python">from langchain.llms.openai import OpenAI
 from langchain.chat_models import ChatOpenAI
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
 
 <strong>portkeyHeaders = createHeaders(
-</strong><strong>    mode="openai",
+</strong><strong>    provider="openai",
 </strong><strong>    api_key="PORTKEY_API_KEY"
 </strong><strong>)
 </strong>
@@ -79,11 +79,11 @@ chat.predict("hi!")
 Langchain supports [Prompt Templates](https://python.langchain.com/docs/modules/model\_io/prompts/) for constructing inputs for language models and [Output Parsers](https://python.langchain.com/docs/modules/model\_io/output\_parsers/) for customizing the models' outputs to your preferred format.
 
 ```python
-from portkey import PortkeyChat
+from portkey_ai.llms.langchain import ChatPortkey
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain.schema import BaseOutputParser
 
-portkeyChatModel = PortkeyChat(api_key="...", virtual_key="...)
+portkeyChatModel = ChatPortkey(api_key="PORTKEY_API_KEY", virtual_key="VIRTUAL_KEY")
 
 class CommaSeparatedListOutputParser(BaseOutputParser):
     """Parse the output of an LLM call to a comma-separated list."""

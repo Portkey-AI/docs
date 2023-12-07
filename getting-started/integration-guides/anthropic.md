@@ -74,11 +74,11 @@ console.log(chatCompletion.choices);
 {% tab title="Python SDK" %}
 ```python
 completion = portkey.chat.completions.create(
-    messages= [{ role: 'user', content: 'Say this is a test' }],
+    messages= [{ "role": 'user', "content": 'Say this is a test' }],
     model= 'claude-instant-1',
     max_tokens=250 # Required field for Anthropic
-})
-
+)
+    
 print(completion.choices)
 ```
 {% endtab %}

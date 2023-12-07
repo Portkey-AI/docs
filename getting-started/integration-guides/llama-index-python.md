@@ -1,4 +1,4 @@
-# Llama Index
+# Llama Index (Python)
 
 **LlamaIndex** is a data framework designed for Large Language Models (LLMs) to ingest, structure, and access private or domain-specific data. It provides tools for beginners and advanced users to ingest data from various sources such as APIs, databases, PDFs, and more, and then index it into representations optimized for LLMs. This allows natural language querying and conversation with the data via query engines, chat interfaces, and LLM-powered data agents. LlamaIndex is available in Python and offers both high-level and lower-level APIs for ease of use and customization.
 
@@ -15,9 +15,9 @@ Here's an example:
 ```python
 # Setup a custom service context by passing in the Portkey LLM
 from llama_index import ServiceContext
-from llama_index.llms.llama_index import PortkeyChat
+from portkey_ai.llms.llama_index import PortkeyLLM
 
-portkey = PortkeyChat(api_key="PORTKEY_API_KEY", virtual_key="VIRTUAL_KEY")
+portkey = PortkeyLLM(api_key="PORTKEY_API_KEY", virtual_key="VIRTUAL_KEY")
 service_context = ServiceContext.from_defaults(llm=portkey)
 ```
 
@@ -44,7 +44,7 @@ To integrate Portkey with your existing models, you need to
 
 The same example above but using the OpenAI model would look like this:
 
-<pre><code>from llama_index import (
+<pre class="language-python"><code class="lang-python">from llama_index import (
     KeywordTableIndex,
     SimpleDirectoryReader,
     LLMPredictor,

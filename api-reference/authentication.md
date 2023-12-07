@@ -33,7 +33,7 @@ console.log(chatCompletion.choices);
 {% endtab %}
 
 {% tab title="Python SDK" %}
-<pre class="language-python"><code class="lang-python">from portkey import Portkey
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
 
 client = Portkey(
 <strong>    api_key="PORTKEY_API_KEY",  # Replace with your actual API key
@@ -45,7 +45,7 @@ chat_completion = client.chat.complete.create(
     model='gpt-3.5-turbo'
 )
 
-print(chat_completion.choices[0].message.content)
+print(chat_completion.choices[0].message["content"])
 </code></pre>
 {% endtab %}
 
@@ -88,7 +88,18 @@ const headers = createHeaders({
 {% endtab %}
 
 {% tab title="Python" %}
+```python
+from openai import OpenAI
+from portkey_ai import PORTKEY_GATEWAY_URL
 
+openai_client = OpenAI(
+    base_url=PORTKEY_GATEWAY_URL
+)
+response = openai_client.chat.completions.create(
+        messages=[{'role': 'user', 'content': 'Say this is a test'}],
+        model='gpt-3.5-turbo'
+)
+```
 {% endtab %}
 {% endtabs %}
 

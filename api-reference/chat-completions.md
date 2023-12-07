@@ -103,7 +103,7 @@ getChatCompletionWithConfig();
 
 {% tab title="Python" %}
 ```python
-from portkey import Portkey
+from portkey_ai import Portkey
 
 # Initialize the Portkey client
 portkey = Portkey(
@@ -125,7 +125,7 @@ get_chat_completion()
 ```python
 # Example with config parameters
 def get_chat_completion_with_config():
-    chat_completion = portkey.with_options({'config': 'sample-7g5tr4'}).chat.completions.create(
+    chat_completion = portkey.with_options(config='sample-7g5tr4').chat.completions.create(
         messages=[{'role': 'user', 'content': 'Say this is a test'}],
         model='gpt-3.5-turbo'
     )
@@ -136,8 +136,8 @@ get_chat_completion_with_config()
 
 ```python
 # Generate a streaming chat completion
-async def get_chat_completion_stream():
-    chat_completion_stream = portkey.chat.completions.create(
+def get_chat_completion_stream():
+    chat_completion_stream = portkey.with_options(config='sample-7g5tr4').chat.completions.create(
         messages=[{'role': 'user', 'content': 'Say this is a test'}],
         model='gpt-3.5-turbo',
         stream=True
@@ -146,7 +146,7 @@ async def get_chat_completion_stream():
     for chunk in chat_completion_stream:
         print(chunk.choices[0].delta)
 
-await get_chat_completion_stream()
+get_chat_completion_stream()
 ```
 {% endtab %}
 {% endtabs %}
