@@ -12,8 +12,9 @@ Here's a quick example of a config to **fallback** to Anthropic's `claude-v1` if
 
 ```json
 {
-  "version": "2.0",
-  "mode": "fallback",
+  "strategy": {
+      "mode": "fallback",
+  },
   "targets": [
     {
       "virtualKey": "openai-virtual-key",
