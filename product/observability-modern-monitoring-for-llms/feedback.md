@@ -43,14 +43,15 @@ const portkey = Portkey(
     virtual_key="VIRTUAL_KEY"
 )
 
-portkey.feedback.create(
-    trace_id = "your trace id",
-    value = 5, // Integer between -10 and 10
-    weight = 1, // Optional
-    metadata = {
-        ... # Pass any additional context here like comments, _user and more
+feedback = portkey.feedback.create(
+    trace_id="TRACE_ID",
+    value=5,  # Integer between -10 and 10
+    weight=1,  # Optional
+    metadata={
+        # Pass any additional context here like comments, _user and more
     }
 )
+print(feedback)
 ```
 {% endtab %}
 

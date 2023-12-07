@@ -310,11 +310,11 @@ from openai import OpenAI
 from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
 
 anyscale = OpenAI(
-    api_key="OPENAI_API_KEY",  # defaults to os.environ.get("OPENAI_API_KEY")
+    api_key="ANYSCALE-API-KEY",  # defaults to os.environ.get("OPENAI_API_KEY")
     base_url=PORTKEY_GATEWAY_URL,
     default_headers=createHeaders(
-        mode="anyscale",
-        api_key="PORTKEY_API_KEY" # defaults to os.environ.get("PORTKEY_API_KEY")
+        provider="anyscale",
+        api_key="PORTKEY-API-KEY" # defaults to os.environ.get("PORTKEY_API_KEY")
     )
 )
 

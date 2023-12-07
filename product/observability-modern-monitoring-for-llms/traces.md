@@ -32,11 +32,11 @@ console.log(chatCompletion.choices);
 {% tab title="Python" %}
 ```python
 completion = portkey.with_options(
-    trace_id = "39e2a60c-b47c-45d8"
+    trace_id = "TRACE_ID"
 ).chat.completions.create(
     messages = [{ "role": 'user', "content": 'Say this is a test' }],
     model = 'gpt-3.5-turbo'
-})
+)
 ```
 {% endtab %}
 

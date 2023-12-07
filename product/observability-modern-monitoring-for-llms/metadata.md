@@ -41,7 +41,7 @@ You can also pass it as request config parameter when using the Portkey or OpenA
 {% tabs %}
 {% tab title="NodeJS" %}
 ```javascript
-const requestOptions = { metadata: {"_user": "432erf6"} }
+const requestOptions = { metadata: {"_user": "USER_ID"} }
 const chatCompletion = await portkey.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
     model: 'gpt-3.5-turbo',
@@ -54,7 +54,7 @@ console.log(chatCompletion.choices);
 {% tab title="Python" %}
 ```python
 completion = portkey.with_options(
-    metadata = {"_user": "39e2a60c-b47c-45d8"}
+    metadata = {"_user": "USER_ID"}
 ).chat.completions.create(
     messages = [{ "role": 'user', "content": 'Say this is a test' }],
     model = 'gpt-3.5-turbo'
@@ -63,7 +63,7 @@ completion = portkey.with_options(
 {% endtab %}
 
 {% tab title="OpenAI NodeJS" %}
-<pre class="language-javascript"><code class="lang-javascript">const reqHeaders = {headers: <a data-footnote-ref href="#user-content-fn-1">createHeaders</a>({metadata: {"_user": "432erf6"}})}
+<pre class="language-javascript"><code class="lang-javascript">const reqHeaders = {headers: <a data-footnote-ref href="#user-content-fn-1">createHeaders</a>({metadata: {"_user": "USER_ID"}})}
 const chatCompletion = await openai.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
     model: 'gpt-3.5-turbo',
@@ -73,11 +73,13 @@ const chatCompletion = await openai.chat.completions.create({
 
 {% tab title="OpenAI Python" %}
 ```python
-req_headers = createHeaders(metadata = {"_user": "39e2a60c-b47c-45d8"})
-chat_complete = client.with_options(headers=req_headers).chat.completions.create(
-    model="gpt-4",
-    messages=[{"role": "user", "content": "Say this is a test"}],
+completion = portkey.with_options(
+    metadata = {"_user": "USER_ID"}
+).chat.completions.create(
+    messages = [{ "role": 'user', "content": 'Say this is a test' }],
+    model = 'gpt-3.5-turbo'
 )
+print(completion)
 ```
 {% endtab %}
 {% endtabs %}
