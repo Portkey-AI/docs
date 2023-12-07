@@ -81,7 +81,7 @@ console.log(chatCompletion.choices);
 ```python
 completion = portkey.chat.completions.create(
     messages= [{ "role": 'user', "content": 'Say this is a test' }],
-    model= 'gpt-3'
+    model= 'custom_model_name'
 )
 
 print(completion.choices)
