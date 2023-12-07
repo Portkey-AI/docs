@@ -34,12 +34,12 @@ console.log(response);
 
 {% tab title="Python" %}
 ```python
-from portkey import Portkey
+from portkey_ai import Portkey
 
 # Initialize the Portkey client
 portkey = Portkey(
-    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    virtual_key="VIRTUAL_KEY"   # The OpenAI virtual key
+    api_key="/turdjWE+tIUeAzmzGxGEkkJLBQ=",  # Replace with your Portkey API key
+    virtual_key="open-ai-key-6317bc"   # The OpenAI virtual key
 )
 
 # Generate a text completion
@@ -85,25 +85,27 @@ console.log(response);
 {% endtab %}
 
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python">from portkey import Portkey
+```python
+from portkey_ai import Portkey
 
 # Initialize the Portkey client
 portkey = Portkey(
     api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
-<strong>    virtual_key="VIRTUAL_KEY"   # The Anthropic virtual key
-</strong>)
+    virtual_key="VIRTUAL_KEY"# The Anthropic virtual key
+)
 
 # Generate a text completion
 def get_text_completion():
     completion = portkey.completions.create(
         prompt='Say this is a test',
-<strong>        model='claude-2'
-</strong>    )
+        model='claude-2',
+        max_tokens=250 #required parameter for Anthropic
+    )
     return completion
 
 response = get_text_completion()
 print(response)
-</code></pre>
+```
 {% endtab %}
 {% endtabs %}
 
