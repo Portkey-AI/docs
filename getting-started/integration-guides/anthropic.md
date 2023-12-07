@@ -84,6 +84,32 @@ print(completion.choices)
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="NodeJS SDK" %}
+```javascript
+const chatCompletion = await portkey.chat.completions.create({
+    messages: [{ role: 'user', content: 'Say this is a test' }],
+    model: 'claude-instant-1',
+    max_tokens: 250 // Required field for Anthropic
+});
+
+console.log(chatCompletion.choices);
+```
+{% endtab %}
+
+{% tab title="Python SDK" %}
+```python
+completion = portkey.chat.completions.create(
+    messages= [{ "role": 'user', "content": 'Say this is a test' }],
+    model= 'claude-instant-1',
+    max_tokens=250 # Required field for Anthropic
+)
+    
+print(completion.choices)
+```
+{% endtab %}
+{% endtabs %}
+
 ## Managing Anthropic Prompts
 
 You can manage all prompts to Anthropic in the [Prompt Library](../../product/prompt-library.md). All the current models of Anthropic are supported and you can easily start testing different prompts.

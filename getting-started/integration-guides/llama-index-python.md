@@ -21,6 +21,15 @@ portkey = PortkeyLLM(api_key="PORTKEY_API_KEY", virtual_key="VIRTUAL_KEY")
 service_context = ServiceContext.from_defaults(llm=portkey)
 ```
 
+```python
+# Setup a custom service context by passing in the Portkey LLM
+from llama_index import ServiceContext
+from portkey_ai.llms.llama_index import PortkeyLLM
+
+portkey = PortkeyLLM(api_key="PORTKEY_API_KEY", virtual_key="VIRTUAL_KEY")
+service_context = ServiceContext.from_defaults(llm=portkey)
+```
+
 <pre class="language-python"><code class="lang-python"># Use this service context in the query engine
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
 
@@ -43,6 +52,34 @@ To integrate Portkey with your existing models, you need to
 * And add Portkey's headers
 
 The same example above but using the OpenAI model would look like this:
+
+<pre class="language-python"><code class="lang-python">from llama_index import (
+    KeywordTableIndex,
+    SimpleDirectoryReader,
+    LLMPredictor,
+    ServiceContext,
+)
+from llama_index.llms import OpenAI
+<strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+</strong>
+documents = SimpleDirectoryReader("data").load_data()
+
+# define LLM with Portkey abstractions
+<strong>headers = createHeaders(api_key="PORTKEY_API_KEY", mode="openai")
+</strong><strong>llm = OpenAI(api_base=PORTKEY_GATEWAY_URL, headers=headers)
+</strong>service_context = ServiceContext.from_defaults(llm=llm)
+
+# build index
+index = KeywordTableIndex.from_documents(
+    documents, service_context=service_context
+)
+
+# get response from query
+query_engine = index.as_query_engine()
+response = query_engine.query(
+    "What did the author do after his time at Y Combinator?"
+)
+</code></pre>
 
 <pre class="language-python"><code class="lang-python">from llama_index import (
     KeywordTableIndex,

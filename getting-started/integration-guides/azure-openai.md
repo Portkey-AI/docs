@@ -54,8 +54,8 @@ const portkey = new Portkey({
 from portkey_ai import Portkey
 
 portkey = Portkey(
-    apiKey="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    virtualKey="VIRTUAL_KEY"   # Replace with your virtual key for Azure
+    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
+    virtual_key="VIRTUAL_KEY"   # Replace with your virtual key for Azure
 )
 ```
 {% endtab %}
@@ -80,9 +80,9 @@ console.log(chatCompletion.choices);
 {% tab title="Python SDK" %}
 ```python
 completion = portkey.chat.completions.create(
-    messages= [{ role: 'user', content: 'Say this is a test' }],
-    model= 'claude-2'
-})
+    messages= [{ "role": 'user', "content": 'Say this is a test' }],
+    model= 'gpt-3'
+)
 
 print(completion.choices)
 ```
