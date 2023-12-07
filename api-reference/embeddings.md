@@ -79,7 +79,7 @@ getEmbeddingsWithConfig();
 
 {% tab title="Python" %}
 ```py
-from portkey import Portkey
+from portkey_ai import Portkey
 
 # Initialize the Portkey client
 portkey = Portkey(

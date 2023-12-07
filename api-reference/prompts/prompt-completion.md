@@ -45,7 +45,7 @@ prompt.completions.create(promptParams)
 
 {% tab title="Python" %}
 ```python
-prompt.completions.create(promptParams)
+prompts.completions.create(promptParams)
 ```
 {% endtab %}
 {% endtabs %}
