@@ -82,6 +82,30 @@ print(completion)
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="NodeJS SDK" %}
+```javascript
+const chatCompletion = await portkey.chat.completions.create({
+    messages: [{ role: 'user', content: 'Say this is a test' }],
+    model: 'chat-bison-001',
+});
+
+console.log(chatCompletion.choices);
+```
+{% endtab %}
+
+{% tab title="Python SDK" %}
+```python
+completion = portkey.chat.completions.create(
+    messages= [{ "role": 'user', "content": 'Say this is a test' }],
+    model= 'chat-bison-001'
+)
+
+print(completion)
+```
+{% endtab %}
+{% endtabs %}
+
 ## Managing Google Palm Prompts
 
 You can manage all prompts to Google Palm in the [Prompt Library](../../product/prompt-library.md). All the current models of Google Palm are supported and you can easily start testing different prompts.

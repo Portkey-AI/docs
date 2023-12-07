@@ -54,6 +54,30 @@ portkey = Portkey(
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="NodeJS SDK" %}
+```javascript
+import Portkey from 'portkey-ai'
+ 
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY", // defaults to process.env["PORTKEY_API_KEY"]
+    virtualKey: "VIRTUAL_KEY" // Your Anthropic Virtual Key
+})
+```
+{% endtab %}
+
+{% tab title="Python SDK" %}
+```python
+from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
+    virtual_key="VIRTUAL_KEY"   # Replace with your virtual key for Anthropic
+)
+```
+{% endtab %}
+{% endtabs %}
+
 ### **3. Invoke Chat Completions with Anthropic**&#x20;
 
 Use the Portkey instance to send requests to Anthropic. You can also override the virtual key directly in the API call if needed.

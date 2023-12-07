@@ -71,9 +71,9 @@ console.log(chatCompletion.choices);
 {% tab title="Python SDK" %}
 ```python
 completion = portkey.chat.completions.create(
-    messages= [{ role: 'user', content: 'Say this is a test' }],
+    messages= [{ "role": 'user', "content": 'Say this is a test' }],
     model= 'mistralai/Mistral-7B-Instruct-v0.1'
-})
+)
 
 print(completion.choices)
 ```
@@ -187,10 +187,9 @@ const portkey = new Portkey({
 
 // Make the prompt creation call with the variables
 const promptCompletion = portkey.prompts.completions.create({
-    promptID: "9218b4e6-52db-41a4-b963-4ee6505ed758",
+    promptID: "YOUR_PROMPT_ID",
     variables: {
-        "title": "The impact of AI on middle school teachers",
-        "num_sections": "5"
+        //Required variables for prompt
     }
 })
 ```
@@ -199,10 +198,9 @@ We can also override the hyperparameters:
 
 ```javascript
 const promptCompletion = portkey.prompts.completions.create({
-    promptID: "9218b4e6-52db-41a4-b963-4ee6505ed758",
+    promptID: "YOUR_PROMPT_ID",
     variables: {
-        "title": "The impact of AI on middle school teachers",
-        "num_sections": "5"
+        //Required variables for prompt
     },
     max_tokens: 250,
     presence_penalty: 0.2
@@ -218,11 +216,10 @@ client = Portkey(
     api_key="PORTKEY_API_KEY",  # defaults to os.environ.get("PORTKEY_API_KEY")
 )
 
-prompt_completion = client.prompt.completions.create(
-    prompt_id="9218b4e6-52db-41a4-b963-4ee6505ed758",
+prompt_completion = client.prompts.completions.create(
+    prompt_id="YOUR_PROMPT_ID",
     variables={
-        "title": "The impact of AI on middle school teachers",
-        "num_sections": "5"
+        #Required variables for prompt
     }
 )
 
@@ -232,11 +229,10 @@ print(prompt_completion.data)
 We can also override the hyperparameters:
 
 ```python
-prompt_completion = client.prompt.completions.create(
-    prompt_id="9218b4e6-52db-41a4-b963-4ee6505ed758",
+prompt_completion = client.prompts.completions.create(
+    prompt_id="YOUR_PROMPT_ID",
     variables={
-        "title": "The impact of AI on middle school teachers",
-        "num_sections": "5"
+        #Required variables for prompt
     },
     max_tokens=250,
     presence_penalty=0.2
