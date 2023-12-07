@@ -47,8 +47,8 @@ const portkey = new Portkey({
 from portkey_ai import Portkey
 
 portkey = Portkey(
-    apiKey="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    virtualKey="VIRTUAL_KEY"   # Replace with your virtual key for Anthropic
+    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
+    virtual_key="VIRTUAL_KEY"   # Replace with your virtual key for Anthropic
 )
 ```
 {% endtab %}

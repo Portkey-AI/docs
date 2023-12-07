@@ -73,11 +73,11 @@ console.log(chatCompletion.choices);
 {% tab title="Python SDK" %}
 ```python
 completion = portkey.chat.completions.create(
-    messages= [{ role: 'user', content: 'Say this is a test' }],
+    messages= [{ "role": 'user', "content": 'Say this is a test' }],
     model= 'chat-bison-001'
-})
+)
 
-print(completion.choices)
+print(completion)
 ```
 {% endtab %}
 {% endtabs %}
