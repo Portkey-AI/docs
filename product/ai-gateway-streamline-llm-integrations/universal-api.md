@@ -17,16 +17,18 @@ const portkey = new Portkey({
     virtualKey: "VIRTUAL_KEY"   // The OpenAI virtual key
 });
 
-// Generate a text completion
+// Function to generate a text completion
 async function getTextCompletion() {
     const completion = await portkey.completions.create({
         prompt: "Say this is a test",
         model: "gpt-3.5-turbo-instruct",
     });
 
-    console.log(completion);
+    return completion;
 }
-getTextCompletion();
+
+const response = await getTextCompletion();
+console.log(response);
 ```
 {% endtab %}
 
@@ -46,9 +48,10 @@ def get_text_completion():
         prompt='Say this is a test',
         model='gpt-3.5-turbo-instruct'
     )
-    print(completion)
+    return completion
 
-get_text_completion()
+response = get_text_completion()
+print(response)
 ```
 {% endtab %}
 {% endtabs %}
@@ -65,16 +68,19 @@ const portkey = new Portkey({
 <strong>    virtualKey: "VIRTUAL_KEY"   // The Anthropic virtual key
 </strong>});
 
-// Generate a text completion
+// Function to generate a text completion
 async function getTextCompletion() {
     const completion = await portkey.completions.create({
         prompt: "Say this is a test",
 <strong>        model: "claude-2",
+</strong><strong>        max_tokens: 250 //required parameter for Anthropic
 </strong>    });
 
-    console.log(completion);
+    return completion;
 }
-getTextCompletion();
+
+const response = await getTextCompletion();
+console.log(response);
 </code></pre>
 {% endtab %}
 
@@ -93,9 +99,10 @@ def get_text_completion():
         prompt='Say this is a test',
 <strong>        model='claude-2'
 </strong>    )
-    print(completion)
+    return completion
 
-get_text_completion()
+response = get_text_completion()
+print(response)
 </code></pre>
 {% endtab %}
 {% endtabs %}
