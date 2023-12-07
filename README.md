@@ -1,14 +1,10 @@
----
-description: >-
-  Teams use Portkey to improve the cost, performance, and accuracy of their Gen
-  AI apps.
----
-
 # What is Portkey?
 
 **Portkey** is a **full-stack LLMOps** platform with **4 key products**: [**Observability**](product/observability-modern-monitoring-for-llms/), [**AI Gateway**](product/ai-gateway-streamline-llm-integrations/), [**Prompt Library**](product/prompt-library.md) and [**Autonomous Fine-Tuning**](product/autonomous-fine-tuning.md).&#x20;
 
-It takes **<1 min** to integrate Portkey in your production workflows and with that, Portkey should already start monitoring all of your LLM requests and making your Gen AI app resilient, secure, and more accurate.
+Teams use Portkey to improve the **cost**, **performance**, and **accuracy** of their Gen AI apps.
+
+It takes **<1 min** to integrate Portkey in your **production workflows** and with that, Portkey should already start **monitoring** all of your LLM requests and making your Gen AI app **resilient**, **secure**, **performant**, and more **accurate**.
 
 **Here's a product walkthrough (3 mins).**
 
