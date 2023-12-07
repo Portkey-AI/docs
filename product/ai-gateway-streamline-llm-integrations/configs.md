@@ -14,7 +14,7 @@ Navigate to the ‘Configs’ page in the Portkey app and click 'Create' to star
 
 Configs are supported across all integrations.
 
-* Through the config parameter of the Portkey SDK client(Directly or via [frameworks](../../getting-started/integration-guides/))
+* Through the config parameter of the Portkey SDK client(Directly or via [frameworks](../../welcome/integration-guides/))
 * Through the config headers in the OpenAI SDK
 * Via the REST API through the `x-portkey-config` header
 

@@ -1,20 +1,20 @@
 # Table of contents
 
-## Getting Started
+## Welcome
 
 * [What is Portkey?](README.md)
-* [Make Your First Request](getting-started/make-your-first-request.md)
-* [Migrating to the New SDKs](getting-started/migrating-to-the-new-sdks.md)
-* [Integration Guides](getting-started/integration-guides/README.md)
-  * [OpenAI](getting-started/integration-guides/openai.md)
-  * [Azure OpenAI](getting-started/integration-guides/azure-openai.md)
-  * [Langchain (Python)](getting-started/integration-guides/langchain-python.md)
-  * [Llama Index (Python)](getting-started/integration-guides/llama-index-python.md)
-  * [Anthropic](getting-started/integration-guides/anthropic.md)
-  * [Cohere](getting-started/integration-guides/cohere.md)
-  * [Google Palm](getting-started/integration-guides/google-palm.md)
-  * [Anyscale (Llama2, Mistral, Zephyr)](getting-started/integration-guides/anyscale-llama2-mistral-zephyr.md)
-  * [Suggest a new integration!](getting-started/integration-guides/suggest-a-new-integration.md)
+* [Make Your First Request](welcome/make-your-first-request.md)
+* [Migrating to the New SDKs](welcome/migrating-to-the-new-sdks.md)
+* [Integration Guides](welcome/integration-guides/README.md)
+  * [OpenAI](welcome/integration-guides/openai.md)
+  * [Azure OpenAI](welcome/integration-guides/azure-openai.md)
+  * [Langchain (Python)](welcome/integration-guides/langchain-python.md)
+  * [Llama Index (Python)](welcome/integration-guides/llama-index-python.md)
+  * [Anthropic](welcome/integration-guides/anthropic.md)
+  * [Cohere](welcome/integration-guides/cohere.md)
+  * [Google Palm](welcome/integration-guides/google-palm.md)
+  * [Anyscale (Llama2, Mistral, Zephyr)](welcome/integration-guides/anyscale-llama2-mistral-zephyr.md)
+  * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
 
 ## Product
 

@@ -75,4 +75,4 @@ Portkey has been tested to handle millions of requests per second. We serve over
 
 ### Where can I reach you you?
 
-We're available all the time on [Discord](https://discord.gg/DD7vgKK299), or on our emails - support@portkey and hello@portkey.ai
+We're available all the time on [Discord](https://discord.gg/DD7vgKK299), or on our support email - support@portkey.ai

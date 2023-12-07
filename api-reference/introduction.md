@@ -40,7 +40,7 @@ Once installed, you can use the SDK to make calls to LLMs, manage prompts, handl
 
 **Ideal for:** if you're currently utilizing OpenAI's Python or Node.js SDKs. By changing the base URL and adding Portkey-specific headers, you can quickly integrate Portkey's features into your existing setup.
 
-Learn more [here](../getting-started/integration-guides/openai.md).
+Learn more [here](../welcome/integration-guides/openai.md).
 
 ### **3. REST API**
 
