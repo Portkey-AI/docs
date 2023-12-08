@@ -107,7 +107,7 @@ You can use cohere reranking the `portkey.post` method with the body expected by
 {% tabs %}
 {% tab title="NodeJS SDK" %}
 ```javascript
-const response = portkey.post(
+const response = await portkey.post(
 "/rerank",
 {
   "return_documents": false,
