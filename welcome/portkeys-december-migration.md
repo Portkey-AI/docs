@@ -291,6 +291,14 @@ main();
 {% endtab %}
 {% endtabs %}
 
+{% content-ref url="../api-reference/chat-completions.md" %}
+[chat-completions.md](../api-reference/chat-completions.md)
+{% endcontent-ref %}
+
+{% content-ref url="../api-reference/completions.md" %}
+[completions.md](../api-reference/completions.md)
+{% endcontent-ref %}
+
 ## Simlarly, for Prompts
 
 {% tabs %}
