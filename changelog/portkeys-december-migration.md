@@ -5,20 +5,20 @@
 This December, we're pushing out some exciting new updates to Portkey's **SDKs**, **APIs**, and **Configs**. &#x20;
 
 {% hint style="success" %}
-**Portkey's SDKs** are upped to _<mark style="color:purple;">**major version 1.0**</mark>_ bringing parity with the new OpenAI SDK structure and adding Portkey production features to it. We are also bringing native Langchain & Llamaindex integrations inside the SDK.\
+[**Portkey's SDKs**](portkeys-december-migration.md#major-version-release-of-the-sdk) are upped to _<mark style="color:purple;">**major version 1.0**</mark>_ bringing parity with the new OpenAI SDK structure and adding Portkey production features to it. We are also bringing native Langchain & Llamaindex integrations inside the SDK.\
 \
 This is a <mark style="background-color:red;">**Breaking Change**</mark> that <mark style="background-color:orange;">**Requires Migration**</mark>.
 {% endhint %}
 
 {% hint style="success" %}
-**Portkey's APIs** are upgraded with _<mark style="color:purple;">**new endpoints**</mark>_, making it simpler to do `/chat/completions` and `/completions` calls and adding Portkey's production functionalities to them.
+[**Portkey's APIs**](portkeys-december-migration.md#all-new-apis) are upgraded with _<mark style="color:purple;">**new endpoints**</mark>_, making it simpler to do `/chat/completions` and `/completions` calls and adding Portkey's production functionalities to them.
 
 \
 This is a <mark style="background-color:red;">**Breaking Change**</mark> that <mark style="background-color:orange;">**Requires Migration**</mark>.
 {% endhint %}
 
 {% hint style="success" %}
-**Configs** are upgraded to _<mark style="color:purple;">**version**</mark>_ _<mark style="color:purple;">**2.0**</mark>_, bringing nested gateway strategies with granular handling. \
+[**Configs**](portkeys-december-migration.md#configs-2.0) are upgraded to _<mark style="color:purple;">**version**</mark>_ _<mark style="color:purple;">**2.0**</mark>_, bringing nested gateway strategies with granular handling. \
 \
 For Configs saved in the Portkey dashboard, this is <mark style="background-color:green;">**NOT a Breaking Change**</mark> and we will <mark style="background-color:blue;">**Auto Migrate**</mark> your old Configs. \
 \
@@ -37,12 +37,12 @@ We recommend upgrading to these new versions promptly to take full advantage of 
 
 ### Here's What's New:
 
-1. More extensible with new methods, can be used with many more LLM providers
-2. Supports streaming out of the box
-3. Follows OpenAI signature completely
+1. More extensible SDK that can be used with many more LLM providers
+2. Out-of-the-box support for streaming
+3. Completely follows OpenAI's SDK signature reducing your technical debt
 4. Native support for Langchain & Llamaindex within the SDK (Python)
 5. Support for the Portkey Feedback endpoint
-6. Support for Portkey prompt templates
+6. Support for Portkey Prompt Templates
 7. Older SDK versions to be deprecated soon
 
 ### Here's What's Changed:
@@ -73,7 +73,7 @@ response = portkey.ChatCompletions.create(
 </strong>
 <strong>portkey = Portkey(
 </strong><strong>    api_key="PORTKEY_API_KEY",
-</strong><strong>    virtual_key="VIRTUAL_KEY"
+</strong><strong>    Authorization="OPENAI_KEY"
 </strong><strong>)
 </strong>
 <strong>response = portkey.chat.completions.create(
@@ -120,7 +120,7 @@ main();
 // Initialize the Portkey client
 <strong>const portkey = new Portkey({
 </strong><strong>    apiKey: "PORTKEY_API_KEY",  // Replace with your Portkey API key
-</strong><strong>    virtualKey: "VIRTUAL_KEY"   // Optional: For virtual key management
+</strong><strong>    Authorization: "OPENAI_KEY" 
 </strong><strong>});
 </strong>
 // Generate a chat completion
@@ -155,7 +155,8 @@ npm i -U portkey-ai
 
 1. Introduced 3 new routes `/chat/completions`, `/completions`, and `/embeddings`&#x20;
 2. Simplified the headers:
-   1. `x-portkey-mode` header is deprecated and replaced with `x-portkey-provider` which takes values of `openai`, `anyscale`, `cohere,` `palm`, `azure-openai`, and more.
+   1. `x-portkey-mode` header is deprecated and replaced with `x-portkey-provider`&#x20;
+      1. Which takes values: `openai`, `anyscale`, `cohere,` `palm`, `azure-openai`, and more.
    2. New header `x-portkey-virtual-key` is introduced.
 3. `/complete` and `/chatComplete` endpoints to be deprecated soon
 4. Prompts endpoint `/prompts/$PROMPT_ID/generate` is upgraded to `/prompts/$PROMPT_ID/completions` and the old route will be deprecated soon
@@ -191,7 +192,9 @@ print(chat_complete.choices[0].message.content)
 
 **TO ⬇**
 
-<pre class="language-python"><code class="lang-python">from openai import OpenAI
+<pre class="language-python"><code class="lang-python"><strong># pip install -U portkey-ai 
+</strong>
+from openai import OpenAI
 <strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
 </strong>
 client = OpenAI(
@@ -241,7 +244,9 @@ main();
 
 **TO ⬇**
 
-<pre class="language-javascript"><code class="lang-javascript">import OpenAI from 'openai'; // We're using the v4 SDK
+<pre class="language-javascript"><code class="lang-javascript"><strong>// npm i portkey-ai
+</strong>
+import OpenAI from 'openai'; // We're using the v4 SDK
 <strong>import { PORTKEY_GATEWAY_URL, createHeaders } from 'portkey-ai'
 </strong>
 const openai = new OpenAI({
@@ -330,6 +335,8 @@ main();
 
 {% tab title="Changing Model Params On-the-fly (Python)" %}
 ```python
+# pip install portkey-ai
+
 from portkey-ai import Portkey
 
 client = Portkey(api_key="PORTKEY_API_KEY")
@@ -361,11 +368,13 @@ print(prompt_completion)
 1. New concept of `strategy` instead of standalone `mode`. You can now build bespoke gateway strategies and nest them in a single config.&#x20;
 2. You can also trigger a specific strategy on specific error codes.
 3. New concept of `targets` that replace `options` in the previous Config&#x20;
-4. If you are adding `virtual_key` to the target array, you don't need to add `provider` any longer. Portkey will pick up the Provider directly from the Virtual Key!
+4. If you are adding `virtual_key` to the target array, you no longer need to add `provider`,Portkey will pick up the Provider directly from the Virtual Key!
 5. For Azure, only now pass the `virtual_key` - it takes care of all other Azure params like Deployment name, API version etc.
 
 {% hint style="info" %}
-The Configs UI on Portkey app will auto write Configs ONLY in the new format. All your existing Configs are auto migrated.
+The Configs UI on Portkey app will autocomplete Configs ONLY in the new format now. \
+\
+All your existing Configs are auto migrated.
 {% endhint %}
 
 ### Here's What's Changed
