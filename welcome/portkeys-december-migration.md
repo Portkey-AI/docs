@@ -23,6 +23,12 @@ This is <mark style="background-color:green;">**NOT a Breaking Change**</mark> a
 
 ***
 
+## Compatibility & Deprecation List
+
+<table><thead><tr><th width="330">List</th><th width="247">Compatibility</th><th>Deprecation Date</th></tr></thead><tbody><tr><td><strong>API (Old)</strong><br><br><code>/v1/proxy</code><br><code>/v1/complete</code><br><code>/v1/chatComplete</code><br><code>/v1/embed</code><br><code>/v1/prompts/ID/generate</code></td><td>✅ SDK (Old)<br>❌ SDK (New)<br>✅ Configs (Old)<br>✅ Configs (New)</td><td>Q2 '24</td></tr><tr><td><strong>API (New)</strong><br><br><code>/v1</code><br><code>/v1/completions</code><br><code>/v1/chat/completions</code><br><code>/v1/embeddings</code><br><code>/v1/prompts/ID/completions</code></td><td>❌ SDK (Old)<br>✅ SDK (New)<br>❌ Configs (Old)<br>✅ Configs (New)</td><td>-</td></tr><tr><td><strong>SDK Version &#x3C; 1 (Old)</strong></td><td>✅ API (Old)<br>❌ API (New)<br>✅ Configs (Old)<br>✅ Configs (new)</td><td>Q2 '24</td></tr><tr><td><strong>SDK Version = 1 (New)</strong></td><td>❌ API (Old)<br>✅ API (New)<br>✅ Configs (Old)<br>✅ Configs (new)</td><td>-</td></tr><tr><td><strong>Configs 1.0 (Old)</strong></td><td><p>✅ API (Old)</p><p>✅ API (New)<br>✅ SDK (Old)<br>✅ SDK (new)</p></td><td>Q2 '24</td></tr><tr><td><strong>Configs 2.0 (New)</strong></td><td><p>✅ API (Old)</p><p>✅ API (New)<br>✅ SDK (Old)<br>✅ SDK (new)</p></td><td>-</td></tr></tbody></table>
+
+***
+
 ## Major Version Release of the SDK
 
 ### Here's What's New:
