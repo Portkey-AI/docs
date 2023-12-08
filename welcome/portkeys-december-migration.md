@@ -3,7 +3,7 @@
 This December, we're pushing out some exciting new updates to Portkey's **SDKs**, **APIs**, and **Configs**.
 
 {% hint style="success" %}
-**Portkey's SDKs** are upped to _<mark style="color:purple;">**major version 1.0**</mark>_ bringing parity with the new OpenAI structure and adding Portkey production features to it. We are also bringing native Langchain & Llamaindex integrations inside the SDK.\
+**Portkey's SDKs** are upped to _<mark style="color:purple;">**major version 1.0**</mark>_ bringing parity with the new OpenAI SDK structure and adding Portkey production features to it. We are also bringing native Langchain & Llamaindex integrations inside the SDK.\
 \
 This is a <mark style="background-color:red;">**Breaking Change**</mark> that <mark style="background-color:orange;">**Requires Migration**</mark>.
 {% endhint %}
@@ -27,14 +27,13 @@ This is <mark style="background-color:green;">**NOT a Breaking Change**</mark> a
 
 ### Here's What's New:
 
-1. New methods and functions + ways of initialisation
-2. More extensible, can be used with many more LLM providers
-3. Supports streaming out of the box
-4. Follows OpenAI signature completely
-5. Native support for Langchain & Llamaindex within the SDK (Python)
-6. Support for the Feedback endpoint
-7. Support for Portkey prompt templates
-8. Older SDK versions to be deprecated soon
+1. More extensible with new methods, can be used with many more LLM providers
+2. Supports streaming out of the box
+3. Follows OpenAI signature completely
+4. Native support for Langchain & Llamaindex within the SDK (Python)
+5. Support for the Portkey Feedback endpoint
+6. Support for Portkey prompt templates
+7. Older SDK versions to be deprecated soon
 
 ### Here's What's Changed:
 
@@ -145,12 +144,12 @@ npm i -U portkey-ai
 ### Here's What's New:
 
 1. Introduced 3 new routes `/chat/completions`, `/completions`, and `/embeddings`&#x20;
-2. Simplified the headers to be sent with each request
+2. Simplified the headers:
+   1. `x-portkey-mode` header is deprecated and replaced with `x-portkey-provider` which takes values of `openai`, `anyscale`, `cohere,` `palm`, `azure-openai`, and more.
+   2. New header `x-portkey-virtual-key` is introduced.
 3. `/complete` and `/chatComplete` endpoints to be deprecated soon
 4. Prompts endpoint `/prompts/$PROMPT_ID/generate` is upgraded to `/prompts/$PROMPT_ID/completions` and the old route will be deprecated soon
 5. New `/gateway` endpoint that lets you make calls to third-party LLM providers easily
-6. `x-portkey-mode` header is deprecated and replaced with `x-portkey-provider` which takes values of `openai`, `anyscale`, `cohere,` `palm`, `azure-openai`, and more.
-7. New header `x-portkey-virtual-key` is introduced.
 
 ### Here's What's Changed
 
@@ -314,27 +313,52 @@ main();
 
 ## Configs 2.0
 
-We've upgraded Configs with advanced features, and auto migrated all the Configs on Portkey to the new structure. They do not break your existing workflows, and are backward compatible.
+### Here's What's New
 
-#### Added features with new Config
-
-1. We've introduced the concept of "strategy" - you can build bespoke gateway strategies and nest them in a single config. And you can trigger the mode on specific error codes.
-2. We've also introduced the concept of "targets" - these are similar to "options" in the previous Config&#x20;
-3. For Azure, you can now just pass the virtual key in the Config and do not have to pass other Azure params
+1. New concept of `strategy` instead of standalone `mode`. You can now build bespoke gateway strategies and nest them in a single config.&#x20;
+2. You can also trigger a specific strategy on specific error codes.
+3. New concept of `targets` that replace `options` in the previous Config&#x20;
+4. If you are adding `virtual_key` to the target array, you don't need to add `provider` any longer. Portkey will pick up the Provider directly from the Virtual Key!
+5. For Azure, only now pass the `virtual_key` - it takes care of all other Azure params like Deployment name, API version etc.
 
 {% hint style="info" %}
 The Configs UI on Portkey app will auto write Configs ONLY in the new format. All your existing Configs are auto migrated.
 {% endhint %}
 
-### Here's what's changed:
+### Here's What's Changed
 
-`"mode:"single"` Transforms to ➡ `"strategy":{"mode":"single"}`
+{% tabs %}
+{% tab title="Config Builder" %}
+**FROM ➡**
 
-And then lets you add more to it, with `"strategy":{"mode":"single", "on_status_codes": [429, 241]}`&#x20;
+```
+{
+	"mode": "single",
+	"options": [
+		{
+			"provider": "openai",
+			"virtual_key": "open-4110dd",
+		}
+	]
+}
+```
 
-`"options":[ {"provider":"openai"} ]` Transforms to ➡ `"targets":[ {"provider":"openai"} ]`
+**TO ⬇**
 
-Read more about the new Config object here:
+```
+{
+	"strategy": {
+		"mode":"single"
+	},
+	"targets": [
+		{
+			"virtual_key": "open-4110dd"
+		}
+	]
+}
+```
+{% endtab %}
+{% endtabs %}
 
 {% content-ref url="../api-reference/config-object.md" %}
 [config-object.md](../api-reference/config-object.md)
@@ -342,6 +366,6 @@ Read more about the new Config object here:
 
 ***
 
-## API
+## Support
 
-`/prompt/$PROMPT_ID/generations` is also upgraded to `/prompt/$PROMPT_ID/completions` and bringing the new API + Config updates to Portkey's prompt templates as well
+Shoot ANY questions or queries you have on the migration to the Portkey team [**on our Discord**](https://discord.gg/yn6QtVZJgV) and we should try to get back to you ASAP.
