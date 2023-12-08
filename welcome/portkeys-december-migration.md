@@ -299,7 +299,7 @@ main();
 [completions.md](../api-reference/completions.md)
 {% endcontent-ref %}
 
-## Simlarly, for Prompts
+### Simlarly, for Prompts
 
 {% tabs %}
 {% tab title="REST API" %}
