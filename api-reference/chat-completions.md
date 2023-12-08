@@ -65,7 +65,7 @@ async function getChatCompletion() {
 
     console.log(chatCompletion);
 }
-getChatCompletion();
+await getChatCompletion();
 ```
 
 ```javascript
@@ -81,7 +81,7 @@ async function getChatCompletionStream(){
         console.log(chunk.choices[0].delta.content);
     }
 }
-getChatCompletionStream();
+await getChatCompletionStream();
 ```
 
 ```javascript
@@ -97,7 +97,7 @@ async function getChatCompletionWithConfig() {
         console.log(chunk.choices[0].delta.content);
     }
 }
-getChatCompletionWithConfig();
+await getChatCompletionWithConfig();
 ```
 {% endtab %}
 

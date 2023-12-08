@@ -55,7 +55,7 @@ const sendFeedback = async () => {
         value: 1  // For thumbs up
     });
 }
-sendFeedback();
+await sendFeedback();
 ```
 {% endtab %}
 

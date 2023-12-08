@@ -80,7 +80,7 @@ async function getTextCompletion() {
 
     console.log(completion);
 }
-getTextCompletion();
+await getTextCompletion();
 ```
 
 ```javascript
@@ -96,7 +96,7 @@ async function getTextCompletionStream(){
         console.log(chunk.content);
     }
 }
-getTextCompletionStream();
+await getTextCompletionStream();
 ```
 
 ```javascript
@@ -109,7 +109,7 @@ async function getTextCompletionWithConfig() {
 
     console.log(completion);
 }
-getTextCompletionWithConfig();
+await getTextCompletionWithConfig();
 ```
 {% endtab %}
 

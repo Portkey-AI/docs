@@ -65,7 +65,7 @@ const portkey = new Portkey({
 })
 
 // Make the prompt creation call with the variables
-<strong>const promptCompletion = portkey.prompts.completions.create({
+<strong>const promptCompletion = await portkey.prompts.completions.create({
 </strong><strong>    promptID: "Your Prompt ID",
 </strong><strong>    variables: {
 </strong><strong>       // The variables specified in the prompt
@@ -73,7 +73,7 @@ const portkey = new Portkey({
 </strong>})
 
 // We can also override the hyperparameters
-<strong>const promptCompletion = portkey.prompts.completions.create({
+<strong>const promptCompletion = await portkey.prompts.completions.create({
 </strong><strong>    promptID: "Your Prompt ID",
 </strong><strong>    variables: {
 </strong><strong>       // The variables specified in the prompt

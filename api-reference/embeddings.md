@@ -62,7 +62,7 @@ async function getEmbeddings() {
 
     console.log(embeddings);
 }
-getEmbeddings();
+await getEmbeddings();
 
 // Generate embeddings with config params
 async function getEmbeddingsWithConfig() {
@@ -73,7 +73,7 @@ async function getEmbeddingsWithConfig() {
 
     console.log(embeddings);
 }
-getEmbeddingsWithConfig();
+await getEmbeddingsWithConfig();
 ```
 {% endtab %}
 

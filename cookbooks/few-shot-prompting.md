@@ -122,7 +122,7 @@ const portkey = new Portkey({
 })
 
 // Make the prompt creation call with the variables
-<strong>const promptCompletion = portkey.prompts.completions.create({
+<strong>const promptCompletion = await portkey.prompts.completions.create({
 </strong><strong>    promptID: "Your Prompt ID",
 </strong><strong>    variables: {
 </strong><strong>       few_shot_examples: fseObj,
@@ -134,7 +134,7 @@ const portkey = new Portkey({
 
 ```javascript
 // We can also override the hyperparameters
-const promptCompletion = portkey.prompts.completions.create({
+const promptCompletion = await portkey.prompts.completions.create({
     promptID: "Your Prompt ID",
     variables: {
        few_shot_examples: fseObj,
@@ -148,7 +148,7 @@ const promptCompletion = portkey.prompts.completions.create({
 {% endtab %}
 
 {% tab title="REST" %}
-<pre class="language-bash"><code class="lang-bash">curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/create" \
+<pre class="language-bash"><code class="lang-bash">curl -X POST "https://api.portkey.ai/v1/prompts/:PROMPT_ID/completions" \
 -H "Content-Type: application/json" \
 -H "x-portkey-api-key: $PORTKEY_API_KEY" \
 <strong>-d '{
