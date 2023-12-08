@@ -41,7 +41,9 @@ For example,
 
 {% tabs %}
 {% tab title="NodeJS" %}
-<pre class="language-javascript"><code class="lang-javascript">// Construct a client with a virtual key
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai';
+
+// Construct a client with a virtual key
 const portkey = new Portkey({
 <strong>    apiKey: "PORTKEY_API_KEY",
 </strong><strong>    virtualKey: "VIRTUAL_KEY"
@@ -58,7 +60,9 @@ Find more info on what's available through [configs here](config-object.md).
 {% endtab %}
 
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python"># Construct a client with a virtual key
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+# Construct a client with a virtual key
 portkey = Portkey(
 <strong>    api_key="PORTKEY_API_KEY",
 </strong><strong>    virtual_key="VIRTUAL_KEY"
