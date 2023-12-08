@@ -20,9 +20,9 @@ This is a <mark style="background-color:red;">**Breaking Change**</mark> that <m
 {% hint style="success" %}
 **Configs** are upgraded to _<mark style="color:purple;">**version**</mark>_ _<mark style="color:purple;">**2.0**</mark>_, bringing nested gateway strategies with granular handling. \
 \
-For Configs saved in the Portkey dashboard, this is <mark style="background-color:green;">**NOT a Breaking Change**</mark> and we will <mark style="background-color:blue;">**Auto Migrate**</mark> your old Configs.\
+For Configs saved in the Portkey dashboard, this is <mark style="background-color:green;">**NOT a Breaking Change**</mark> and we will <mark style="background-color:blue;">**Auto Migrate**</mark> your old Configs. \
 \
-For Configs directly defined at the time of making a call - either through `/complete` or `/chatComplete` routes OR through old `SDKs` - they <mark style="background-color:red;">**will fail**</mark> on the new routes and the new SDKs and <mark style="background-color:orange;">**require migration**</mark>.&#x20;
+For Configs directly defined at the time of making a call, through the old SDKs or old APIS, they <mark style="background-color:red;">**will fail**</mark> on the new APIs & SDKs and <mark style="background-color:orange;">**require migration**</mark>.&#x20;
 {% endhint %}
 
 ## Compatibility & Deprecation List
@@ -159,6 +159,7 @@ npm i -U portkey-ai
    2. New header `x-portkey-virtual-key` is introduced.
 3. `/complete` and `/chatComplete` endpoints to be deprecated soon
 4. Prompts endpoint `/prompts/$PROMPT_ID/generate` is upgraded to `/prompts/$PROMPT_ID/completions` and the old route will be deprecated soon
+   1. We now support updating the model params on-the-fly (i.e. changing temperature etc at the time of making a call)
 5. New `/gateway` endpoint that lets you make calls to third-party LLM providers easily
 
 ### Here's What's Changed
@@ -320,6 +321,25 @@ main();
 </strong>  -H 'Content-Type: application/json' \
   -d '{"variables": {"variable_a": "", "variable_b": ""}}'
 </code></pre>
+{% endtab %}
+
+{% tab title="Changing Model Params On-the-fly (Python)" %}
+```python
+from portkey-ai import Portkey
+
+client = Portkey(api_key="PORTKEY_API_KEY")
+
+response = client.prompts.completions.create(
+    prompt_id="Prompt_ID",
+    variables={
+       # The variables specified in the prompt
+    },
+    max_tokens=250,
+    presence_penalty=0.2,
+    temperature=0.1
+)
+print(prompt_completion)
+```
 {% endtab %}
 {% endtabs %}
 
