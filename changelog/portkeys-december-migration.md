@@ -2,9 +2,7 @@
 
 > **Date: 8th Dec, 2024**
 
-This December, we're pushing out some exciting new updates to Portkey's **SDKs**, **APIs**, and **Configs**. Key updates include major version upgrades to SDKs (now 1.0), new API endpoints, and enhanced Configs (version 2.0).  \
-\
-We recommend upgrading to these new versions promptly to take full advantage of their capabilities. While your existing code will continue to work until the deprecation date around Q2 '24, transitioning now ensures you stay ahead of the curve and avoid any future service interruptions. Follow along with this guide!&#x20;
+This December, we're pushing out some exciting new updates to Portkey's **SDKs**, **APIs**, and **Configs**. &#x20;
 
 {% hint style="success" %}
 **Portkey's SDKs** are upped to _<mark style="color:purple;">**major version 1.0**</mark>_ bringing parity with the new OpenAI SDK structure and adding Portkey production features to it. We are also bringing native Langchain & Llamaindex integrations inside the SDK.\
@@ -25,11 +23,11 @@ This is a <mark style="background-color:red;">**Breaking Change**</mark> that <m
 This is <mark style="background-color:green;">**NOT a Breaking Change**</mark> and we will <mark style="background-color:blue;">**Auto Migrate**</mark> your Configs.
 {% endhint %}
 
-***
-
 ## Compatibility & Deprecation List
 
 <table><thead><tr><th width="330">List</th><th width="247">Compatibility</th><th>Deprecation Date</th></tr></thead><tbody><tr><td><strong>API (Old)</strong><br><br><code>/v1/proxy</code><br><code>/v1/complete</code><br><code>/v1/chatComplete</code><br><code>/v1/embed</code><br><code>/v1/prompts/ID/generate</code></td><td>✅ SDK (Old)<br>❌ SDK (New)<br>✅ Configs (Old)<br>✅ Configs (New)</td><td>Q2 '24</td></tr><tr><td><strong>API (New)</strong><br><br><code>/v1</code><br><code>/v1/completions</code><br><code>/v1/chat/completions</code><br><code>/v1/embeddings</code><br><code>/v1/prompts/ID/completions</code></td><td>❌ SDK (Old)<br>✅ SDK (New)<br>❌ Configs (Old)<br>✅ Configs (New)</td><td>-</td></tr><tr><td><strong>SDK Version &#x3C; 1 (Old)</strong></td><td>✅ API (Old)<br>❌ API (New)<br>✅ Configs (Old)<br>✅ Configs (new)</td><td>Q2 '24</td></tr><tr><td><strong>SDK Version = 1 (New)</strong></td><td>❌ API (Old)<br>✅ API (New)<br>✅ Configs (Old)<br>✅ Configs (new)</td><td>-</td></tr><tr><td><strong>Configs 1.0 (Old)</strong></td><td><p>✅ API (Old)</p><p>✅ API (New)<br>✅ SDK (Old)<br>✅ SDK (new)</p></td><td>Q2 '24</td></tr><tr><td><strong>Configs 2.0 (New)</strong></td><td><p>✅ API (Old)</p><p>✅ API (New)<br>✅ SDK (Old)<br>✅ SDK (new)</p></td><td>-</td></tr></tbody></table>
+
+We recommend upgrading to these new versions promptly to take full advantage of their capabilities. While your existing code will continue to work until the deprecation date around Q2 '24, transitioning now ensures you stay ahead of the curve and avoid any future service interruptions. Follow along with this guide!
 
 ***
 
