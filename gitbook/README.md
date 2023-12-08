@@ -22,6 +22,8 @@ layout:
 
 # 👋 Welcome to Portkey!
 
+> ### You are on our old documentation. For the most current guides and documentation, please visit [https://portkey.ai/docs](https://portkey.ai/docs).
+
 Scaling LLM apps to production is laden with unexpected and often unprecedented challenges such as:
 
 * Increasing latencies
