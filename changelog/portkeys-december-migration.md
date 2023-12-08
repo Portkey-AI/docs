@@ -87,7 +87,7 @@ print(response)
 **Installing the  New SDK,**
 
 ```bash
-pip install -U portkey_ai
+pip install -U portkey-ai
 ```
 {% endtab %}
 
@@ -160,6 +160,7 @@ npm i -U portkey-ai
 3. `/complete` and `/chatComplete` endpoints to be deprecated soon
 4. Prompts endpoint `/prompts/$PROMPT_ID/generate` is upgraded to `/prompts/$PROMPT_ID/completions` and the old route will be deprecated soon
    1. We now support updating the model params on-the-fly (i.e. changing temperature etc at the time of making a call)
+   2. Prompt response object on the `/completions` route is now fully OpenAI compliant
 5. New `/gateway` endpoint that lets you make calls to third-party LLM providers easily
 
 ### Here's What's Changed
@@ -302,6 +303,10 @@ main();
 [completions.md](../api-reference/completions.md)
 {% endcontent-ref %}
 
+{% content-ref url="../api-reference/gateway-for-other-apis.md" %}
+[gateway-for-other-apis.md](../api-reference/gateway-for-other-apis.md)
+{% endcontent-ref %}
+
 ### Simlarly, for Prompts
 
 {% tabs %}
@@ -406,4 +411,4 @@ The Configs UI on Portkey app will auto write Configs ONLY in the new format. Al
 
 ## Support
 
-Shoot ANY questions or queries you have on the migration to the Portkey team [**on our Discord**](https://discord.gg/yn6QtVZJgV) and we should try to get back to you ASAP.
+Shoot ANY questions or queries you have on the migration to the Portkey team [**on our Discord**](https://discord.gg/yn6QtVZJgV) and we will try to get back to you ASAP.
