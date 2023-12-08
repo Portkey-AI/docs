@@ -2,7 +2,9 @@
 
 > **Date: 8th Dec, 2024**
 
-This December, we're pushing out some exciting new updates to Portkey's **SDKs**, **APIs**, and **Configs**.
+This December, we're pushing out some exciting new updates to Portkey's **SDKs**, **APIs**, and **Configs**. Key updates include major version upgrades to SDKs (now 1.0), new API endpoints, and enhanced Configs (version 2.0).  \
+\
+We recommend upgrading to these new versions promptly to take full advantage of their capabilities. While your existing code will continue to work until the deprecation date around Q2 '24, transitioning now ensures you stay ahead of the curve and avoid any future service interruptions. Follow along with this guide!&#x20;
 
 {% hint style="success" %}
 **Portkey's SDKs** are upped to _<mark style="color:purple;">**major version 1.0**</mark>_ bringing parity with the new OpenAI SDK structure and adding Portkey production features to it. We are also bringing native Langchain & Llamaindex integrations inside the SDK.\
