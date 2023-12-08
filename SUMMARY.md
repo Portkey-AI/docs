@@ -4,7 +4,6 @@
 
 * [What is Portkey?](README.md)
 * [Make Your First Request](welcome/make-your-first-request.md)
-* [Portkey's December Migration](welcome/portkeys-december-migration.md)
 * [Integration Guides](welcome/integration-guides/README.md)
   * [OpenAI](welcome/integration-guides/openai.md)
   * [Azure OpenAI](welcome/integration-guides/azure-openai.md)
@@ -55,3 +54,7 @@
 ## Cookbooks
 
 * [Few-shot Prompting](cookbooks/few-shot-prompting.md)
+
+## Changelog
+
+* [Portkey's December Migration](changelog/portkeys-december-migration.md)
