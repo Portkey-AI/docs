@@ -2,11 +2,9 @@
 
 Portkey is a full-stack LLMOps platform with 4 key products:&#x20;
 
-<table data-card-size="large" data-view="cards" data-full-width="true"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Observability</td><td></td><td><a href="product/observability-modern-monitoring-for-llms/">observability-modern-monitoring-for-llms</a></td></tr><tr><td></td><td>AI Gateway</td><td></td><td><a href="product/ai-gateway-streamline-llm-integrations/">ai-gateway-streamline-llm-integrations</a></td></tr><tr><td></td><td>Prompt Library</td><td></td><td><a href="product/prompt-library.md">prompt-library.md</a></td></tr><tr><td></td><td>Autonomous Fine-Tuning</td><td></td><td><a href="product/autonomous-fine-tuning.md">autonomous-fine-tuning.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td>Observability</td><td></td><td><a href="product/observability-modern-monitoring-for-llms/">observability-modern-monitoring-for-llms</a></td></tr><tr><td></td><td>AI Gateway</td><td></td><td><a href="product/ai-gateway-streamline-llm-integrations/">ai-gateway-streamline-llm-integrations</a></td></tr><tr><td></td><td>Prompt Library</td><td></td><td><a href="product/prompt-library.md">prompt-library.md</a></td></tr><tr><td></td><td>Autonomous Fine-Tuning</td><td></td><td><a href="product/autonomous-fine-tuning.md">autonomous-fine-tuning.md</a></td></tr></tbody></table>
 
 Teams use Portkey to improve the cost, performance, and accuracy of their Gen AI apps.
-
-***
 
 It takes <2 mins to integrate and with that, it already starts monitoring all of your LLM requests and also makes your app resilient, secure, performant, and more accurate at the same time.
 
