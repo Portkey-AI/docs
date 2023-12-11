@@ -115,7 +115,7 @@ print(prompt_completion)
 {% endtab %}
 
 {% tab title="REST" %}
-<pre class="language-bash" data-overflow="wrap"><code class="lang-bash"><strong>curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/create" \
+<pre class="language-bash" data-overflow="wrap"><code class="lang-bash"><strong>curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/completions" \
 </strong>-H "Content-Type: application/json" \
 -H "x-portkey-api-key: $PORTKEY_API_KEY" \
 <strong>-d '{
