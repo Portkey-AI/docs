@@ -22,7 +22,7 @@ curl --request POST \
      --header 'accept: application/json' \
      --header 'content-type: application/json' \
      --header 'x-portkey-api-key: $PORTKEY_API_KEY' \
-     --header 'x-portkey-api-virtual-key: $VIRTUAL_KEY' \
+     --header 'x-portkey-virtual-key: $VIRTUAL_KEY' \
      --data '
 {
   "return_documents": false,
@@ -48,7 +48,7 @@ curl --request POST \
      --header 'content-type: application/json' \
      --header 'authorization: Bearer $COHERE_API_KEY' \
      --header 'x-portkey-api-key: $PORTKEY_API_KEY' \
-     --header 'x-portkey-mode: proxy cohere' \
+     --header 'x-portkey-provider: cohere' \
      --data '
 {
   "return_documents": false,
