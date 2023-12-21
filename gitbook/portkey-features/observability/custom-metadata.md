@@ -1,10 +1,6 @@
 # 📃 Custom Metadata
 
-You can send custom metadata along with your API requests in Portkey, which can be later used for auditing or filtering logs. Portkey provides four predefined keys: `_environment`, `_user`, `_organisation`, and `_prompt`. These predefined keys are indexed and allow for filtering data in Portkey analytics and logs sections. You can still pass any other metadata key you desire, but these four predefined keys will be indexed and will be available for filtering data in Portkey.
-
-{% hint style="info" %}
-All predefined keys should be of type String, with max-length as 128 characters.
-{% endhint %}
+You can send custom metadata along with your API requests in Portkey, which can be later used for auditing or filtering logs. You can pass any number of keys, all values should be of type with max-length as 128 characters.
 
 ### Proxy Metadata
 
@@ -13,21 +9,21 @@ To include metadata in the proxy requests, you can add an `x-portkey-metadata` h
 ```
 {    
     "x-portkey-metadata": JSON.stringify({
-        "_environment": "production",
         "_user": "userid123",
-        "_organisation": "orgid123",
-        "_prompt": "summarisationPrompt",
+        "environment": "production",
+        "organisation": "orgid123",
+        "prompt": "summarisationPrompt",
         "foo": "abc",
         "bar": "def"
     })
 }
 ```
 
-
-
 {% hint style="info" %}
-**When using the \_user predefined key, the following behavior applies:**
+**\_user is a special key**
 
+This key is used to provide user analytics in the analytics section.\
+\
 If you pass the `user` key in the OpenAI request body, it will be automatically stored in `_user`. If both the OpenAI request body `user` key and the metadata `_user` key are passed, the metadata `_user` key will be stored.
 {% endhint %}
 
