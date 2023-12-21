@@ -23,6 +23,10 @@ The variables mentioned in the prompt template being used
 Add any hyperparameters to the request to override the ones set in the prompt definition
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="stream" type="boolean" %}
+Incrementally stream the response using server-sent events. Defaults to false
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 
 {% endswagger-response %}
@@ -71,17 +75,30 @@ const portkey = new Portkey({
 </strong><strong>       // The variables specified in the prompt
 </strong><strong>    }
 </strong>})
-
-// We can also override the hyperparameters
-<strong>const promptCompletion = await portkey.prompts.completions.create({
-</strong><strong>    promptID: "Your Prompt ID",
-</strong><strong>    variables: {
-</strong><strong>       // The variables specified in the prompt
-</strong><strong>    },
-</strong><strong>    max_tokens: 250,
-</strong><strong>    presence_penalty: 0.2
-</strong>})
 </code></pre>
+
+```javascript
+// Make the prompt creation call with the variables - stream mode
+const streamPromptCompletion = await portkey.prompts.completions.create({
+    promptID: "Your Prompt ID",
+    variables: {
+       // The variables specified in the prompt
+    },
+    "stream": true // Defaults to false
+})
+```
+
+```javascript
+// We can also override the hyperparameters
+const promptCompletion = await portkey.prompts.completions.create({
+    promptID: "Your Prompt ID",
+    variables: {
+       // The variables specified in the prompt
+    },
+    max_tokens: 250,
+    presence_penalty: 0.2
+})
+```
 {% endtab %}
 
 {% tab title="Python" %}
@@ -101,8 +118,21 @@ client = Portkey(
 print(prompt_completion)
 </code></pre>
 
-<pre class="language-python"><code class="lang-python"># We can also override the hyperparameters
-<strong>prompt_completion = client.prompts.completions.create(
+<pre class="language-python"><code class="lang-python"># Stream mode call
+<strong>stream_prompt_completion = client.prompts.completions.create(
+</strong>    prompt_id="Your Prompt ID",
+    variables={
+       # The variables specified in the prompt
+    },
+    stream: True # Defaults to false
+)
+
+for chunk in stream_prompt_completion:
+        print(chunk.choices[0].delta)
+</code></pre>
+
+<pre class="language-python"><code class="lang-python"><strong># We can also override the hyperparameters
+</strong><strong>prompt_completion = client.prompts.completions.create(
 </strong><strong>    prompt_id="Your Prompt ID",
 </strong><strong>    variables={
 </strong><strong>       # The variables specified in the prompt
@@ -122,6 +152,7 @@ print(prompt_completion)
 </strong><strong>    "variables": {
 </strong><strong>        # variables to pass
 </strong><strong>    },
+</strong><strong>    "stream": true, # Defaults to false
 </strong><strong>    "max_tokens": 250, # Optional
 </strong><strong>    "presence_penalty": 0.2 # Optional
 </strong>}'
