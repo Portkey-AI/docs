@@ -139,11 +139,11 @@ print(prompt_completion)
 ### Streaming Mode
 
 {% hint style="info" %}
-With the new **`/completions`** route, it is mandatory to set **`stream:True`** while making the call if you want to stream the responses.\
+With the new **`/prompts/:id/completions`** route, it is mandatory to set **`stream:True`** while making the call—if you want to stream the responses.\
 \
-This is a departure from when you could toggle the stream mode in Portkey prompt playground UI, and have the request automatically return streamed response. \
+**This is a departure** from when you could toggle the stream mode in Portkey prompt playground UI, and have the request automatically return streamed response.\
 \
-Now, regardless of the stream toggle state in the prompt playground, if you want streaming mode, you must set it to true at the time of making the call.
+Now, **regardless of the stream toggle** state in the prompt playground, if you want streaming mode, you must set it to true at the time of making the call.
 {% endhint %}
 
 {% tabs %}
