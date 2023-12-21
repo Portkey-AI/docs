@@ -19,6 +19,14 @@ These can be managed within your account under the "Virtual Keys" tab.
 **Tip:** You can register multiple keys for one provider or use different names for the same key for easy identification.
 {% endhint %}
 
+### How are the provider API keys stored?
+
+Your API keys are encrypted and then stored in a secure key management service that is only accessed at the time of making a request.
+
+### How are the provider keys linked to the virtual key?
+
+We randomly generate virtual keys and link them separately to the securely stored keys. This means, your raw API keys can not be reverse engineered from the virtual keys.
+
 ## Using Virtual Keys
 
 ### Using the Portkey SDK
@@ -84,3 +92,4 @@ Set the virtual key when utilizing Portkey's custom LLM as shown below:
 # Example in Langchain
 llm = PortkeyLLM(api_key="PORTKEY_API_KEY",virtual_key="VIRTUAL_KEY")
 ```
+
