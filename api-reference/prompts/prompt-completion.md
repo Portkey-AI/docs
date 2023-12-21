@@ -62,82 +62,59 @@ prompts.completions.create(promptParams)
 
 {% tabs %}
 {% tab title="NodeJS" %}
-<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
+```javascript
+import Portkey from 'portkey-ai'
 
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",
 })
 
 // Make the prompt creation call with the variables
-<strong>const promptCompletion = await portkey.prompts.completions.create({
-</strong><strong>    promptID: "Your Prompt ID",
-</strong><strong>    variables: {
-</strong><strong>       // The variables specified in the prompt
-</strong><strong>    }
-</strong>})
-</code></pre>
-
-```javascript
-// Make the prompt creation call with the variables - stream mode
-const streamPromptCompletion = await portkey.prompts.completions.create({
+const promptCompletion = await portkey.prompts.completions.create({
     promptID: "Your Prompt ID",
     variables: {
        // The variables specified in the prompt
-    },
-    "stream": true // Defaults to false
+    }
 })
 ```
 
-```javascript
-// We can also override the hyperparameters
+<pre class="language-javascript"><code class="lang-javascript">// We can also override the hyperparameters
 const promptCompletion = await portkey.prompts.completions.create({
     promptID: "Your Prompt ID",
     variables: {
        // The variables specified in the prompt
     },
-    max_tokens: 250,
-    presence_penalty: 0.2
-})
-```
+<strong>    max_tokens: 250,
+</strong><strong>    presence_penalty: 0.2
+</strong>})
+</code></pre>
 {% endtab %}
 
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+```python
+from portkey_ai import Portkey
 
 client = Portkey(
     api_key="PORTKEY_API_KEY",  # defaults to os.environ.get("PORTKEY_API_KEY")
 )
 
-<strong>prompt_completion = client.prompts.completions.create(
-</strong><strong>    prompt_id="Your Prompt ID",
-</strong><strong>    variables={
-</strong><strong>       # The variables specified in the prompt
-</strong><strong>    }
-</strong>)
+prompt_completion = client.prompts.completions.create(
+    prompt_id="Your Prompt ID",
+    variables={
+       # The variables specified in the prompt
+    }
+)
 
 print(prompt_completion)
-</code></pre>
+```
 
-<pre class="language-python"><code class="lang-python"># Stream mode call
-<strong>stream_prompt_completion = client.prompts.completions.create(
-</strong>    prompt_id="Your Prompt ID",
+<pre class="language-python"><code class="lang-python"># We can also override the hyperparameters
+prompt_completion = client.prompts.completions.create(
+    prompt_id="Your Prompt ID",
     variables={
        # The variables specified in the prompt
     },
-    stream: True # Defaults to false
-)
-
-for chunk in stream_prompt_completion:
-        print(chunk.choices[0].delta)
-</code></pre>
-
-<pre class="language-python"><code class="lang-python"><strong># We can also override the hyperparameters
-</strong><strong>prompt_completion = client.prompts.completions.create(
-</strong><strong>    prompt_id="Your Prompt ID",
-</strong><strong>    variables={
-</strong><strong>       # The variables specified in the prompt
-</strong><strong>    },
-</strong><strong>    max_tokens=250,
+<strong>    max_tokens=250,
 </strong><strong>    presence_penalty=0.2
 </strong>)
 print(prompt_completion)
@@ -145,17 +122,68 @@ print(prompt_completion)
 {% endtab %}
 
 {% tab title="REST" %}
-<pre class="language-bash" data-overflow="wrap"><code class="lang-bash"><strong>curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/completions" \
-</strong>-H "Content-Type: application/json" \
+<pre class="language-bash" data-overflow="wrap"><code class="lang-bash">curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/completions" \
+-H "Content-Type: application/json" \
 -H "x-portkey-api-key: $PORTKEY_API_KEY" \
-<strong>-d '{
-</strong><strong>    "variables": {
-</strong><strong>        # variables to pass
-</strong><strong>    },
-</strong><strong>    "stream": true, # Defaults to false
-</strong><strong>    "max_tokens": 250, # Optional
+-d '{
+    "variables": {
+        # variables to pass
+    },
+<strong>    "max_tokens": 250, # Optional
 </strong><strong>    "presence_penalty": 0.2 # Optional
 </strong>}'
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+### Streaming Mode
+
+{% hint style="info" %}
+With the new **`/completions`** route, it is mandatory to set **`stream:True`** while making the call if you want to stream the responses.\
+\
+This is a departure from when you could toggle the stream mode in Portkey prompt playground UI, and have the request automatically return streamed response. \
+\
+Now, regardless of the stream toggle state in the prompt playground, if you want streaming mode, you must set it to true at the time of making the call.
+{% endhint %}
+
+{% tabs %}
+{% tab title="NodeJS" %}
+<pre class="language-javascript"><code class="lang-javascript">const streamPromptCompletion = await portkey.prompts.completions.create({
+    promptID: "Your Prompt ID",
+    variables: {
+       // The variables specified in the prompt
+    },
+<strong>    stream: true // Defaults to false
+</strong>})
+</code></pre>
+{% endtab %}
+
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python">stream_prompt_completion = client.prompts.completions.create(
+    prompt_id="Your Prompt ID",
+    variables={
+       # The variables specified in the prompt
+    },
+<strong>    stream=True # Defaults to false
+</strong>)
+
+for chunk in stream_prompt_completion:
+        print(chunk.choices[0].delta)
+</code></pre>
+{% endtab %}
+
+{% tab title="REST API" %}
+<pre class="language-bash"><code class="lang-bash">curl -X POST "https://api.portkey.ai/v1/prompts/PROMPT_ID/completions" \
+-H "Content-Type: application/json" \
+-H "x-portkey-api-key: $PORTKEY_API_KEY" \
+-d '{
+    "variables": {
+        # variables to pass
+    },
+<strong>    "stream": true, # Defaults to false
+</strong>    "max_tokens": 250, # Optional
+    "presence_penalty": 0.2 # Optional
+}'
 </code></pre>
 {% endtab %}
 {% endtabs %}
