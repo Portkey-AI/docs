@@ -81,6 +81,10 @@ Portkey has been tested to handle millions of requests per second. We serve over
 
 We do not impose **any explicit timeout** for our free OR paid plans currently. In the past, we have had users experience timeouts from various other frameworks, but Portkey does not time out requests on our end.
 
+### Do you support sign ups from non-google/gmail accounts?
+
+Yes! We support registrations with Microsoft accounts - this is currently in beta. Please reach out on support@portkey.ai or [request on Discord](https://discord.gg/kXYKpPGasJ) for access to MS login.
+
 ### Where can I reach you you?
 
 We're available all the time on [Discord](https://discord.gg/DD7vgKK299), or on our support email - support@portkey.ai
