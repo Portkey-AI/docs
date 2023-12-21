@@ -1,91 +1,153 @@
 # Metadata
 
-You can send custom metadata along with your API requests in Portkey, which can be later used for auditing or filtering logs. Portkey provides four predefined keys:&#x20;
+You can send custom metadata along with your requests in Portkey, which can later be used for auditing or filtering logs. You can pass **any number** of keys, all values should be of type **`string`** with **max-length** as **128** characters.
 
-* `_environment`,&#x20;
-* `_user`,
-* `_organisation`,&#x20;
-* and `_prompt`.&#x20;
+### Adding Metadata to Requests
 
-These predefined keys are indexed and allow for filtering data in Portkey analytics and logs sections. You can still pass any other metadata key you desire, but these four predefined keys will be indexed and will be available for filtering data in Portkey.
+The metadata object accepts a JSON - Portkey will then parse it and let you filter on your metadata.
 
-{% hint style="info" %}
-All predefined keys should be of type String, with max-length as 128 characters.
-{% endhint %}
-
-### Gateway Metadata
-
-To include metadata in your requests, you can add an `x-portkey-metadata` header with a JSON string containing your metadata. Portkey will parse the JSON object and make it available for filtering.
-
-```json
-{    
-    "x-portkey-metadata": JSON.stringify({
-        "_environment": "production",
-        "_user": "userid123",
-        "_organisation": "orgid123",
-        "_prompt": "summarisationPrompt",
-        "foo": "abc",
-        "bar": "def"
-    })
+```python
+PORTKEY_METADATA = {
+    "_user": "userid123",
+    "environment": "production",
+    "organisation": "orgid123",
+    "prompt": "summarisationPrompt",
+    "foo": "abc",
+    "bar": "def"
 }
 ```
 
 {% hint style="info" %}
-**When using the \_user predefined key, the following behaviour applies:**
+**\_user is a special key**
 
-If you pass the `user` key in the OpenAI request body, it will be automatically stored in `_user`. If both the OpenAI request body `user` key and the metadata `_user` key are passed, the metadata `_user` key will be stored.
+This key is used to **provide user analytics** in the analytics section of Portkey app.
+
+If you pass the **`user`** key in the OpenAI request body, we will automatically also store it in Portkey's **`_user`** key. \
+\
+If both the OpenAI request body **`user`** key and the Portkey metadata **`_user`** key are passed, then only the metadata **`_user`** key will be stored.
 {% endhint %}
 
-You can also pass it as request config parameter when using the Portkey or OpenAI SDKs.
+#### Send metadata along with your requests as shown below:
 
 {% tabs %}
 {% tab title="NodeJS" %}
-```javascript
-const requestOptions = { metadata: {"_user": "USER_ID"} }
-const chatCompletion = await portkey.chat.completions.create({
-    messages: [{ role: 'user', content: 'Say this is a test' }],
-    model: 'gpt-3.5-turbo',
-}, requestOptions);
+<pre class="language-javascript"><code class="lang-javascript">import {Portkey} from 'portkey-ai'
 
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY",
+    virtualKey: "OPENAI_VIRTUAL_KEY"
+})
+
+const requestOptions = { 
+<strong>    metadata: {
+</strong><strong>        "_user": "USER_ID",
+</strong><strong>        "organisation": "ORG_ID",
+</strong><strong>        "request_id": "1729"
+</strong><strong>    }
+</strong>}
+
+const chatCompletion = await portkey.chat.completions.create({
+    messages: [{ role: 'user', content: 'Who was ariadne?' }],
+    model: 'gpt-4',
+<strong>}, requestOptions);
+</strong>
 console.log(chatCompletion.choices);
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Python" %}
-```python
-completion = portkey.with_options(
-    metadata = {"_user": "USER_ID"}
-).chat.completions.create(
-    messages = [{ "role": 'user', "content": 'Say this is a test' }],
-    model = 'gpt-3.5-turbo'
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+    virtual_key="OPENAI_VIRTUAL_KEY"
 )
-```
+
+<strong>response = portkey.with_options(
+</strong><strong>    metadata = {
+</strong><strong>        "_user": "USER_ID",
+</strong><strong>        "environment": "production",
+</strong><strong>        "prompt": "test_prompt",
+</strong><strong>        "session_id": "1729"
+</strong><strong>}).chat.completions.create(
+</strong>    messages = [{ "role": 'user', "content": 'What is 1729' }],
+    model = 'gpt-4'
+)
+
+print(response.choices[0].message)
+</code></pre>
 {% endtab %}
 
 {% tab title="OpenAI NodeJS" %}
-<pre class="language-javascript"><code class="lang-javascript">const reqHeaders = {headers: <a data-footnote-ref href="#user-content-fn-1">createHeaders</a>({metadata: {"_user": "USER_ID"}})}
-const chatCompletion = await openai.chat.completions.create({
-    messages: [{ role: 'user', content: 'Say this is a test' }],
-    model: 'gpt-3.5-turbo',
-}, reqHeaders);
+<pre class="language-javascript"><code class="lang-javascript">import OpenAI from 'openai';
+import { PORTKEY_GATEWAY_URL, createHeaders } from 'portkey-ai'
+
+const openai = new OpenAI({
+  baseURL: PORTKEY_GATEWAY_URL,
+  defaultHeaders: createHeaders({
+    apiKey: "PORTKEY_API_KEY",
+<strong>    metadata: {"_user": "USER_ID"}
+</strong>  })
+});
+
+async function main() {
+  const chatCompletion = await openai.chat.completions.create({
+    messages: [{ role: 'user', content: 'What is the capital of Uzbekistan?' }],
+    model: 'gpt-4',
+  });
+
+  console.log(chatCompletion.choices[0].message);
+}
+
+main();
 </code></pre>
 {% endtab %}
 
 {% tab title="OpenAI Python" %}
-```python
-completion = portkey.with_options(
-    metadata = {"_user": "USER_ID"}
-).chat.completions.create(
-    messages = [{ "role": 'user', "content": 'Say this is a test' }],
-    model = 'gpt-3.5-turbo'
+<pre class="language-python"><code class="lang-python">from openai import OpenAI
+from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+
+client = OpenAI(
+    base_url=PORTKEY_GATEWAY_URL,
+    default_headers=createHeaders(
+        api_key="PORTKEY_API_KEY",
+<strong>        metadata={"_user": "USER_ID"}
+</strong>    )
 )
-print(completion)
-```
+
+response = client.chat.completions.create(
+    model="gpt-4",
+    messages=[{"role": "user", "content": "Say this is a test"}],
+)
+
+print(response.choices[0].message)
+</code></pre>
+{% endtab %}
+
+{% tab title="REST API" %}
+<pre class="language-bash"><code class="lang-bash">curl https://api.portkey.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+  -H "x-portkey-virtual-key: $OPENAI_VIRTUAL_KEY" \
+<strong>  -H "x-portkey-metadata: {\"_user\":\"john\"}" \
+</strong>  -d '{
+    "model": "gpt-4",
+    "messages": [{"role": "user","content": "Hello!"}]
+  }'
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
-### **🖥️ Portkey Dashboard Guide**
+### Using Metadata
 
-You can filter your logs with the predefined keys (`_environment`, `_user`, `_organisation`, `_prompt)` easily on the the analytics and logs dashboards.
+#### See metadata summary on the Analytics page:
 
-[^1]: Imported from the Portkey SDK
+Just head over to the metadata tab and you should see all of your keys in the filter.
+
+<figure><img src="../../.gitbook/assets/metadata-analytics.gif" alt=""><figcaption></figcaption></figure>
+
+#### Filter requests according to your custom metadata on the Logs page
+
+Select the "Meta" filter and choose the key:value pairs you want to filter the requests on. All the custom keys you have sent with _any_ of your requests should show up here.
+
+<figure><img src="../../.gitbook/assets/metadata-logs.gif" alt=""><figcaption></figcaption></figure>
