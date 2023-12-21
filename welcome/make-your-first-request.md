@@ -77,6 +77,10 @@ Portkey has been tested to handle millions of requests per second. We serve over
 
 [**View our Status Page**](https://status.portkey.ai)
 
+### Does Portkey impose timeouts on requests?
+
+We do not impose **any explicit timeout** for our free OR paid plans currently. In the past, we have had users experience timeouts from various other frameworks, but Portkey does not time out requests on our end.
+
 ### Where can I reach you you?
 
 We're available all the time on [Discord](https://discord.gg/DD7vgKK299), or on our support email - support@portkey.ai
