@@ -21,7 +21,7 @@ These can be managed within your account under the "Virtual Keys" tab.
 
 ### How are the provider API keys stored?
 
-Your API keys are encrypted and then stored in a secure key management service that is only accessed at the time of making a request.
+Your API keys are encrypted and stored in secure vaults, accessible only at the moment of a request. Decryption is performed exclusively in isolated workers and only when necessary, ensuring the highest level of data security.
 
 ### How are the provider keys linked to the virtual key?
 
