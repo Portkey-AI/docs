@@ -47,6 +47,7 @@
 * [Embeddings](api-reference/embeddings.md)
 * [Feedback](api-reference/feedback.md)
 * [Gateway for Other APIs](api-reference/gateway-for-other-apis.md)
+* [Response Schema](api-reference/response-schema.md)
 * [Prompts](api-reference/prompts/README.md)
   * [Prompt Completion](api-reference/prompts/prompt-completion.md)
 * [Evals](api-reference/evals.md)
