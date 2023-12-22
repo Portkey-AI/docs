@@ -38,6 +38,8 @@ portkey.with_options(**configParams).chat.completions.create(**requestParams);
 {% endtab %}
 {% endtabs %}
 
+For REST API examples, scroll [here](chat-completions.md#rest-api-example).
+
 ### Parameters
 
 1. **requestParams (Object)**:  Parameters for the chat completion request, detailing the chat interaction. These are similar to the [OpenAI request signature](https://platform.openai.com/docs/api-reference/chat/create). Portkey automatically transforms the parameters for LLMs other than OpenAI. If some parameters don't exist in the other LLMs, they will be dropped.
@@ -150,6 +152,76 @@ get_chat_completion_stream()
 ```
 {% endtab %}
 {% endtabs %}
+
+<details>
+
+<summary>REST API Examples</summary>
+
+In REST calls, `x-portkey-api-key` is a compulsory header, it can be paired with the following options for sending provider details:
+
+1. `x-portkey-provider` & `Authorization` (or similar auth headers)
+2. `x-portkey-virtual-key`&#x20;
+3. `x-portkey-config` (must contain targets)
+
+**Example request using Provider + Auth:**
+
+<pre class="language-bash"><code class="lang-bash">curl "https://api.portkey.ai/v1/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+<strong>  -H "x-portkey-provider: openai" \
+</strong><strong>  -H "Authorization: Bearer $OPENAI_API_KEY" \
+</strong>  -d '{
+    "model": "gpt-4",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+</code></pre>
+
+**Example request using Virtual Key:**
+
+<pre class="language-bash"><code class="lang-bash">curl "https://api.portkey.ai/v1/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+<strong>  -H "x-portkey-virtual-key: openai-virtual-key" \
+</strong>  -d '{
+    "model": "gpt-4",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+</code></pre>
+
+**Example request using Config:**
+
+<pre class="language-bash"><code class="lang-bash">curl "https://api.portkey.ai/v1/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+<strong>  -H "x-portkey-config: config-key" \
+</strong>  -d '{
+    "model": "gpt-4",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+</code></pre>
+
+**You can send 3 other headers in your Portkey requests**
+
+* `x-portkey-trace-id`: Send trace id&#x20;
+* `x-portkey-metadata`: Send custom metadata
+* `x-portkey-cache-force-refresh`: Force refresh cache for this request
+
+**Example request using these 3:**
+
+<pre class="language-bash"><code class="lang-bash">curl "https://api.portkey.ai/v1/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+  -H "x-portkey-config: config-key" \
+<strong>  -H "x-portkey-trace-id: $UNIQUE_TRACE_ID" \
+</strong><strong>  -H "x-portkey-metadata: {\"_user\":\"john\"}" \
+</strong><strong>  -H "x-portkey-cache-force-refresh: True" \
+</strong>  -d '{
+    "model": "gpt-4",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+</code></pre>
+
+</details>
 
 ### Response Format
 
