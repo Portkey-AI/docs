@@ -1,0 +1,4 @@
+root: ./
+
+redirects:
+  portkey-docs/introduction/welcome-to-portkey: README.md
