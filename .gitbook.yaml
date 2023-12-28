@@ -84,3 +84,11 @@ redirects:
   why-portkey/optimise-generation-quality: product/observability-modern-monitoring-for-llms.md
   why-portkey/hide-pii-from-llms: welcome/make-your-first-request#is-my-data-secure.md
   troubleshooting-and-support/common-errors-and-resolutions: changelog/portkeys-december-migration.md
+  open-source: open-source.md
+  open-source/rubeus-by-portkey: open-source.md
+  support-and-faq/join-portkey-on-discord: support/join-portkey-on-discord.md
+  support-and-faq/contacting-support: support/contact-us.md
+  support-and-faq/reporting-issues: support/common-errors-and-resolutions.md
+  troubleshooting-and-support/reporting-issues: https://portkey.ai/docs/support/common-errors-and-resolutions.md
+  troubleshooting-and-support/contacting-support: https://portkey.ai/docs/support/contact-us.md
+  troubleshooting-and-support/join-portkey-on-discord: https://portkey.ai/docs/support/join-portkey-on-discord.md
