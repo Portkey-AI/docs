@@ -65,3 +65,7 @@
 * [Contact Us](support/contact-us.md)
 * [Join Portkey on Discord](support/join-portkey-on-discord.md)
 * [Common Errors & Resolutions](support/common-errors-and-resolutions.md)
+
+***
+
+* [Open Source](open-source.md)
