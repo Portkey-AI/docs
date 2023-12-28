@@ -59,3 +59,9 @@
 ## Changelog
 
 * [Portkey's December Migration](changelog/portkeys-december-migration.md)
+
+## Support
+
+* [Contact Us](support/contact-us.md)
+* [Join Portkey on Discord](support/join-portkey-on-discord.md)
+* [Common Errors & Resolutions](support/common-errors-and-resolutions.md)
