@@ -36,6 +36,10 @@
 * [Prompt Library](product/prompt-library.md)
 * [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
 
+***
+
+* [Open Source](open-source.md)
+
 ## API Reference
 
 * [Introduction](api-reference/introduction.md)
@@ -65,7 +69,3 @@
 * [Contact Us](support/contact-us.md)
 * [Join Portkey on Discord](support/join-portkey-on-discord.md)
 * [Common Errors & Resolutions](support/common-errors-and-resolutions.md)
-
-***
-
-* [Open Source](open-source.md)
