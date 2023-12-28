@@ -2,7 +2,6 @@ root: ./
 
 redirects:
   introduction/welcome-to-portkey: README.md
-  introduction/welcome-to-portkey: README.md
   introduction/getting-started: welcome/make-your-first-request.md.md
   introduction/features: README.md
   introduction/portkey-headers: api-reference/portkey-sdk-client.md
