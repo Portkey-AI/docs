@@ -125,7 +125,6 @@ curl --location 'https://api.portkey.ai/v1/feedback' \
 
 * Business metrics make for great feedback. If you're generating an email, the email being sent out could be a positive feedback metric. The level of editing could indicate the value.
 * When a user retries a generation, store the negative feedback since something probably went wrong. Use a lower weight for this feedback since it could be circumstantial.
-* Whena&#x20;
 
 ### **Feedback Analytics**
 
