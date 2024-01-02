@@ -1,6 +1,6 @@
 # Portkey's December Migration
 
-> **Date: 8th Dec, 2024**
+> **Date: 8th Dec, 2023**
 
 This December, we're pushing out some exciting new updates to Portkey's **SDKs**, **APIs**, and **Configs**. &#x20;
 
