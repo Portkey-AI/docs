@@ -14,11 +14,11 @@ We will rely on user feedback metrics to pick a winner.
 
 Setting it up will need us to
 
-1. Create a prompt for each of the models in Portkey
+1. Create prompts for the 2 models
 2. Write the config for a 50-50 test
 3. Make requests using this config
-4. Setup feedback APIs for the responses
-5. Find the winner and direct traffic to it
+4. Send feedback for responses
+5. Find the winner
 
 Let's get started.
 
@@ -67,7 +67,7 @@ We've created a load balanced config that will route 50% of the traffic to each 
 
 <figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption><p>Create the config and fetch the ID</p></figcaption></figure>
 
-### 3. Start making requests using this config
+### 3. Make requests using this config
 
 Lets use this config to start making requests from our application. We will use the [prompt completions API](../api-reference/prompts/prompt-completion.md) to make the requests and add the config in our headers.
 
@@ -137,7 +137,7 @@ As we make these requests, they'll show up in the Logs tab. We can see that requ
 
 Let's setup feedback for these APIs so we can begin our tests!
 
-### 4. Setup feedback APIs for the responses we create
+### 4. Send feedback for responses
 
 Collecting and analysing feedback allows us to find the real performance of each of these 2 prompts (an in turn `gemini-pro` and `gpt-3.5-turbo`)
 
@@ -180,7 +180,7 @@ curl -X POST "https://api.portkey.ai/v1/feedback" \
 {% endtab %}
 {% endtabs %}
 
-### 5. Find the winner and direct traffic to it
+### 5. Find the winner
 
 We can now compare the feedback for the 2 prompts from our feedback dashboard
 
