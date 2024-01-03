@@ -1,16 +1,19 @@
+---
+description: >-
+  This cookbook will guide us through setting up an effective A/B test where we
+  measure the performance of 2 different prompts written for 2 different models
+  in production.
+---
+
 # A/B test prompts and models
 
-A/B testing with large language models in production is crucial for driving optimal performance and user satisfaction.
-
-Portkey enables enterprises to deploy and test prompts in production, confidently.
+A/B testing with large language models in production is crucial for driving optimal performance and user satisfaction. It helps you find and settle on the best model for your application (and use-case).
 
 **This cookbook will guide us through setting up an effective A/B test where we measure the performance of 2 different prompts written for 2 different models in production.**
 
 ### **The Test**
 
-We want to test the **blog outline generation** capabilities of OpenAI's **`gpt-3.5-turbo`** model and Google's **`gemini-pro`** models which have similar pricing and benchmarks.
-
-We will rely on user feedback metrics to pick a winner.
+We want to test the **blog outline generation** capabilities of OpenAI's **`gpt-3.5-turbo`** model and Google's **`gemini-pro`** models which have similar pricing and benchmarks. We will rely on user feedback metrics to pick a winner.
 
 Setting it up will need us to
 
@@ -22,27 +25,27 @@ Setting it up will need us to
 
 Let's get started.
 
-### 1. Create prompts for the 2 models
+### Create prompts for the 2 models
 
 Portkey makes it easy to create prompts through the playground.
 
 We'll start by clicking **Create** on the **Prompts** **tab** and create the first prompt for OpenAI's gpt-3.5-turbo.
 
 {% hint style="info" %}
-You'll notice that I'd already created virtual keys for OpenAI and Google in my account. You can create them by going to the **Virtual Keys** tab and adding your API keys to Portkey's vault so we don't need to worry about them.
+You'll notice that I'd already created [virtual keys](../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) for OpenAI and Google in my account. You can create them by going to the **Virtual Keys** tab and adding your API keys to Portkey's vault so we don't need to worry about them.
 {% endhint %}
 
-Let's start with a simple prompt. We can always improve it iteratively. You'll notice that we've added variables to it for _title_ and _num\_sections_ which we'll populate through the API later on.
+Let's start with a simple prompt. We can always improve it iteratively. You'll notice that we've added variables to it for `title` and `num_sections` which we'll populate through the API later on.
 
-<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption><p>OpenAI prompt to create a blog outline</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 Great, this is setup and ready now.&#x20;
 
 The gemini model doesn't need a `system` prompt, so we can ignore it and create a prompt like this.
 
-<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption><p>Gemini prompt to create a blog outline</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
-### 2. Write the config for a 50-50 test
+### Write the config for a 50-50 test
 
 To run the experiment, lets create a [config](../product/ai-gateway-streamline-llm-integrations/configs.md) in Portkey that can automatically route requests between these 2 prompts.
 
@@ -67,7 +70,7 @@ We've created a load balanced config that will route 50% of the traffic to each 
 
 <figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption><p>Create the config and fetch the ID</p></figcaption></figure>
 
-### 3. Make requests using this config
+### Make requests using this config
 
 Lets use this config to start making requests from our application. We will use the [prompt completions API](../api-reference/prompts/prompt-completion.md) to make the requests and add the config in our headers.
 
@@ -137,7 +140,7 @@ As we make these requests, they'll show up in the Logs tab. We can see that requ
 
 Let's setup feedback for these APIs so we can begin our tests!
 
-### 4. Send feedback for responses
+### Send feedback for responses
 
 Collecting and analysing feedback allows us to find the real performance of each of these 2 prompts (an in turn `gemini-pro` and `gpt-3.5-turbo`)
 
@@ -180,7 +183,7 @@ curl -X POST "https://api.portkey.ai/v1/feedback" \
 {% endtab %}
 {% endtabs %}
 
-### 5. Find the winner
+### Find the winner
 
 We can now compare the feedback for the 2 prompts from our feedback dashboard
 
@@ -212,6 +215,8 @@ And we're done! We were able to set up an effective A/B test between prompts and
 ### Next Steps
 
 As next explorations, we could create versions of the prompts and test between them. We could also test 2 prompts on `gpt-3.5-turbo` to judge which one would perform better.
+
+Try creating a prompt to create tweets and see which model or prompts perform better.
 
 Portkey allows a lot of flexibility while experimenting with prompts.
 
