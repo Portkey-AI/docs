@@ -29,7 +29,7 @@ Setting it up will need us to
 
 Let's get started.
 
-### Create prompts for the 2 models
+### 1. Create prompts for the 2 models
 
 Portkey makes it easy to create prompts through the playground.
 
@@ -49,7 +49,7 @@ The gemini model doesn't need a `system` prompt, so we can ignore it and create 
 
 <figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
-### Write the config for a 50-50 test
+### 2. Write the config for a 50-50 test
 
 To run the experiment, lets create a [config](../product/ai-gateway-streamline-llm-integrations/configs.md) in Portkey that can automatically route requests between these 2 prompts.
 
@@ -74,7 +74,7 @@ We've created a load balanced config that will route 50% of the traffic to each 
 
 <figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption><p>Create the config and fetch the ID</p></figcaption></figure>
 
-### Make requests using this config
+### 3. Make requests using this config
 
 Lets use this config to start making requests from our application. We will use the [prompt completions API](../api-reference/prompts/prompt-completion.md) to make the requests and add the config in our headers.
 
@@ -144,7 +144,7 @@ As we make these requests, they'll show up in the Logs tab. We can see that requ
 
 Let's setup feedback for these APIs so we can begin our tests!
 
-### Send feedback for responses
+### 4. Send feedback for responses
 
 Collecting and analysing feedback allows us to find the real performance of each of these 2 prompts (an in turn `gemini-pro` and `gpt-3.5-turbo`)
 
@@ -187,7 +187,7 @@ curl -X POST "https://api.portkey.ai/v1/feedback" \
 {% endtab %}
 {% endtabs %}
 
-### Find the winner
+### 5. Find the winner
 
 We can now compare the feedback for the 2 prompts from our feedback dashboard
 
