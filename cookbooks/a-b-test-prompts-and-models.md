@@ -11,6 +11,10 @@ A/B testing with large language models in production is crucial for driving opti
 
 **This cookbook will guide us through setting up an effective A/B test where we measure the performance of 2 different prompts written for 2 different models in production.**
 
+{% hint style="success" %}
+If you prefer to follow along a **python notebook**, you can find that here: [https://colab.research.google.com/drive/1ZCmLHh9etOGYhhCw-lUVpEu9Nw43lnD1?usp=sharing](https://colab.research.google.com/drive/1ZCmLHh9etOGYhhCw-lUVpEu9Nw43lnD1?usp=sharing)
+{% endhint %}
+
 ### **The Test**
 
 We want to test the **blog outline generation** capabilities of OpenAI's **`gpt-3.5-turbo`** model and Google's **`gemini-pro`** models which have similar pricing and benchmarks. We will rely on user feedback metrics to pick a winner.
