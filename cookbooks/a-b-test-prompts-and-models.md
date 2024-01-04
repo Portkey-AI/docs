@@ -1,18 +1,11 @@
----
-description: >-
-  This cookbook will guide us through setting up an effective A/B test where we
-  measure the performance of 2 different prompts written for 2 different models
-  in production.
----
-
-# A/B test prompts and models
+# A/B Test Prompts and Models
 
 A/B testing with large language models in production is crucial for driving optimal performance and user satisfaction. It helps you find and settle on the best model for your application (and use-case).
 
 **This cookbook will guide us through setting up an effective A/B test where we measure the performance of 2 different prompts written for 2 different models in production.**
 
 {% hint style="success" %}
-If you prefer to follow along a **python notebook**, you can find that here: [https://colab.research.google.com/drive/1ZCmLHh9etOGYhhCw-lUVpEu9Nw43lnD1?usp=sharing](https://colab.research.google.com/drive/1ZCmLHh9etOGYhhCw-lUVpEu9Nw43lnD1?usp=sharing)
+If you prefer to follow along a **python notebook**, you can find that [here](https://colab.research.google.com/drive/1ZCmLHh9etOGYhhCw-lUVpEu9Nw43lnD1?usp=sharing).
 {% endhint %}
 
 ### **The Test**
@@ -36,7 +29,7 @@ Portkey makes it easy to create prompts through the playground.
 We'll start by clicking **Create** on the **Prompts** **tab** and create the first prompt for OpenAI's gpt-3.5-turbo.
 
 {% hint style="info" %}
-You'll notice that I'd already created [virtual keys](../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) for OpenAI and Google in my account. You can create them by going to the **Virtual Keys** tab and adding your API keys to Portkey's vault so we don't need to worry about them.
+You'll notice that I'd already created [virtual keys](../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) for OpenAI and Google in my account. You can create them by going to the **Virtual Keys** tab and adding your API keys to Portkey's vault - this also ensures that your original API keys remain secure.
 {% endhint %}
 
 Let's start with a simple prompt. We can always improve it iteratively. You'll notice that we've added variables to it for `title` and `num_sections` which we'll populate through the API later on.
@@ -70,7 +63,7 @@ We pulled the `id` for both these prompts from our Prompts list page and will us
 }
 ```
 
-We've created a load balanced config that will route 50% of the traffic to each of the 2 prompt IDs mentioned in it. We can save this config and fetch it's ID.
+We've created a load balanced config that will route 50% of the traffic to each of the 2 prompt IDs mentioned in it. We can save this config and fetch its ID.
 
 <figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption><p>Create the config and fetch the ID</p></figcaption></figure>
 
@@ -80,8 +73,7 @@ Lets use this config to start making requests from our application. We will use 
 
 {% tabs %}
 {% tab title="NodeJS" %}
-```javascript
-import Portkey from 'portkey-ai'
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
 
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",
@@ -90,7 +82,7 @@ const portkey = new Portkey({
 
 // We can also override the hyperparameters
 const pcompletion = await portkey.prompts.completions.create({
-    promptID: "pp-blog-outli-840877", // Use any of the prompt IDs
+    <a data-footnote-ref href="#user-content-fn-1">promptID: "pp-blog-outli-840877"</a>, // Use any prompt ID
     variables: {
        "title": "Should colleges permit the use of AI in assignments?",
        "num_sections": "5"
@@ -98,12 +90,11 @@ const pcompletion = await portkey.prompts.completions.create({
 });
 
 console.log(pcompletion.choices)
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Python" %}
-```python
-from portkey_ai import Portkey
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
 
 client = Portkey(
     api_key="PORTKEY_API_KEY",
@@ -111,7 +102,7 @@ client = Portkey(
 )
 
 pcompletion = client.prompts.completions.create(
-    prompt_id="pp-blog-outli-840877", # Use any of the prompt IDs
+    <a data-footnote-ref href="#user-content-fn-2">prompt_id="pp-blog-outli-840877</a>", # Use any prompt ID
     variables={
        "title": "Should colleges permit the use of AI in assignments?",
        "num_sections": "5"
@@ -119,13 +110,11 @@ pcompletion = client.prompts.completions.create(
 )
 
 print(pcompletion)
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="REST" %}
-{% code overflow="wrap" %}
-```bash
-curl -X POST "https://api.portkey.ai/v1/prompts/pp-blog-outli-840877/completions" \
+<pre class="language-bash" data-overflow="wrap"><code class="lang-bash">curl -X POST "https://api.portkey.ai/v1/prompts/<a data-footnote-ref href="#user-content-fn-3">pp-blog-outli-840877</a>/completions" \ # You can use any of the A/B prompt IDs here 
 -H "Content-Type: application/json" \
 -H "x-portkey-api-key: $PORTKEY_API_KEY" \
 -H "x-portkey-config": "pc-blog-o-0e83d2" \ # Replace with your config ID
@@ -135,8 +124,7 @@ curl -X POST "https://api.portkey.ai/v1/prompts/pp-blog-outli-840877/completions
         "num_sections": "5"
     }
 }'
-```
-{% endcode %}
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -241,8 +229,7 @@ Adjust the config like this, and your fallback is setup!
         "prompt_id": "0db0d89c-c1f6-44bc-a976-f92e24b39a19",
         "weight": 0.8
 <strong>      }, {
-</strong><strong>        "prompt_id": "pp-blog-outli-840877",
-</strong><strong>        "weight": 0.2
+</strong><strong>        "prompt_id": "pp-blog-outli-840877"
 </strong><strong>      }]
 </strong>  },{
     "prompt_id": "pp-blog-outli-840877",
@@ -252,3 +239,9 @@ Adjust the config like this, and your fallback is setup!
 </code></pre>
 
 If you need any help in further customizing this flow, or just have more questions as you run experiments with prompts / models, please reach out to us at hello@portkey.ai (We reply fast!)
+
+[^1]: You can send any dummy prompt ID here. This prompt ID will not be used to make any calls. Portkey takes the relevant A or B prompt ID directly from the Config.
+
+[^2]: You can send any dummy prompt ID here. This prompt ID will not be used to make any calls. Portkey takes the relevant A or B prompt ID directly from the Config.
+
+[^3]: You can send any dummy prompt ID here. This prompt ID will not be used to make any calls. Portkey takes the relevant A or B prompt ID directly from the Config.

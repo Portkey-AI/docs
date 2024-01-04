@@ -63,7 +63,7 @@
 ## Cookbooks
 
 * [Few-shot Prompting](cookbooks/few-shot-prompting.md)
-* [A/B test prompts and models](cookbooks/a-b-test-prompts-and-models.md)
+* [A/B Test Prompts and Models](cookbooks/a-b-test-prompts-and-models.md)
 
 ## Changelog
 
