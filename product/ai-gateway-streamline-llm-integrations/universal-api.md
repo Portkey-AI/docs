@@ -1,8 +1,8 @@
 # Universal API
 
-The Portkey API and SDKs are integrated with all the popular LLM providers. This allows you to make a request to any hosted or private model with the same signature.
+The Portkey API and SDKs are integrated with all the popular LLM providers. This allows you to make a request to any hosted or private model with the same signature, and we take care of the request and response transformations automatically.
 
-Portkey uses the fast open-source AI gateway, [Rubeus](https://github.com/Portkey-AI/Rubeus) to handle request and response transformations automatically. Rubeus by default accepts all requests with a similar signature to OpenAI and is tuned to always return an OpenAI compliant response.
+This universal API is powered by Portkey's battle-tested open-source AI Gateway. It converts all incoming requests to the OpenAI signature and is tuned to always return an OpenAI compliant response.
 
 Let's try sending a completion request to OpenAI using Portkey's gateway
 

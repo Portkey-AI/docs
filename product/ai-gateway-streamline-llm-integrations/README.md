@@ -14,12 +14,18 @@ The various gateway strategies are implemented using Gateway configs. You can re
 [configs.md](configs.md)
 {% endcontent-ref %}
 
-### Open Source
+## Open Source
 
-Portkey uses the [open source AI Gateway - Rubeus](https://github.com/Portkey-AI/Rubeus) under the hood.
+We've open sourced our battle-tested AI gateway to the community. You can run it locally with a single command:
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+```bash
+npx @portkey-ai/gateway
+```
+
+[**Contribute here**](https://github.com/portkey-ai/gateway).
+
+<figure><img src="../../.gitbook/assets/Rubeus Social Share (2).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-Rubeus can also be self-hosted and then connected to Portkey. Please reach out to hello@portkey.ai if you need help getting this set up.
+You can also [self-host](https://github.com/Portkey-AI/gateway/blob/main/docs/installation-deployments.md) the gateway and then connect it to Portkey. Please reach out on hello@portkey.ai and we'll help you set this up!
 {% endhint %}
