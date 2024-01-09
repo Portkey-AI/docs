@@ -161,7 +161,7 @@ In REST calls, `x-portkey-api-key` is a compulsory header, it can be paired with
 
 1. `x-portkey-provider` & `Authorization` (or similar auth headers)
 2. `x-portkey-virtual-key`&#x20;
-3. `x-portkey-config` (must contain targets)
+3. `x-portkey-config`&#x20;
 
 **Example request using Provider + Auth:**
 
