@@ -15,11 +15,11 @@ The config object would look like this
   },
   "targets": [
     {
-      "virtualey": "openai-virtual-key",
+      "virtual_key": "openai-virtual-key",
       "weight": 0.95
     },
     {
-      "virtualey": "anyscale-virtual-key",
+      "virtual_key": "anyscale-virtual-key",
       "weight": 0.05,
       "override_params": {
           "model": "meta-llama/Llama-2-70b-chat-hf"
