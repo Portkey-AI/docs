@@ -155,9 +155,9 @@ await portkey.feedback.create({
 ```python
 req_trace = pcompletion.get_headers()['trace-id']
 
-portkey.feedback.create(
-    'trace_id'=req_trace,
-    'value'=0  # For thumbs down or 1 for thumbs up
+client.feedback.create(
+    trace_id=req_trace,
+    value=0  # For thumbs down or 1 for thumbs up
 )
 ```
 {% endtab %}
