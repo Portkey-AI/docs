@@ -57,7 +57,7 @@ documents = SimpleDirectoryReader("data").load_data()
 
 # define LLM with Portkey abstractions
 <strong>headers = createHeaders(api_key="PORTKEY_API_KEY", mode="openai")
-</strong><strong>llm = OpenAI(api_base=PORTKEY_GATEWAY_URL, headers=headers)
+</strong><strong>llm = OpenAI(api_base=PORTKEY_GATEWAY_URL, default_headers=headers)
 </strong>service_context = ServiceContext.from_defaults(llm=llm)
 
 # build index
