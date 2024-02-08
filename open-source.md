@@ -24,7 +24,7 @@ We collaborate with the community to dive deep into how the LLMs & their inferen
 
 #### Report 1: [GPT-4 is getting faster](https://portkey.ai/blog/gpt-4-is-getting-faster/)
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### **Please reach out** [**on Discord**](https://discord.gg/9sfE5ZYv) **to collaborate on our next report!**
 

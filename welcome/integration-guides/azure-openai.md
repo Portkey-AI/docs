@@ -15,6 +15,25 @@ With Portkey, you can take advantage of features like fast AI gateway access, ob
 
 Portkey provides a consistent API to interact with models from various providers. To integrate Azure OpenAI with Portkey:
 
+### First, add your Azure details to Portkey's Virtual Keys
+
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/image.png" alt="" width="375"><figcaption></figcaption></figure>
+
+</div>
+
+**Here's a step-by-step guide:**
+
+1. Request access to Azure OpenAI [here](https://aka.ms/oai/access).
+2. Create a resource in the Azure portal [here](https://portal.azure.com/?microsoft\_azure\_marketplace\_ItemHideKey=microsoft\_openai\_tip#create/Microsoft.CognitiveServicesOpenAI). (This will be your **Resource Name**)
+3. Deploy a model in Azure OpenAI Studio [here](https://oai.azure.com/). (This will be your **Deployment Name)**
+4. Now, on Azure OpenAI studio, go to any playground (chat or completions), click on a UI element called "View code". Note down the API version & API key from here. (This will be your **Azure API Version** & **Azure API Key**)
+
+When you input these details, the foundation model will be auto populated. More details in [this guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).
+
+Now, let's make a request using this virtual key!
+
 ### **1. Install the Portkey SDK**
 
 Add the Portkey SDK to your application to interact with Azure OpenAI's API through Portkey's gateway.
