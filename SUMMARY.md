@@ -37,6 +37,7 @@
   * [Load Balancing](product/ai-gateway-streamline-llm-integrations/load-balancing.md)
   * [Canary Testing](product/ai-gateway-streamline-llm-integrations/canary-testing.md)
   * [Virtual Keys](product/ai-gateway-streamline-llm-integrations/virtual-keys.md)
+  * [Request Timeouts](product/ai-gateway-streamline-llm-integrations/request-timeouts.md)
 * [Prompt Library](product/prompt-library.md)
 * [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
 
