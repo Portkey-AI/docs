@@ -86,7 +86,7 @@ Portkey issues a **408 error** for timed-out requests. You can leverage this by 
 <pre><code>{
   "strategy": {
     "mode": "fallback",
-<strong>    "on_status_codes":408
+<strong>    "on_status_codes": [408]
 </strong>  },
   "targets": [
 <strong>    { "virtual_key": "open-ai-xxx", "request_timeout": 10000, },
