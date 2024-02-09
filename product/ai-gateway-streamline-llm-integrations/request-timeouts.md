@@ -6,7 +6,7 @@ Manage unpredictable LLM latencies effectively with Portkey's **Request Timeouts
 
 You can enable request timeouts by setting them in Configs. Request timeouts are set at either (1) strategy level, or (2) target level.
 
-Use the `request_timeout` parameter, and specify the time in **microseconds** (`integer)`&#x20;
+Use the `request_timeout` parameter, and specify the time in **milliseconds** (`integer)`&#x20;
 
 For a 10-second timeout, it will be:
 
