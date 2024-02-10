@@ -12,7 +12,7 @@
   * [Anthropic](welcome/integration-guides/anthropic.md)
   * [Cohere](welcome/integration-guides/cohere.md)
   * [Google Palm](welcome/integration-guides/google-palm.md)
-  * [Google Gemini Advanced](welcome/integration-guides/google-palm-1.md)
+  * [Google Gemini](welcome/integration-guides/google-palm-1.md)
   * [Together AI](welcome/integration-guides/google-palm-2.md)
   * [Perplexity AI](welcome/integration-guides/google-palm-3.md)
   * [Mistral AI](welcome/integration-guides/google-palm-4.md)
