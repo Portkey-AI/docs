@@ -2,7 +2,7 @@
 
 Manage unpredictable LLM latencies effectively with Portkey's **Request Timeouts**. This feature allows automatic termination of requests that exceed a specified duration, letting you gracefully handle errors or make another, faster request.&#x20;
 
-### Enabling Request Timeouts
+## Enabling Request Timeouts
 
 You can enable request timeouts by setting them in Configs. Request timeouts are set at either (1) strategy level, or (2) target level.
 
@@ -14,7 +14,7 @@ For a 10-second timeout, it will be:
 "request_timeout": 10000
 ```
 
-#### Setting Request Timeout at Strategy Level
+### Setting Request Timeout at Strategy Level
 
 <pre class="language-json"><code class="lang-json">{
   "strategy": { "mode": "fallback" },
@@ -28,7 +28,7 @@ For a 10-second timeout, it will be:
 
 Here, the request timeout of 10 seconds will be applied to \***all**\* the targets in this Config.
 
-#### Setting Request Timeout at Target Level
+### Setting Request Timeout at Target Level
 
 <pre class="language-json"><code class="lang-json">{
   "strategy": { "mode": "fallback" },
@@ -79,23 +79,36 @@ Nested target objects inherit the top-level timeout, with the option to override
 4. For the second virtual key (i.e. `open-ai-1-2`), there is a timeout override, set at **10s**, which will be applied only to this target
 5. For the last target (i.e. virtual key `azure-open-ai-1`), the top strategy-level timeout of **2s** will be applied
 
-### Handling 408 Error
+## Handling Request Timeouts
 
-Portkey issues a **408 error** for timed-out requests. You can leverage this by setting up fallback strategies through the `on_status_codes` parameter, ensuring robust handling of these scenarios.
+Portkey issues a standard **408 error** for timed-out requests. You can leverage this by setting up fallback or retry strategies through the **`on_status_codes`** parameter, ensuring robust handling of these scenarios.
+
+### Triggering Fallbacks with Request Timeouts
 
 <pre><code>{
   "strategy": {
-    "mode": "fallback",
-<strong>    "on_status_codes": [408]
+<strong>    "mode": "fallback",
+</strong><strong>    "on_status_codes": [408]
 </strong>  },
   "targets": [
-<strong>    { "virtual_key": "open-ai-xxx", "request_timeout": 10000, },
+<strong>    { "virtual_key": "open-ai-xxx", "request_timeout": 2000, },
 </strong>    { "virtual_key": "azure-open-ai-xxx"}
   ]
 }
 </code></pre>
 
-Here, fallback will only be triggered if the first request times out, otherwise the request will fail with a 408 error code.
+Here, fallback from OpenAI to Azure OpenAI will only be triggered if the first request times out after 2 seconds, otherwise the request will fail with a 408 error code.
+
+### Triggering Retries with Request Timeouts
+
+<pre><code>{
+<strong>    "request_timeout": 1000,
+</strong><strong>    "retry": { "attempts": 3, "on_status_codes": [ 408 ] },
+</strong>    "virtual_key": "open-ai-xxx"
+}
+</code></pre>
+
+Here, retry is triggered upto 3 times whenever the request takes more than 1s to return a response. After 3 unsuccessful retries, it will fail with a 408 code.
 
 [Here's a general guide on how to use Configs in your requests.](configs.md)
 
