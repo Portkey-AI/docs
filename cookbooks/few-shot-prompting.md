@@ -1,8 +1,8 @@
-# Few-shot Prompting
+# Few-Shot Prompting
 
 LLMs are highly capable of following a given structure. By providing a few examples of how the assistant should respond to a given prompt, the LLM can generate responses that closely follow the format of these examples.
 
-Portkey enhances this capability with the _raw prompt_ feature of prompt templates. You can easily add few-shot learning examples to your templates with _raw prompt_ and dynamically update them whenever you want, without needing to modify the prompt templates!
+Portkey enhances this capability with the _**raw prompt**_ feature of prompt templates. You can easily add few-shot learning examples to your templates with _raw prompt_ and dynamically update them whenever you want, without needing to modify the prompt templates!
 
 ### How does it work?
 
@@ -68,7 +68,7 @@ In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt="" width="296"><figcaption></figcaption></figure>
 
 </div>
 
