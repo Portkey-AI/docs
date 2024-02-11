@@ -1,18 +1,18 @@
 ---
-description: >-
-  Get the LLM to generate legitimate API request objects and "interact" with any
-  API
+description: Get the LLM to interact with external APIs!
 ---
 
 # Function Calling
 
-As seen in [JSON mode cookbook](enforcing-json-schema-with-anyscale-and-together.md), LLMs have gotten good at generating outputs that follow a specified syntax. We can combine this LLM ability with their reasoning ability to let them: (1) Inform the user when a question can be answered using an external API, (2) Generating a valid request in the API's format, (3) Converting the API's response to a natural language answer.
+As described in the [Enforcing JSON Schema cookbook](enforcing-json-schema-with-anyscale-and-together.md), LLMs are now good at generating outputs that follow a specified syntax. We can combine this LLM ability with their reasoning ability to let LLMs interact with external APIs. **This is called Function (or Tool) calling.** In simple terms, function calling:&#x20;
 
-**This is called Function (or Tool) calling** and it's effect is achieved by stringing together 2 LLM calls**.**&#x20;
+1. Informs the user when a question can be answered using an external API
+2. Generates a valid request in the API's format
+3. Converts the API's response to a natural language answer
 
 Function calling is currently supported on select models on **Anyscale**, **Together AI**, and **OpenAI**. Using Portkey, you can easily experiment with function calling across various providers and gain confidence to ship it to production.
 
-**Let's understand how it works with a simple example**:&#x20;
+**Let's understand how it works with an example**:&#x20;
 
 We want the  LLM to tell what's the temperature in Delhi today. We'll use a "Weather API" to fetch the weather:
 
@@ -78,7 +78,7 @@ Here, we've defined what the Weather API expects for its requests in the `tool` 
 }
 </code></pre>
 
-We can just take the `tool_call` made by the LLM, and pass it to our `getWeather` function - it should return a proper response to our query! We then take that response and send it to our LLM to complete the loop:
+We can just take the `tool_call` made by the LLM, and pass it to our `getWeather` function - it should return a proper response to our query. We then take that response and send it to our LLM to complete the loop:
 
 ```javascript
 /**
