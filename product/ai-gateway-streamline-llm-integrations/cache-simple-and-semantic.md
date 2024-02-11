@@ -1,6 +1,11 @@
 # Cache (Simple & Semantic)
 
-Respond to previously served queries from Portkey cache instead of sending them again to your AI provider. **Match exact strings** OR **Semantically similar strings** and serve requests upto **20x times faster** and **cheaper**.
+Speed up and save money on your LLM requests by storing past responses in the Portkey cache. There are 2 cache modes:
+
+* **Simple:** Matches requests verbatim. Perfect for repeated, identical prompts.
+* **Semantic:** Matches responses for requests that are semantically similar. Ideal for denoising requests with extra prepositions, pronouns, etc.
+
+Portkey cache serves requests upto **20x times faster** and **cheaper**.
 
 ## **Enable Cache in the Config**
 
@@ -12,7 +17,7 @@ To enable Portkey cache, just add the `cache` params to your [config object](../
 "cache": { "mode": "simple" }
 ```
 
-Simple cache performs an exact match on the input prompts. If the exact same request is received again, Portkey retrieves the response directly from the cache, bypassing the model execution. This approach is straightforward and effective for repeated identical requests.
+**How it works:** Simple cache performs an exact match on the input prompts. If the exact same request is received again, Portkey retrieves the response directly from the cache, bypassing the model execution.&#x20;
 
 ### **Semantic Cache**
 
@@ -20,32 +25,31 @@ Simple cache performs an exact match on the input prompts. If the exact same req
 "cache": { "mode": "semantic" }
 ```
 
-Semantic cache considers the contextual similarity between input requests. It uses cosine similarity to ascertain if the similarity between the input and a cached request exceeds a specific threshold. If the similarity threshold is met, Portkey retrieves the response from the cache, saving model execution time. Check out this [blog](https://portkey.ai/blog/reducing-llm-costs-and-latency-semantic-cache/) for more details on how we do this.
+**How it works:** Semantic cache considers the contextual similarity between input requests. It uses cosine similarity to ascertain if the similarity between the input and a cached request exceeds a specific threshold. If the similarity threshold is met, Portkey retrieves the response from the cache, saving model execution time. Check out this [blog](https://portkey.ai/blog/reducing-llm-costs-and-latency-semantic-cache/) for more details on how we do this.
 
-{% hint style="success" %}
+{% hint style="info" %}
 Semantic cache is a "superset" of both caches. Setting cache mode to "semantic" will work for when there are simple cache hits as well.
 {% endhint %}
 
-[Read how to set cache in Configs](cache-simple-and-semantic.md#how-cache-works-with-configs).
+[Read more how to set cache in Configs](cache-simple-and-semantic.md#how-cache-works-with-configs).
 
 ***
 
 ## Setting Cache Age
 
-You can set the age (or "ttl") of your cached response with this setting. Cache age is also set in your Config object, along with the cache mode:
+You can set the age (or "ttl") of your cached response with this setting. Cache age is also set in your Config object:
 
-```
-"cache": { 
+<pre><code>"cache": { 
     "mode": "semantic",
-    "max_age": 60
-}
-```
+<strong>    "max_age": 60
+</strong>}
+</code></pre>
 
-Here, your cache will automatically expire after 60 seconds. Cache age is set in **seconds**.&#x20;
+In this example, your cache will automatically expire after 60 seconds. Cache age is set in **seconds**.&#x20;
 
 {% hint style="info" %}
 * **Minimum** cache age is **60 seconds**
-* **Maximum** cache age **is 90 days** (i.e. **7776000** seconds)
+* **Maximum** cache age is **90 days** (i.e. **7776000** seconds)
 * **Default** cache age is **7 days** (i.e. **604800** seconds)
 {% endhint %}
 
@@ -53,7 +57,7 @@ Here, your cache will automatically expire after 60 seconds. Cache age is set in
 
 ## Force Refresh Cache
 
-You can **force refresh** the cache for a particular request and ensure that even if cache is present, a new request is made and the existing cache value is updated. You can force refresh the cache only **at the time of making a request**, and it is **not a part of your Config**.
+Ensure that a new response is fetched and stored in the cache even when there is an existing cached response for your request. Cache force refresh can only be done **at the time of making a request**, and it is **not a part of your Config**.
 
 You can enable cache force refresh with this header:
 
@@ -117,11 +121,8 @@ main()
 {% endtabs %}
 
 {% hint style="info" %}
-For requests that have previous semantic hits, force refresh is performed on ALL the semantic hits.
-{% endhint %}
-
-{% hint style="warning" %}
-Cache force refresh is only activated if a cache config is also passed along with your request. This means, setting cache force refresh true without passing the relevant cache config with the request will not have any effect.
+* Cache force refresh is only activated if a cache config is **also passed** along with your request. (setting `cacheForceRefresh` as `true` without passing the relevant cache config will not have any effect)
+* For requests that have previous semantic hits, force refresh is performed on ALL the semantic matches of your request.
 {% endhint %}
 
 ***
