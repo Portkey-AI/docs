@@ -12,7 +12,7 @@ Portkey's observability features provide complete control over all your requests
 
 <div data-full-width="true">
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 

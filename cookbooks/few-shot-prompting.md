@@ -68,7 +68,7 @@ In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (3).png" alt="" width="296"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt="" width="296"><figcaption></figcaption></figure>
 
 </div>
 

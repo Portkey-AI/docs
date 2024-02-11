@@ -66,6 +66,7 @@
 * [Few-Shot Prompting](cookbooks/few-shot-prompting.md)
 * [A/B Test Prompts and Models](cookbooks/a-b-test-prompts-and-models.md)
 * [Enforcing JSON Schema with Anyscale & Together](cookbooks/enforcing-json-schema-with-anyscale-and-together.md)
+* [Function Calling](cookbooks/function-calling.md)
 
 ## Changelog
 
