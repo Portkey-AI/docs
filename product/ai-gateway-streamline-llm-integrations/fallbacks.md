@@ -49,13 +49,13 @@ You can change this behaviour by setting the optional **`on_status_codes`** para
       "virtual_key": "openai-virtual-key"
     },
     {
-      "virtual_key": "anthropic-virtual-key"
+      "virtual_key": "azure-openai-virtual-key"
     }
   ]
 }
 </code></pre>
 
-Here, fallback from OpenAI to Azure OpenAI will only be triggered when there is a **`429`** error code (i.e. rate limiting error)
+Here, fallback from OpenAI to Azure OpenAI will only be triggered when there is a **`429`** error code from the OpenAI request (i.e. rate limiting error)
 
 ### Caveats and Considerations
 
