@@ -12,33 +12,35 @@ To enable retry, just add the `retry` param to your [config object](../../api-re
 
 ### Retry with 5 attempts
 
-```json
-{
-    "retry": { "attempts": 5 },
+<pre class="language-json"><code class="lang-json">{
+    "retry": {
+<strong>        "attempts": 5
+</strong>    },
     "virtual_key": "virtual-key-xxx"
 }
-```
+</code></pre>
 
 ### Retry only on specific error codes
 
-```json
-{
+By default, Portkey triggers retries on the following error codes: **\[429, 500, 502, 503, 504]**
+
+You can change this behaviour by setting the optional **`on_status_codes`** param in your retry config and manually inputting the error codes on which rety will be triggered.
+
+<pre class="language-json"><code class="lang-json">{
   "retry": {
     "attempts": 3,
-    "on_status_codes": [
-      408, 429, 401
-    ]
-  },
+<strong>    "on_status_codes": [ 408, 429, 401 ]
+</strong>  },
   "virtual_key": "virtual-key-xxx"
 }
-```
+</code></pre>
 
 {% hint style="info" %}
-The **`on_status_codes`** parameter is optional. You can use it to specify which errors trigger retries. Without it, retries will be triggered for every error.
+If the `on_status_codes` param is present, retries will be triggered **only** on the error codes specified in that Config and not on Portkey's default error codes for retries (i.e. \[429, 500, 502, 503, 504])
 {% endhint %}
 
 ### Exponential backoff strategy
 
 Here's how Portkey triggers retries following exponential backoff:
 
-<table><thead><tr><th width="249">Attempt</th><th>Time delay between requests</th></tr></thead><tbody><tr><td>Initial Call</td><td>Immediately</td></tr><tr><td>Retry 1st attempt</td><td>1 second</td></tr><tr><td>Retry 2nd attempt</td><td>2 seconds</td></tr><tr><td>Retry 3rd attempt</td><td>4 seconds</td></tr><tr><td>Retry 4th attempt</td><td>8 seconds</td></tr><tr><td>Retry 5th attempt</td><td>16 seconds</td></tr></tbody></table>
+<table><thead><tr><th width="249">Attempt</th><th>Time out between requests</th></tr></thead><tbody><tr><td>Initial Call</td><td>Immediately</td></tr><tr><td>Retry 1st attempt</td><td>1 second</td></tr><tr><td>Retry 2nd attempt</td><td>2 seconds</td></tr><tr><td>Retry 3rd attempt</td><td>4 seconds</td></tr><tr><td>Retry 4th attempt</td><td>8 seconds</td></tr><tr><td>Retry 5th attempt</td><td>16 seconds</td></tr></tbody></table>

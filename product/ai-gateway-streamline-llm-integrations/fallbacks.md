@@ -2,7 +2,7 @@
 
 With an array of Language Model APIs available on the market, each with its own strengths and specialties, wouldn't it be great if you could seamlessly switch between them based on their performance or availability? Portkey's Fallback capability is designed to do exactly that.
 
-The Fallback feature allows you to specify a list of Language Model APIs (LLMs) in a prioritized order. If the primary LLM fails to respond or encounters an error, Portkey will automatically fallback to the next LLM in the list, ensuring your application's robustness and reliability.
+The Fallback feature allows you to specify a list of providers/models in a prioritized order. If the primary LLM fails to respond or encounters an error, Portkey will automatically fallback to the next LLM in the list, ensuring your application's robustness and reliability.
 
 ### Enabling Fallback on LLMs
 
@@ -17,10 +17,10 @@ Here's a quick example of a config to **fallback** to Anthropic's `claude-v1` if
   },
   "targets": [
     {
-      "virtualey": "openai-virtual-key",
+      "virtual_key": "openai-virtual-key",
     },
     {
-      "virtualey": "anthropic-virtual-key",
+      "virtual_key": "anthropic-virtual-key",
       "override_params": {
           "model": "claude-1"
       }
@@ -32,6 +32,30 @@ Here's a quick example of a config to **fallback** to Anthropic's `claude-v1` if
 In this scenario, if the OpenAI model encounters an error or fails to respond, Portkey will automatically retry the request with Anthropic.
 
 [Using Configs in your Requests](configs.md#using-configs)
+
+### Triggering fallback on specific error codes
+
+By default, fallback is triggered on any request that returns a **non-2xx** status code.&#x20;
+
+You can change this behaviour by setting the optional **`on_status_codes`** param in your fallback config and manually inputting the status codes on which fallback will be triggered.
+
+<pre><code>{
+  "strategy": {
+    "mode": "fallback",
+<strong>    "on_status_codes": [ 429 ]
+</strong>  },
+  "targets": [
+    {
+      "virtual_key": "openai-virtual-key"
+    },
+    {
+      "virtual_key": "anthropic-virtual-key"
+    }
+  ]
+}
+</code></pre>
+
+Here, fallback from OpenAI to Azure OpenAI will only be triggered when there is a **`429`** error code (i.e. rate limiting error)
 
 ### Caveats and Considerations
 
