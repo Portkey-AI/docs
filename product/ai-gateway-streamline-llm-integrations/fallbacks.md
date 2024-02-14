@@ -17,10 +17,10 @@ Here's a quick example of a config to **fallback** to Anthropic's `claude-v1` if
   },
   "targets": [
     {
-      "virtualKey": "openai-virtual-key",
+      "virtualey": "openai-virtual-key",
     },
     {
-      "virtualKey": "anthropic-virtual-key",
+      "virtualey": "anthropic-virtual-key",
       "override_params": {
           "model": "claude-1"
       }
