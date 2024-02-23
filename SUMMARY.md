@@ -53,6 +53,7 @@
 * [Config Object](api-reference/config-object.md)
 * [Chat Completions](api-reference/chat-completions.md)
 * [Completions](api-reference/completions.md)
+* [Image Generation](api-reference/completions-1.md)
 * [Embeddings](api-reference/embeddings.md)
 * [Feedback](api-reference/feedback.md)
 * [Gateway for Other APIs](api-reference/gateway-for-other-apis.md)

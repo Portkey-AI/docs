@@ -75,10 +75,9 @@ pip install portkey-ai
 
 2. Next, insert the Portkey-specific code as shown in the highlighted lines to your OpenAI function calls. `PORTKEY_GATEWAY_URL` is portkey's gateway URL to route your requests and `createHeaders` is a convenience function that generates the headers object. ([All supported params/headers](../../api-reference/portkey-sdk-client.md#python-3))
 
-```python
-from openai import OpenAI
-from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
-
+<pre class="language-python"><code class="lang-python">from openai import OpenAI
+<strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+</strong>
 client = OpenAI(
     api_key="OPENAI_API_KEY", # defaults to os.environ.get("OPENAI_API_KEY")
     base_url=PORTKEY_GATEWAY_URL,
@@ -94,7 +93,7 @@ chat_complete = client.chat.completions.create(
 )
 
 print(chat_complete.choices[0].message.content)
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="REST API" %}
