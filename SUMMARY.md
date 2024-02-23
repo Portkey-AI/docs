@@ -56,6 +56,7 @@
 * [Image Generation](api-reference/completions-1.md)
 * [Embeddings](api-reference/embeddings.md)
 * [Feedback](api-reference/feedback.md)
+* [Logs](api-reference/logs.md)
 * [Gateway for Other APIs](api-reference/gateway-for-other-apis.md)
 * [Response Schema](api-reference/response-schema.md)
 * [Prompts](api-reference/prompts/README.md)
