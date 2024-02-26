@@ -31,6 +31,10 @@ To enable Portkey cache, just add the `cache` params to your [config object](../
 Semantic cache is a "superset" of both caches. Setting cache mode to "semantic" will work for when there are simple cache hits as well.
 {% endhint %}
 
+{% hint style="warning" %}
+To optimise for accurate cache hit rates, Semantic cache only works with requests with less than 8,191 input tokens, and with number of messages (human, assistant, system combined) less than or equal to 4.
+{% endhint %}
+
 [Read more how to set cache in Configs](cache-simple-and-semantic.md#how-cache-works-with-configs).
 
 ***
@@ -198,3 +202,4 @@ If any of your targets have **`override_params`** then cache on that target will
 \
 If there are **no** **`override_params`** for that target, then **cache will be active** on that target even if it hasn't been triggered even once.
 {% endhint %}
+
