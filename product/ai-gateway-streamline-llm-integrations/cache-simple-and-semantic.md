@@ -2,10 +2,10 @@
 
 Speed up and save money on your LLM requests by storing past responses in the Portkey cache. There are 2 cache modes:
 
-* **Simple:** Matches requests verbatim. Perfect for repeated, identical prompts.
-* **Semantic:** Matches responses for requests that are semantically similar. Ideal for denoising requests with extra prepositions, pronouns, etc.
+* **Simple:** Matches requests verbatim. Perfect for repeated, identical prompts. Works on **all models** including image generation models.
+* **Semantic:** Matches responses for requests that are semantically similar. Ideal for denoising requests with extra prepositions, pronouns, etc. Works on any model available on **`/chat/completions`** or **`/completions`** routes.
 
-Portkey cache serves requests upto **20x times faster** and **cheaper**.
+Portkey cache serves requests upto **20x times faster** and **cheaper**.&#x20;
 
 ## **Enable Cache in the Config**
 
