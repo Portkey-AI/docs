@@ -283,6 +283,42 @@ Additionally, you can define functions within your prompts and invoke the `portk
 
 Please refer to our fine-tuning guides to take advantage of Portkey's advanced [continuous fine-tuning](../../product/autonomous-fine-tuning.md) capabilities.
 
+### Image Generation
+
+Portkey supports multiple modalities for OpenAI and you can make image generation requests through Portkey's AI Gateway the same way as making completion calls.
+
+{% tabs %}
+{% tab title="OpenAI NodeJS" %}
+```javascript
+// Define the OpenAI client as shown above
+
+const image = await openai.images.generate({
+  model:"dall-e-3",
+  prompt:"Lucy in the sky with diamonds",
+  size:"1024x1024"
+})
+```
+{% endtab %}
+
+{% tab title="OpenAI Python" %}
+```python
+# Define the OpenAI client as shown above
+
+image = openai.images.generate(
+  model="dall-e-3",
+  prompt="Lucy in the sky with diamonds",
+  size="1024x1024"
+)
+```
+{% endtab %}
+{% endtabs %}
+
+Portkey's fast AI gateway captures the information about the request on your Portkey Dashboard. On your logs screen, you'd be able to see this request with the request and response.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Log view for an image generation request on OpenAI</p></figcaption></figure>
+
+More information on image generation is available in the [API Reference](../../api-reference/completions-1.md#create-image)
+
 ### Portkey Features
 
 Portkey supports the complete host of it's functionality via the OpenAI SDK so you don't need to migrate away from it.

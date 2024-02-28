@@ -51,8 +51,6 @@ client.images.create(requestParams);
 {% endtab %}
 {% endtabs %}
 
-
-
 ### Parameters
 
 1. **requestParams (Object):** Parameters for the completion request. These parameters should include the prompt and model, and are transformed automatically by Portkey for image models.&#x20;
@@ -138,3 +136,9 @@ curl "https://api.portkey.ai/v1/images/generations" \
 ### Response Format
 
 The response will conform to the Image Generation Object schema from the Portkey API, typically including the generated image based on the prompt and the selected model.
+
+
+
+Reference:
+
+[Image generation using OpenAI](../welcome/integration-guides/openai.md#image-generation)
