@@ -17,6 +17,7 @@
   * [Perplexity AI](welcome/integration-guides/google-palm-3.md)
   * [Mistral AI](welcome/integration-guides/google-palm-4.md)
   * [Anyscale (Llama2, Mistral, Zephyr)](welcome/integration-guides/anyscale-llama2-mistral-zephyr.md)
+  * [Stability AI](welcome/integration-guides/stability-ai.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
 
 ## Product
