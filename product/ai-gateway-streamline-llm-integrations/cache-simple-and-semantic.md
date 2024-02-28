@@ -76,7 +76,7 @@ You can enable cache force refresh with this header:
   -H "x-portkey-api-key: $PORTKEY_API_KEY" \
   -H "x-portkey-virtual-key: open-ai-xxx" \
 <strong>  -H "x-portkey-config: cache-config-xxx" \
-</strong><strong>  -H "x-portkey-cache-force-refresh: True" \
+</strong><strong>  -H "x-portkey-cache-force-refresh: true" \
 </strong>  -d '{
     "messages": [{"role": "user","content": "Hello!"}]
   }'
