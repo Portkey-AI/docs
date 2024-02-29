@@ -16,7 +16,7 @@
   * [Together AI](welcome/integration-guides/google-palm-2.md)
   * [Perplexity AI](welcome/integration-guides/google-palm-3.md)
   * [Mistral AI](welcome/integration-guides/google-palm-4.md)
-  * [Anyscale (Llama2, Mistral, Zephyr)](welcome/integration-guides/anyscale-llama2-mistral-zephyr.md)
+  * [Anyscale](welcome/integration-guides/anyscale-llama2-mistral-zephyr.md)
   * [Stability AI](welcome/integration-guides/stability-ai.md)
   * [Nomic](welcome/integration-guides/nomic.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
@@ -40,6 +40,11 @@
   * [Canary Testing](product/ai-gateway-streamline-llm-integrations/canary-testing.md)
   * [Virtual Keys](product/ai-gateway-streamline-llm-integrations/virtual-keys.md)
   * [Request Timeouts](product/ai-gateway-streamline-llm-integrations/request-timeouts.md)
+  * [Capabilities](product/ai-gateway-streamline-llm-integrations/capabilities/README.md)
+    * [Image Generation](product/ai-gateway-streamline-llm-integrations/capabilities/image-generation.md)
+    * [Function Calling](product/ai-gateway-streamline-llm-integrations/capabilities/function-calling.md)
+    * [Vision](product/ai-gateway-streamline-llm-integrations/capabilities/vision.md)
+    * [Audio](product/ai-gateway-streamline-llm-integrations/capabilities/audio.md)
 * [Prompt Library](product/prompt-library.md)
 * [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
 
@@ -71,6 +76,7 @@
 * [A/B Test Prompts and Models](cookbooks/a-b-test-prompts-and-models.md)
 * [Enforcing JSON Schema with Anyscale & Together](cookbooks/enforcing-json-schema-with-anyscale-and-together.md)
 * [Function Calling](cookbooks/function-calling.md)
+* [Image Generation](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb)
 
 ## Changelog
 
