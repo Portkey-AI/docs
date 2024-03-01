@@ -123,11 +123,17 @@ curl "https://api.portkey.ai/v1/chat/completions" \
 {% endtab %}
 {% endtabs %}
 
+#### API Reference
+
+{% content-ref url="../../../api-reference/completions-1.md" %}
+[completions-1.md](../../../api-reference/completions-1.md)
+{% endcontent-ref %}
+
 On completion, the request will get logged in the logs UI where the image can be viewed.&#x20;
 
 (_Note that providers may remove the hosted image after a period of time, so some logs might only contain the url_)
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Supported Providers and Models
 
