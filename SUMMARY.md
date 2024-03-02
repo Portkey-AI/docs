@@ -20,6 +20,7 @@
   * [Stability AI](welcome/integration-guides/stability-ai.md)
   * [Nomic](welcome/integration-guides/nomic.md)
   * [Autogen](welcome/integration-guides/autogen.md)
+  * [Groq](welcome/integration-guides/groq.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
 
 ## Product
