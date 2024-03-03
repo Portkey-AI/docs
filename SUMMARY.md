@@ -46,7 +46,6 @@
     * [Image Generation](product/ai-gateway-streamline-llm-integrations/capabilities/image-generation.md)
     * [Function Calling](product/ai-gateway-streamline-llm-integrations/capabilities/function-calling.md)
     * [Vision](product/ai-gateway-streamline-llm-integrations/capabilities/vision.md)
-    * [Audio](product/ai-gateway-streamline-llm-integrations/capabilities/audio.md)
 * [Prompt Library](product/prompt-library.md)
 * [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
 

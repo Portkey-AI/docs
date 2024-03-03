@@ -111,4 +111,4 @@ print(response)
 
 You can also use [config objects](configs.md) for a whole host of gateway strategies.
 
-The AI Gateway supports APIs outside plain text and chat completions as well. Check out the guides on [Image Generation](capabilities/image-generation.md), [Function Calling](capabilities/function-calling.md), [Using Vision APIs ](capabilities/vision.md)and [Working with Audio](capabilities/audio.md).
+The AI Gateway supports APIs outside plain text and chat completions as well. Check out the guides on [Image Generation](capabilities/image-generation.md), [Function Calling](capabilities/function-calling.md), [Using Vision APIs ](capabilities/vision.md)and [Working with Audio](broken-reference).
