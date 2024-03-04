@@ -22,6 +22,7 @@
   * [Autogen](welcome/integration-guides/autogen.md)
   * [Groq](welcome/integration-guides/groq.md)
   * [Segmind](welcome/integration-guides/segmind.md)
+  * [AWS Bedrock](welcome/integration-guides/aws-bedrock.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
 
 ## Product
