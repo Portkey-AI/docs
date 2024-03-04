@@ -82,6 +82,45 @@ image = portkey.images.generate(
 
 Notice how we're using the OpenAI's image generation signature to prompt Segmind's hosted serverless endpoints allowing greater flexibility to change models and providers later if necessary.
 
+### Supported Models
+
+The following models are supported, newer models added to Segmind should also be automatically supported.
+
+| Model String               | Model Name            | Extra Keys (if any)                                                            |
+| -------------------------- | --------------------- | ------------------------------------------------------------------------------ |
+| `sdxl1.0-txt2img`          | SDXL                  |                                                                                |
+| `sd1.5-526mix`             | 526 Mix               |                                                                                |
+| `sd1.5-allinonepixel`      | All In One Pixel      |                                                                                |
+| `sd1.5-disneyB`            | Cartoon               |                                                                                |
+| `sd1.5-colorful`           | Colorful              |                                                                                |
+| `sd1.5-cuterichstyle`      | Cute Rich Style       |                                                                                |
+| `sd1.5-cyberrealistic`     | Cyber Realistic       |                                                                                |
+| `sd1.5-deepspacediffusion` | Deep Spaced Diffusion |                                                                                |
+| `sd1.5-dreamshaper`        | Dream Shaper          |                                                                                |
+| `sd1.5-dvarch`             | Dv Arch               |                                                                                |
+| `sd1.5-edgeofrealism`      | Edge of Realism       |                                                                                |
+| `sd1.5-epicrealism`        | Epic Realism          |                                                                                |
+| `sd1.5-fantassifiedicons`  | Fantassified Icons    |                                                                                |
+| `sd1.5-flat2d`             | Flat 2D               |                                                                                |
+| `sd1.5-fruitfusion`        | Fruit Fusion          |                                                                                |
+| `sd1.5-icbinp`             | Icbinp                |                                                                                |
+| `sd1.5-juggernaut`         | Juggernaut            |                                                                                |
+| `kandinsky2.2-txt2img`     | Kandinsky             |                                                                                |
+| `sd1.5-majicmix`           | Majicmix              |                                                                                |
+| `sd1.5-manmarumix`         | Manmarumix            |                                                                                |
+| `sd1.5-paragon`            | Paragon               |                                                                                |
+| `potraitsd1.5-txt2img`     | Potrait SD            |                                                                                |
+| `qrsd1.5-txt2img`          | QR Generator          | `control_scale`, `control_scale`, `control_scale`, `qr_text`, `invert`, `size` |
+| `sd1.5-rcnz`               | RCNZ                  |                                                                                |
+| `sd1.5-rpg`                | RPG                   |                                                                                |
+| `sd1.5-realisticvision`    | Realistic Vision      |                                                                                |
+| `sd1.5-reliberate`         | Reliberate            |                                                                                |
+| `sd1.5-revanimated`        | Revanimated           |                                                                                |
+| `sd1.5-samaritan-3d`       | Samaritan             |                                                                                |
+| `sd1.5-scifi`              | SciFi                 |                                                                                |
+| `smallsd1.5-txt2img`       | Small SD              |                                                                                |
+| `tinysd1.5-txt2img`        | Tiny SD               |                                                                                |
+
 ## Next Steps
 
 The complete list of features supported in the SDK are available on the link below.
