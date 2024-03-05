@@ -94,24 +94,7 @@ Once you're ready with your prompt, you can use the `portkey.prompts.completions
 
 ### Supported Models
 
-| Model Name                        | Model String to Use in API calls |
-| --------------------------------- | -------------------------------- |
-| Amazon Titan Text Express         | `amazon.titan-text-express-v1`   |
-| Amazon Titan Lite                 | `amazon.titan-text-lite-v1`      |
-| Amazon Titan Embeddings           | `amazon.titan-embed-text-v1`     |
-| Anthropic Claude 1                | `anthropic.claude-v1`            |
-| Anthropic Claude 2                | `anthropic.claude-v2`            |
-| Anthropic Claude 2.1              | `anthropic.claude-v2:1`          |
-| Anthropic Claude Instant 1        | `anthropic.claude-instant-v1`    |
-| AI21 J2 Mid                       | `ai21.j2-mid-v1`                 |
-| AI21 J2 Ultra                     | `ai21.j2-ultra-v1`               |
-| Cohere Command                    | `cohere.command-text-v14`        |
-| Cohere Command Light              | `cohere.command-light-text-v14`  |
-| Cohere Embeddings (English)       | `cohere.embed-english-v3`        |
-| Cohere Embeddings (multilingual)  | `cohere.embed-multilingual-v3`   |
-| Meta Llama2 13B Chat              | `meta.llama2-13b-chat-v1`        |
-| Meta Llama2 70B Chat              | `meta.llama2-70b-chat-v1`        |
-| Stability Image Generation models | All                              |
+<table><thead><tr><th width="322">Model Name</th><th>Model String to Use in API calls</th></tr></thead><tbody><tr><td>Amazon Titan Text Express</td><td><code>amazon.titan-text-express-v1</code></td></tr><tr><td>Amazon Titan Lite</td><td><code>amazon.titan-text-lite-v1</code></td></tr><tr><td>Amazon Titan Embeddings</td><td><code>amazon.titan-embed-text-v1</code></td></tr><tr><td>Anthropic Claude 1</td><td><code>anthropic.claude-v1</code></td></tr><tr><td>Anthropic Claude 2</td><td><code>anthropic.claude-v2</code></td></tr><tr><td>Anthropic Claude 2.1</td><td><code>anthropic.claude-v2:1</code></td></tr><tr><td>Anthropic Claude Instant 1</td><td><code>anthropic.claude-instant-v1</code></td></tr><tr><td>Anthropic Claude 3 Sonnet</td><td><code>anthropic.claude-3-sonnet-20240229-v1:0</code></td></tr><tr><td>AI21 J2 Mid</td><td><code>ai21.j2-mid-v1</code></td></tr><tr><td>AI21 J2 Ultra</td><td><code>ai21.j2-ultra-v1</code></td></tr><tr><td>Cohere Command</td><td><code>cohere.command-text-v14</code></td></tr><tr><td>Cohere Command Light</td><td><code>cohere.command-light-text-v14</code></td></tr><tr><td>Cohere Embeddings (English)</td><td><code>cohere.embed-english-v3</code></td></tr><tr><td>Cohere Embeddings (multilingual)</td><td><code>cohere.embed-multilingual-v3</code></td></tr><tr><td>Meta Llama2 13B Chat</td><td><code>meta.llama2-13b-chat-v1</code></td></tr><tr><td>Meta Llama2 70B Chat</td><td><code>meta.llama2-70b-chat-v1</code></td></tr><tr><td>Stability Image Generation models</td><td>All</td></tr></tbody></table>
 
 ## Next Steps
 
