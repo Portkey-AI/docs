@@ -158,6 +158,38 @@ console.log(chatCompletion.choices);
 {% endtab %}
 {% endtabs %}
 
+***
+
+## Async Usage
+
+Portkey's Python SDK supports **Async** usage - just use **`AsyncPortkey`** instead of **`Portkey`** with **`await`**:
+
+{% tabs %}
+{% tab title="Python" %}
+```python
+import asyncio
+from portkey_ai import AsyncPortkey
+
+portkey = AsyncPortkey(
+    api_key="PORTKEY_API_KEY",
+    virtual_key="VIRTUAL_KEY"
+)
+
+async def main():
+    chat_completion = await portkey.chat.completions.create(
+        messages=[{'role': 'user', 'content': 'Say this is a test'}],
+        model='gpt-4'
+    )
+
+    print(chat_completion)
+
+asyncio.run(main())
+```
+{% endtab %}
+{% endtabs %}
+
+***
+
 ## Parameters
 
 Following are the parameter keys that you can add while creating the Portkey client.&#x20;
@@ -171,8 +203,6 @@ Keeping in tune with the most popular language conventions, we use:
 {% tabs %}
 {% tab title="NodeJS" %}
 <table><thead><tr><th width="384">Parameter</th><th width="97">Type<select multiple><option value="e8618b5391cc4b0692bd961a5c54befe" label="string" color="blue"></option><option value="ad1bd085879248dfac91455e550b4c62" label="object" color="blue"></option><option value="55c3ea4c5f8843f9af086f6fa3e02091" label="required" color="blue"></option><option value="dZalFSqJXRdc" label="boolean" color="blue"></option></select></th><th>Key</th></tr></thead><tbody><tr><td><strong>API Key</strong><br>Your Portkey account's API Key.</td><td><span data-option="e8618b5391cc4b0692bd961a5c54befe">string, </span><span data-option="55c3ea4c5f8843f9af086f6fa3e02091">required</span></td><td><code>apiKey</code></td></tr><tr><td><strong>Virtual Key</strong><br>The virtual key created from Portkey's vault for a specific provider</td><td><span data-option="e8618b5391cc4b0692bd961a5c54befe">string</span></td><td><code>virtualKey</code></td></tr><tr><td><strong>Config</strong><br>The slug or <a href="config-object.md">config object</a> to use</td><td><span data-option="e8618b5391cc4b0692bd961a5c54befe">string, </span><span data-option="ad1bd085879248dfac91455e550b4c62">object</span></td><td><code>config</code></td></tr><tr><td><strong>Provider</strong><br>The AI provider to use for your calls. (<a href="../welcome/integration-guides/#supported-ai-providers">supported providers</a>).</td><td><span data-option="e8618b5391cc4b0692bd961a5c54befe">string</span></td><td><code>provider</code></td></tr><tr><td><strong>Base URL</strong><br>You can edit the URL of the gateway to use. Needed if you're <a href="https://github.com/Portkey-AI/gateway/blob/main/docs/installation-deployments.md">self-hosting the AI gateway</a></td><td><span data-option="e8618b5391cc4b0692bd961a5c54befe">string</span></td><td><code>baseURL</code></td></tr><tr><td><strong>Trace ID</strong><br>An ID you can pass to refer to 1 or more requests later on. Generated automatically for every request, if not sent.</td><td><span data-option="e8618b5391cc4b0692bd961a5c54befe">string</span></td><td><code>traceID</code></td></tr><tr><td><strong>Metadata</strong><br>Any metadata to attach to the requests. These can be filtered later on in the analytics and log dashboards<br><br>Can contain <code>_prompt</code>, <code>_user</code>, <code>_organisation</code>, or <code>_environment</code> that are special metadata types in Portkey.<br><br>You can also send any other keys as part of this object.</td><td><span data-option="ad1bd085879248dfac91455e550b4c62">object</span></td><td><code>metadata</code></td></tr><tr><td><strong>Cache Force Refresh</strong><br>Force refresh the cache for your request by making a new call and storing that value.</td><td><span data-option="dZalFSqJXRdc">boolean</span></td><td><code>cacheForceRefresh</code></td></tr></tbody></table>
-
-
 {% endtab %}
 
 {% tab title="Python" %}
