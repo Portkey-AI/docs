@@ -57,6 +57,21 @@ You can change this behaviour by setting the optional **`on_status_codes`** para
 
 Here, fallback from OpenAI to Azure OpenAI will only be triggered when there is a **`429`** error code from the OpenAI request (i.e. rate limiting error)
 
+### Tracing Fallback Requests on Portkey
+
+Portkey logs all the requests that are sent as a part of your fallback config. This allows you to easily trace and see which targets failed and see which ones were eventually successful.
+
+To see your fallback trace,
+
+1. On the Logs page, first filter the logs with the specific `Config ID` where you've setup the fallback - this will show all the requests that have been sent with that config.
+2. Now, trace an individual request and all the failed + successful logs for it by filtering further on `Trace ID` - this will show all the logs originating from a single request.
+
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/configs-in-logs.png" alt="" width="480"><figcaption></figcaption></figure>
+
+</div>
+
 ### Caveats and Considerations
 
 While the Fallback on LLMs feature greatly enhances the reliability and resilience of your application, there are a few things to consider:
