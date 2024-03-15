@@ -8,7 +8,7 @@ The Portkey - LlamaIndex integration also for monitoring, debugging, and testing
 
 ### ⭐️ Using the Portkey custom models
 
-Portkey is available as a [Custom LLM in LlamaIndex](https://docs.llamaindex.ai/en/stable/getting\_started/customization.html) making the integration simpler while allowing you to connect to multiple LLM providers (Anthropic, Azure, Huggingface, Anyscale, etc) through our powerful AI gateway.
+Portkey is available as a Custom LLM in LlamaIndex making the integration simpler while allowing you to connect to multiple LLM providers (Anthropic, Azure, Huggingface, Anyscale, etc) through our powerful AI gateway.
 
 Here's an example:
 
@@ -21,19 +21,18 @@ portkey = PortkeyLLM(api_key="PORTKEY_API_KEY", virtual_key="VIRTUAL_KEY")
 service_context = ServiceContext.from_defaults(llm=portkey)
 ```
 
-<pre class="language-python"><code class="lang-python"># Use this service context in the query engine
+```python
+# Use this service context in the query engine
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
 
 documents = SimpleDirectoryReader("data").load_data()
 index = VectorStoreIndex.from_documents(documents)
-<strong>query_engine = index.as_query_engine(service_context=service_context)
-</strong>response = query_engine.query("What did the author do growing up?")
+query_engine = index.as_query_engine(service_context=service_context)
+response = query_engine.query("What did the author do growing up?")
 print(response)
-</code></pre>
+```
 
 You can read more about custom LLM models in LlamaIndex [here](https://docs.llamaindex.ai/en/stable/module\_guides/models/llms/usage\_custom.html).
-
-
 
 ### Using LlamaIndex's OpenAI model
 
