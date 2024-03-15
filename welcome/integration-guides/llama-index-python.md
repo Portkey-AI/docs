@@ -42,22 +42,22 @@ To integrate Portkey with your existing models, you need to
 * And add Portkey's headers
 
 The same example above but using the OpenAI model would look like this:
-
-<pre class="language-python"><code class="lang-python">from llama_index import (
+```python
+from llama_index import (
     KeywordTableIndex,
     SimpleDirectoryReader,
     LLMPredictor,
     ServiceContext,
 )
 from llama_index.llms import OpenAI
-<strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
-</strong>
+from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+
 documents = SimpleDirectoryReader("data").load_data()
 
 # define LLM with Portkey abstractions
-<strong>headers = createHeaders(api_key="PORTKEY_API_KEY", mode="openai")
-</strong><strong>llm = OpenAI(api_base=PORTKEY_GATEWAY_URL, default_headers=headers)
-</strong>service_context = ServiceContext.from_defaults(llm=llm)
+headers = createHeaders(api_key="PORTKEY_API_KEY", mode="openai")
+llm = OpenAI(api_base=PORTKEY_GATEWAY_URL, default_headers=headers)
+service_context = ServiceContext.from_defaults(llm=llm)
 
 # build index
 index = KeywordTableIndex.from_documents(
@@ -69,5 +69,4 @@ query_engine = index.as_query_engine()
 response = query_engine.query(
     "What did the author do after his time at Y Combinator?"
 )
-</code></pre>
-
+```

@@ -210,4 +210,4 @@ The following providers are supported for image generation with more providers g
 | ------------------------------------------------------------------- | ----------------------- | ---------------------- |
 | [OpenAI](../../../welcome/integration-guides/openai.md)             | `gpt-4-vision-preview`  | Create Chat Completion |
 | [Azure OpenAI](../../../welcome/integration-guides/azure-openai.md) | `gpt-4-vision-preview`  | Create Chat Completion |
-| [Gemini](../../../welcome/integration-guides/google-palm-1.md)      | `gemini-1.0-pro-vision` | Create Chat Completion |
+| [Gemini](../../../welcome/integration-guides/gemini.md)      | `gemini-1.0-pro-vision` | Create Chat Completion |
