@@ -5,6 +5,7 @@ Prompts in Portkey allow you to create and manage prompt templates collaborative
 The `portkey.prompts` APIs allow you to&#x20;
 
 * [Trigger a prompt completion](prompt-completion.md)
+* [Retrieve a saved propmt](render.md)
 
 While, the following methods are in private beta
 

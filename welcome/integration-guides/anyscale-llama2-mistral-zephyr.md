@@ -4,7 +4,7 @@ description: >-
   production-ready
 ---
 
-# Anyscale (Llama2, Mistral, Zephyr)
+# Anyscale
 
 Portkey's suite of features - AI gateway, observability, prompt management, and continuous fine-tuning are all enabled for the OSS models (Llama2, Mistral, Zephyr, and more) available on Anyscale endpoints.
 
@@ -164,7 +164,7 @@ This request will be automatically logged by Portkey. You can view this in your 
 
 ## Managing Anyscale Prompts
 
-You can manage all prompts for Anyscale's OSS models in the [Prompt Library](../../product/prompt-library.md). All the current models of Anyscale are supported.
+You can manage all prompts for Anyscale's OSS models in the [Prompt Library](../../product/prompt-library/). All the current models of Anyscale are supported.
 
 ### Creating Prompts
 

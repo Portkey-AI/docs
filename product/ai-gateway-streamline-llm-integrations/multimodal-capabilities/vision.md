@@ -1,9 +1,9 @@
 # Vision
 
-Portkey's AI gateway supports vision models like GPT-4V by OpenAI, Gemini by Google and more.&#x20;
+Portkey's AI gateway supports vision models like GPT-4V by OpenAI, Gemini by Google and more.
 
 {% hint style="info" %}
-#### What are vision models?
+**What are vision models?**
 
 Vision models are artificial intelligence systems that combine both vision and language modalities to process images and natural language text. These models are typically trained on large image and text datasets with different structures based on the pre-training objective.
 {% endhint %}
@@ -194,9 +194,9 @@ curl "https://api.portkey.ai/v1/chat/completions" \
 
 On completion, the request will get logged in the logs UI where any image inputs or outputs can be viewed. Portkey will automatically load the image URLs or the base64 images making for a great debugging experience with vision models.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-### Creating prompt templates for vision models&#x20;
+### Creating prompt templates for vision models
 
 Portkey's prompt library supports creating templates with image inputs. If the same image will be used in all prompt calls, you can save it as part of the template's image URL itself. Or, if the image will be sent via the API as a variable, add a variable to the image link.
 
@@ -210,4 +210,4 @@ The following providers are supported for image generation with more providers g
 | ------------------------------------------------------------------- | ----------------------- | ---------------------- |
 | [OpenAI](../../../welcome/integration-guides/openai.md)             | `gpt-4-vision-preview`  | Create Chat Completion |
 | [Azure OpenAI](../../../welcome/integration-guides/azure-openai.md) | `gpt-4-vision-preview`  | Create Chat Completion |
-| [Gemini](../../../welcome/integration-guides/gemini.md)      | `gemini-1.0-pro-vision` | Create Chat Completion |
+| [Gemini](../../../welcome/integration-guides/gemini.md)             | `gemini-1.0-pro-vision` | Create Chat Completion |
