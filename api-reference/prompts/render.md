@@ -6,27 +6,28 @@
 
 Retrieves given prompt ID containing the saved model params (temperature, max\_tokens, etc) along with the prompt/messages body.
 
-{% swagger method="post" path="/prompts/:id/render" baseUrl="https://api.portkey.ai/v1" summary="Retrieves the details of the selected prompt ID" %}
-{% swagger-description %}
+## Retrieves the details of the selected prompt ID
 
-{% endswagger-description %}
+<mark style="color:green;">`POST`</mark> `https://api.portkey.ai/v1/prompts/:id/render`
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-The prompt ID to retrieve
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="body" name="variables" type="Object" required="false" %}
-The variables mentioned in the prompt template being used
-{% endswagger-parameter %}
+| Name                                 | Type   | Description               |
+| ------------------------------------ | ------ | ------------------------- |
+| id<mark style="color:red;">\*</mark> | String | The prompt ID to retrieve |
 
-{% swagger-parameter in="body" name="hyperparameters" type="Multiple" %}
-Add any hyperparameters to the request to override the ones set in the prompt definition
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-response status="200: OK" description="" %}
+| Name            | Type     | Description                                                                              |
+| --------------- | -------- | ---------------------------------------------------------------------------------------- |
+| variables       | Object   | The variables mentioned in the prompt template being used                                |
+| hyperparameters | Multiple | Add any hyperparameters to the request to override the ones set in the prompt definition |
 
-{% endswagger-response %}
-{% endswagger %}
+{% tabs %}
+{% tab title="200: OK " %}
+
+{% endtab %}
+{% endtabs %}
 
 The API expects the prompt ID, prompt variables and optionally any hyperparameters to override for this request. It returns a JSON object containing the prompt template details.
 
