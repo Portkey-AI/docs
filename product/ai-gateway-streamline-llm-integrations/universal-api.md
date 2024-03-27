@@ -38,8 +38,8 @@ from portkey_ai import Portkey
 
 # Initialize the Portkey client
 portkey = Portkey(
-    api_key="/turdjWE+tIUeAzmzGxGEkkJLBQ=",  # Replace with your Portkey API key
-    virtual_key="open-ai-key-6317bc"   # The OpenAI virtual key
+    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
+    virtual_key="VIRTUAL_KEY"   # The OpenAI virtual key
 )
 
 # Generate a text completion
