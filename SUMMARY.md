@@ -80,6 +80,7 @@
 * [Few-Shot Prompting](cookbooks/few-shot-prompting.md)
 * [A/B Test Prompts and Models](cookbooks/a-b-test-prompts-and-models.md)
 * [Enforcing JSON Schema with Anyscale & Together](cookbooks/enforcing-json-schema-with-anyscale-and-together.md)
+* [Tackling Rate Limiting](cookbooks/tackling-rate-limiting.md)
 * [Function Calling](cookbooks/function-calling.md)
 * [Image Generation](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb)
 
