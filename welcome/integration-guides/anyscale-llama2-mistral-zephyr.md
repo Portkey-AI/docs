@@ -164,7 +164,7 @@ This request will be automatically logged by Portkey. You can view this in your 
 
 ## Managing Anyscale Prompts
 
-You can manage all prompts for Anyscale's OSS models in the [Prompt Library](../../product/prompt-library.md). All the current models of Anyscale are supported.
+You can manage all prompts for Anyscale's OSS models in the [Prompt Library](../../product/prompt-library/). All the current models of Anyscale are supported.
 
 ### Creating Prompts
 

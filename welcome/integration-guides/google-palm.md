@@ -84,7 +84,7 @@ print(completion)
 
 ## Managing Google Palm Prompts
 
-You can manage all prompts to Google Palm in the [Prompt Library](../../product/prompt-library.md). All the current models of Google Palm are supported and you can easily start testing different prompts.
+You can manage all prompts to Google Palm in the [Prompt Library](../../product/prompt-library/). All the current models of Google Palm are supported and you can easily start testing different prompts.
 
 Once you're ready with your prompt, you can use the `portkey.prompts.completions.create` interface to use the prompt in your application.
 

@@ -2,11 +2,7 @@
 
 ## Retrieve Prompt Template
 
-`POST /prompts/:id/render`
-
 Retrieves given prompt ID containing the saved model params (temperature, max\_tokens, etc) along with the prompt/messages body.
-
-## Retrieves the details of the selected prompt ID
 
 <mark style="color:green;">`POST`</mark> `https://api.portkey.ai/v1/prompts/:id/render`
 
@@ -22,12 +18,6 @@ Retrieves given prompt ID containing the saved model params (temperature, max\_t
 | --------------- | -------- | ---------------------------------------------------------------------------------------- |
 | variables       | Object   | The variables mentioned in the prompt template being used                                |
 | hyperparameters | Multiple | Add any hyperparameters to the request to override the ones set in the prompt definition |
-
-{% tabs %}
-{% tab title="200: OK " %}
-
-{% endtab %}
-{% endtabs %}
 
 The API expects the prompt ID, prompt variables and optionally any hyperparameters to override for this request. It returns a JSON object containing the prompt template details.
 
@@ -73,7 +63,7 @@ The Output:
 {% endtab %}
 {% endtabs %}
 
-For detailed examples, refer to:
+### For detailed examples:
 
 {% content-ref url="../../product/prompt-library/retrieve-prompt-templates.md" %}
 [retrieve-prompt-templates.md](../../product/prompt-library/retrieve-prompt-templates.md)

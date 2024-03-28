@@ -10,7 +10,7 @@ You can retrieve your saved prompts on Portkey using the `/prompts/$PROMPT_ID/re
 
 This is helpful if you are required to use provider SDKs and can not use the Portkey SDK in production. ([Example of how to use Portkey prompt templates with OpenAI SDK](retrieve-prompt-templates.md#using-the-render-output-in-a-new-request))
 
-## Using the `Render` Endpoint
+## Using the `Render` Endpoint/Method
 
 1. Make a request to `https://api.portkey.ai/v1/prompts/$PROMPT_ID/render` with your prompt ID
 2. Pass your Portkey API key with `x-portkey-api-key` in the header
@@ -56,94 +56,87 @@ The Output:
 ```
 {% endtab %}
 
-{% tab title="Python (Requests)" %}
+{% tab title="Portkey Python SDK" %}
 ```python
-import requests
+from portkey_ai import Portkey
 
-url = f"https://api.portkey.ai/v1/prompts/{PROMPT_ID}/render"
+portkey = Portkey(
+  api_key="PORTKEY_API_KEY"
+)
 
-headers = {
-    "Content-Type": "application/json",
-    "x-portkey-api-key": "PORTKEY_API_KEY"
-}
+render = portkey.prompts.render(
+  prompt_id="PROMPT_ID",
+  variables={ "movie":"Dune 2" }
+)
 
-data = {
-    "variables": {"movie": "Dune 2"}
-}
-
-response = requests.post(url, headers=headers, json=data)
+print(render.data)
 ```
 
 The Output:
 
 ```json
 {
-    "success": true,
-    "data": {
-        "model": "gpt-4",
-        "n": 1,
-        "top_p": 1,
-        "max_tokens": 256,
-        "temperature": 0,
-        "presence_penalty": 0,
-        "frequency_penalty": 0,
-        "messages": [
-            {
-                "role": "system",
-                "content": "You're a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Who directed Dune 2?"
-            }
-        ]
-    }
+    "model": "gpt-4",
+    "n": 1,
+    "top_p": 1,
+    "max_tokens": 256,
+    "temperature": 0,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "messages": [
+        {
+            "role": "system",
+            "content": "You're a helpful assistant."
+        },
+        {
+            "role": "user",
+            "content": "Who directed Dune 2?"
+        }
+    ]
 }
 ```
 {% endtab %}
 
-{% tab title="Axios (Node)" %}
+{% tab title="Portkey Node SDK" %}
 ```typescript
-import axios from 'axios';
+import Portkey from 'portkey-ai'
 
-const url = `https://api.portkey.ai/v1/prompts/${PROMPT_ID}/render`;
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY"
+})
 
-const headers = {
-  'Content-Type': 'application/json',
-  'x-portkey-api-key': 'PORTKEY_API_KEY'
-};
+async function getRender(){
+    const render = await portkey.prompts.render({
+        promptID: "PROMPT_ID",
+        variables: { "movie":"Dune 2" }
+    })
+    console.log(render.data)
+}
 
-const data = {
-  variables: { movie: 'Dune 2' }
-};
-
-axios.post(url, data, { headers })
+getRender()
 ```
 
 The Output:
 
 ```json
 {
-    "success": true,
-    "data": {
-        "model": "gpt-4",
-        "n": 1,
-        "top_p": 1,
-        "max_tokens": 256,
-        "temperature": 0,
-        "presence_penalty": 0,
-        "frequency_penalty": 0,
-        "messages": [
-            {
-                "role": "system",
-                "content": "You're a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Who directed Dune 2?"
-            }
-        ]
-    }
+    "model": "gpt-4",
+    "n": 1,
+    "top_p": 1,
+    "max_tokens": 256,
+    "temperature": 0,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "messages": [
+        {
+            "role": "system",
+            "content": "You're a helpful assistant."
+        },
+        {
+            "role": "user",
+            "content": "Who directed Dune 2?"
+        }
+    ]
 }
 ```
 {% endtab %}
@@ -195,6 +188,97 @@ The New Output:
 }
 </code></pre>
 {% endtab %}
+
+{% tab title="Python SDK" %}
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+portkey = Portkey(
+  api_key="PORTKEY_API_KEY"
+)
+
+render = portkey.prompts.render(
+  prompt_id="PROMPT_ID",
+  variables={ "movie":"Dune 2" },
+<strong>  model="gpt-3.5-turbo",
+</strong><strong>  temperature=2
+</strong>)
+
+print(render.data)
+</code></pre>
+
+Based on the above snippet, `model` and `temperature` params in the retrieved prompt will be **overridden** with the newly passed values.
+
+**The New Output:**
+
+```json
+{
+    "model": "gpt-3.5-turbo",
+    "n": 1,
+    "top_p": 1,
+    "max_tokens": 256,
+    "temperature": 2,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "messages": [
+        {
+            "role": "system",
+            "content": "You're a helpful assistant."
+        },
+        {
+            "role": "user",
+            "content": "Who directed Dune 2?"
+        }
+    ]
+}
+```
+{% endtab %}
+
+{% tab title="Node SDK" %}
+<pre class="language-typescript"><code class="lang-typescript">import Portkey from 'portkey-ai'
+
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY"
+})
+
+async function getRender(){
+    const render = await portkey.prompts.render({
+        promptID: "PROMPT_ID",
+        variables: { "movie":"Dune 2" },
+<strong>        model: "gpt-3.5-turbo",
+</strong><strong>        temperature: 2
+</strong>    })
+    console.log(render.data)
+}
+
+getRender()
+</code></pre>
+
+Based on the above snippet, `model` and `temperature` params in the retrieved prompt will be **overridden** with the newly passed values.
+
+**The New Output:**
+
+```json
+{
+    "model": "gpt-3.5-turbo",
+    "n": 1,
+    "top_p": 1,
+    "max_tokens": 256,
+    "temperature": 2,
+    "presence_penalty": 0,
+    "frequency_penalty": 0,
+    "messages": [
+        {
+            "role": "system",
+            "content": "You're a helpful assistant."
+        },
+        {
+            "role": "user",
+            "content": "Who directed Dune 2?"
+        }
+    ]
+}
+```
+{% endtab %}
 {% endtabs %}
 
 ## Using the `render` Output in a New Request
@@ -203,24 +287,20 @@ Here's how you can take the output from the `render` API and use it for making a
 
 {% tabs %}
 {% tab title="OpenAI Node" %}
-<pre class="language-typescript"><code class="lang-typescript">import axios from 'axios';
+<pre class="language-typescript"><code class="lang-typescript">import Portkey from 'portkey-ai';
 import OpenAI from 'openai';
 
 // Retrieving the Prompt from Portkey
 
-const RENDER_ENDPOINT = 'https://api.portkey.ai/v1/prompts/$PROMPT_ID/render';
-
-const headers = {
-  'Content-Type': 'application/json',
-  'x-portkey-api-key': 'PORTKEY_API_KEY'
-};
-
-const data = {
-  variables: { movie: 'Dune 2' }
-};
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY"
+})
 
 async function getPromptTemplate() {
-    const render_response = await axios.post(RENDER_ENDPOINT, data, { headers });
+    const render_response = await portkey.prompts.render({
+        promptID: "PROMPT_ID",
+        variables: { "movie":"Dune 2" }
+    })
     return render_response.data.data;
 }
 
@@ -248,23 +328,20 @@ main();
 
 {% tab title="OpenAI Python" %}
 ```python
-import requests
+from portkey_ai import Portkey
 from openai import OpenAI
 
 # Retrieving the Prompt from Portkey
 
-RENDER_ENDPOINT = f"https://api.portkey.ai/v1/prompts/PROMPT_ID/render"
+portkey = Portkey(
+  api_key="PORTKEY_API_KEY"
+)
 
-headers = {
-    "Content-Type": "application/json",
-    "x-portkey-api-key": "PORTKEY_API_KEY"
-}
+render_response = portkey.prompts.render(
+  prompt_id="PROMPT_ID",
+  variables={ "movie":"Dune 2" }
+)
 
-data = {
-    "variables": {"movie": "Dune 2"}
-}
-
-render_response = requests.post(RENDER_ENDPOINT, headers=headers, json=data)
 PROMPT_TEMPLATE = render_response.json()['data']
 
 # Making a Call to OpenAI with the Retrieved Prompt

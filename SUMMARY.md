@@ -48,7 +48,8 @@
     * [Image Generation](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/image-generation.md)
     * [Function Calling](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/function-calling.md)
     * [Vision](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision.md)
-* [Prompt Library](product/prompt-library.md)
+* [Prompt Library](product/prompt-library/README.md)
+  * [Global Prompt Partials](product/prompt-library/global-prompt-partials.md)
   * [Retrieve Prompt Templates](product/prompt-library/retrieve-prompt-templates.md)
 * [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
 
