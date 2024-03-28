@@ -146,11 +146,9 @@ The following providers are supported for image generation with more providers g
 | [Stability](../../../welcome/integration-guides/stability-ai.md)    | `stable-diffusion-v1-6`, `stable-diffusion-xl-1024-v1-0` | Create Image (text to image) |
 | Replicate (Coming Soon)                                             |                                                          |                              |
 | Monster API (Coming Soon)                                           |                                                          |                              |
+| Segmind (Coming Soon)                                               |                                                          |                              |
+| Together AI (Coming Soon)                                           |                                                          |                              |
 
 ### Cookbook
 
-Here's a detailed cookbook on image generation using Portkey which demonstrates the use of multiple providers and routing between them through [Configs](../configs.md).
-
-{% hint style="success" %}
-[https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb)
-{% endhint %}
+[**Here's a detailed cookbook on image generation using Portkey**](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb) which demonstrates the use of multiple providers and routing between them through Configs.
