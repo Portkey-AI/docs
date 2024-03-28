@@ -6,7 +6,11 @@ This detailed log can be invaluable when troubleshooting issues or understanding
 
 <figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
+## Share Logs with Teammates
+
 Each log on Portkey has a unique URL. You can copy the link from the address bar and directly share it with anyone in your org.
+
+## Request Status Guide
 
 The Status column on the Logs page gives you a snapshot of the gateway activity for every request.
 
@@ -22,6 +26,18 @@ Portkey’s gateway features—[Cache](broken-reference), [Retries](broken-refer
 
 <table><thead><tr><th width="195">Option</th><th width="238">🔴 Inactive State</th><th>🟢 Possible Active States</th></tr></thead><tbody><tr><td><strong>Cache</strong></td><td>Cache Disabled</td><td><p>Cache Miss,</p><p>Cache Refreshed,</p><p>Cache Hit,</p><p>Cache Semantic Hit</p></td></tr><tr><td><strong>Retry</strong></td><td>Retry Not Triggered</td><td><p>Retry Success on {x} Tries,</p><p>Retry Failed</p></td></tr><tr><td><strong>Fallback</strong></td><td>Fallback Disabled</td><td><p>Fallback Active,</p><p>Fallback Triggered on Option {x}</p></td></tr><tr><td><strong>Loadbalance</strong></td><td>Loadbalancer Disabled</td><td>Loadbalancer Active</td></tr></tbody></table>
 
+## Manual Feedback
+
 As you're viewing logs, you can also add manual feedback on the logs to be analysed and filtered later. This data can be viewed on the [feedback analytics dashboards](analytics.md#feedback).
 
 <figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+
+## Configs & Propmt IDs in Logs
+
+If your request has an attached [Config](../ai-gateway-streamline-llm-integrations/configs.md) or if it's originating from a [prompt template](../prompt-library.md), you can see the relevant Config or Prompt IDs separately in the log's details on Portkey. And to dig deeper, you can just click on the IDs and Portkey will take you to the respective Config or Prompt playground where you can view the full details.
+
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/config-prompt-in-logs.png" alt=""><figcaption></figcaption></figure>
+
+</div>
