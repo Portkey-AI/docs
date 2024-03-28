@@ -35,3 +35,6 @@ You can use the `render` endpoint to retrieve your saved prompt template on Port
 **Global Prompt Partials**
 
 Docs coming soon!
+
+**Advanded Prompting with  Mode**
+

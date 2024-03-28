@@ -51,6 +51,7 @@
 * [Prompt Library](product/prompt-library/README.md)
   * [Global Prompt Partials](product/prompt-library/global-prompt-partials.md)
   * [Retrieve Prompt Templates](product/prompt-library/retrieve-prompt-templates.md)
+  * [Advanced Prompting with JSON Mode](product/prompt-library/advanced-prompting-with-json-mode.md)
 * [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
 
 ***
