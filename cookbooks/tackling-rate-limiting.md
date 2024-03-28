@@ -1,12 +1,17 @@
 # Tackling Rate Limiting
 
-LLMs are **costly** to run. , the providers have to balance serving user requests v/s straining their GPU resources too thin. They generally deal with this by putting _rate limits_ on how many requests a user can send in a minute or in a day.&#x20;
+LLMs are **costly** to run. As the LLM usage increaases, the providers constantly have to balance serving user requests v/s straining their GPU resources too thin. They generally deal with this by putting _rate limits_ on how many requests a user can send in a minute or in a day.&#x20;
 
 For example, for the text-to-speech model `tts-1-hd` from OpenAI, you can not send **more than 7** requests in minute. Any extra request automatically fails.&#x20;
 
 There are many real-world use cases where it's possilbe to run into rate limits:
 
-<table><thead><tr><th>LLM Provider</th><th width="213">Example Model</th><th>Rate Limits</th></tr></thead><tbody><tr><td><a href="https://platform.openai.com/docs/guides/rate-limits/usage-tiers">OpenAI</a> </td><td>gpt-3.5-turbo</td><td><p>Tier 1: </p><ul><li>10,000 Requests Per Day</li></ul></td></tr><tr><td><a href="https://docs.anthropic.com/claude/reference/errors-and-rate-limits">Anthropic</a></td><td></td><td><p></p><ul><li></li></ul></td></tr><tr><td><a href="https://docs.cohere.com/docs/going-live#trial-key-limitations">Cohere</a></td><td></td><td></td></tr><tr><td><a href="https://www.anyscale.com/endpoints">Anyscale</a></td><td></td><td><p>Endpoints</p><ul><li>30 concurrent requests</li></ul></td></tr><tr><td><a href="https://docs.perplexity.ai/docs/rate-limits">Perplexity AI</a></td><td>KTxYu9wCEMaj</td><td><ul><li></li></ul></td></tr><tr><td><a href="https://docs.together.ai/docs/rate-limits">Together AI</a></td><td></td><td><p>Paid:</p><ul><li></li></ul></td></tr></tbody></table>
+* When your requests have very high input-tokens count or a very long context, you can hit token thresholds
+* When you are running a complex and long prompts pipeline that fires hundreds of requests at once, you can hit both token & request limits
+
+#### Here's an overview of rate limits imposed by various providers:
+
+<table><thead><tr><th>LLM Provider</th><th width="213">Example Model</th><th>Rate Limits</th></tr></thead><tbody><tr><td><a href="https://platform.openai.com/docs/guides/rate-limits/usage-tiers">OpenAI</a> </td><td>gpt-4</td><td><p>Tier 1:</p><ul><li>500 Requests per Minute</li><li>10,000 Tokens per Minute</li><li>10,000 Requests per Day</li></ul></td></tr><tr><td><a href="https://docs.anthropic.com/claude/reference/errors-and-rate-limits">Anthropic</a></td><td>All models</td><td><p>Tier 1:</p><ul><li>50 RPM</li><li>50,000 TPM</li><li>1 Million Tokens per Day</li></ul></td></tr><tr><td><a href="https://docs.cohere.com/docs/going-live#trial-key-limitations">Cohere</a></td><td>Co.Generate models</td><td><p>Production Key:</p><ul><li>10,000 RPM</li></ul></td></tr><tr><td><a href="https://www.anyscale.com/endpoints">Anyscale</a></td><td>All models</td><td><p>Endpoints:</p><ul><li>30 concurrent requests</li></ul></td></tr><tr><td><a href="https://docs.perplexity.ai/docs/rate-limits">Perplexity AI</a></td><td>mixtral-8x7b-instruct</td><td><ul><li>24 RPM</li><li>16,000 TPM</li></ul></td></tr><tr><td><a href="https://docs.together.ai/docs/rate-limits">Together AI</a></td><td>All models</td><td><p>Paid:</p><ul><li>100 RPM</li></ul></td></tr></tbody></table>
 
 
 
