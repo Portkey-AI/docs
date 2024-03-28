@@ -41,3 +41,21 @@ If your request has an attached [Config](../ai-gateway-streamline-llm-integratio
 <figure><img src="../../.gitbook/assets/config-prompt-in-logs.png" alt=""><figcaption></figcaption></figure>
 
 </div>
+
+## Debug Requests with Log Replay
+
+You can rerun any buggy request with just one click, straight from the log details page. The `Replay` button opens your reuqest in a fresh prompt playground where you can rerun the request and edit it right there until it works.
+
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/log-replay.png" alt=""><figcaption></figcaption></figure>
+
+</div>
+
+{% hint style="info" %}
+**`Replay` button will be inactive for a log in the following cases:**
+
+1. If the reuqest is sent to any endpoint other than `/chat/completions,` `/completions`, `/embeddings`
+2. If the virtual key used in the log is archived on Portkey
+3. If the request originates from a prompt template which is called from inside a Config target
+{% endhint %}
