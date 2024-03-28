@@ -129,6 +129,12 @@ If you want to attach the configuration to only a few requests instead of modify
 You can also add the config JSON as a string instead of the slug.
 {% endhint %}
 
+## Configs in Logs
+
+Portkey shows your Config usage smartly on the logs page with the **Status column** and gives you a snapshot of the Gateway activity for every request. [Read more about the status column here](https://portkey.ai/docs/product/observability-modern-monitoring-for-llms/logs#request-status-guide).
+
+You can also see the ID of the specific Config used for a request separately in the log details, and jump into viewing/editing it directly from the log details page.
+
 ## Config Object Documentation
 
 The config object is defined here

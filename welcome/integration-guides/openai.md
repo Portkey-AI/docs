@@ -125,7 +125,7 @@ The same integration approach applies to APIs for [`completions`](https://platfo
 
 ## Using the Prompts API
 
-Portkey also supports creating and managing prompt templates in the [prompt library](../../product/prompt-library/). This enables the collaborative development of prompts directly through the user interface.
+Portkey also supports creating and managing prompt templates in the [prompt library](../../product/prompt-library.md). This enables the collaborative development of prompts directly through the user interface.
 
 1. Create a prompt template with variables and set the hyperparameters.&#x20;
 
