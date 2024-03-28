@@ -1,10 +1,10 @@
 # Function Calling
 
-Portkey's AI gateway supports function calling capabilities that many foundational model providers offer. In the API call you can describe functions and the model can choose to output text or this function name with parameters.
+Portkey's AI Gateway supports function calling capabilities that many foundational model providers offer. In the API call you can describe functions and the model can choose to output text or this function name with parameters.
 
 ### Functions Usage
 
-Portkey supports the OpenAI signature to define functions as part of the API request. The `tools` parameter accepts functions which can be sent specifically for models that support function calling.
+Portkey supports the OpenAI signature to define functions as part of the API request. The `tools` parameter accepts functions which can be sent specifically for models that support function/tool calling.
 
 {% tabs %}
 {% tab title="NodeJS" %}
@@ -244,26 +244,22 @@ On completion, the request will get logged in the logs UI where the tools and fu
 
 <figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-### Managing functions and tools in Prompts
+### Managing Functions and Tools in Prompts
 
-TODO
+Portkey's Prompt Library supports creating prompt templates with function/tool definitions, as well as letting you set the `tool choice` param. Portkey will also validate your tool definition on the fly, eliminating syntax errors.
+
+<div align="left">
+
+<figure><img src="../../../.gitbook/assets/tools-function-calling.png" alt="" width="525"><figcaption></figcaption></figure>
+
+</div>
 
 ### Supported Providers and Models
 
-The following providers are supported for image generation with more providers getting added soon. Please raise a [request](../../../welcome/integration-guides/suggest-a-new-integration.md) or a [PR](https://github.com/Portkey-AI/gateway/pulls) to add model or provider to the AI gateway.
+The following providers are supported for function calling with more providers getting added soon. Please raise a [request](../../../welcome/integration-guides/suggest-a-new-integration.md) or a [PR](https://github.com/Portkey-AI/gateway/pulls) to add model or provider to the AI gateway.
 
-| Provider                                                            | Models                                                   | Functions                    |
-| ------------------------------------------------------------------- | -------------------------------------------------------- | ---------------------------- |
-| [OpenAI](../../../welcome/integration-guides/openai.md)             | `dall-e-2`, `dall-e-3`                                   | Create Image (text to image) |
-| [Azure OpenAI](../../../welcome/integration-guides/azure-openai.md) | `dall-e-2`, `dall-e-3`                                   | Create Image (text to image) |
-| [Stability](../../../welcome/integration-guides/stability-ai.md)    | `stable-diffusion-v1-6`, `stable-diffusion-xl-1024-v1-0` | Create Image (text to image) |
-| Replicate (Coming Soon)                                             |                                                          |                              |
-| Monster API (Coming Soon)                                           |                                                          |                              |
+<table><thead><tr><th width="202">Provider</th><th>Models</th></tr></thead><tbody><tr><td><a href="../../../welcome/integration-guides/openai.md">OpenAI</a></td><td><code>gpt-4</code> series of models<br><code>gpt-3.5-turbo</code> series of models</td></tr><tr><td><a href="../../../welcome/integration-guides/azure-openai.md">Azure OpenAI</a></td><td><code>gpt-4</code> series of models<br><code>gpt-3.5-turbo</code> series of models</td></tr><tr><td><a href="../../../welcome/integration-guides/anyscale-llama2-mistral-zephyr.md">Anyscale</a></td><td><code>mistralai/Mistral-7B-Instruct-v0.1</code><br><code>mistralai/Mixtral-8x7B-Instruct-v0.1</code></td></tr><tr><td><a href="../../../welcome/integration-guides/together-ai.md">Together AI</a></td><td><code>mistralai/Mixtral-8x7B-Instruct-v0.1</code><br><code>mistralai/Mistral-7B-Instruct-v0.1</code><br><code>togethercomputer/CodeLlama-34b-Instruct</code></td></tr></tbody></table>
 
 ### Cookbook
 
-Here's a detailed cookbook on image generation using Portkey which demonstrates the use of multiple providers and routing between them through [Configs](../configs.md).
-
-{% hint style="success" %}
-[https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb)
-{% endhint %}
+[**Here's a detailed cookbook on function calling using Portkey.**](function-calling.md)
