@@ -1,6 +1,8 @@
 # Logs
 
-The Logs section presents a chronological list of all the requests processed through Portkey. Each log entry provides useful data such as the timestamp, request type, LLM used, tokens generated, and cost. By clicking on an entry, a side panel opens up, revealing the entire raw data with the request and response objects.
+The Logs section presents a chronological list of all the requests processed through Portkey. Each log entry provides useful data such as the timestamp, request type, LLM used, tokens generated, and cost. For [multimodal models](../ai-gateway-streamline-llm-integrations/multimodal-capabilities/), Logs will also show the image sent with vision/image models, as well as the image generated.
+
+By clicking on an entry, a side panel opens up, revealing the entire raw data with the request and response objects.
 
 This detailed log can be invaluable when troubleshooting issues or understanding specific interactions. It provides full transparency into each request and response, enabling you to see exactly what data was sent and received.
 

@@ -42,7 +42,13 @@ Docs coming soon!
 
 ***
 
-### Prompts in Logs
+## Multimodal Prompts
+
+Portkey's prompt playground also supports vision models. You can pass image URL/data along with the rest of your messages body and deploy multimodal prompt templates to production easily.
+
+***
+
+## Prompts in Logs
 
 You can easily view only the logs for a specific prompt template by filtering the logs on that relevant prompt template.&#x20;
 

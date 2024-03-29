@@ -42,7 +42,7 @@ For REST API examples, scroll [here](chat-completions.md#rest-api-example).
 
 ### Parameters
 
-1. **requestParams (Object)**:  Parameters for the chat completion request, detailing the chat interaction. These are similar to the [OpenAI request signature](https://platform.openai.com/docs/api-reference/chat/create). Portkey automatically transforms the parameters for LLMs other than OpenAI. If some parameters don't exist in the other LLMs, they will be dropped.
+1. **requestParams (Object)**:  Parameters for the chat completion request, detailing the chat interaction. These are similar to the [OpenAI request signature](https://platform.openai.com/docs/api-reference/chat/create). Portkey automatically transforms the parameters for LLMs other than OpenAI. If some parameters don't exist in the other LLMs, they will be dropped. Portkey is multimodal by-default, so parameters relevant to vision models, like `image_url`, `base64 data` are also supported.
 2. **configParams(Object)**: Additional configuration options for the request. This is an optional parameter that can include custom config options for this specific request. These will override the configs set in the Portkey Client. A full list of these config parameters can be found [here](../product/ai-gateway-streamline-llm-integrations/configs.md).
 
 ### Example Usage

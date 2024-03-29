@@ -86,6 +86,16 @@ print(completion.choices)
 {% endtab %}
 {% endtabs %}
 
+## Using Vision Models
+
+Portkey's multimodal Gateway fully supports Bedrock's vision models `anthropic.claude-3-sonnet`, `anthropic.claude-3-haiku`, and `anthropic.claude-3-opus`
+
+For more info, check out this guide:
+
+{% content-ref url="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision.md" %}
+[vision.md](../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision.md)
+{% endcontent-ref %}
+
 ## Managing AWS Bedrock Prompts
 
 You can manage all prompts to AWS bedrock in the [Prompt Library](../../product/prompt-library.md). All the current models of Anthropic are supported and you can easily start testing different prompts.

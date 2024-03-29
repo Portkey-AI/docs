@@ -273,13 +273,21 @@ for chunk in chat_complete:
 {% endtab %}
 {% endtabs %}
 
+### Using Vision Models
+
+Portkey's multimodal Gateway fully supports OpenAI vision models as well. See this guide for more info:
+
+{% content-ref url="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision.md" %}
+[vision.md](../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision.md)
+{% endcontent-ref %}
+
 ### Function Calling
 
 Function calls within your OpenAI or Portkey SDK operations remain standard. These logs will appear in Portkey, highlighting the utilized functions and their outputs.
 
 Additionally, you can define functions within your prompts and invoke the `portkey.prompts.completions.create` method as above.
 
-### Fine-tuning
+### Fine-Tuning
 
 Please refer to our fine-tuning guides to take advantage of Portkey's advanced [continuous fine-tuning](../../product/autonomous-fine-tuning.md) capabilities.
 
@@ -317,7 +325,21 @@ Portkey's fast AI gateway captures the information about the request on your Por
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Log view for an image generation request on OpenAI</p></figcaption></figure>
 
-More information on image generation is available in the [API Reference](../../api-reference/completions-1.md#create-image)
+More information on image generation is available in the [API Reference](../../api-reference/completions-1.md#create-image).
+
+### Audio - Transcription, Translation, and Text-to-Speech
+
+Portkey's multimodal Gateway also supports the `audio` methods on OpenAI API. `tts-1` , `tts-1-hd`, and `whisper-1` models are supported.
+
+Check out the below guides for more info:
+
+{% content-ref url="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-2.md" %}
+[vision-2.md](../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-2.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md" %}
+[vision-1.md](../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md)
+{% endcontent-ref %}
 
 ### Portkey Features
 
