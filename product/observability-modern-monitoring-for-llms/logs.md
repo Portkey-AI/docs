@@ -57,7 +57,7 @@ You can rerun any buggy request with just one click, straight from the log detai
 {% hint style="info" %}
 **`Replay` button will be inactive for a log in the following cases:**
 
-1. If the reuqest is sent to any endpoint other than `/chat/completions,` `/completions`, `/embeddings`
+1. If the request is sent to any endpoint other than `/chat/completions,` `/completions`, `/embeddings`
 2. If the virtual key used in the log is archived on Portkey
 3. If the request originates from a prompt template which is called from inside a Config target
 {% endhint %}
