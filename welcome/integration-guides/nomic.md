@@ -54,8 +54,8 @@ Use the Portkey instance to send requests to your Nomic API. You can also overri
 {% tab title="NodeJS SDK" %}
 ```javascript
 const embeddings = await portkey.embeddings.create({
-    input: "embed this",
-    model: "text-embedding-ada-002",
+    input: "create vector representation on this sentence",
+    model: "nomic-embed-text-v1.5",
 });
 
 console.log(embeddings);
@@ -65,8 +65,8 @@ console.log(embeddings);
 {% tab title="Python SDK" %}
 ```python
 embeddings = portkey.embeddings.create(
-    input='embed this',
-    model='text-embedding-ada-002'
+    input='create vector representation on this sentence',
+    model='nomic-embed-text-v1.5'
 )
 print(embeddings)
 ```
