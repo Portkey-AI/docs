@@ -34,7 +34,7 @@ As you're viewing logs, you can also add manual feedback on the logs to be analy
 
 <figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-## Configs & Propmt IDs in Logs
+## Configs & Prompt IDs in Logs
 
 If your request has an attached [Config](../ai-gateway-streamline-llm-integrations/configs.md) or if it's originating from a [prompt template](../prompt-library.md), you can see the relevant Config or Prompt IDs separately in the log's details on Portkey. And to dig deeper, you can just click on the IDs and Portkey will take you to the respective Config or Prompt playground where you can view the full details.
 
