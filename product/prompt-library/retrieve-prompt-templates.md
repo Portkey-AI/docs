@@ -301,7 +301,7 @@ async function getPromptTemplate() {
         promptID: "PROMPT_ID",
         variables: { "movie":"Dune 2" }
     })
-    return render_response.data.data;
+    return render_response.data;
 }
 
 // Making a Call to OpenAI with the Retrieved Prompt
@@ -342,7 +342,7 @@ render_response = portkey.prompts.render(
   variables={ "movie":"Dune 2" }
 )
 
-PROMPT_TEMPLATE = render_response.json()['data']
+PROMPT_TEMPLATE = render_response.data
 
 # Making a Call to OpenAI with the Retrieved Prompt
 
