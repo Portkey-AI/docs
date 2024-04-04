@@ -53,16 +53,14 @@ const openai = new OpenAI({
 </strong><strong>  })
 </strong>});
 
-async function main() {
-  const chatCompletion = await openai.chat.completions.create({
-    messages: [{ role: 'user', content: 'Say this is a test' }],
-    model: 'gpt-3.5-turbo',
-  });
 
-  console.log(chatCompletion.choices);
-}
+const chatCompletion = await openai.chat.completions.create({
+  messages: [{ role: 'user', content: 'Say this is a test' }],
+  model: 'gpt-3.5-turbo',
+});
 
-main();
+console.log(chatCompletion.choices[0].message.content);
+
 </code></pre>
 {% endtab %}
 
