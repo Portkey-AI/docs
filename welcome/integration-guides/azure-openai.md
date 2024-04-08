@@ -114,6 +114,50 @@ You can manage all prompts to Azure OpenAI in the [Prompt Library](../../product
 
 Once you're ready with your prompt, you can use the `portkey.prompts.completions.create` interface to use the prompt in your application.
 
+## Image Generation
+
+Portkey supports multiple modalities for Azure OpenAI and you can make image generation requests through Portkey's AI Gateway the same way as making completion calls.
+
+{% tabs %}
+{% tab title="Portkey NodeJS" %}
+```javascript
+import Portkey from 'portkey-ai'
+ 
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY",
+    virtualKey: "DALL-E_VIRTUAL_KEY" // Referencing a Dall-E Azure deployment with Virtual Key
+})
+
+const image = await portkey.images.generate({
+  prompt:"Lucy in the sky with diamonds",
+  size:"1024x1024"
+})
+```
+{% endtab %}
+
+{% tab title="Portkey Python" %}
+```python
+from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",  
+    virtual_key="DALL-E_VIRTUAL_KEY"   # Referencing a Dall-E Azure deployment with Virtual Key
+)
+
+image = portkey.images.generate(
+  prompt="Lucy in the sky with diamonds",
+  size="1024x1024"
+)
+```
+{% endtab %}
+{% endtabs %}
+
+Portkey's fast AI gateway captures the information about the request on your Portkey Dashboard. On your logs screen, you'd be able to see this request with the request and response.
+
+<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption><p>Log view for an image generation request on Azure OpenAI</p></figcaption></figure>
+
+More information on image generation is available in the [API Reference](https://portkey.ai/docs/api-reference/completions-1#create-image).
+
 ## Next Steps
 
 The complete list of features supported in the SDK are available on the link below.
