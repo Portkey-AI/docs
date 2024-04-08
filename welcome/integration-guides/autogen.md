@@ -13,7 +13,7 @@ Autogen supports a concept of [`config_list`](https://microsoft.github.io/autoge
 #### Example using minimal configuration
 
 ```python
-from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
+from autogen import AssistantAgent, UserProxyAgent 
 
 # Import the portkey library to fetch helper functions
 from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
@@ -52,7 +52,7 @@ Since Portkey [seamlessly connects to 150+ models across providers](./), you can
 Let's see an example using **Mistral-7B on Anyscale** running with Autogen seamlessly:
 
 ```python
-from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
+from autogen import AssistantAgent, UserProxyAgent 
 
 # Import the portkey library to fetch helper functions
 from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
@@ -81,7 +81,7 @@ user_proxy.initiate_chat(assistant, message="Say this is also a test - part 2.")
 [Virtual keys](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) in Portkey allow you to easily switch between providers without manually having to store and change their API keys. Let's use the same Mistral example above, but this time using a Virtual Key.
 
 ```python
-from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
+from autogen import AssistantAgent, UserProxyAgent 
 
 # Import the portkey library to fetch helper functions
 from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
@@ -117,7 +117,7 @@ user_proxy.initiate_chat(assistant, message="Say this is also a test - part 2.")
 You can use Portkey configs in Autogen like this:
 
 ```python
-from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
+from autogen import AssistantAgent, UserProxyAgent 
 
 # Import the portkey library to fetch helper functions
 from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
