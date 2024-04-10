@@ -21,7 +21,10 @@ from openai import OpenAI
 </strong>
 client = OpenAI(
 <strong>    base_url=PORTKEY_GATEWAY_URL,
-</strong><strong>    default_headers=createHeaders(provider="openai", api_key="PORTKEY_API_KEY")
+</strong><strong>    default_headers=createHeaders(
+    provider="openai", 
+    api_key="PORTKEY_API_KEY"
+    )
 </strong>)
 
 chat_complete = client.chat.completions.create(
@@ -41,7 +44,10 @@ import OpenAI from 'openai';
 </strong>
 const openai = new OpenAI({
 <strong>  baseURL: PORTKEY_GATEWAY_URL,
-</strong><strong>  defaultHeaders: createHeaders({provider: "openai", apiKey: "PORTKEY_API_KEY"})
+</strong><strong>  defaultHeaders: createHeaders({
+    provider: "openai", 
+    apiKey: "PORTKEY_API_KEY"
+    })
 </strong>});
 
 async function main() {
@@ -62,7 +68,7 @@ main();
 [make-your-first-request.md](welcome/make-your-first-request.md)
 {% endcontent-ref %}
 
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h3>✨ Product Features</h3></td><td>Jump to the product section to learn more about the Portkey modules and the use cases they solve.</td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><h3>🚀 Quickstart</h3></td><td>Setting up Portkey takes . Check out how.</td><td></td><td><a href="welcome/make-your-first-request.md">make-your-first-request.md</a></td></tr><tr><td><h3>📔 API Reference</h3></td><td>Head to the API reference and code samples for all Portkey functionality available through REST APIs and SDKs</td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><h3>🤝 Integrations</h3></td><td>Find the best integration for you with 0+ models across LLM providers and multiple frameworks. </td><td></td><td><a href="welcome/integration-guides/">integration-guides</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h3>✨ Product Features</h3></td><td>Jump to the product section to learn more about the Portkey modules and the use cases they solve.</td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><h3>🚀 Quickstart</h3></td><td>Setting up Portkey takes less than 2 mintues.</td><td></td><td><a href="welcome/make-your-first-request.md">make-your-first-request.md</a></td></tr><tr><td><h3>📔 API Reference</h3></td><td>Head to the API reference and code samples for all Portkey functionality available through REST APIs and SDKs</td><td></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><h3>🤝 Integrations</h3></td><td>Find the best integration for you with 0+ models across LLM providers and multiple frameworks. </td><td></td><td><a href="welcome/integration-guides/">integration-guides</a></td></tr></tbody></table>
 
 ### Languages Supported
 
