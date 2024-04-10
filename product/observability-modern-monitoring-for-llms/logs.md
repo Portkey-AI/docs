@@ -46,7 +46,7 @@ If your request has an attached [Config](../ai-gateway-streamline-llm-integratio
 
 ## Debug Requests with Log Replay
 
-You can rerun any buggy request with just one click, straight from the log details page. The `Replay` button opens your reuqest in a fresh prompt playground where you can rerun the request and edit it right there until it works.
+You can rerun any buggy request with just one click, straight from the log details page. The `Replay` button opens your request in a fresh prompt playground where you can rerun the request and edit it right there until it works.
 
 <div align="left">
 
