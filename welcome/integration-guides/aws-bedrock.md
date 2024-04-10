@@ -30,7 +30,7 @@ pip install portkey-ai
 
 Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) for AWS Bedrock in the UI.
 
-You can navigate to the Virtual Keys tab of your Portkey account and create a Key for AWS Bedrock that'll make it easier to make calls. You'll need the `AWS Secret Access Key` and `AWS Access Key Id`
+You can navigate to the Virtual Keys tab of your Portkey account and create a Key for AWS Bedrock that'll make it easier to make calls. You'll need the `AWS Secret Access Key` and `AWS Access Key Id` to create the virtual key.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -55,6 +55,38 @@ portkey = Portkey(
 ```
 {% endtab %}
 {% endtabs %}
+
+#### **Using Virtual Key with AWS STS**
+
+If you're using [AWS Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html), you can pass your `aws_session_token` along with the Virtual key:
+
+{% tabs %}
+{% tab title="NodeJS" %}
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
+ 
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY", // defaults to process.env["PORTKEY_API_KEY"]
+    virtualKey: "VIRTUAL_KEY" // Your Bedrock Virtual Key,
+<strong>    aws_session_token: "&#x3C;aws_session_token>"
+</strong>})
+</code></pre>
+{% endtab %}
+
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
+    virtual_key="VIRTUAL_KEY"   # Replace with your virtual key for Bedrock,
+<strong>    aws_session_token="&#x3C;aws_session_token>"
+</strong>)
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+#### Not using Virtual Keys?
+
+[Check out this example on how you can directly use your AWS details to make a Bedrock request through Portkey.](aws-bedrock.md#making-requests-without-virtual-keys)
 
 ### **3. Invoke Chat Completions with AWS bedrock**&#x20;
 
@@ -101,6 +133,48 @@ For more info, check out this guide:
 You can manage all prompts to AWS bedrock in the [Prompt Library](../../product/prompt-library.md). All the current models of Anthropic are supported and you can easily start testing different prompts.
 
 Once you're ready with your prompt, you can use the `portkey.prompts.completions.create` interface to use the prompt in your application.
+
+## Making Requests without Virtual Keys
+
+If you do not want to add your AWS details to Portkey vault, you can also directly pass them while instantiating the Portkey client.
+
+### Mapping the Azure Details
+
+<table><thead><tr><th width="208">Node SDK</th><th width="209">Python SDK</th><th>REST Headers</th></tr></thead><tbody><tr><td>awsAccessKeyId</td><td>aws_access_key_id</td><td>x-portkey-aws-session-token</td></tr><tr><td>awsSecretAccessKey</td><td>aws_secret_access_key</td><td>x-portkey-aws-secret-access-key</td></tr><tr><td>awsRegion</td><td>aws_region</td><td>x-portkey-aws-region</td></tr><tr><td>awsSessionToken</td><td>aws_session_token</td><td>x-portkey-aws-session-token</td></tr></tbody></table>
+
+### Example
+
+{% tabs %}
+{% tab title="NodeJS" %}
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
+ 
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY",
+<strong>    provider: "bedrock",
+</strong><strong>    awsAccessKeyId: "AWS_ACCESS_KEY_ID",
+</strong><strong>    awsSecretAccessKey: "AWS_SECRET_ACCESS_KEY",
+</strong><strong>    awsRegion: "us-east-1",
+</strong><strong>    awsSessionToken: "AWS_SESSION_TOKEN"
+</strong>})
+</code></pre>
+{% endtab %}
+
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+client = Portkey(
+    api_key="PORTKEY_API_KEY",
+<strong>    provider="bedrock",
+</strong><strong>    aws_access_key_id="&#x3C;aws_acces_key_id>",
+</strong><strong>    aws_secret_access_key="&#x3C;aws_secret_acces_key>",
+</strong><strong>    aws_region="us-east-1",
+</strong><strong>    aws_session_token="&#x3C;aws_session_token>"
+</strong>)
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+
 
 ### Supported Models
 
