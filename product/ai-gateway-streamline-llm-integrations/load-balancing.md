@@ -17,11 +17,11 @@ Here's a quick example to **load balance 75-25** between an OpenAI and an Azure 
   },
   "targets": [
     {
-      "virtualKey": "openai-virtual-key",
+      "virtual_key": "openai-virtual-key",
       "weight": 0.7
     },
     {
-      "virtualKey": "azure-virtual-key",
+      "virtual_key": "azure-virtual-key",
       "weight": 0.3
     }
   ]
@@ -29,6 +29,12 @@ Here's a quick example to **load balance 75-25** between an OpenAI and an Azure 
 ```
 
 You can [create](configs.md#creating-configs) and then [use](configs.md#using-configs) the config in your requests.
+
+{% hint style="info" %}
+* `weight` is a necessary param for each target of a loadbalancer config
+* `weight` can have any value >=0
+* you can set `weight=0` for a specific target to stop routing traffic to it without removing it from your Config
+{% endhint %}
 
 ### Caveats and Considerations
 

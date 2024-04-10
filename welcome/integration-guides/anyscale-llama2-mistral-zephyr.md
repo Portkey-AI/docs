@@ -4,7 +4,7 @@ description: >-
   production-ready
 ---
 
-# Anyscale (Llama2, Mistral, Zephyr)
+# Anyscale
 
 Portkey's suite of features - AI gateway, observability, prompt management, and continuous fine-tuning are all enabled for the OSS models (Llama2, Mistral, Zephyr, and more) available on Anyscale endpoints.
 

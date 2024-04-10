@@ -51,10 +51,11 @@ You can find more examples of schemas [below](config-object.md#examples).
 | `weight`          | Weight for load balancing                                    | number           | No                                      | -                                                           | Used in `loadbalance` mode          |
 | `on_status_codes` | Status codes triggering fallback                             | array of strings | No                                      | -                                                           | Used in `fallback` mode             |
 | `targets`         | List of target configurations                                | array            | Yes (if `mode` is specified)            | -                                                           | Each item follows the config schema |
+| `request_timeout` | Request timeout configuration                                | number           | No                                      | -                                                           | -                                   |
 
 ### Strategy Object Details
 
-<table><thead><tr><th width="137">Key Name</th><th width="130">Description</th><th width="107">Type</th><th>Required</th><th width="133">Enum Values</th><th>Additional Info</th></tr></thead><tbody><tr><td><code>mode</code></td><td>strategy mode for the config</td><td>string</td><td>Yes</td><td>"loadbalance", "fallback"</td><td></td></tr><tr><td><code>on_status_codes</code></td><td>status codes to apply the strategy. This field is only used when strategy mode is "fallback"</td><td>array of numbers</td><td>No</td><td></td><td>Optional</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="137">Key Name</th><th width="130">Description</th><th width="107">Type</th><th>Required</th><th width="133">Enum Values</th><th>Additional Info</th></tr></thead><tbody><tr><td><code>mode</code></td><td>strategy mode for the config</td><td>string</td><td>Yes</td><td>"loadbalance", "fallback"</td><td></td></tr><tr><td><code>on_status_codes</code></td><td>status codes to apply the strategy. This field is only used when strategy mode is "fallback"</td><td>array of numbers</td><td>No</td><td></td><td>Optional</td></tr></tbody></table>
 
 ### Cache Object Details
 

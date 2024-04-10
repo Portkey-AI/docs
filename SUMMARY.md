@@ -12,11 +12,17 @@
   * [Anthropic](welcome/integration-guides/anthropic.md)
   * [Cohere](welcome/integration-guides/cohere.md)
   * [Google Palm](welcome/integration-guides/google-palm.md)
-  * [Google Gemini](welcome/integration-guides/google-palm-1.md)
-  * [Together AI](welcome/integration-guides/google-palm-2.md)
-  * [Perplexity AI](welcome/integration-guides/google-palm-3.md)
-  * [Mistral AI](welcome/integration-guides/google-palm-4.md)
-  * [Anyscale (Llama2, Mistral, Zephyr)](welcome/integration-guides/anyscale-llama2-mistral-zephyr.md)
+  * [Google Gemini](welcome/integration-guides/gemini.md)
+  * [Together AI](welcome/integration-guides/together-ai.md)
+  * [Perplexity AI](welcome/integration-guides/perplexity-ai.md)
+  * [Mistral AI](welcome/integration-guides/mistral-ai.md)
+  * [Anyscale](welcome/integration-guides/anyscale-llama2-mistral-zephyr.md)
+  * [Stability AI](welcome/integration-guides/stability-ai.md)
+  * [Nomic](welcome/integration-guides/nomic.md)
+  * [Autogen](welcome/integration-guides/autogen.md)
+  * [Groq](welcome/integration-guides/groq.md)
+  * [Segmind](welcome/integration-guides/segmind.md)
+  * [AWS Bedrock](welcome/integration-guides/aws-bedrock.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
 
 ## Product
@@ -31,6 +37,12 @@
 * [AI Gateway - Streamline LLM Integrations](product/ai-gateway-streamline-llm-integrations/README.md)
   * [Universal API](product/ai-gateway-streamline-llm-integrations/universal-api.md)
   * [Configs](product/ai-gateway-streamline-llm-integrations/configs.md)
+  * [Multimodal Capabilities](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/README.md)
+    * [Image Generation](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/image-generation.md)
+    * [Function Calling](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/function-calling.md)
+    * [Vision](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision.md)
+    * [Speech-to-Text](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md)
+    * [Text-to-Speech](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-2.md)
   * [Cache (Simple & Semantic)](product/ai-gateway-streamline-llm-integrations/cache-simple-and-semantic.md)
   * [Fallbacks](product/ai-gateway-streamline-llm-integrations/fallbacks.md)
   * [Automatic Retries](product/ai-gateway-streamline-llm-integrations/automatic-retries.md)
@@ -39,6 +51,9 @@
   * [Virtual Keys](product/ai-gateway-streamline-llm-integrations/virtual-keys.md)
   * [Request Timeouts](product/ai-gateway-streamline-llm-integrations/request-timeouts.md)
 * [Prompt Library](product/prompt-library.md)
+  * [Global Prompt Partials](product/prompt-library/global-prompt-partials.md)
+  * [Retrieve Prompt Templates](product/prompt-library/retrieve-prompt-templates.md)
+  * [Advanced Prompting with JSON Mode](product/prompt-library/advanced-prompting-with-json-mode.md)
 * [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
 
 ***
@@ -53,18 +68,25 @@
 * [Config Object](api-reference/config-object.md)
 * [Chat Completions](api-reference/chat-completions.md)
 * [Completions](api-reference/completions.md)
+* [Image Generation](api-reference/completions-1.md)
 * [Embeddings](api-reference/embeddings.md)
 * [Feedback](api-reference/feedback.md)
+* [Logs](api-reference/logs.md)
 * [Gateway for Other APIs](api-reference/gateway-for-other-apis.md)
 * [Response Schema](api-reference/response-schema.md)
 * [Prompts](api-reference/prompts/README.md)
   * [Prompt Completion](api-reference/prompts/prompt-completion.md)
+  * [Render](api-reference/prompts/render.md)
 * [Evals](api-reference/evals.md)
 
 ## Cookbooks
 
-* [Few-shot Prompting](cookbooks/few-shot-prompting.md)
+* [Few-Shot Prompting](cookbooks/few-shot-prompting.md)
 * [A/B Test Prompts and Models](cookbooks/a-b-test-prompts-and-models.md)
+* [Enforcing JSON Schema with Anyscale & Together](cookbooks/enforcing-json-schema-with-anyscale-and-together.md)
+* [Tackling Rate Limiting](cookbooks/tackling-rate-limiting.md)
+* [Function Calling](cookbooks/function-calling.md)
+* [Image Generation](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb)
 
 ## Changelog
 

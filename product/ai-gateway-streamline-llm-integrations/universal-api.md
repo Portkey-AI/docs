@@ -38,8 +38,8 @@ from portkey_ai import Portkey
 
 # Initialize the Portkey client
 portkey = Portkey(
-    api_key="/turdjWE+tIUeAzmzGxGEkkJLBQ=",  # Replace with your Portkey API key
-    virtual_key="open-ai-key-6317bc"   # The OpenAI virtual key
+    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
+    virtual_key="OPENAI_VIRTUAL_KEY"   # The OpenAI virtual key
 )
 
 # Generate a text completion
@@ -110,3 +110,5 @@ print(response)
 {% endtabs %}
 
 You can also use [config objects](configs.md) for a whole host of gateway strategies.
+
+The AI Gateway supports APIs outside plain text and chat completions as well. Check out the guides on [Image Generation](multimodal-capabilities/image-generation.md), [Function Calling](multimodal-capabilities/function-calling.md), [Using Vision APIs ](multimodal-capabilities/vision.md)and [Working with Audio](broken-reference).

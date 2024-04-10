@@ -75,10 +75,9 @@ pip install portkey-ai
 
 2. Next, insert the Portkey-specific code as shown in the highlighted lines to your OpenAI function calls. `PORTKEY_GATEWAY_URL` is portkey's gateway URL to route your requests and `createHeaders` is a convenience function that generates the headers object. ([All supported params/headers](../../api-reference/portkey-sdk-client.md#python-3))
 
-```python
-from openai import OpenAI
-from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
-
+<pre class="language-python"><code class="lang-python">from openai import OpenAI
+<strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+</strong>
 client = OpenAI(
     api_key="OPENAI_API_KEY", # defaults to os.environ.get("OPENAI_API_KEY")
     base_url=PORTKEY_GATEWAY_URL,
@@ -94,7 +93,7 @@ chat_complete = client.chat.completions.create(
 )
 
 print(chat_complete.choices[0].message.content)
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="REST API" %}
@@ -274,15 +273,73 @@ for chunk in chat_complete:
 {% endtab %}
 {% endtabs %}
 
+### Using Vision Models
+
+Portkey's multimodal Gateway fully supports OpenAI vision models as well. See this guide for more info:
+
+{% content-ref url="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision.md" %}
+[vision.md](../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision.md)
+{% endcontent-ref %}
+
 ### Function Calling
 
 Function calls within your OpenAI or Portkey SDK operations remain standard. These logs will appear in Portkey, highlighting the utilized functions and their outputs.
 
 Additionally, you can define functions within your prompts and invoke the `portkey.prompts.completions.create` method as above.
 
-### Fine-tuning
+### Fine-Tuning
 
 Please refer to our fine-tuning guides to take advantage of Portkey's advanced [continuous fine-tuning](../../product/autonomous-fine-tuning.md) capabilities.
+
+### Image Generation
+
+Portkey supports multiple modalities for OpenAI and you can make image generation requests through Portkey's AI Gateway the same way as making completion calls.
+
+{% tabs %}
+{% tab title="OpenAI NodeJS" %}
+```javascript
+// Define the OpenAI client as shown above
+
+const image = await openai.images.generate({
+  model:"dall-e-3",
+  prompt:"Lucy in the sky with diamonds",
+  size:"1024x1024"
+})
+```
+{% endtab %}
+
+{% tab title="OpenAI Python" %}
+```python
+# Define the OpenAI client as shown above
+
+image = openai.images.generate(
+  model="dall-e-3",
+  prompt="Lucy in the sky with diamonds",
+  size="1024x1024"
+)
+```
+{% endtab %}
+{% endtabs %}
+
+Portkey's fast AI gateway captures the information about the request on your Portkey Dashboard. On your logs screen, you'd be able to see this request with the request and response.
+
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption><p>Log view for an image generation request on OpenAI</p></figcaption></figure>
+
+More information on image generation is available in the [API Reference](../../api-reference/completions-1.md#create-image).
+
+### Audio - Transcription, Translation, and Text-to-Speech
+
+Portkey's multimodal Gateway also supports the `audio` methods on OpenAI API. `tts-1` , `tts-1-hd`, and `whisper-1` models are supported.
+
+Check out the below guides for more info:
+
+{% content-ref url="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-2.md" %}
+[vision-2.md](../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-2.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md" %}
+[vision-1.md](../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md)
+{% endcontent-ref %}
 
 ### Portkey Features
 
