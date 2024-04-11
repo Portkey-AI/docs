@@ -1,6 +1,6 @@
 # Anthropic
 
-Portkey provides a robust and secure gateway to facilitate the integration of various Large Language Models (LLMs) into your applications, including [Anthropic's Claude APIs](https://docs.anthropic.com/claude/reference/getting-started-with-the-api).&#x20;
+Portkey provides a robust and secure gateway to facilitate the integration of various Large Language Models (LLMs) into your applications, including [Anthropic's Claude APIs](https://docs.anthropic.com/claude/reference/getting-started-with-the-api).
 
 With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) system.
 
@@ -54,7 +54,7 @@ portkey = Portkey(
 {% endtab %}
 {% endtabs %}
 
-### **3. Invoke Chat Completions with Anthropic**&#x20;
+### **3. Invoke Chat Completions with Anthropic**
 
 Use the Portkey instance to send requests to Anthropic. You can also override the virtual key directly in the API call if needed.
 
@@ -83,6 +83,42 @@ print(completion.choices)
 ```
 {% endtab %}
 {% endtabs %}
+
+## How to Use Anthropic System Prompt
+
+With Portkey, we make Anthropic models interoperable with the OpenAI schema and SDK methods. So, instead of passing the `system` prompt separately, you can pass it as part of the `messages` body, similar to OpenAI:
+
+{% tabs %}
+{% tab title="NodeJS" %}
+<pre class="language-javascript"><code class="lang-javascript">const chatCompletion = await portkey.chat.completions.create({
+    messages: [
+<strong>        { role: 'system', content: 'Your system prompt' },
+</strong>        { role: 'user', content: 'Say this is a test' }
+    ],
+<strong>    model: 'claude-3-opus-20240229',
+</strong>    max_tokens: 250
+});
+
+console.log(chatCompletion.choices);
+</code></pre>
+{% endtab %}
+
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python">completion = portkey.chat.completions.create(
+    messages= [
+<strong>        { "role": 'system', "content": 'Your system prompt' },
+</strong>        { "role": 'user', "content": 'Say this is a test' }
+    ],
+<strong>    model= 'claude-3-opus-20240229',
+</strong>    max_tokens=250 # Required field for Anthropic
+)
+    
+print(completion.choices)
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+For more, check out the [`chat completions`](../../api-reference/chat-completions.md) and [`completions`](../../api-reference/completions.md) API reference docs.
 
 ## Using Anthropic Vision Models
 
