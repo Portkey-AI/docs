@@ -8,8 +8,6 @@ Here's a product walkthrough (3 mins):
 
 {% embed url="https://youtu.be/PgwK5dmvwTk" %}
 
-***
-
 ### Integrate in 3 Lines of Code
 
 {% tabs %}
@@ -22,8 +20,8 @@ from openai import OpenAI
 client = OpenAI(
 <strong>    base_url=PORTKEY_GATEWAY_URL,
 </strong><strong>    default_headers=createHeaders(
-</strong><strong>    provider="openai", 
-</strong><strong>    api_key="PORTKEY_API_KEY"
+</strong><strong>        provider="openai", 
+</strong><strong>        api_key="PORTKEY_API_KEY"
 </strong><strong>    )
 </strong>)
 
@@ -64,11 +62,7 @@ main();
 {% endtab %}
 {% endtabs %}
 
-{% content-ref url="welcome/make-your-first-request.md" %}
-[make-your-first-request.md](welcome/make-your-first-request.md)
-{% endcontent-ref %}
-
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>✨ Product Features</h4></td><td>Jump to the product section to learn more about the Portkey modules and the use cases they solve.</td><td></td><td><a href="product/observability-modern-monitoring-for-llms/">observability-modern-monitoring-for-llms</a></td></tr><tr><td><h4>🚀 Quickstart</h4></td><td>Setting up Portkey takes less than 2 mintues.</td><td></td><td><a href="welcome/make-your-first-request.md">make-your-first-request.md</a></td></tr><tr><td><h4>📔 API Reference</h4></td><td>Head to the API reference and code samples for all Portkey functionality available through REST APIs and SDKs</td><td></td><td><a href="api-reference/authentication.md">authentication.md</a></td></tr><tr><td><h4>🤝 Integrations</h4></td><td>Find the best integration for you with 0+ models across LLM providers and multiple frameworks.</td><td></td><td><a href="welcome/integration-guides/openai.md">openai.md</a></td></tr></tbody></table>
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>🚀 Quickstart</h4></td><td>Setting up Portkey takes less than 2 mintues.</td><td></td><td><a href="welcome/make-your-first-request.md">make-your-first-request.md</a></td></tr><tr><td><h4>🤝 Integrations</h4></td><td>Find the best integration for you with 0+ models across LLM providers and multiple frameworks.</td><td></td><td><a href="welcome/integration-guides/openai.md">openai.md</a></td></tr><tr><td><h4>✨ Product Features</h4></td><td>Jump to the product section to learn more about the Portkey modules and the use cases they solve.</td><td></td><td><a href="product/observability-modern-monitoring-for-llms/">observability-modern-monitoring-for-llms</a></td></tr><tr><td><h4>📔 API Reference</h4></td><td>Head to the API reference and code samples for all Portkey functionality available through REST APIs and SDKs</td><td></td><td><a href="api-reference/authentication.md">authentication.md</a></td></tr></tbody></table>
 
 ### Languages Supported
 
