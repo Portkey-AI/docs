@@ -30,15 +30,14 @@ Here's a quick example to **load balance 75-25** between an OpenAI and an Azure 
 
 ### How Load Balancing Works
 
-1. **Defining the Loadbalance Targets & their Weights**: You provide a list of `virtual keys` (or `provider` + `api_key` pairs), and assign a **`weight`** value to each target. The weights represent the relative share of requests that should be routed to each target.
+1. **Defining the Loadbalance Targets & their Weights**: You provide a list of `virtual keys` (or `provider` + `api_key` pairs), and assign a `weight` value to each target. The weights represent the relative share of requests that should be routed to each target.
 2.  **Weight Normalization**: Portkey first sums up all the weights you provided for the targets. It then divides each target's weight by the total sum to calculate the normalized weight for that target. This ensures the weights add up to 1 (or 100%), allowing Portkey to distribute the load proportionally.
 
-    \
-    For example, let's say you have three targets with weights **5**, **3**, and **1**. The total sum of weights is **9** (5 + 3 + 1). Portkey will then normalize the weights as follows:
+    For example, let's say you have three targets with weights 5, 3, and 1. The total sum of weights is 9 (5 + 3 + 1). Portkey will then normalize the weights as follows:
 
-    * **Target 1**: 5 / 9 = 0.55 (55% of the traffic)
-    * **Target 2**: 3 / 9 = 0.33 (33% of the traffic)
-    * **Target 3**: 1 / 9 = 0.011 (11% of the traffic)
+    * Target 1: 5 / 9 = 0.55 (55% of the traffic)
+    * Target 2: 3 / 9 = 0.33 (33% of the traffic)
+    * Target 3: 1 / 9 = 0.011 (11% of the traffic)
 3. **Request Distribution**: When a request comes in, Portkey routes it to a target LLM based on the normalized weight probabilities. This ensures the traffic is distributed across the LLMs according to the specified weights.
 
 {% hint style="info" %}
