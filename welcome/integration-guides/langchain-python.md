@@ -37,7 +37,6 @@ Since Portkey is fully compatible with the OpenAI signature, you can connect to 
 We can now initialise the model and update the model to use Portkey's AI gateway
 
 {% code overflow="wrap" %}
-````python
 ```python
 from langchain_openai import ChatOpenAI
 from portkey_ai import createHeaders, PORTKEY_GATEWAY_URL
@@ -51,7 +50,6 @@ llm = ChatOpenAI(api_key=PROVIDER_API_KEY, base_url=PORTKEY_GATEWAY_URL, default
 
 llm.invoke("What is the meaning of life, universe and everything?")
 ```
-````
 {% endcode %}
 
 Response
@@ -160,18 +158,18 @@ Let's take an **example** where we might want to split traffic between gpt-4 and
 
 ```python
 config = {
-	"strategy": {
-		"mode": "loadbalance"
-	},
-	"targets": [{
-		"virtual_key": "openai-25654" # OpenAI's virtual key
-		"override_params": {"model": "gpt4"},
-		"weight": 0.5
-	}, {
-		"virtual_key": "anthropic-25654" # Anthropic's virtual key
-		"override_params": {"model": "claude-opus-20240229"},
-		"weight": 0.5
-	}]
+    "strategy": {
+         "mode": "loadbalance"
+    },
+    "targets": [{
+        "virtual_key": "openai-25654" # OpenAI's virtual key
+        "override_params": {"model": "gpt4"},
+        "weight": 0.5
+    }, {
+        "virtual_key": "anthropic-25654" # Anthropic's virtual key
+        "override_params": {"model": "claude-opus-20240229"},
+        "weight": 0.5
+    }]
 }
 ```
 
@@ -179,8 +177,8 @@ We can then use this config in our requests being made from langchain.
 
 ```python
 portkey_headers = createHeaders(
-	api_key=PORTKEY_API_KEY,
-	config=config
+    api_key=PORTKEY_API_KEY,
+    config=config
 )
 
 llm = ChatOpenAI(api_key="X", base_url=PORTKEY_GATEWAY_URL, default_headers=portkey_headers)
