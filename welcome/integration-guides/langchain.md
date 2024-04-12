@@ -2,7 +2,7 @@
 description: Portkey adds core production capabilities to any Langchain app.
 ---
 
-# Langchain (Python)
+# Langchain
 
 {% hint style="info" %}
 This guide covers the integration for the **Python** flavour of Langchain. Docs for the JS Langchain integration are coming soon.
