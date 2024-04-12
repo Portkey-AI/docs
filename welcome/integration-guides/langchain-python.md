@@ -64,17 +64,17 @@ The call and the corresponding prompt will also be visible on the Portkey logs t
 
 <figure><img src="../../.gitbook/assets/langchain-logs.gif" alt=""><figcaption></figcaption></figure>
 
-### Using Virtual Keys for Multiple Models
+## Using Virtual Keys for Multiple Models
 
 Portkey supports [Virtual Keys](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) which are an easy way to store and manage API keys in a secure vault. Lets try using a Virtual Key to make LLM calls.
 
-**1. Create a Virtual Key in your Portkey account and copy the id**
+#### **1. Create a Virtual Key in your Portkey account and copy the id**
 
 Let's try creating a new Virtual Key for Mistral like this
 
 <figure><img src="../../.gitbook/assets/create_virtual_key.gif" alt=""><figcaption></figcaption></figure>
 
-**2. Use Virtual Keys in the Portkey Headers**
+#### **2. Use Virtual Keys in the Portkey Headers**
 
 The `virtual_key` parameter sets the authentication and provider for the AI provider being used. In our case we're using the Mistral Virtual key.
 
@@ -100,7 +100,7 @@ The Portkey AI gateway will authenticate the API request to Mistral and get the 
 
 The AI gateway extends Langchain's `ChatOpenAI` class making it a single interface to call any provider and any model.
 
-### Embeddings
+## Embeddings
 
 Embeddings in Langchain through Portkey work the same way as the Chat Models using the `OpenAIEmbeddings` class. Let's try to create an embedding using OpenAI's embedding model
 
@@ -123,7 +123,7 @@ Only OpenAI is supported as an embedding provider for Langchain because internal
 If you plan to use any other embedding model, we recommend using the Portkey SDK directly to make embedding calls.
 {% endhint %}
 
-### Chains & Prompts
+## Chains & Prompts
 
 [Chains](https://python.langchain.com/docs/modules/chains/) enable the integration of various Langchain concepts for simultaneous execution while Langchain supports [Prompt Templates](https://python.langchain.com/docs/modules/model\_io/prompts/) to construct inputs for language models. Lets see how this would work with Portkey
 
@@ -150,7 +150,7 @@ chain.invoke({"input": "Explain the concept of an API"})
 
 We'd be able to view the exact prompt that was used to make the call to OpenAI in the Portkey logs dashboards.
 
-### Using Advanced Routing
+## Using Advanced Routing
 
 The Portkey AI Gateway brings capabilities like load-balancing, fallbacks, experimentation and canary testing to Langchain through a configuration-first approach.
 
@@ -190,7 +190,7 @@ When the LLM is invoked, Portkey will distribute the requests to `gpt-4` and `cl
 
 You can find more config examples [here](../../api-reference/config-object.md#examples).
 
-### Agents & Tracing
+## Agents & Tracing
 
 A powerful capability of Langchain is creating Agents. The challenge with agentic workflows is that prompts are often abstracted out and it's hard to get a visibility into what the agent is doing. This also makes debugging harder.
 
