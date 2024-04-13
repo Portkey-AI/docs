@@ -5,7 +5,7 @@ description: Portkey adds core production capabilities to any Langchain app.
 # Langchain (Python)
 
 {% hint style="info" %}
-This guide covers the integration for the **Python** flavour of Langchain. Docs for the JS Langchain integration are coming soon.
+This guide covers the integration for the **Python** flavour of Langchain. Docs for the JS Langchain integration are [here](langchain-js.md).
 {% endhint %}
 
 **LangChain** is a framework for developing applications powered by language models. It enables applications that:
@@ -162,12 +162,12 @@ config = {
          "mode": "loadbalance"
     },
     "targets": [{
-        "virtual_key": "openai-25654" # OpenAI's virtual key
+        "virtual_key": "openai-25654", # OpenAI's virtual key
         "override_params": {"model": "gpt4"},
         "weight": 0.5
     }, {
-        "virtual_key": "anthropic-25654" # Anthropic's virtual key
-        "override_params": {"model": "claude-opus-20240229"},
+        "virtual_key": "anthropic-25654", # Anthropic's virtual key
+        "override_params": {"model": "claude-3-opus-20240229"},
         "weight": 0.5
     }]
 }
@@ -186,7 +186,7 @@ llm = ChatOpenAI(api_key="X", base_url=PORTKEY_GATEWAY_URL, default_headers=port
 llm.invoke("What is the meaning of life, universe and everything?")
 ```
 
-When the LLM is invoked, Portkey will distribute the requests to `gpt-4` and `claude-opus-20240229` in the ratio of the defined weights.
+When the LLM is invoked, Portkey will distribute the requests to `gpt-4` and `claude-3-opus-20240229` in the ratio of the defined weights.
 
 You can find more config examples [here](../../api-reference/config-object.md#examples).
 
@@ -194,50 +194,7 @@ You can find more config examples [here](../../api-reference/config-object.md#ex
 
 A powerful capability of Langchain is creating Agents. The challenge with agentic workflows is that prompts are often abstracted out and it's hard to get a visibility into what the agent is doing. This also makes debugging harder.
 
-Portkey's Langchain integration gives you full visibility into the running of an agent. Let's take an example of a [popular agentic workflow](https://python.langchain.com/docs/use\_cases/tool\_use/quickstart/#agents).
-
-```python
-from langchain import hub  
-from langchain.agents import AgentExecutor, create_openai_tools_agent  
-from langchain_openai import ChatOpenAI
-from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
- 
-prompt = hub.pull("hwchase17/openai-tools-agent")
-
-portkey_headers = createHeaders(
-    api_key=PORTKEY_API_KEY,
-    virtual_key=OPENAI_VIRTUAL_KEY,
-    trace_id="uuid-uuid-uuid-uuid"
-)
-
-@tool  
-def add(first_int: int, second_int: int) -> int:  
-    "Add two integers."  
-    return first_int + second_int  
-  
-  
-@tool  
-def exponentiate(base: int, exponent: int) -> int:  
-    "Exponentiate the base to the exponent power."  
-    return base**exponent  
-  
-  
-tools = [multiply, add, exponentiate]
-
-model = ChatOpenAI(api_key="X", base_url=PORTKEY_GATEWAY_URL, default_headers=portkey_headers, temperature=0)
-  
-# Construct the OpenAI Tools agent  
-agent = create_openai_tools_agent(model, tools, prompt)
-
-# Create an agent executor by passing in the agent and tools
-agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
-
-agent_executor.invoke({
-    "input": "Take 3 to the fifth power and multiply that by the sum of twelve and three, then square the whole result"
-})
-```
-
-Running this would yield the following logs in Portkey.
+Portkey's Langchain integration gives you full visibility into the running of an agent. You can replace the `ChatModel` definition as above and Portkey will be able to log the entire workflow.
 
 <figure><img src="../../.gitbook/assets/agent_tracing.gif" alt=""><figcaption></figcaption></figure>
 
