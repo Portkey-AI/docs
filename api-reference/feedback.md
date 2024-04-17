@@ -79,3 +79,11 @@ send_feedback()
 ```
 {% endtab %}
 {% endtabs %}
+
+`PUT /feedback/{id}`
+
+{% swagger src="../.gitbook/assets/openapi (5).yaml" path="/feedback/{id}" method="put" %}
+[openapi (5).yaml](<../.gitbook/assets/openapi (5).yaml>)
+{% endswagger %}
+
+The Update Feedback API allows you to update existing feedback details
