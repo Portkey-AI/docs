@@ -11,7 +11,7 @@ With Prompt Templates, you can seamlessly create and manage your LLM prompts in 
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -33,7 +33,7 @@ The most common usage of mustache templates is for **\{{variables\}}**, used to 
 
 Let's look at the following template:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 As you can see, `{{customer_data}}` and `{{chat_query}}` are defined as variables in the template and you can pass their value at the runtime:
 
@@ -74,6 +74,47 @@ const response = portkey.prompts.completions.create({
 </code></pre><p><br><strong>Output:</strong><br>Give atomic symbols for the following:<br>- Gold<br>- Carbon<br>- Zinc</p></td></tr><tr><td>{{! Comment}}</td><td>Comments that are ignored</td><td><p><strong>Template:</strong><br>Hello I am Tesla bot.<br>{{! How do tags work?}} </p><p>What can I help you with?<br><br><strong>Data:</strong></p><pre class="language-json"><code class="lang-json">{}
 </code></pre><p></p><p><strong>Output:</strong><br>Hello I am Tesla bot. What can I help you with?</p></td></tr><tr><td>{{>Partials}}</td><td><p>"Mini-templates" that can be called at runtime. </p><p></p><p>On Portkey, you can save partials separately and call them in your prompt templates by typing <code>{{></code></p></td><td><p><strong>Template:</strong><br>Hello I am Tesla bot.<br>{{>pp-tesla-template}} </p><p>What can I help you with?<br><br><strong>Data in<code>pp-tesla-template</code>:</strong></p><pre class="language-json" data-overflow="wrap"><code class="lang-json">Take the context from {{context}}. And answer user questions.
 </code></pre><p></p><p><strong>Output:</strong><br>Hello I am Tesla bot. Take the context from {{context}}. And answer user questions. What can I help you with?</p></td></tr><tr><td>{{>>Partial Variables}}</td><td>Pass your privately saved partials to Portkey by creating tags with  double <code>>></code> <br><br>Like: <code>{{>> }}</code> <br><br>This is helpful if you do not want to save your partials with Portkey but are maintaining them elsewhere</td><td><p><strong>Template:</strong><br>Hello I am Tesla bot.<br>{{>>My Private Partial}} </p><p>What can I help you with?</p></td></tr></tbody></table>
+
+## Using Tags
+
+You can directly pass your data object containing all the variable/tags info (in JSON) to Portkey's `prompts.completions` method with the `variables` property.
+
+**For example, here's a prompt partial containing the key instructions for an AI support bot:**
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+**And the prompt template uses the partial like this:**
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+**We can pass the data object inside the variables:**
+
+<pre class="language-typescript"><code class="lang-typescript">import Portkey from 'portkey-ai'
+
+const portkey = new Portkey({})
+
+const data = {
+    "company": "NESTLE",
+    "product": "MAGGI",
+    "benefits": "HEALTH",
+    "phone number": "123456",
+    "name": "Sheila",
+    "device": "iOS",
+    "query": "Product related",
+    "test_variable":"Something unrelated" // Your data object can also contain unrelated variables
+}
+
+// Make the prompt creation call with the variables
+const response = portkey.prompts.completions.create({
+    promptID: "pp-system-pro-34a60b",
+<strong>    variables: {
+</strong><strong>        ...data,
+</strong><strong>        "user_query": "I ate Maggi and I think it was stale."
+</strong><strong>    }
+</strong>})
+
+console.log(response)
+</code></pre>
 
 ***
 
