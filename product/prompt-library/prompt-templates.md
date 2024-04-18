@@ -58,7 +58,7 @@ const response = portkey.prompts.completions.create({
   "name": "Chris",
   "company": "GitHub"
 }
-</code></pre><p></p><p><strong>Output:</strong><br>Hi! My name is Chris. I work at Github.</p></td></tr><tr><td>{{#variable}} &#x3C;string> {{/variable}}</td><td>Render &#x3C;string> only if variable is <code>true</code></td><td><p><strong>Template:</strong><br>Hello I am Tesla bot.<br>{{#chat_mode_pleasant}} Excited to chat with you! {{/chat_mode_pleasant}}</p><p>What can I help you with?<br><br><strong>Data:</strong></p><pre class="language-json"><code class="lang-json">{
+</code></pre><p></p><p><strong>Output:</strong><br>Hi! My name is Chris. I work at Github.</p></td></tr><tr><td>{{#variable}} &#x3C;string> {{/variable}}</td><td>Render &#x3C;string> only if variable is <code>true</code> or <code>non Empty</code></td><td><p><strong>Template:</strong><br>Hello I am Tesla bot.<br>{{#chat_mode_pleasant}} Excited to chat with you! {{/chat_mode_pleasant}}</p><p>What can I help you with?<br><br><strong>Data:</strong></p><pre class="language-json"><code class="lang-json">{
   "chat_mode_pleasant": False
 }
 </code></pre><p></p><p><strong>Output:</strong><br>Hello I am Tesla bot. What can I help you with?</p></td></tr><tr><td><p>{{^variable}} <br>&#x3C;string></p><p>{{/variable}}</p></td><td>Render &#x3C;string> only if variable is <code>false</code> or <code>empty</code></td><td><p><strong>Template:</strong><br>Hello I am Tesla bot.<br>{{^chat_mode_pleasant}} Excited to chat with you! {{/chat_mode_pleasant}}</p><p>What can I help you with?<br><br><strong>Data:</strong></p><pre class="language-json"><code class="lang-json">{
