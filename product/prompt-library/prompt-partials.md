@@ -22,7 +22,7 @@ Partials also follow the [Mustache template engine](https://mustache.github.io/)
 
 Portkey supports `{{variable}}`,  `{{#block}} <string> {{/block}}`, `{{^block}}` and other tags.
 
-[**Check out this comprehensive guide on how to use tags**](global-prompt-partials.md#templating-engine).
+[**Check out this comprehensive guide on how to use tags**](prompt-templates.md#templating-engine).
 
 ### Versioning
 
