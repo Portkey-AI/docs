@@ -122,7 +122,7 @@ Recapping, there are 4 key steps to doing function calling, as illustrated below
 
 <div align="center">
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Function Calling Workflow</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Function Calling Workflow</p></figcaption></figure>
 
 </div>
 

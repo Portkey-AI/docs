@@ -6,7 +6,7 @@ The analytics dashboard provides an interactive interface to understand your LLM
 
 The metrics in the Analytics section can help you understand the overall efficiency of your application, discover patterns, identify areas of optimization, and much more.
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Analytics Overview Dashboard</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p>Analytics Overview Dashboard</p></figcaption></figure>
 
 ## Charts
 

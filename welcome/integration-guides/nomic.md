@@ -14,7 +14,7 @@ Portkey provides a consistent API to interact with embedding models from various
 
 You can head over to the virtual keys tab and create one for Nomic. This will be then used to make API requests to Nomic without needing the protected API key.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Create a virtual key for Nomic in Portkey</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Create a virtual key for Nomic in Portkey</p></figcaption></figure>
 
 ### 2. Install the Portkey SDK and Initialize with this Virtual Key
 
