@@ -26,7 +26,7 @@ Portkey’s gateway features—[Cache](broken-reference), [Retries](broken-refer
 
 <figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
-<table><thead><tr><th width="195">Option</th><th width="238">🔴 Inactive State</th><th>🟢 Possible Active States</th></tr></thead><tbody><tr><td><strong>Cache</strong></td><td>Cache Disabled</td><td><p>Cache Miss,</p><p>Cache Refreshed,</p><p>Cache Hit,</p><p>Cache Semantic Hit</p></td></tr><tr><td><strong>Retry</strong></td><td>Retry Not Triggered</td><td><p>Retry Success on {x} Tries,</p><p>Retry Failed</p></td></tr><tr><td><strong>Fallback</strong></td><td>Fallback Disabled</td><td><p>Fallback Active,</p><p>Fallback Triggered on Option {x}</p></td></tr><tr><td><strong>Loadbalance</strong></td><td>Loadbalancer Disabled</td><td>Loadbalancer Active</td></tr></tbody></table>
+<table><thead><tr><th width="195">Option</th><th width="238">🔴 Inactive State</th><th>🟢 Possible Active States</th></tr></thead><tbody><tr><td><strong>Cache</strong></td><td>Cache Disabled</td><td><p>Cache Miss,</p><p>Cache Refreshed,</p><p>Cache Hit,</p><p>Cache Semantic Hit</p></td></tr><tr><td><strong>Retry</strong></td><td>Retry Not Triggered</td><td><p>Retry Success on {x} Tries,</p><p>Retry Failed</p></td></tr><tr><td><strong>Fallback</strong></td><td>Fallback Disabled</td><td>Fallback Active</td></tr><tr><td><strong>Loadbalance</strong></td><td>Loadbalancer Disabled</td><td>Loadbalancer Active</td></tr></tbody></table>
 
 ## Manual Feedback
 
@@ -61,3 +61,117 @@ You can rerun any buggy request with just one click, straight from the log detai
 2. If the virtual key used in the log is archived on Portkey
 3. If the request originates from a prompt template which is called from inside a Config target
 {% endhint %}
+
+## DO NOT TRACK
+
+The `DO NOT TRACK` option allows you to process requests without logging the request and response data. When enabled, only high-level statistics like **tokens** used, **cost**, and **latency** will be recorded, while the actual request and response content will be omitted from the logs.
+
+This feature is particularly useful when dealing with sensitive data or complying with data privacy regulations. It ensures that you can still capture critical operational metrics without storing potentially sensitive information in your logs.
+
+To enable `DO NOT TRACK` for a specific request, set the **`debug`** flag to **`false`** when instantiating your **Portkey** or **OpenAI** client, or include the **`x-portkey-debug:false`** header with your request.
+
+{% tabs %}
+{% tab title="Node SDK" %}
+<pre class="language-typescript"><code class="lang-typescript">import Portkey from 'portkey-ai';
+
+const portkey = new Portkey({
+    virtualKey: "OPENAI_VIRTUAL_KEY",
+    apiKey: "PORTKEY_API_KEY",
+<strong>    debug: false
+</strong>})
+
+async function main(){
+    const response = await portkey.chat.completions.create({
+        messages: [{ role: 'user', content: '1729' }],
+        model: 'gpt-4',
+    });
+    console.log(response.choices[0].message?.content)
+}
+
+main()
+</code></pre>
+{% endtab %}
+
+{% tab title="Python SDK" %}
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",  
+    virtual_key="OPENAI_VIRTUAL_KEY",
+<strong>    debug=False
+</strong>)
+
+response = portkey.chat.completions.create(
+    messages=[{'role': 'user', 'content': 'Say this is a test'}],
+    model='gpt-4'
+)
+
+print(response.choices[0].message.content)
+</code></pre>
+{% endtab %}
+
+{% tab title="REST API" %}
+<pre class="language-bash"><code class="lang-bash">curl 'https://api.portkey.ai/v1/chat/completions' \
+    -H 'Content-Type: application/json' \
+    -H 'x-portkey-virtual-key: $OPENAI_VIRTUAL_KEY' \
+    -H 'x-portkey-api-key: $PORTKEY_API_KEY' \
+<strong>    -H 'x-portkey-debug: false' \
+</strong>    -d '{ 
+        "model": "gpt-4",  
+        "messages": [{ "role": "user", "content": "Hello" }] 
+    }'
+</code></pre>
+{% endtab %}
+
+{% tab title="OpenAI Python" %}
+<pre class="language-python"><code class="lang-python">from openai import OpenAI
+from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+
+client = OpenAI(
+    base_url=PORTKEY_GATEWAY_URL,
+    default_headers=createHeaders(
+        virtual_key="OPENAI_VIRTUAL_KEY",
+        api_key="PORTKEY_API_KEY",
+<strong>        debug=False
+</strong>    )
+)
+
+chat_complete = client.chat.completions.create(
+    model="gpt-4",
+    messages=[{"role": "user", "content": "Say this is a test"}],
+)
+
+print(chat_complete.choices[0].message.content)
+</code></pre>
+{% endtab %}
+
+{% tab title="OpenAI Node" %}
+<pre class="language-typescript"><code class="lang-typescript">import OpenAI from 'openai';
+import { PORTKEY_GATEWAY_URL, createHeaders } from 'portkey-ai'
+
+const openai = new OpenAI({
+  baseURL: PORTKEY_GATEWAY_URL,
+  defaultHeaders: createHeaders({
+    virtualKey: "OPENAI_VIRTUAL_KEY",
+    apiKey: "PORTKEY_API_KEY",
+<strong>    debug: false
+</strong>  })
+});
+
+async function main() {
+  const chatCompletion = await openai.chat.completions.create({
+    messages: [{ role: 'user', content: 'Say this is a test' }],
+    model: 'gpt-3.5-turbo',
+  });
+  console.log(chatCompletion.choices);
+}
+
+main();
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+### Side-by-side comparison on how a `debug:false` reuqest will be logged
+
+<figure><img src="../../.gitbook/assets/debug.png" alt=""><figcaption></figcaption></figure>
+
