@@ -8,17 +8,17 @@ Portkey provides a consistent API to interact with models from various providers
 
 ### **1. Install the Portkey SDK**
 
-Install the Portkey SDK in your application to interact with your Ollama localhost API through Portkey.
+Install the Portkey SDK in your application to interact with your Ollama API through Portkey.
 
 {% tabs %}
 {% tab title="NodeJS" %}
-```javascript
+```bash
 npm install --save portkey-ai
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-```python
+```bash
 pip install portkey-ai
 ```
 {% endtab %}
@@ -26,7 +26,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with Ollama URL**
 
-Provide your Ollama localhost URL when instantiating the Portkey client, and you can start sending requests to it through the Portkey Gateway.
+Instantiate the Portkey client by adding your Ollama publicly-exposed URL to the `customHost` property.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -35,7 +35,7 @@ Provide your Ollama localhost URL when instantiating the Portkey client, and you
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY", // defaults to process.env["PORTKEY_API_KEY"]
 <strong>    provider: "ollama",
-</strong><strong>    customHost: "http://localhost:11434/v1/" // Your Ollama localhost URL
+</strong><strong>    customHost: "https://7cc4-3-235-157-146.ngrok-free.app" // Your Ollama ngrok URL
 </strong>})
 </code></pre>
 {% endtab %}
@@ -46,11 +46,19 @@ const portkey = new Portkey({
 portkey = Portkey(
     api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
 <strong>    provider="ollama",
-</strong><strong>    custom_host="http://localhost:11434/v1/" # Your Ollama localhost URL    
+</strong><strong>    custom_host="https://7cc4-3-235-157-146.ngrok-free.app" # Your Ollama ngrok URL    
 </strong>)
 </code></pre>
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+For the Ollama integration, you only need to pass the base URL to **`customHost`** without the version identifier (such as **`/v1`**) - Portkey takes care of it for Ollama.
+{% endhint %}
+
+{% hint style="warning" %}
+Requests made to your localhost Ollama endpoints will fail. To integrate with Portkey and to observe your requests, you'll need to expose your localhost URLs publicly via a service like ngrok.
+{% endhint %}
 
 ### **3. Invoke Chat Completions with** Ollama
 
@@ -94,4 +102,3 @@ You'll find more information in the relevant sections:
 2. [Add gateway configs to your Ollama requests](../../product/ai-gateway-streamline-llm-integrations/universal-api.md#ollama-in-configs)
 3. [Tracing Ollama requests](../../product/observability-modern-monitoring-for-llms/traces.md)
 4. [Setup a fallback from OpenAI to Ollama APIs](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md)
-

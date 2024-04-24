@@ -62,7 +62,7 @@ response = portkey.chat.completions.create(
 
 ## Integrating Local or Private Models
 
-Portkey can also route to and observe your locally or privately hosted LLMs, as long as the model is compliant with one of the 15+ providers supported by Portkey.
+Portkey can also route to and observe your locally or privately hosted LLMs, as long as the model is compliant with one of the 15+ providers supported by Portkey and the URL is exposed publicly.
 
 Simply specify the **`custom_host`** parameter along with the **`provider`** name, and Portkey will handle the communication with your local model.
 
@@ -72,14 +72,14 @@ Simply specify the **`custom_host`** parameter along with the **`provider`** nam
 
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",
-<strong>    provider: "ollama",
-</strong><strong>    customHost: "http://localhost:11434/v1/" // Point Portkey to where Ollama's Llama 3 is hosted
+<strong>    provider: "mistral-ai",
+</strong><strong>    customHost: "http://MODEL_URL/v1/" // Point Portkey to where the model is hosted
 </strong>})
 
 async function main(){
     const response = await portkey.chat.completions.create({
         messages: [{ role: 'user', content: '1729' }],
-<strong>        model: 'llama3',
+<strong>        model: 'mixtral-8x22b',
 </strong>    });
     console.log(response)
 }
@@ -93,13 +93,13 @@ main()
 
 portkey = Portkey(
     api_key="PORTKEY_API_KEY",
-<strong>    provider="ollama",
-</strong><strong>    custom_host="http://localhost:11434/v1/" # Point Portkey to where Llama 3 is hosted using Ollama
+<strong>    provider="mistral-ai",
+</strong><strong>    custom_host="http://MODEL_URL/v1/" # Point Portkey to where the model is hosted
 </strong>)
 
 chat = portkey.chat.completions.create(
     messages = [{ "role": 'user', "content": 'Say this is a test' }],
-<strong>    model="llama3"
+<strong>    model="mixtral-8x22b"
 </strong>)
 
 print(chat)
@@ -110,10 +110,10 @@ print(chat)
 <pre class="language-bash"><code class="lang-bash">curl https://api.portkey.ai/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "x-portkey-api-key: $PORTKEY_API_KEY" \
-<strong>  -H "x-portkey-provider: ollama" \
-</strong><strong>  -H "x-portkey-custom-host: http://localhost:11434/v1/" \
+<strong>  -H "x-portkey-provider: mistral-ai" \
+</strong><strong>  -H "x-portkey-custom-host: http://MODEL_URL/v1/" \
 </strong>  -d '{
-<strong>    "model": "llama3",
+<strong>    "model": "mixtral-8x22b",
 </strong>    "messages": [{ "role": "user", "content": "Say this is a test" }]
   }'
 </code></pre>
@@ -123,7 +123,9 @@ print(chat)
 {% hint style="info" %}
 **Note:**&#x20;
 
-When using **`custom_host`**, include the version identifier (e.g., **`/v1`**) in the URL. Portkey will append the actual endpoint path (**`/chat/completions`**, **`/completions`**, or **`/embeddings`**) automatically.
+When using **`custom_host`**, include the version identifier (e.g., **`/v1`**) in the URL. Portkey will append the actual endpoint path (**`/chat/completions`**, **`/completions`**, or **`/embeddings`**) automatically.\
+\
+(For Ollama models, this works differently. [Check here](../../welcome/integration-guides/ollama.md))
 {% endhint %}
 
 ## Powerful Routing and Fallback Strategies
@@ -142,10 +144,10 @@ Here's an example config where we set up a fallback from OpenAI to a locally hos
 			"override_params": { "model": "gpt-3.5-turbo" }
 		},
 		{
-<strong>			"provider": "ollama",
-</strong><strong>			"custom_host": "http://localhost:11434/v1/",
+<strong>			"provider": "mistral-ai",
+</strong><strong>			"custom_host": "http://MODEL_URL/v1/",
 </strong>			"weight": 1,
-			"override_params": { "model": "llama3" }
+			"override_params": { "model": "mixtral-8x22b" }
 		}
 	]
 }

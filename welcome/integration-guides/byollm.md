@@ -24,9 +24,9 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with your Custom URL**
 
-Instead of using a `provider` + `Authorization` pair or a `virtualKey` referring to the provider, you can specify a **`provider`** + **`custom_host`** pair while instantiating the Portkey client.
+Instead of using a `provider` + `authorization` pair or a `virtualKey` referring to the provider, you can specify a **`provider`** + **`custom_host`** pair while instantiating the Portkey client.
 
-`custom_host` here refers to the URL where your custom model is hosted, including the API version identifier. (e.g., `http://localhost:11434/v1` for Ollama).
+`custom_host` here refers to the URL where your custom model is hosted, including the API version identifier.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -36,7 +36,7 @@ const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",
 <strong>    provider: "PROVIDER_NAME", // This can be mistral-ai, openai, or anything else
 </strong><strong>    customHost: "http://MODEL_URL/v1/", // Your custom URL with version identifier
-</strong><strong>    Authorization: "AUTH_KEY", // If you need to pass auth
+</strong><strong>    authorization: "AUTH_KEY", // If you need to pass auth
 </strong>})
 </code></pre>
 {% endtab %}
@@ -48,7 +48,7 @@ portkey = Portkey(
     api_key="PORTKEY_API_KEY",
 <strong>    provider="PROVIDER_NAME", # This can be mistral-ai, openai, or anything else
 </strong><strong>    custom_host="http://MODEL_URL/v1/", # Your custom URL with version identifier
-</strong><strong>    Authorization="AUTH_KEY", # If you need to pass auth
+</strong><strong>    authorization="AUTH_KEY", # If you need to pass auth
 </strong>)
 </code></pre>
 {% endtab %}
@@ -98,8 +98,8 @@ const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",
     provider: "PROVIDER_NAME", // This can be mistral-ai, openai, or anything else
     customHost: "http://MODEL_URL/v1/", // Your custom URL with version identifier
-    Authorization: "AUTH_KEY", // If you need to pass auth
-<strong>    forwardHeaders: [ "Authorization" ]
+    authorization: "AUTH_KEY", // If you need to pass auth
+<strong>    forwardHeaders: [ "authorization" ]
 </strong>})
 </code></pre>
 {% endtab %}
@@ -111,34 +111,63 @@ portkey = Portkey(
     api_key="PORTKEY_API_KEY",
     provider="PROVIDER_NAME", # This can be mistral-ai, openai, or anything else
     custom_host="http://MODEL_URL/v1/", # Your custom URL with version identifier
-    Authorization="AUTH_KEY", # If you need to pass auth
-<strong>    forward_headers= [ "Authorization" ]
+    authorization="AUTH_KEY", # If you need to pass auth
+<strong>    forward_headers= [ "authorization" ]
 </strong>)
+</code></pre>
+{% endtab %}
+
+{% tab title="REST API" %}
+`x-portkey-forward-headers` accepts comma separated header names
+
+<pre class="language-bash"><code class="lang-bash">curl https://api.portkey.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+  -H "x-portkey-provider: $PROVIDER_NAME" \
+  -H "x-portkey-custom-host: https://MODEL_URL/v1" \
+  -H "x-api-key: $API_KEY" \
+  -H "x-secret-access-key: $ACCESS_KEY" \
+  -H "x-key-id: $KEY_ID" \
+<strong>  -H "x-portkey-forward-headers: x-api-key, x-secret-access-key, x-key-id" \
+</strong>  -d '{
+    "model": "llama2",
+    "messages": [{ "role": "user", "content": "Say this is a test" }]
+  }'
 </code></pre>
 {% endtab %}
 {% endtabs %}
 
-You can also configure `forward_headers` in your Config object:
+### Forward Headers in the Config Object
 
-<pre class="language-python"><code class="lang-python">config = {
-		"provider": "mistral-ai",
-		"custom_host": "http://MODEL_URL/v1/",
-		"access_token": "xxx",
-		"key_id": "xxx",
-		"pod_id": "xxx",
-<strong>		"forward_headers": [
-</strong><strong>				"key_id",
-</strong><strong>				"pod_id",
-</strong><strong>				"access_token"
-</strong><strong>		]
-</strong>}
+You can also define `forward_headers` in your Config object and then pass the headers directly while making a request.
 
-from portkey_ai import Portkey
-
-portkey = Portkey(
-    api_key="PORTKEY_API_KEY",
-<strong>    config=config
-</strong>)
+<pre class="language-json"><code class="lang-json">{
+    "strategy": {
+        "mode": "loadbalance"
+    },
+    "targets": [
+        {
+            "provider": "openai",
+            "api_key": "&#x3C;api-key>"
+        },
+        {
+            "strategy": {
+                "mode": "fallback"
+            },
+            "targets": [
+                {
+                    "provider": "azure-openai",
+                    "custom_host": "http://MODEL_URL/v1",
+<strong>                    "forward_headers": ["my-auth-header-1", "my-auth-header-2"]
+</strong>                },
+                {
+                    "provider": "openai",
+                    "api_key": "sk-***"
+                }
+            ]
+        }
+    ]
+}
 </code></pre>
 
 ## Next Steps
