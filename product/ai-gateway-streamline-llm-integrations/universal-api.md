@@ -1,114 +1,167 @@
 # Universal API
 
-The Portkey API and SDKs are integrated with all the popular LLM providers. This allows you to make a request to any hosted or private model with the same signature, and we take care of the request and response transformations automatically.
+Portkey's Universal API provides a consistent interface to integrate a wide range of modalities (text, vision, audio) and LLMs (hosted OR local) into your apps. So, instead of maintaining separate integrations for different multimodal LLMs, you can interact with models from OpenAI, Anthropic, Meta, Cohere, Mistral, and many more (100+ models, 15+ providers) - all  using a common, unified API signature.
 
-This universal API is powered by Portkey's battle-tested open-source AI Gateway. It converts all incoming requests to the OpenAI signature and is tuned to always return an OpenAI compliant response.
+### Portkey Follows OpenAI Spec
 
-Let's try sending a completion request to OpenAI using Portkey's gateway
+Portkey API is powered by its [battle-tested open-source AI Gateway](https://github.com/portkey-ai/gateway), which converts all incoming requests to the OpenAI signature and returns OpenAI-compliant responses.
+
+### Switching Providers is a Breeze
 
 {% tabs %}
-{% tab title="NodeJS" %}
-```javascript
-import Portkey from 'portkey-ai';
+{% tab title="Node" %}
+<pre class="language-typescript"><code class="lang-typescript">import Portkey from 'portkey-ai';
 
-// Initialize the Portkey client
-const portkey = new Portkey({
-    apiKey: "PORTKEY_API_KEY",  // Replace with your Portkey API key
-    virtualKey: "VIRTUAL_KEY"   // The OpenAI virtual key
+<strong>// Calling OpenAI
+</strong>const portkey = new Portkey({
+    provider: "openai",
+    Authorization: "Bearer sk-xxxxx"
+})
+const response = await portkey.chat.completions.create({
+    messages: [{ role: 'user', content: 'Hello' }],
+    model: 'gpt-4',
 });
 
-// Function to generate a text completion
-async function getTextCompletion() {
-    const completion = await portkey.completions.create({
-        prompt: "Say this is a test",
-        model: "gpt-3.5-turbo-instruct",
-    });
-
-    return completion;
-}
-
-const response = await getTextCompletion();
-console.log(response);
-```
-{% endtab %}
-
-{% tab title="Python" %}
-```python
-from portkey_ai import Portkey
-
-# Initialize the Portkey client
-portkey = Portkey(
-    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    virtual_key="OPENAI_VIRTUAL_KEY"   # The OpenAI virtual key
-)
-
-# Generate a text completion
-def get_text_completion():
-    completion = portkey.completions.create(
-        prompt='Say this is a test',
-        model='gpt-3.5-turbo-instruct'
-    )
-    return completion
-
-response = get_text_completion()
-print(response)
-```
-{% endtab %}
-{% endtabs %}
-
-When we decide that we just want to try out Anthropic instead, we can just change this to Anthropic's virtual key and update the model.
-
-{% tabs %}
-{% tab title="NodeJS" %}
-<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai';
-
-// Initialize the Portkey client
-const portkey = new Portkey({
-    apiKey: "PORTKEY_API_KEY",  // Replace with your Portkey API key
-<strong>    virtualKey: "VIRTUAL_KEY"   // The Anthropic virtual key
-</strong>});
-
-// Function to generate a text completion
-async function getTextCompletion() {
-    const completion = await portkey.completions.create({
-        prompt: "Say this is a test",
-<strong>        model: "claude-2",
-</strong><strong>        max_tokens: 250 //required parameter for Anthropic
-</strong>    });
-
-    return completion;
-}
-
-const response = await getTextCompletion();
-console.log(response);
+<strong>// Swithing to Anthropic
+</strong>const portkey = new Portkey({
+    provider: "anthropic",
+    Authorization: "Bearer sk-ant-xxxxx"
+})
+const response = await portkey.chat.completions.create({
+    messages: [{ role: 'user', content: 'Hello' }],
+    model: 'claude-3-opus-20240229',
+});
 </code></pre>
 {% endtab %}
 
 {% tab title="Python" %}
-```python
-from portkey_ai import Portkey
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
 
-# Initialize the Portkey client
-portkey = Portkey(
-    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    virtual_key="VIRTUAL_KEY"# The Anthropic virtual key
+<strong># Calling OpenAI
+</strong>portkey = Portkey(
+    provider = "openai",
+    Authorization = "sk-xxxxx"
+)
+response = portkey.chat.completions.create(
+    messages = [{ "role": 'user', "content": 'Hello' }],
+    model = 'gpt-4'
 )
 
-# Generate a text completion
-def get_text_completion():
-    completion = portkey.completions.create(
-        prompt='Say this is a test',
-        model='claude-2',
-        max_tokens=250 #required parameter for Anthropic
-    )
-    return completion
-
-response = get_text_completion()
-print(response)
-```
+<strong># Switching to Anthropic
+</strong>portkey = Portkey(
+    provider = "anthropic",
+    Authorization = "sk-ant-xxxxx"
+)
+response = portkey.chat.completions.create(
+    messages = [{ "role": 'user', "content": 'Hello' }],
+    model = 'claude-3-opus-20240229'
+)
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
-You can also use [config objects](configs.md) for a whole host of gateway strategies.
+## Integrating Local or Private Models
 
-The AI Gateway supports APIs outside plain text and chat completions as well. Check out the guides on [Image Generation](multimodal-capabilities/image-generation.md), [Function Calling](multimodal-capabilities/function-calling.md), [Using Vision APIs ](multimodal-capabilities/vision.md)and [Working with Audio](broken-reference).
+Portkey can also route to and observe your locally or privately hosted LLMs, as long as the model is compliant with one of the 15+ providers supported by Portkey.
+
+Simply specify the **`custom_host`** parameter along with the **`provider`** name, and Portkey will handle the communication with your local model.
+
+{% tabs %}
+{% tab title="Node" %}
+<pre class="language-typescript"><code class="lang-typescript">import Portkey from 'portkey-ai';
+
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY",
+<strong>    provider: "ollama",
+</strong><strong>    customHost: "http://localhost:11434/v1/" // Point Portkey to where Ollama's Llama 3 is hosted
+</strong>})
+
+async function main(){
+    const response = await portkey.chat.completions.create({
+        messages: [{ role: 'user', content: '1729' }],
+<strong>        model: 'llama3',
+</strong>    });
+    console.log(response)
+}
+
+main()
+</code></pre>
+{% endtab %}
+
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+<strong>    provider="ollama",
+</strong><strong>    custom_host="http://localhost:11434/v1/" # Point Portkey to where Llama 3 is hosted using Ollama
+</strong>)
+
+chat = portkey.chat.completions.create(
+    messages = [{ "role": 'user', "content": 'Say this is a test' }],
+<strong>    model="llama3"
+</strong>)
+
+print(chat)
+</code></pre>
+{% endtab %}
+
+{% tab title="REST API" %}
+<pre class="language-bash"><code class="lang-bash">curl https://api.portkey.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+<strong>  -H "x-portkey-provider: ollama" \
+</strong><strong>  -H "x-portkey-custom-host: http://localhost:11434/v1/" \
+</strong>  -d '{
+<strong>    "model": "llama3",
+</strong>    "messages": [{ "role": "user", "content": "Say this is a test" }]
+  }'
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+**Note:**&#x20;
+
+When using **`custom_host`**, include the version identifier (e.g., **`/v1`**) in the URL. Portkey will append the actual endpoint path (**`/chat/completions`**, **`/completions`**, or **`/embeddings`**) automatically.
+{% endhint %}
+
+## Powerful Routing and Fallback Strategies
+
+With Portkey you can implement sophisticated routing and fallback strategies. Route requests to different providers based on various criteria, loadbalance them, set up retries or fallbacks to alternative models in case of failures or resource constraints.
+
+Here's an example config where we set up a fallback from OpenAI to a locally hosted Llama3 on Ollama:
+
+<pre class="language-python"><code class="lang-python">config = {
+	"strategy": { "mode": "loadbalance" },
+	"targets": [
+		{
+			"provider": "openai",
+			"api_key": "xxx",
+			"weight": 1,
+			"override_params": { "model": "gpt-3.5-turbo" }
+		},
+		{
+<strong>			"provider": "ollama",
+</strong><strong>			"custom_host": "http://localhost:11434/v1/",
+</strong>			"weight": 1,
+			"override_params": { "model": "llama3" }
+		}
+	]
+}
+
+from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+<strong>    config=config
+</strong>)
+</code></pre>
+
+## Multimodality
+
+Portkey integrates with multimodal models through the same unified API and supports vision, audio, image generation, and more capabilities across providers.
+
+{% content-ref url="multimodal-capabilities/" %}
+[multimodal-capabilities](multimodal-capabilities/)
+{% endcontent-ref %}

@@ -6,11 +6,11 @@ description: Integrate Portkey and analyze your first LLM call in 2 minutes!
 
 ## 1. Get your Portkey API Key
 
-[Create](https://app.portkey.ai/signup) or [log in](https://app.portkey.ai/login) to your Portkey account. Grab your account's API key in the dropdown menu on your profile icon.
+[Create](https://app.portkey.ai/signup) or [log in](https://app.portkey.ai/login) to your Portkey account. Grab your account's API key in the menu on your profile icon.
 
 <div align="left" data-full-width="false">
 
-<figure><img src="https://3798672042-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FeWEp2XRBGxs7C1jgAdk7%2Fuploads%2Fa7JLqhFhjaOinZsj1oxq%2Fportkey_api.gif?alt=media&#x26;token=e2025311-62ba-479f-859c-de5d55de9536" alt="" width="563"><figcaption><p>Copy your Portkey account API key</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/portkey_api_key.gif" alt="" width="563"><figcaption><p>Copy your Portkey account API key</p></figcaption></figure>
 
 </div>
 
@@ -40,7 +40,7 @@ Once, the integration is ready, you can view the requests reflect on your Portke
 
 ### Other Integration Guides
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Azure OpenAI</h4></td><td><a href="integration-guides/azure-openai.md">azure-openai.md</a></td></tr><tr><td><h4>Anthropic</h4></td><td><a href="integration-guides/anthropic.md">anthropic.md</a></td></tr><tr><td><h4>Langchain</h4></td><td><a href="integration-guides/langchain-python.md">langchain-python.md</a></td></tr><tr><td><h4>LlamaIndex</h4></td><td><a href="integration-guides/llama-index-python.md">llama-index-python.md</a></td></tr><tr><td><h4>Cohere</h4></td><td><a href="integration-guides/cohere.md">cohere.md</a></td></tr><tr><td><h4>Others</h4></td><td><a href="../api-reference/gateway-for-other-apis.md">gateway-for-other-apis.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Azure OpenAI</h4></td><td><a href="integration-guides/azure-openai.md">azure-openai.md</a></td></tr><tr><td><h4>Anthropic</h4></td><td><a href="integration-guides/anthropic.md">anthropic.md</a></td></tr><tr><td><h4>Langchain</h4></td><td><a href="integration-guides/langchain-python.md">langchain-python.md</a></td></tr><tr><td><h4>LlamaIndex</h4></td><td><a href="integration-guides/llama-index-python.md">llama-index-python.md</a></td></tr><tr><td><h4>Ollama</h4></td><td><a href="integration-guides/groq-1.md">groq-1.md</a></td></tr><tr><td><h4>Others</h4></td><td><a href="../api-reference/gateway-for-other-apis.md">gateway-for-other-apis.md</a></td></tr></tbody></table>
 
 ## 3. Next Steps
 
@@ -58,7 +58,7 @@ Portkey is hosted on edge workers throughout the world and our servers ensure th
 
 Our edge worker locations:
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Is my data secure?
 

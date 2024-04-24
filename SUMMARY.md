@@ -22,6 +22,8 @@
   * [Nomic](welcome/integration-guides/nomic.md)
   * [Autogen](welcome/integration-guides/autogen.md)
   * [Groq](welcome/integration-guides/groq.md)
+  * [Ollama](welcome/integration-guides/groq-1.md)
+  * [Bring Your Own LLM](welcome/integration-guides/groq-2.md)
   * [Segmind](welcome/integration-guides/segmind.md)
   * [AWS Bedrock](welcome/integration-guides/aws-bedrock.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)

@@ -10,7 +10,7 @@ Portkey provides a consistent API to interact with models from various providers
 
 ### **1. Install the Portkey SDK**
 
-Add the Portkey SDK to your application to interact with Mistral AI's API through Portkey's gateway.
+Add the Portkey SDK to your application to interact with Groq AI's API through Portkey's gateway.
 
 {% tabs %}
 {% tab title="NodeJS" %}
