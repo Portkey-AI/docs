@@ -88,6 +88,15 @@ You can manage all prompts to Groq in the [Prompt Library](../../product/prompt-
 
 Once you're ready with your prompt, you can use the `portkey.prompts.completions.create` interface to use the prompt in your application.
 
+## Supported Models
+
+| Model Name   | Model String to Use in API calls |
+| ------------ | -------------------------------- |
+| Llama3 8B    | `llama3-8b-8192`                 |
+| Llama3 70B   | `llama3-70b-8192`                |
+| Mixtral 8x7b | `mixtral-8x7b-32768`             |
+| Gemma 7b     | `gemma-7b-it`                    |
+
 ## Next Steps
 
 The complete list of features supported in the SDK are available on the link below.
