@@ -18,10 +18,10 @@ Using the Gateway, you can call `vision`, `audio (text-to-speech & speech-to-tex
 [function-calling.md](function-calling.md)
 {% endcontent-ref %}
 
-{% content-ref url="speech-to-text.md" %}
-[speech-to-text.md](speech-to-text.md)
+{% content-ref url="vision-1.md" %}
+[vision-1.md](vision-1.md)
 {% endcontent-ref %}
 
-{% content-ref url="text-to-speech.md" %}
-[text-to-speech.md](text-to-speech.md)
+{% content-ref url="vision-2.md" %}
+[vision-2.md](vision-2.md)
 {% endcontent-ref %}
