@@ -14,6 +14,7 @@
   * [Cohere](welcome/integration-guides/cohere.md)
   * [Google Palm](welcome/integration-guides/google-palm.md)
   * [Google Gemini](welcome/integration-guides/gemini.md)
+  * [Google Vertex AI](welcome/integration-guides/vertex-ai.md)
   * [Together AI](welcome/integration-guides/together-ai.md)
   * [Perplexity AI](welcome/integration-guides/perplexity-ai.md)
   * [Mistral AI](welcome/integration-guides/mistral-ai.md)
