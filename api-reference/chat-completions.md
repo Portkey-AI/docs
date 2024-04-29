@@ -164,7 +164,7 @@ In REST calls, `x-portkey-api-key` is a compulsory header, it can be paired with
 {% endtab %}
 {% endtabs %}
 
-To send chat requests to locally or privately hosted models, check out the guide on [Ollama](../welcome/integration-guides/groq-1.md).
+To send chat requests to locally or privately hosted models, check out the guide on [Ollama](broken-reference).
 
 #### 2. Image Input (Vision Models)
 
