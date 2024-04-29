@@ -138,7 +138,7 @@ Once you're ready with your prompt, you can use the `portkey.prompts.completions
 
 If you do not want to add your AWS details to Portkey vault, you can also directly pass them while instantiating the Portkey client.
 
-### Mapping the Azure Details
+### Mapping the Bedrock Details
 
 <table><thead><tr><th width="208">Node SDK</th><th width="209">Python SDK</th><th>REST Headers</th></tr></thead><tbody><tr><td>awsAccessKeyId</td><td>aws_access_key_id</td><td>x-portkey-aws-session-token</td></tr><tr><td>awsSecretAccessKey</td><td>aws_secret_access_key</td><td>x-portkey-aws-secret-access-key</td></tr><tr><td>awsRegion</td><td>aws_region</td><td>x-portkey-aws-region</td></tr><tr><td>awsSessionToken</td><td>aws_session_token</td><td>x-portkey-aws-session-token</td></tr></tbody></table>
 
