@@ -14,13 +14,13 @@ Add the Portkey SDK to your application to interact with Google Vertex AI API th
 
 {% tabs %}
 {% tab title="NodeJS" %}
-```javascript
+```bash
 npm install --save portkey-ai
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-```python
+```bash
 pip install portkey-ai
 ```
 {% endtab %}
@@ -32,57 +32,57 @@ Set up Portkey with your virtual key as part of the initialization configuration
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
-```javascript
-import Portkey from 'portkey-ai'
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
  
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY", // defaults to process.env["PORTKEY_API_KEY"]
-    virtualKey: "VIRTUAL_KEY", // Your Vertex AI Virtual Key
-})
-```
+<strong>    virtualKey: "VERTEX_VIRTUAL_KEY", // Your Vertex AI Virtual Key
+</strong>})
+</code></pre>
 {% endtab %}
 
 {% tab title="Python SDK" %}
-```python
-from portkey_ai import Portkey
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
 
 portkey = Portkey(
     api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    virtual_key="VIRTUAL_KEY"   # Replace with your virtual key for Google
-)
-```
+<strong>    virtual_key="VERTEX_VIRTUAL_KEY"   # Replace with your virtual key for Google
+</strong>)
+</code></pre>
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+If you do not want to add your Azure details to Portkey vault, you can also directly pass them while instantiating the Portkey client. [More on that here](vertex-ai.md#making-requests-without-virtual-keys).
+{% endhint %}
 
 ### **3. Invoke Chat Completions with** Vertex AI and Gemini&#x20;
 
 Use the Portkey instance to send requests to Gemini models hosted on Vertex AI. You can also override the virtual key directly in the API call if needed.
 
 {% hint style="warning" %}
-Vertex AI uses OAuth2 to authenticate its requests, so you need to send the access token additionally in the config along with the request.
+Vertex AI uses OAuth2 to authenticate its requests, so you need to send the **access token** additionally along with the request.
 {% endhint %}
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
-```javascript
-const chatCompletion = await portkey.chat.completions.create({
+<pre class="language-javascript"><code class="lang-javascript">const chatCompletion = await portkey.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
     model: 'gemini-pro',
-}, {authorization: "vertex ai access token here"});
-
+<strong>}, {authorization: "vertex ai access token here"});
+</strong>
 console.log(chatCompletion.choices);
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Python SDK" %}
-```python
-completion = portkey.with_options(authorization="...").chat.completions.create(
-    messages= [{ "role": 'user', "content": 'Say this is a test' }],
+<pre class="language-python"><code class="lang-python"><strong>completion = portkey.with_options(authorization="...").chat.completions.create(
+</strong>    messages= [{ "role": 'user', "content": 'Say this is a test' }],
     model= 'gemini-pro'
 )
 
 print(completion)
-```
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
@@ -94,24 +94,21 @@ Once you're ready with your prompt, you can use the `portkey.prompts.completions
 
 ## Making Requests Without Virtual Keys <a href="#making-requests-without-virtual-keys" id="making-requests-without-virtual-keys"></a>
 
-Here's how you can pass your Vertex AI details & secrets directly without using the Virtual Keys in Portkey.
+You can also pass your Vertex AI details & secrets directly without using the Virtual Keys in Portkey.
 
-Vertex AI expects a region, a project ID and the access token in the request for a successful completion request.
-
-This is how you can specify these fields directly in your requests.
+Vertex AI expects a **`region`**, a **`project ID`** and the **`access token`** in the request for a successful completion request. This is how you can specify these fields directly in your requests:
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
-```javascript
-import Portkey from 'portkey-ai'
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
  
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",
-    vertexProjectId: "sample-55646",
-    vertexRegion: "us-central1",
-    provider:"vertex_ai",
-    authorization: "VERTEX_AI_ACCESS_TOKEN"
-})
+<strong>    vertexProjectId: "sample-55646",
+</strong><strong>    vertexRegion: "us-central1",
+</strong><strong>    provider:"vertex_ai",
+</strong><strong>    authorization: "VERTEX_AI_ACCESS_TOKEN"
+</strong>})
 
 const chatCompletion = await portkey.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
@@ -119,20 +116,19 @@ const chatCompletion = await portkey.chat.completions.create({
 });
 
 console.log(chatCompletion.choices);
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Python SDK" %}
-```python
-from portkey_ai import Portkey
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
 
 portkey = Portkey(
     api_key="PORTKEY_API_KEY",
-    vertex_project_id="sample-55646",
-    vertex_region="us-central1",
-    provider="vertex_ai",
-    authorization="VERTEX_AI_ACCESS_TOKEN"
-)
+<strong>    vertex_project_id="sample-55646",
+</strong><strong>    vertex_region="us-central1",
+</strong><strong>    provider="vertex_ai",
+</strong><strong>    authorization="VERTEX_AI_ACCESS_TOKEN"
+</strong>)
 
 completion = portkey.chat.completions.create(
     messages= [{ "role": 'user', "content": 'Say this is a test' }],
@@ -140,29 +136,23 @@ completion = portkey.chat.completions.create(
 )
 
 print(completion)
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="REST" %}
-```bash
-curl --location 'https://api.portkey.ai/v1/chat/completions' \
---header 'x-portkey-provider: vertex-ai' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer VERTEX_AI_ACCESS_TOKEN' \
---header 'x-portkey-api-key: PORTKEY_API_KEY' \
---header 'x-portkey-vertex-project-id: sample-94994' \
---header 'x-portkey-vertex-region: us-central1' \
---data '{
-    "messages": [
-        {
-            "role": "user",
-            "content": "Say this is a test"
-        }
-    ],
+<pre class="language-bash"><code class="lang-bash">curl 'https://api.portkey.ai/v1/chat/completions' \
+-H 'Content-Type: application/json' \
+-H 'x-portkey-api-key: PORTKEY_API_KEY' \
+<strong>-H 'x-portkey-provider: vertex-ai' \
+</strong><strong>-H 'Authorization: Bearer VERTEX_AI_ACCESS_TOKEN' \
+</strong><strong>-H 'x-portkey-vertex-project-id: sample-94994' \
+</strong><strong>-H 'x-portkey-vertex-region: us-central1' \
+</strong>--data '{
+    "messages": [{"role": "user","content": "Hello"}],
     "max_tokens": 20,
     "model": "gemini-pro"
 }'
-```
+</code></pre>
 {% endtab %}
 {% endtabs %}
 
