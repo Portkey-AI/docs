@@ -23,6 +23,7 @@
   * [Nomic](welcome/integration-guides/nomic.md)
   * [Autogen](welcome/integration-guides/autogen.md)
   * [Groq](welcome/integration-guides/groq.md)
+  * [Fireworks](welcome/integration-guides/fireworks.md)
   * [Jina AI](welcome/integration-guides/jina-ai.md)
   * [Ollama](welcome/integration-guides/ollama.md)
   * [Bring Your Own LLM](welcome/integration-guides/byollm.md)
