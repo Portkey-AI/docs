@@ -1,6 +1,6 @@
 # Fireworks
 
-Portkey provides a robust and secure gateway to facilitate the integration of various models into your apps, including [chat](fireworks.md#id-3.-invoke-chat-completions-with-fireworks), [vision](fireworks.md#using-vision-models), [image generation](fireworks.md#using-image-generation-models), and [embedding](fireworks.md#using-embeddings-models) models hosted on the [Firework platform](https://fireworks.ai/).
+Portkey provides a robust and secure gateway to facilitate the integration of various models into your apps, including [chat](fireworks.md#id-3.-invoke-chat-completions-with-fireworks), [vision](fireworks.md#using-vision-models), [image generation](fireworks.md#using-image-generation-models), and [embedding](fireworks.md#using-embeddings-models) models hosted on the [Fireworks platform](https://fireworks.ai/).
 
 With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) system.
 
