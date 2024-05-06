@@ -53,7 +53,7 @@ portkey = Portkey(
 {% endtabs %}
 
 {% hint style="info" %}
-If you do not want to add your Azure details to Portkey vault, you can also directly pass them while instantiating the Portkey client. [More on that here](vertex-ai.md#making-requests-without-virtual-keys).
+If you do not want to add your Vertex AI details to Portkey vault, you can directly pass them while instantiating the Portkey client. [More on that here](vertex-ai.md#making-requests-without-virtual-keys).
 {% endhint %}
 
 ### **3. Invoke Chat Completions with** Vertex AI and Gemini&#x20;
