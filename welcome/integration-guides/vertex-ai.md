@@ -86,6 +86,14 @@ print(completion)
 {% endtab %}
 {% endtabs %}
 
+## Function Calling
+
+Portkey supports function calling mode on Google's Gemini Models. Explore this :arrow\_down: Cookbook for a deep dive and examples:
+
+{% content-ref url="../../cookbooks/function-calling.md" %}
+[function-calling.md](../../cookbooks/function-calling.md)
+{% endcontent-ref %}
+
 ## Managing Vertex AI Prompts
 
 You can manage all prompts to Google Gemini in the [Prompt Library](../../product/prompt-library.md). All the models in the model garden are supported and you can easily start testing different prompts.
