@@ -25,7 +25,7 @@ Portkey has native integrations with OpenAI SDKs for Node.js, Python, and its RE
 To integrate the Portkey gateway with OpenAI,&#x20;
 
 * Set the `baseURL` to the Portkey Gateway URL
-* Include Portkey-specific headers such as `mode` and `apiKey`and others.
+* Include Portkey-specific headers such as `provider`, `apiKey`and others.
 
 Here's how to apply it to a **chat completion** request:
 
@@ -56,7 +56,7 @@ const openai = new OpenAI({
 async function main() {
   const chatCompletion = await openai.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4-turbo',
   });
 
   console.log(chatCompletion.choices);
@@ -80,15 +80,15 @@ pip install portkey-ai
 </strong>
 client = OpenAI(
     api_key="OPENAI_API_KEY", # defaults to os.environ.get("OPENAI_API_KEY")
-    base_url=PORTKEY_GATEWAY_URL,
-    default_headers=createHeaders(
-        provider="openai",
-        api_key="PORTKEY_API_KEY" # defaults to os.environ.get("PORTKEY_API_KEY")
-    )
-)
+<strong>    base_url=PORTKEY_GATEWAY_URL,
+</strong><strong>    default_headers=createHeaders(
+</strong><strong>        provider="openai",
+</strong><strong>        api_key="PORTKEY_API_KEY" # defaults to os.environ.get("PORTKEY_API_KEY")
+</strong><strong>    )
+</strong>)
 
 chat_complete = client.chat.completions.create(
-    model="gpt-4",
+    model="gpt-4-turbo",
     messages=[{"role": "user", "content": "Say this is a test"}],
 )
 
@@ -97,14 +97,13 @@ print(chat_complete.choices[0].message.content)
 {% endtab %}
 
 {% tab title="REST API" %}
-```bash
-curl https://api.portkey.ai/v1/chat/completions \
-  -H "Content-Type: application/json" \
+<pre class="language-bash"><code class="lang-bash"><strong>curl https://api.portkey.ai/v1/chat/completions \
+</strong>  -H "Content-Type: application/json" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
-  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
-  -H "x-portkey-provider: openai" \ 
-  -d '{
-    "model": "gpt-3.5-turbo",
+<strong>  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+</strong><strong>  -H "x-portkey-provider: openai" \ 
+</strong>  -d '{
+    "model": "gpt-4-turbo",
     "messages": [{
         "role": "system",
         "content": "You are a helpful assistant."
@@ -113,7 +112,7 @@ curl https://api.portkey.ai/v1/chat/completions \
         "content": "Hello!"
       }]
   }'
-```
+</code></pre>
 
 [List of all possible headers](../../api-reference/portkey-sdk-client.md#rest-headers)
 {% endtab %}
@@ -226,7 +225,7 @@ import { PORTKEY_GATEWAY_URL, createHeaders } from 'portkey-ai'
 const openai = new OpenAI({
   baseURL: PORTKEY_GATEWAY_URL,
   defaultHeaders: createHeaders({
-    mode: "openai",
+    provider: "openai",
     apiKey: "PORTKEY_API_KEY" // defaults to process.env["PORTKEY_API_KEY"]
   })
 });
