@@ -57,7 +57,7 @@ const portkey = new Portkey({
 async function getEmbeddings() {
     const embeddings = await portkey.embeddings.create({
         input: "embed this",
-        model: "text-embedding-ada-002",
+        model: "text-embedding-3-large",
     });
 
     console.log(embeddings);
@@ -68,7 +68,7 @@ await getEmbeddings();
 async function getEmbeddingsWithConfig() {
     const embeddings = await portkey.embeddings.create({
         input: "embed this",
-        model: "text-embedding-ada-002",
+        model: "text-embedding-3-large",
     }, {config: "custom-config-123"});
 
     console.log(embeddings);
@@ -90,8 +90,8 @@ portkey = Portkey(
 # Generate embeddings
 def get_embeddings():
     embeddings = portkey.embeddings.create(
-        input='embed this',
-        model='text-embedding-ada-002'
+        input='The vector representation for this text',
+        model='text-embedding-3-large'
     )
     print(embeddings)
 
@@ -100,8 +100,8 @@ get_embeddings()
 # Generate embeddings with config parameters
 def get_embeddings_with_config():
     embeddings = portkey.with_options(config='custom-config-123').embeddings.create(
-        input='embed this',
-        model='text-embedding-ada-002'
+        input='The vector representation for this text',
+        model='text-embedding-3-large'
     })
     print(embeddings)
 
