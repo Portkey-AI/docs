@@ -29,6 +29,7 @@
   * [Bring Your Own LLM](welcome/integration-guides/byollm.md)
   * [Segmind](welcome/integration-guides/segmind.md)
   * [Vercel](welcome/integration-guides/vercel.md)
+  * [Instructor](welcome/integration-guides/instructor.md)
   * [AWS Bedrock](welcome/integration-guides/aws-bedrock.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
 
