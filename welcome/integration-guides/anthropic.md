@@ -14,14 +14,26 @@ Add the Portkey SDK to your application to interact with Anthropic's API through
 
 {% tabs %}
 {% tab title="NodeJS" %}
-```javascript
+```bash
 npm install --save portkey-ai
+```
+
+And if you want to use Portkey with the Anthropic SDK,
+
+```bash
+npm install @anthropic-ai/sdk
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-```python
+```bash
 pip install portkey-ai
+```
+
+And if you want to use Portkey with the Anthropic SDK,
+
+```bash
+pip install anthropic
 ```
 {% endtab %}
 {% endtabs %}
@@ -52,6 +64,36 @@ portkey = Portkey(
 )
 ```
 {% endtab %}
+
+{% tab title="Anthropic Python SDK" %}
+<pre class="language-python"><code class="lang-python">from anthropic import Anthropic
+<strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+</strong>
+client = Anthropic(
+    api_key="ANTHROPIC_API_KEY",
+<strong>    base_url=PORTKEY_GATEWAY_URL,
+</strong><strong>    default_headers=createHeaders(
+</strong><strong>        api_key="PORTKEY_API_KEY",
+</strong><strong>        provider="anthropic"
+</strong><strong>    )
+</strong>)
+</code></pre>
+{% endtab %}
+
+{% tab title="Anthropic Node SDK" %}
+<pre class="language-typescript"><code class="lang-typescript">import Anthropic from "@anthropic-ai/sdk";
+<strong>import { PORTKEY_GATEWAY_URL, createHeaders } from "portkey-ai";
+</strong>
+const anthropic = new Anthropic({
+  apiKey: "ANTHROPIC_API_KEY",
+<strong>  baseURL: PORTKEY_GATEWAY_URL,
+</strong><strong>  defaultHeaders: createHeaders({
+</strong><strong>    provider: "anthropic",
+</strong><strong>    apiKey: "PORTKEY_API_KEY",
+</strong><strong>  }),
+</strong>});
+</code></pre>
+{% endtab %}
 {% endtabs %}
 
 ### **3. Invoke Chat Completions with Anthropic**
@@ -80,6 +122,33 @@ completion = portkey.chat.completions.create(
 )
     
 print(completion.choices)
+```
+{% endtab %}
+
+{% tab title="Anthropic Python SDK" %}
+```python
+message = client.messages.create(
+    messages= [{ "role": 'user', "content": 'Say this is a test' }],
+    model= 'claude-3-opus-20240229',
+    max_tokens=250
+)
+
+print(message.content)
+```
+{% endtab %}
+
+{% tab title="Anthropic Node SDK" %}
+```typescript
+async function main() {
+    const msg = await anthropic.messages.create({
+        model: "claude-3-opus-20240229",
+        max_tokens: 1024,
+        messages: [{ role: "user", content: "Hello, Claude" }],
+    });
+    console.log(msg);
+}
+
+main();
 ```
 {% endtab %}
 {% endtabs %}
