@@ -97,6 +97,7 @@
 * [Function Calling](cookbooks/function-calling.md)
 * [Image Generation](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb)
 * [Llama 3 on Portkey + Together AI](cookbooks/llama-3-on-portkey-+-together-ai.md)
+* [Detecting Emotions with GPT-4o](cookbooks/emotions-with-gpt-4o.md)
 
 ## Changelog
 
