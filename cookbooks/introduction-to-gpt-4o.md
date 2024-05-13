@@ -1,5 +1,7 @@
 # Introduction to GPT-4o
 
+> This is a copy of the notebook available on OpenAI [repo](https://github.com/openai/openai-cookbook/blob/main/examples/gpt4o/introduction\_to\_gpt4o.ipynb)
+
 GPT-4o ("o" for "omni") is designed to handle a combination of text, audio, and video inputs, and can generate outputs in text, audio, and image formats.
 
 ### Background
