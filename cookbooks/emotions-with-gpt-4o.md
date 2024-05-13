@@ -40,4 +40,4 @@ print(emotions.choices[0].message.content)
 
 ## Get Observability over the reqest
 
-<figure><img src="../.gitbook/assets/CleanShot 2024-05-13 at 23.34.22@2x.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2024-05-14 at 00.43.59@2x.png" alt=""><figcaption></figcaption></figure>
