@@ -38,6 +38,6 @@ emotions = portkey.chat.completions.create(
 print(emotions.choices[0].message.content)
 </code></pre>
 
-## Get Observability over the reqest
+## Get Observability over the request
 
 <figure><img src="../.gitbook/assets/CleanShot 2024-05-14 at 00.43.59@2x.png" alt=""><figcaption></figcaption></figure>
