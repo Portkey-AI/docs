@@ -40,18 +40,21 @@ You can find more examples of schemas [below](config-object.md#examples).
 
 ## Schema Details
 
-| Key Name          | Description                                                  | Type             | Required                                | Enum Values                                                 | Additional Info                     |
-| ----------------- | ------------------------------------------------------------ | ---------------- | --------------------------------------- | ----------------------------------------------------------- | ----------------------------------- |
-| `strategy`        | Operational strategy for the config or any individual target | object           | Yes (if no `provider` or `virtual_key`) | -                                                           | See Strategy Object Details         |
-| `provider`        | Name of the service provider                                 | string           | Yes (if no `mode` or `virtual_key`)     | "openai", "anthropic", "azure-openai", "anyscale", "cohere" | -                                   |
-| `api_key`         | API key for the service provider                             | string           | Yes (if `provider` is specified)        | -                                                           | -                                   |
-| `virtual_key`     | Virtual key identifier                                       | string           | Yes (if no `mode` or `provider`)        | -                                                           | -                                   |
-| `cache`           | Caching configuration                                        | object           | No                                      | -                                                           | See Cache Object Details            |
-| `retry`           | Retry configuration                                          | object           | No                                      | -                                                           | See Retry Object Details            |
-| `weight`          | Weight for load balancing                                    | number           | No                                      | -                                                           | Used in `loadbalance` mode          |
-| `on_status_codes` | Status codes triggering fallback                             | array of strings | No                                      | -                                                           | Used in `fallback` mode             |
-| `targets`         | List of target configurations                                | array            | Yes (if `mode` is specified)            | -                                                           | Each item follows the config schema |
-| `request_timeout` | Request timeout configuration                                | number           | No                                      | -                                                           | -                                   |
+| Key Name          | Description                                                  | Type             | Required                                | Enum Values                                                                                                                                                                           | Additional Info                                      |
+| ----------------- | ------------------------------------------------------------ | ---------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| `strategy`        | Operational strategy for the config or any individual target | object           | Yes (if no `provider` or `virtual_key`) | -                                                                                                                                                                                     | See Strategy Object Details                          |
+| `provider`        | Name of the service provider                                 | string           | Yes (if no `mode` or `virtual_key`)     | "openai", "anthropic", "azure-openai", "anyscale", "cohere"                                                                                                                           | -                                                    |
+| `api_key`         | API key for the service provider                             | string           | Yes (if `provider` is specified)        | -                                                                                                                                                                                     | -                                                    |
+| `virtual_key`     | Virtual key identifier                                       | string           | Yes (if no `mode` or `provider`)        | -                                                                                                                                                                                     | -                                                    |
+| `cache`           | Caching configuration                                        | object           | No                                      | -                                                                                                                                                                                     | See Cache Object Details                             |
+| `retry`           | Retry configuration                                          | object           | No                                      | -                                                                                                                                                                                     | See Retry Object Details                             |
+| `weight`          | Weight for load balancing                                    | number           | No                                      | -                                                                                                                                                                                     | Used in `loadbalance` mode                           |
+| `on_status_codes` | Status codes triggering fallback                             | array of strings | No                                      | -                                                                                                                                                                                     | Used in `fallback` mode                              |
+| `targets`         | List of target configurations                                | array            | Yes (if `mode` is specified)            | -                                                                                                                                                                                     | Each item follows the config schema                  |
+| `request_timeout` | Request timeout configuration                                | number           | No                                      | -                                                                                                                                                                                     | -                                                    |
+| `custom_host`     | Route to privately hosted model                              | string           | No                                      | -                                                                                                                                                                                     | Used in combination with `provider` + `api_key`      |
+| `forward_headers` | Forward sensitive headers directly                           | array of strings | No                                      | -                                                                                                                                                                                     | -                                                    |
+| `override_params` | Pass model name and other hyper parameters                   | object           | No                                      | "model", "temperature", "frequency\_penalty", "logit\_bias", "logprobs", "top\_logprobs", "max\_tokens", "n", "presence\_penalty", "response\_format", "seed", "stop", "top\_p", etc. | Pass everything that's typically part of the payload |
 
 ### Strategy Object Details
 
@@ -89,6 +92,23 @@ You can find more examples of schemas [below](config-object.md#examples).
   "api_key": "sk-***"
 }
 ```
+
+</details>
+
+<details>
+
+<summary>Passing Model &#x26; Hyperparameters with Override Option</summary>
+
+<pre class="language-json"><code class="lang-json">{
+  "provider": "anthropic",
+  "api_key": "xxx",
+<strong>  "override_params": {
+</strong><strong>    "model": "claude-3-sonnet-20240229",
+</strong><strong>    "max_tokens": 512,
+</strong><strong>    "temperature": 0
+</strong><strong>  }
+</strong>}
+</code></pre>
 
 </details>
 
