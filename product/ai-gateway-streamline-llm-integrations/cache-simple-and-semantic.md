@@ -11,21 +11,27 @@ Portkey cache serves requests upto **20x times faster** and **cheaper**.&#x20;
 
 To enable Portkey cache, just add the `cache` params to your [config object](../../api-reference/config-object.md#cache-object-details).
 
-### **Simple Cache**
+## **Simple Cache**
 
 ```sh
 "cache": { "mode": "simple" }
 ```
 
-**How it works:** Simple cache performs an exact match on the input prompts. If the exact same request is received again, Portkey retrieves the response directly from the cache, bypassing the model execution.&#x20;
+### **How it Works**
 
-### **Semantic Cache**
+Simple cache performs an exact match on the input prompts. If the exact same request is received again, Portkey retrieves the response directly from the cache, bypassing the model execution.&#x20;
+
+***
+
+## **Semantic Cache**
 
 ```json
 "cache": { "mode": "semantic" }
 ```
 
-**How it works:** Semantic cache considers the contextual similarity between input requests. It uses cosine similarity to ascertain if the similarity between the input and a cached request exceeds a specific threshold. If the similarity threshold is met, Portkey retrieves the response from the cache, saving model execution time. Check out this [blog](https://portkey.ai/blog/reducing-llm-costs-and-latency-semantic-cache/) for more details on how we do this.
+### **How it Works**
+
+Semantic cache considers the contextual similarity between input requests. It uses cosine similarity to ascertain if the similarity between the input and a cached request exceeds a specific threshold. If the similarity threshold is met, Portkey retrieves the response from the cache, saving model execution time. Check out this [blog](https://portkey.ai/blog/reducing-llm-costs-and-latency-semantic-cache/) for more details on how we do this.
 
 {% hint style="info" %}
 Semantic cache is a "superset" of both caches. Setting cache mode to "semantic" will work for when there are simple cache hits as well.
@@ -35,7 +41,25 @@ Semantic cache is a "superset" of both caches. Setting cache mode to "semantic" 
 To optimise for accurate cache hit rates, Semantic cache only works with requests with less than 8,191 input tokens, and with number of messages (human, assistant, system combined) less than or equal to 4.
 {% endhint %}
 
-[Read more how to set cache in Configs](cache-simple-and-semantic.md#how-cache-works-with-configs).
+### Ignoring the First Message in Semantic Cache
+
+When using the `/chat/completions` endpoint, Portkey requires at least **two** message objects in the `messages` array. The first message object, typically used for the `system` message, is not considered when determining semantic similarity for caching purposes.
+
+For example:
+
+<pre class="language-json"><code class="lang-json">messages = [
+<strong>        { "role": "system", "content": "You are a helpful assistant" },
+</strong>        { "role": "user", "content": "Who is the president of the US?" }
+]
+</code></pre>
+
+In this case, only the content of the `user` message ("Who is the president of the US?") is used for finding semantic matches in the cache. The `system` message ("You are a helpful assistant") is ignored.
+
+This means that even if you change the `system` message while keeping the `user` message semantically similar, Portkey will still return a semantic cache hit.&#x20;
+
+This allows you to modify the behavior or context of the assistant without affecting the cache hits for similar user queries.
+
+### [Read more how to set cache in Configs](cache-simple-and-semantic.md#how-cache-works-with-configs).
 
 ***
 
