@@ -322,7 +322,7 @@ image = openai.images.generate(
 
 Portkey's fast AI gateway captures the information about the request on your Portkey Dashboard. On your logs screen, you'd be able to see this request with the request and response.
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Log view for an image generation request on OpenAI</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Log view for an image generation request on OpenAI</p></figcaption></figure>
 
 More information on image generation is available in the [API Reference](../../api-reference/completions-1.md#create-image).
 
@@ -339,6 +339,30 @@ Check out the below guides for more info:
 {% content-ref url="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md" %}
 [vision-1.md](../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md)
 {% endcontent-ref %}
+
+### Managing Organizations and Projects
+
+For users who belong to multiple organizations or are accessing their projects through their legacy user API key, you can specify which organization and project is used for an API request.
+
+In Portkey, you can attach this as a header, as part of the config or within the OpenAI virtual key.
+
+#### OpenAI Virtual Keys
+
+You can specify OpenAI's organisation and project IDs while defining a Virtual Key.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+#### In the Gateway Config
+
+You can also specify the organisation and project details in the config root or within a target.
+
+```json
+{
+	"virtual_key": "open-ai-key-66a67d",
+	"openai_organization": "org-MoQxcZmsvbzVKibXlRMuAHXm",
+	"openai_project": "$PROJECT_ID"
+}
+```
 
 ### Portkey Features
 
