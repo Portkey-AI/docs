@@ -26,7 +26,7 @@ For example:
 
 ```yaml
 prompts:
-  - 'portkey://pp-test-promp-669f48'
+  - portkey://pp-test-promp-669f48
 
 providers:
   - openai:gpt-3.5-turbo-0613
