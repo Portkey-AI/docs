@@ -103,12 +103,10 @@
 * [Detecting Emotions with GPT-4o](cookbooks/emotions-with-gpt-4o.md)
 * [Introduction to GPT-4o](cookbooks/introduction-to-gpt-4o.md)
 
-## Changelog
-
-* [Portkey's December Migration](changelog/portkeys-december-migration.md)
-
 ## Support
 
 * [Contact Us](support/contact-us.md)
 * [Join Portkey on Discord](support/join-portkey-on-discord.md)
 * [Common Errors & Resolutions](support/common-errors-and-resolutions.md)
+* [December '23 Migration](support/portkeys-december-migration.md)
+* [Changelog](https://new.portkey.ai/)
