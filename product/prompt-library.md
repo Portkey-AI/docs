@@ -6,7 +6,7 @@ This enables you to experiment with various combinations of parameters and promp
 
 #### **Setting Up AI Providers**
 
-Before you can create and manage prompts, you'll need to set up your [Virtual Keys](ai-gateway-streamline-llm-integrations/virtual-keys.md). After saving the key, the respective AI provider can be used to run and manage prompts.
+Before you can create and manage prompts, you'll need to set up your [Virtual Keys](ai-gateway-streamline-llm-integrations/virtual-keys/). After saving the key, the respective AI provider can be used to run and manage prompts.
 
 #### **Defining and Saving Prompts**
 

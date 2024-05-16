@@ -2,7 +2,7 @@
 
 Portkey provides a robust and secure gateway to facilitate the integration of various models into your applications, including [Jina AI embedding & reranker models](https://jina.ai/).
 
-With Portkey, you can take advantage of features like fast AI gateway access, observability, and more, all while ensuring the secure management of your API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) system.
+With Portkey, you can take advantage of features like fast AI gateway access, observability, and more, all while ensuring the secure management of your API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) system.
 
 ## Portkey SDK Integration with Jina AI Models
 
@@ -28,7 +28,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) for Jina AI in the UI.
+Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for Jina AI in the UI.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}

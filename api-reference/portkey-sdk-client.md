@@ -31,7 +31,7 @@ export PORTKEY_API_KEY=""
 The basic Portkey SDK client needs _**2 required parameters**_
 
 1. The Portkey Account's API key to authenticate all your requests
-2. The [virtual key](../product/ai-gateway-streamline-llm-integrations/virtual-keys.md#using-virtual-keys) of the AI provider you want to use\
+2. The [virtual key](../product/ai-gateway-streamline-llm-integrations/virtual-keys/#using-virtual-keys) of the AI provider you want to use\
    OR\
    The [config](config-object.md) being used
 

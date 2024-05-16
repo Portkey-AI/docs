@@ -78,7 +78,7 @@ user_proxy.initiate_chat(assistant, message="Say this is also a test - part 2.")
 
 ### Using a Virtual Key
 
-[Virtual keys](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) in Portkey allow you to easily switch between providers without manually having to store and change their API keys. Let's use the same Mistral example above, but this time using a Virtual Key.
+[Virtual keys](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) in Portkey allow you to easily switch between providers without manually having to store and change their API keys. Let's use the same Mistral example above, but this time using a Virtual Key.
 
 ```python
 from autogen import AssistantAgent, UserProxyAgent, config_list_from_json

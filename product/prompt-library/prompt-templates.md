@@ -5,7 +5,7 @@ With Prompt Templates, you can seamlessly create and manage your LLM prompts in 
 ## How to use Prompt Templates
 
 * On the Portkey app, just click on the "Prompts" button on the left, click on "Create" and a new, blank playground opens up.
-* Here you can pick your provider & model of choice - Portkey supports `vision`, `chat`, and `completions` models from 20+ providers. Provider choice here is tied up to [Virtual keys](../ai-gateway-streamline-llm-integrations/virtual-keys.md) so you may see multiple options for the same provider, based on the number of virtual keys you have.
+* Here you can pick your provider & model of choice - Portkey supports `vision`, `chat`, and `completions` models from 20+ providers. Provider choice here is tied up to [Virtual keys](../ai-gateway-streamline-llm-integrations/virtual-keys/) so you may see multiple options for the same provider, based on the number of virtual keys you have.
 * You can write the user/assistant messages as well as configure all the model parameters like `top_p`, `max_tokens`, `logit_bias` etc - right from UI.&#x20;
 * Portkey prompts also has support for enabling `JSON Mode`, and writing `Tools/Functions` call chains.
 

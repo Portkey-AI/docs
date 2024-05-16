@@ -6,7 +6,7 @@ This feature also provides the following benefits:
 
 * Easier key rotation
 * The ability to generate multiple virtual keys for a single API key
-* Imposition of restrictions based on cost, request volume, and user access
+* Imposition of restrictions [based on cost](budget-limits-enterprise-feature.md), request volume, and user access
 
 These can be managed within your account under the "Virtual Keys" tab.
 
@@ -77,6 +77,14 @@ completion = portkey.with_options(virtual_key="...").chat.completions.create(
 ```
 {% endtab %}
 {% endtabs %}
+
+### Setting Budget Limits (Enterprise Feature)
+
+Portkey provides a simple way to set budget limits for any of your virtual keys and helps you manage your spending on AI providers (and LLMs) - giving you confidence and control over your application's costs.
+
+{% content-ref url="budget-limits-enterprise-feature.md" %}
+[budget-limits-enterprise-feature.md](budget-limits-enterprise-feature.md)
+{% endcontent-ref %}
 
 ### Prompt Templates
 

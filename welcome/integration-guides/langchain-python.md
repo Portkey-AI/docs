@@ -66,7 +66,7 @@ The call and the corresponding prompt will also be visible on the Portkey logs t
 
 ## Using Virtual Keys for Multiple Models
 
-Portkey supports [Virtual Keys](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) which are an easy way to store and manage API keys in a secure vault. Lets try using a Virtual Key to make LLM calls.
+Portkey supports [Virtual Keys](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) which are an easy way to store and manage API keys in a secure vault. Lets try using a Virtual Key to make LLM calls.
 
 #### **1. Create a Virtual Key in your Portkey account and copy the id**
 

@@ -4,7 +4,7 @@ Portkey provides a robust and secure gateway to facilitate the integration of va
 
 Nomic has especially become popular due to it's superior embeddings and is now available through Portkey's AI gateway as well.
 
-With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) system.
+With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) system.
 
 ## Portkey SDK Integration with Nomic
 
@@ -20,7 +20,7 @@ You can head over to the virtual keys tab and create one for Nomic. This will be
 
 Add the Portkey SDK to your application to interact with Nomic's API through Portkey's gateway. Set up Portkey with your virtual key as part of the initialization configuration.
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) for Azure in the UI.
+Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for Azure in the UI.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}

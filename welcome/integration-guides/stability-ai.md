@@ -2,7 +2,7 @@
 
 Portkey provides a robust and secure gateway to facilitate the integration of various Large Language Models (LLMs) into your applications, including [Stability AI APIs](https://platform.stability.ai/docs/api-reference).
 
-With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) system.
+With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) system.
 
 ## Portkey SDK Integration with Stability AI
 
@@ -28,7 +28,7 @@ pip install portkey-ai
 
 ### 2. Initialize Portkey with the Virtual Key
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) for Stability AI in your Portkey account.
+Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for Stability AI in your Portkey account.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}

@@ -29,7 +29,7 @@ Portkey makes it easy to create prompts through the playground.
 We'll start by clicking **Create** on the **Prompts** **tab** and create the first prompt for OpenAI's gpt-3.5-turbo.
 
 {% hint style="info" %}
-You'll notice that I'd already created [virtual keys](../product/ai-gateway-streamline-llm-integrations/virtual-keys.md) for OpenAI and Google in my account. You can create them by going to the **Virtual Keys** tab and adding your API keys to Portkey's vault - this also ensures that your original API keys remain secure.
+You'll notice that I'd already created [virtual keys](../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for OpenAI and Google in my account. You can create them by going to the **Virtual Keys** tab and adding your API keys to Portkey's vault - this also ensures that your original API keys remain secure.
 {% endhint %}
 
 Let's start with a simple prompt. We can always improve it iteratively. You'll notice that we've added variables to it for `title` and `num_sections` which we'll populate through the API later on.
