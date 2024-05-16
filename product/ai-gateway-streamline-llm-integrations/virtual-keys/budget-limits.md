@@ -1,12 +1,14 @@
 ---
-description: >-
-  Budget Limits is an Enterprise-only feature that lets you set cost limits on
-  virtual keys
+description: Budget Limits lets you set cost limits on virtual keys
 ---
 
-# Budget Limits (Enterprise Feature)
+# Budget Limits
 
 **Budget Limits on Virtual Keys** provide a simple way to manage your spending on AI providers (and LLMs) - giving you confidence and control over your application's costs.
+
+{% hint style="success" %}
+Budget Limit is currently only available to **Portkey Enterprise Plan** customers. Email us at `support@portkey.ai` if you would like to enable it for your org.
+{% endhint %}
 
 ### Setting Budget Limits on Virtual Keys
 

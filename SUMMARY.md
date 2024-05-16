@@ -58,7 +58,7 @@
   * [Load Balancing](product/ai-gateway-streamline-llm-integrations/load-balancing.md)
   * [Canary Testing](product/ai-gateway-streamline-llm-integrations/canary-testing.md)
   * [Virtual Keys](product/ai-gateway-streamline-llm-integrations/virtual-keys/README.md)
-    * [Budget Limits (Enterprise Feature)](product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits-enterprise-feature.md)
+    * [Budget Limits](product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits.md)
   * [Request Timeouts](product/ai-gateway-streamline-llm-integrations/request-timeouts.md)
 * [Prompt Library](product/prompt-library.md)
   * [Prompt Templates](product/prompt-library/prompt-templates.md)
