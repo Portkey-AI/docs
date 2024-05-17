@@ -19,6 +19,7 @@ When creating a new virtual key on Portkey, you can set a budget limit in USD. O
 ### Key Considerations
 
 {% hint style="warning" %}
+* There is **No time period** for budget limits; they apply until the budget is exhausted
 * Budget limits are set in **USD** and can include decimal values
 * The budget limit **applies only** to requests made after the limit is set; it **does not retroactively** apply to previous requests
 * Once set, budget limits **cannot be edited** by any organization member
