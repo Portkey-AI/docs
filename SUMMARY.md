@@ -31,7 +31,7 @@
   * [Vercel](welcome/integration-guides/vercel.md)
   * [Instructor](welcome/integration-guides/instructor.md)
   * [AWS Bedrock](welcome/integration-guides/aws-bedrock.md)
-  * [promptfoo](welcome/integration-guides/promptfoo.md)
+  * [Promptfoo](welcome/integration-guides/promptfoo.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
 
 ## Product
