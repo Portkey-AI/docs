@@ -79,6 +79,7 @@
 
 * [Introduction](api-reference/introduction.md)
 * [Authentication](api-reference/authentication.md)
+* [Portkey API Headers](api-reference/portkey-api-headers.md)
 * [Portkey SDK Client](api-reference/portkey-sdk-client.md)
 * [Config Object](api-reference/config-object.md)
 * [Chat Completions](api-reference/chat-completions.md)

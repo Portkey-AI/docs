@@ -207,6 +207,23 @@ const portkey = new Portkey({
 </strong>)
 </code></pre>
 {% endtab %}
+
+{% tab title="REST" %}
+```bash
+curl https://api.portkey.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "api-key: Bearer $AZURE_OPENAI_API_KEY" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+  -H "x-portkey-provider: azure-openai" \
+  -H "x-portkey-azure-resource-name: $AZURE_RESOURCE_NAME" \
+  -H "x-portkey-azure-deployment-id": $AZURE_DEPLOYMENY_ID" \
+  -H "x-portkey-azure-api-version: $AZURE_API_VERSION" \
+  -d '{
+    "model": "gpt-4o",
+    "messages": [{"role": "user","content": "Hello!"}]
+  }'
+```
+{% endtab %}
 {% endtabs %}
 
 ### How to Pass JWT (JSON Web Tokens)

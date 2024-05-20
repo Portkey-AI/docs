@@ -488,8 +488,8 @@ main();
 <pre class="language-bash"><code class="lang-bash">curl https://api.portkey.ai/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
-<strong>  -H "OpenAI-Organization: org-xxxxxxx" \
-</strong><strong>  -H "OpenAI-Project: proj_xxxxxxx" \
+<strong>  -H "x-portkey-openai-organization: org-xxxxxxx" \
+</strong><strong>  -H "x-portkey-openai-project: proj_xxxxxxx" \
 </strong>  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
   -H "x-portkey-provider: openai" \
   -d '{

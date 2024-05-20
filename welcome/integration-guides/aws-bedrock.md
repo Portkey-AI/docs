@@ -172,6 +172,22 @@ client = Portkey(
 </strong>)
 </code></pre>
 {% endtab %}
+
+{% tab title="REST API" %}
+<pre class="language-bash"><code class="lang-bash">curl https://api.portkey.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+  -H "x-portkey-provider: bedrock" \
+<strong>  -H "x-portkey-aws-session-token: $AWS_SESSION_TOKEN" \
+</strong><strong>  -H "x-portkey-aws-secret-access-key: $AWS_SECRET_ACCESS_KEY" \
+</strong><strong>  -H "x-portkey-aws-region: $AWS_REGION" \
+</strong><strong>  -H "x-portkey-aws-session-token: $AWS_TOKEN" \
+</strong>  -d '{
+    "model": "gpt-4o",
+    "messages": [{"role": "user","content": "Hello!"}]
+  }'
+</code></pre>
+{% endtab %}
 {% endtabs %}
 
 
