@@ -43,6 +43,7 @@
   * [Feedback](product/observability-modern-monitoring-for-llms/feedback.md)
   * [Metadata](product/observability-modern-monitoring-for-llms/metadata.md)
   * [Filters](product/observability-modern-monitoring-for-llms/filters.md)
+  * [Logs Export](product/observability-modern-monitoring-for-llms/logs-export.md)
   * [Budget Limits](https://portkey.ai/docs/product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits-enterprise-feature)
 * [AI Gateway - Streamline LLM Integrations](product/ai-gateway-streamline-llm-integrations/README.md)
   * [Universal API](product/ai-gateway-streamline-llm-integrations/universal-api.md)
