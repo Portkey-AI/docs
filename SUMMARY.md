@@ -67,6 +67,8 @@
   * [Retrieve Prompts](product/prompt-library/retrieve-prompt-templates.md)
   * [Advanced Prompting with JSON Mode](product/prompt-library/advanced-prompting-with-json-mode.md)
 * [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
+* [Enterprise Offering](product/enterprise-offering/README.md)
+  * [Access Control Management](product/enterprise-offering/access-control-management.md)
 
 ***
 
