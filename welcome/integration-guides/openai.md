@@ -123,7 +123,7 @@ This request will be automatically logged by Portkey. You can view this in your 
 The same integration approach applies to APIs for [`completions`](https://platform.openai.com/docs/guides/text-generation/completions-api), [`embeddings`](https://platform.openai.com/docs/api-reference/embeddings/create), [`vision`](https://platform.openai.com/docs/guides/vision/quick-start), [`moderation`](https://platform.openai.com/docs/api-reference/moderations/create), [`transcription`](https://platform.openai.com/docs/api-reference/audio/createTranscription), [`translation`](https://platform.openai.com/docs/api-reference/audio/createTranslation), [`speech`](https://platform.openai.com/docs/api-reference/audio/createSpeech) and [`files`](https://platform.openai.com/docs/api-reference/files/create) .
 
 {% hint style="info" %}
-If you are looking for a way to add your **Org ID** & **Project ID** to the requests, head over to [this section](openai.md#managing-openai-projects-and-organizations).
+If you are looking for a way to add your **Org ID** & **Project ID** to the requests, head over to [this section](openai.md#managing-openai-projects-and-organizations-in-portkey).
 {% endhint %}
 
 ## Using the Prompts API
@@ -346,7 +346,7 @@ Check out the below guides for more info:
 
 ***
 
-### Managing OpenAI Projects & Organizations in Portkey
+## Managing OpenAI Projects & Organizations in Portkey
 
 When integrating OpenAI with Portkey, you can specify your OpenAI organization and project IDs along with your API key. This is particularly useful if you belong to multiple organizations or are accessing projects through a legacy user API key.
 
