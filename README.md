@@ -6,7 +6,7 @@ It takes <2 mins to integrate and with that, it already starts monitoring all of
 
 Here's a product walkthrough (3 mins):
 
-{% embed url="https://youtu.be/9aO340Hew2I" fullWidth="true" %}
+{% embed url="https://youtu.be/9aO340Hew2I" fullWidth="false" %}
 
 ### Integrate in 3 Lines of Code
 

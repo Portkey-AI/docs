@@ -120,10 +120,47 @@ print(chat_complete.choices[0].message.content)
 
 This request will be automatically logged by Portkey. You can view this in your logs dashboard. Portkey logs the tokens utilized, execution time, and cost for each request. Additionally, you can delve into the details to review the precise request and response data.
 
-The same integration approach applies to APIs for [`completions`](https://platform.openai.com/docs/guides/text-generation/completions-api), [`embeddings`](https://platform.openai.com/docs/api-reference/embeddings/create), [`vision`](https://platform.openai.com/docs/guides/vision/quick-start), [`moderation`](https://platform.openai.com/docs/api-reference/moderations/create), [`transcription`](https://platform.openai.com/docs/api-reference/audio/createTranscription), [`translation`](https://platform.openai.com/docs/api-reference/audio/createTranslation), [`speech`](https://platform.openai.com/docs/api-reference/audio/createSpeech) and [`files`](https://platform.openai.com/docs/api-reference/files/create) .
+### Track End-User IDs
+
+Portkey allows you to track user IDs passed with the `user` parameter in OpenAI requests, enabling you to monitor user-level costs, requests, and more.
+
+{% tabs %}
+{% tab title="NodeJS" %}
+<pre class="language-typescript"><code class="lang-typescript">const chatCompletion = await portkey.chat.completions.create({
+  messages: [{ role: "user", content: "Say this is a test" }],
+  model: "gpt-4o",
+<strong>  user: "user_12345",
+</strong>});
+</code></pre>
+{% endtab %}
+
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python">response = portkey.chat.completions.create(
+  model="gpt-4o",
+  messages=[{ role: "user", content: "Say this is a test" }]
+<strong>  user="user_123456"
+</strong>)
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+When you include the `user` parameter in your requests, Portkey logs will display the associated user ID, as shown in the image below:
+
+<div align="left">
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-05-20 at 16.04.06@2x.png" alt="" width="375"><figcaption></figcaption></figure>
+
+</div>
+
+In addition to the `user` parameter, Portkey allows you to send arbitrary custom metadata with your requests. This powerful feature enables you to associate additional context or information with each request, which can be useful for analysis, debugging, or other custom use cases.
+
+{% content-ref url="../../product/observability-modern-monitoring-for-llms/metadata.md" %}
+[metadata.md](../../product/observability-modern-monitoring-for-llms/metadata.md)
+{% endcontent-ref %}
 
 {% hint style="info" %}
-If you are looking for a way to add your **Org ID** & **Project ID** to the requests, head over to [this section](openai.md#managing-openai-projects-and-organizations-in-portkey).
+* The same integration approach applies to APIs for [`completions`](https://platform.openai.com/docs/guides/text-generation/completions-api), [`embeddings`](https://platform.openai.com/docs/api-reference/embeddings/create), [`vision`](https://platform.openai.com/docs/guides/vision/quick-start), [`moderation`](https://platform.openai.com/docs/api-reference/moderations/create), [`transcription`](https://platform.openai.com/docs/api-reference/audio/createTranscription), [`translation`](https://platform.openai.com/docs/api-reference/audio/createTranslation), [`speech`](https://platform.openai.com/docs/api-reference/audio/createSpeech) and [`files`](https://platform.openai.com/docs/api-reference/files/create).
+* If you are looking for a way to add your **Org ID** & **Project ID** to the requests, head over to [this section](openai.md#managing-openai-projects-and-organizations-in-portkey).
 {% endhint %}
 
 ## Using the Prompts API
