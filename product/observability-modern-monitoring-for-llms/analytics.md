@@ -20,9 +20,13 @@ This is a good starting point to then dive deeper.
 
 ### Users
 
-The users tab provides an overview of the user information being sent to Portkey. (This is sent as the `user` parameter of OpenAI SDK requests or in the Portkey [metadata](metadata.md) header.
+The users tab provides an overview of the user information associated with your Portkey requests. This data is derived from the `user` parameter in OpenAI SDK requests or the special `_user` key in the Portkey [metadata header](metadata.md).
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>User Analytics Dashboard</p></figcaption></figure>
+{% hint style="info" %}
+Portkey currently does not provide analytics on usage patterns for individual team members in your Portkey organization. The users tab is designed to track end-user behavior in your application, not internal team usage.
+{% endhint %}
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-05-20 at 19.03.50@2x (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Errors
 
