@@ -69,6 +69,7 @@
 * [Autonomous Fine-tuning](product/autonomous-fine-tuning.md)
 * [Enterprise Offering](product/enterprise-offering/README.md)
   * [Access Control Management](product/enterprise-offering/access-control-management.md)
+  * [Budget Limits](https://portkey.ai/docs/product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits-enterprise-feature)
 
 ***
 
@@ -91,7 +92,7 @@
 * [Prompts](api-reference/prompts/README.md)
   * [Prompt Completion](api-reference/prompts/prompt-completion.md)
   * [Render](api-reference/prompts/render.md)
-* [Evals](api-reference/evals.md)
+* [Guardrails](api-reference/evals.md)
 
 ## Cookbooks
 
