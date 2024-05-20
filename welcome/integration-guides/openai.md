@@ -120,7 +120,11 @@ print(chat_complete.choices[0].message.content)
 
 This request will be automatically logged by Portkey. You can view this in your logs dashboard. Portkey logs the tokens utilized, execution time, and cost for each request. Additionally, you can delve into the details to review the precise request and response data.
 
-The same integration approach applies to APIs for [`completions`](https://platform.openai.com/docs/guides/text-generation/completions-api), [`embeddings`](https://platform.openai.com/docs/api-reference/embeddings/create), [`vision`](https://platform.openai.com/docs/guides/vision/quick-start), [`moderation`](https://platform.openai.com/docs/api-reference/moderations/create), [`transcription`](https://platform.openai.com/docs/api-reference/audio/createTranscription), [`translation`](https://platform.openai.com/docs/api-reference/audio/createTranslation), [`speech`](https://platform.openai.com/docs/api-reference/audio/createSpeech) and [`files`](https://platform.openai.com/docs/api-reference/files/create)&#x20;
+The same integration approach applies to APIs for [`completions`](https://platform.openai.com/docs/guides/text-generation/completions-api), [`embeddings`](https://platform.openai.com/docs/api-reference/embeddings/create), [`vision`](https://platform.openai.com/docs/guides/vision/quick-start), [`moderation`](https://platform.openai.com/docs/api-reference/moderations/create), [`transcription`](https://platform.openai.com/docs/api-reference/audio/createTranscription), [`translation`](https://platform.openai.com/docs/api-reference/audio/createTranslation), [`speech`](https://platform.openai.com/docs/api-reference/audio/createSpeech) and [`files`](https://platform.openai.com/docs/api-reference/files/create) .
+
+{% hint style="info" %}
+If you are looking for a way to add your **Org ID** & **Project ID** to the requests, head over to [this section](openai.md#managing-openai-projects-and-organizations).
+{% endhint %}
 
 ## Using the Prompts API
 
@@ -340,29 +344,172 @@ Check out the below guides for more info:
 [vision-1.md](../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md)
 {% endcontent-ref %}
 
-### Managing Organizations and Projects
+***
 
-For users who belong to multiple organizations or are accessing their projects through their legacy user API key, you can specify which organization and project is used for an API request.
+### Managing OpenAI Projects & Organizations in Portkey
 
-In Portkey, you can attach this as a header, as part of the config or within the OpenAI virtual key.
+When integrating OpenAI with Portkey, you can specify your OpenAI organization and project IDs along with your API key. This is particularly useful if you belong to multiple organizations or are accessing projects through a legacy user API key.
 
-#### OpenAI Virtual Keys
+Specifying the organization and project IDs helps you maintain better control over your access rules, usage, and costs.
 
-You can specify OpenAI's organisation and project IDs while defining a Virtual Key.
+In Portkey, you can add your Org & Project details by,
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+1. Creating your Virtual Key
+2. Defining a Gateway Config
+3. Passing Details in a Request
 
-#### In the Gateway Config
+Let's explore each method in more detail.
 
-You can also specify the organisation and project details in the config root or within a target.
+### Using Virtual Keys
 
-```json
-{
-	"virtual_key": "open-ai-key-66a67d",
-	"openai_organization": "org-MoQxcZmsvbzVKibXlRMuAHXm",
-	"openai_project": "$PROJECT_ID"
+When selecting OpenAI from the dropdown menu while creating a virtual key, Portkey automatically displays optional fields for the organization ID and project ID alongside the API key field. You can add all the details in one place and obtain a virtual key that can be used throughout Portkey.
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-05-20 at 08.35.21@2x.png" alt=""><figcaption></figcaption></figure>
+
+{% content-ref url="../../product/ai-gateway-streamline-llm-integrations/virtual-keys/" %}
+[virtual-keys](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/)
+{% endcontent-ref %}
+
+Portkey takes budget management a step further than OpenAI. While OpenAI allows setting budget limits per project, Portkey enables you to set budget limits for each virtual key you create. For more information on budget limits, refer to this documentation:
+
+{% content-ref url="../../product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits.md" %}
+[budget-limits.md](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits.md)
+{% endcontent-ref %}
+
+### Using The Gateway Config
+
+You can also specify the organization and project details in the gateway config, either at the root level or within a specific target.
+
+<pre class="language-json"><code class="lang-json">{
+	"provider": "openai",
+	"api_key": "OPENAI_API_KEY"
+<strong>	"openai_organization": "org-xxxxxx",
+</strong><strong>	"openai_project": "proj_xxxxxxxx"
+</strong>}
+</code></pre>
+
+### While Making a Request
+
+You can also pass your organization and project details directly when making a request using curl, the OpenAI SDK, or the Portkey SDK.
+
+{% tabs %}
+{% tab title="OpenAI Python SDK" %}
+<pre class="language-python"><code class="lang-python">from openai import OpenAI
+from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+
+client = OpenAI(
+    api_key="OPENAI_API_KEY",
+<strong>    organization="org-xxxxxxxxxx",
+</strong><strong>    project="proj_xxxxxxxxx",
+</strong>    base_url=PORTKEY_GATEWAY_URL,
+    default_headers=createHeaders(
+        provider="openai",
+        api_key="PORTKEY_API_KEY"
+    )
+)
+
+chat_complete = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Say this is a test"}],
+)
+
+print(chat_complete.choices[0].message.content)
+
+</code></pre>
+{% endtab %}
+
+{% tab title="OpenAI TS SDK" %}
+<pre class="language-typescript"><code class="lang-typescript">import OpenAI from "openai";
+import { PORTKEY_GATEWAY_URL, createHeaders } from "portkey-ai";
+
+const openai = new OpenAI({
+  apiKey: "OPENAI_API_KEY",
+<strong>  organization: "org-xxxxxx",
+</strong><strong>  project: "proj_xxxxxxx",
+</strong>  baseURL: PORTKEY_GATEWAY_URL,
+  defaultHeaders: createHeaders({
+    provider: "openai",
+    apiKey: "PORTKEY_API_KEY",
+  }),
+});
+
+async function main() {
+  const chatCompletion = await openai.chat.completions.create({
+    messages: [{ role: "user", content: "Say this is a test" }],
+    model: "gpt-4o",
+  });
+
+  console.log(chatCompletion.choices);
 }
-```
+
+main();
+
+</code></pre>
+{% endtab %}
+
+{% tab title="REST API" %}
+<pre class="language-bash"><code class="lang-bash">curl https://api.portkey.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+<strong>  -H "OpenAI-Organization: org-xxxxxxx" \
+</strong><strong>  -H "OpenAI-Project: proj_xxxxxxx" \
+</strong>  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+  -H "x-portkey-provider: openai" \
+  -d '{
+    "model": "gpt-4o",
+    "messages": [{"role": "user","content": "Hello!"}]
+  }'
+</code></pre>
+{% endtab %}
+
+{% tab title="Portkey Python SDK" %}
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+    provider="openai",
+    authorization="Bearer OPENAI_API_KEY",
+<strong>    openai_organization="org-xxxxxxxxx",
+</strong><strong>    openai_project="proj_xxxxxxxxx",
+</strong>)
+
+chat_complete = portkey.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Say this is a test"}],
+)
+
+print(chat_complete.choices[0].message.content)
+
+</code></pre>
+{% endtab %}
+
+{% tab title="Portkey Node SDK" %}
+<pre class="language-typescript"><code class="lang-typescript">import Portkey from "portkey-ai";
+
+const portkey = new Portkey({
+  apiKey: "PORTKEY_API_KEY",
+  provider: "openai",
+  Authorization: "Bearer OPENAI_API_KEY",
+<strong>  openaiOrganization: "org-xxxxxxxxxxx",
+</strong><strong>  openaiProject: "proj_xxxxxxxxxxxxx",
+</strong>});
+
+async function main() {
+  const chatCompletion = await portkey.chat.completions.create({
+    messages: [{ role: "user", content: "Say this is a test" }],
+    model: "gpt-4o",
+  });
+
+  console.log(chatCompletion.choices);
+}
+
+main();
+
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+***
 
 ### Portkey Features
 
