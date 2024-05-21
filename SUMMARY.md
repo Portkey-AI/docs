@@ -72,6 +72,7 @@
 * [Enterprise Offering](product/enterprise-offering/README.md)
   * [Access Control Management](product/enterprise-offering/access-control-management.md)
   * [Budget Limits](https://portkey.ai/docs/product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits-enterprise-feature)
+  * [Logs Export](https://portkey.ai/docs/product/observability-modern-monitoring-for-llms/logs-export)
 
 ***
 
