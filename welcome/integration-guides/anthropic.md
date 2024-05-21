@@ -65,11 +65,11 @@ portkey = Portkey(
 ```
 {% endtab %}
 
-{% tab title="Anthropic Python SDK" %}
-<pre class="language-python"><code class="lang-python">from anthropic import Anthropic
+{% tab title="OpenAI Python SDK" %}
+<pre class="language-python"><code class="lang-python">from openai import OpenAI
 <strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
 </strong>
-client = Anthropic(
+client = Portkey(
     api_key="ANTHROPIC_API_KEY",
 <strong>    base_url=PORTKEY_GATEWAY_URL,
 </strong><strong>    default_headers=createHeaders(
@@ -80,11 +80,11 @@ client = Anthropic(
 </code></pre>
 {% endtab %}
 
-{% tab title="Anthropic Node SDK" %}
-<pre class="language-typescript"><code class="lang-typescript">import Anthropic from "@anthropic-ai/sdk";
+{% tab title="OpenAI Node SDK" %}
+<pre class="language-typescript"><code class="lang-typescript">import OpenAI from "openai";
 <strong>import { PORTKEY_GATEWAY_URL, createHeaders } from "portkey-ai";
 </strong>
-const anthropic = new Anthropic({
+const client = new OpenAI({
   apiKey: "ANTHROPIC_API_KEY",
 <strong>  baseURL: PORTKEY_GATEWAY_URL,
 </strong><strong>  defaultHeaders: createHeaders({
@@ -125,22 +125,22 @@ print(completion.choices)
 ```
 {% endtab %}
 
-{% tab title="Anthropic Python SDK" %}
+{% tab title="OpenAI Python SDK" %}
 ```python
-message = client.messages.create(
-    messages= [{ "role": 'user', "content": 'Say this is a test' }],
-    model= 'claude-3-opus-20240229',
-    max_tokens=250
+message = client.chat.completions.create(
+    messages = [{ "role": 'user', "content": 'Say this is a test' }],
+    model = 'claude-3-opus-20240229',
+    max_tokens = 250
 )
 
 print(message.content)
 ```
 {% endtab %}
 
-{% tab title="Anthropic Node SDK" %}
+{% tab title="OpenAI Node SDK" %}
 ```typescript
 async function main() {
-    const msg = await anthropic.messages.create({
+    const msg = await client.chat.completions.create({
         model: "claude-3-opus-20240229",
         max_tokens: 1024,
         messages: [{ role: "user", content: "Hello, Claude" }],
