@@ -62,7 +62,10 @@ Use the Portkey instance to send requests to Google Gemini. You can also overrid
 {% tab title="NodeJS SDK" %}
 ```javascript
 const chatCompletion = await portkey.chat.completions.create({
-    messages: [{ role: 'user', content: 'Say this is a test' }],
+    messages: [
+        { role: 'system', content: 'You are not a helpful assistant' },
+        { role: 'user', content: 'Say this is a test' }
+    ],
     model: 'gemini-pro',
 });
 
@@ -73,7 +76,10 @@ console.log(chatCompletion.choices);
 {% tab title="Python SDK" %}
 ```python
 completion = portkey.chat.completions.create(
-    messages= [{ "role": 'user', "content": 'Say this is a test' }],
+    messages= [
+        { "role": 'system', "content": 'You are not a helpful assistant' },
+        { "role": 'user', "content": 'Say this is a test' }
+    ],
     model= 'gemini-pro'
 )
 
@@ -81,6 +87,14 @@ print(completion)
 ```
 {% endtab %}
 {% endtabs %}
+
+{% hint style="info" %}
+Portkey supports the `system_instructions` parameter for Google Gemini 1.5 - allowing you to control the behavior and output of your Gemini-powered applications with ease.&#x20;
+
+
+
+Simply include your Gemini system prompt as part of the `{"role":"system"}` message within the `messages` array of your request body. Portkey Gateway will automatically transform your message to ensure seamless compatibility with the Google Gemini API.
+{% endhint %}
 
 ## Function Calling
 
