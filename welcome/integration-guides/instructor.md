@@ -39,38 +39,6 @@ print(user_info.age)
 </code></pre>
 {% endtab %}
 
-{% tab title="Instructor Python - Anthropic" %}
-<pre class="language-python"><code class="lang-python">import instructor
-from pydantic import BaseModel
-from anthropic import Anthropic
-<strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
-</strong>
-portkey = Anthropic(
-<strong>    base_url=PORTKEY_GATEWAY_URL,
-</strong><strong>    default_headers=createHeaders(
-</strong><strong>        virtual_key="ANTHROPIC_VIRTUAL_KEY",
-</strong><strong>        api_key="PORTKEY_API_KEY"
-</strong><strong>    )
-</strong>)
-
-class User(BaseModel):
-    name: str
-    age: int
-
-<strong>client = instructor.from_anthropic(portkey)
-</strong>
-user_info = client.messages.create(
-    model="claude-3-opus-20240229",
-    max_tokens=1024,
-    messages=[{"role": "user", "content": "Extract Jason is 25 years old."}],
-    response_model=User,
-)
-
-print(user_info.name)
-print(user_info.age)
-</code></pre>
-{% endtab %}
-
 {% tab title="Instructor JS - OpenAI" %}
 <pre class="language-javascript"><code class="lang-javascript">import Instructor from "@instructor-ai/instructor";
 import OpenAI from "openai";
