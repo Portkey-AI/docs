@@ -47,16 +47,15 @@ You can easily add team members to your organization and assign them appropriate
 
 Portkey provides a secure and flexible API key management system that allows you to create and manage multiple API keys with fine-grained permissions. Each API key can be customized to grant specific access levels to different features, such as metrics, completions, prompts, configs, guardrails, virtual keys, team management, and API key management.
 
-| Feature                     | Permissions                   | Default                                     |
-| --------------------------- | ----------------------------- | ------------------------------------------- |
-| Metrics                     | Disabled, Enabled             | Disabled                                    |
-| Completions (all LLM calls) | Disabled, Enabled             | Enabled                                     |
-| Prompts                     | Disabled, Read, Write, Delete | Read                                        |
-| Configs                     | Disabled, Read, Write, Delete | Disabled                                    |
-| Guardrails                  | Disabled, Read, Write, Delete | Disabled                                    |
-| Virtual Keys                | Disabled, Read, Write, Delete | Disabled                                    |
-| Team                        | Disabled, Read, Write, Delete | Disabled                                    |
-| API Keys                    | Disabled, Read, Write, Delete | Disabled (Needs warning when being enabled) |
+| Feature                     | Permissions                   | Default  |
+| --------------------------- | ----------------------------- | -------- |
+| Metrics                     | Disabled, Enabled             | Disabled |
+| Completions (all LLM calls) | Disabled, Enabled             | Enabled  |
+| Prompts                     | Disabled, Read, Write, Delete | Read     |
+| Configs                     | Disabled, Read, Write, Delete | Disabled |
+| Guardrails                  | Disabled, Read, Write, Delete | Disabled |
+| Virtual Keys                | Disabled, Read, Write, Delete | Disabled |
+| Users (Team Management)     | Disabled, Read, Write, Delete | Disabled |
 
 By default, a new organization is provisioned with a master API key that has all permissions enabled. Owners and admins can edit and manage these keys, as well as create new API keys with tailored permissions. This granular control enables you to enforce the principle of least privilege, ensuring that each API key has access only to the necessary resources.
 
