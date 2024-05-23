@@ -2,12 +2,7 @@
 description: >-
   Strategies and examples for tackling the production challenges of LLMs with
   Portkey Gateway
-cover: ../../.gitbook/assets/cookbook-header.png
-coverY: 208.17866666666666
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:
@@ -21,6 +16,8 @@ layout:
 ---
 
 # Practitioners' Cookbooks
+
+<figure><img src="../../.gitbook/assets/cookbook-header (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Trending
 
