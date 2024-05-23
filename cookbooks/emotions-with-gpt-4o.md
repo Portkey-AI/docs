@@ -1,6 +1,6 @@
 # Detecting Emotions with GPT-4o
 
-<figure><img src="../../.gitbook/assets/q8jXvXOF.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/q8jXvXOF.jpeg" alt=""><figcaption></figcaption></figure>
 
 ## First, grab the API keys
 
@@ -40,4 +40,4 @@ print(emotions.choices[0].message.content)
 
 ## Get Observability over the request
 
-<figure><img src="../../.gitbook/assets/CleanShot 2024-05-14 at 00.43.59@2x.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2024-05-14 at 00.43.59@2x.png" alt=""><figcaption></figcaption></figure>

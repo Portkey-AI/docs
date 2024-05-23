@@ -262,4 +262,4 @@ The following providers are supported for function calling with more providers g
 
 ### Cookbook
 
-[**Here's a detailed cookbook on function calling using Portkey.**](../../../practitioners-cookbooks/quickstarts/function-calling.md)
+[**Here's a detailed cookbook on function calling using Portkey.**](../../../cookbooks/function-calling.md)
