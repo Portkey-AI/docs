@@ -96,21 +96,21 @@
   * [Render](api-reference/prompts/render.md)
 * [Guardrails](api-reference/evals.md)
 
-***
+## Guides
 
-* [Practitioners' Cookbooks](practitioners-cookbooks/README.md)
-  * [Quickstarts](practitioners-cookbooks/quickstarts/README.md)
-    * [A/B Test Prompts and Models](cookbooks/a-b-test-prompts-and-models.md)
-    * [Tackling Rate Limiting](cookbooks/tackling-rate-limiting.md)
-    * [Function Calling](cookbooks/function-calling.md)
+* [Practitioners' Cookbooks](guides/practitioners-cookbooks/README.md)
+  * [Quickstarts](guides/practitioners-cookbooks/quickstarts/README.md)
+    * [A/B Test Prompts and Models](guides/practitioners-cookbooks/quickstarts/a-b-test-prompts-and-models.md)
+    * [Tackling Rate Limiting](guides/practitioners-cookbooks/quickstarts/tackling-rate-limiting.md)
+    * [Function Calling](guides/practitioners-cookbooks/quickstarts/function-calling.md)
     * [Image Generation](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb)
-  * [Integrations](practitioners-cookbooks/integrations/README.md)
-    * [Llama 3 on Portkey + Together AI](cookbooks/llama-3-on-portkey-+-together-ai.md)
-    * [Introduction to GPT-4o](cookbooks/introduction-to-gpt-4o.md)
-  * [How-tos](practitioners-cookbooks/how-tos/README.md)
-    * [Few-Shot Prompting](cookbooks/few-shot-prompting.md)
-    * [Enforcing JSON Schema with Anyscale & Together](cookbooks/enforcing-json-schema-with-anyscale-and-together.md)
-    * [Detecting Emotions with GPT-4o](cookbooks/emotions-with-gpt-4o.md)
+  * [Integrations](guides/practitioners-cookbooks/integrations/README.md)
+    * [Llama 3 on Portkey + Together AI](guides/practitioners-cookbooks/integrations/llama-3-on-portkey-+-together-ai.md)
+    * [Introduction to GPT-4o](guides/practitioners-cookbooks/integrations/introduction-to-gpt-4o.md)
+  * [How-tos](guides/practitioners-cookbooks/how-tos/README.md)
+    * [Few-Shot Prompting](guides/practitioners-cookbooks/how-tos/few-shot-prompting.md)
+    * [Enforcing JSON Schema with Anyscale & Together](guides/practitioners-cookbooks/how-tos/enforcing-json-schema-with-anyscale-and-together.md)
+    * [Detecting Emotions with GPT-4o](guides/practitioners-cookbooks/how-tos/emotions-with-gpt-4o.md)
 
 ## Support
 

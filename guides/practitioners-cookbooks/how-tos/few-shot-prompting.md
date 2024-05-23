@@ -68,7 +68,7 @@ In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt="" width="296"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt="" width="296"><figcaption></figcaption></figure>
 
 </div>
 
@@ -76,7 +76,7 @@ In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot
 
 ### Deploying the Prompt with Portkey
 
-Deploying your prompt template to an API is extremely easy with Portkey. You can use our [Prompt Completions API](../api-reference/prompts/prompt-completion.md) to use the prompt we created.
+Deploying your prompt template to an API is extremely easy with Portkey. You can use our [Prompt Completions API](../../../api-reference/prompts/prompt-completion.md) to use the prompt we created.
 
 {% tabs %}
 {% tab title="Python" %}

@@ -125,4 +125,4 @@ With Loadbalance on different accounts, you can effectively multiply your rate l
 
 ## That's it!&#x20;
 
-You can read more on [fallbacks here](../product/ai-gateway-streamline-llm-integrations/fallbacks.md), and on [loadbalance here](../product/ai-gateway-streamline-llm-integrations/load-balancing.md). If you want a deep dive on how Configs work on Portkey, [check out the docs here](../product/ai-gateway-streamline-llm-integrations/configs.md).
+You can read more on [fallbacks here](../../../product/ai-gateway-streamline-llm-integrations/fallbacks.md), and on [loadbalance here](../../../product/ai-gateway-streamline-llm-integrations/load-balancing.md). If you want a deep dive on how Configs work on Portkey, [check out the docs here](../../../product/ai-gateway-streamline-llm-integrations/configs.md).

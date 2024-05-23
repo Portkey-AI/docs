@@ -4,7 +4,7 @@ description: Get the LLM to interact with external APIs!
 
 # Function Calling
 
-As described in the [Enforcing JSON Schema cookbook](enforcing-json-schema-with-anyscale-and-together.md), LLMs are now good at generating outputs that follow a specified syntax. We can combine this LLM ability with their reasoning ability to let LLMs interact with external APIs. **This is called Function (or Tool) calling.** In simple terms, function calling:&#x20;
+As described in the [Enforcing JSON Schema cookbook](../how-tos/enforcing-json-schema-with-anyscale-and-together.md), LLMs are now good at generating outputs that follow a specified syntax. We can combine this LLM ability with their reasoning ability to let LLMs interact with external APIs. **This is called Function (or Tool) calling.** In simple terms, function calling:&#x20;
 
 1. Informs the user when a question can be answered using an external API
 2. Generates a valid request in the API's format
@@ -122,7 +122,7 @@ Recapping, there are 4 key steps to doing function calling, as illustrated below
 
 <div align="center">
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Function Calling Workflow</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Function Calling Workflow</p></figcaption></figure>
 
 </div>
 
