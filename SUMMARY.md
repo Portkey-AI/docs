@@ -37,7 +37,7 @@
 
 ## Product
 
-* [Observability - Modern monitoring for LLMs](product/observability-modern-monitoring-for-llms/README.md)
+* [Observability](product/observability-modern-monitoring-for-llms/README.md)
   * [Analytics](product/observability-modern-monitoring-for-llms/analytics.md)
   * [Logs](product/observability-modern-monitoring-for-llms/logs.md)
   * [Traces](product/observability-modern-monitoring-for-llms/traces.md)
@@ -46,7 +46,7 @@
   * [Filters](product/observability-modern-monitoring-for-llms/filters.md)
   * [Logs Export](product/observability-modern-monitoring-for-llms/logs-export.md)
   * [Budget Limits](https://portkey.ai/docs/product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits-enterprise-feature)
-* [AI Gateway - Streamline LLM Integrations](product/ai-gateway-streamline-llm-integrations/README.md)
+* [AI Gateway](product/ai-gateway-streamline-llm-integrations/README.md)
   * [Universal API](product/ai-gateway-streamline-llm-integrations/universal-api.md)
   * [Configs](product/ai-gateway-streamline-llm-integrations/configs.md)
   * [Multimodal Capabilities](product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/README.md)
@@ -74,10 +74,7 @@
   * [Budget Limits](https://portkey.ai/docs/product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits-enterprise-feature)
   * [Security @ Portkey](product/enterprise-offering/security-portkey.md)
   * [Logs Export](https://portkey.ai/docs/product/observability-modern-monitoring-for-llms/logs-export)
-
-***
-
-* [Open Source](open-source.md)
+* [Open Source](product/open-source.md)
 
 ## API Reference
 
@@ -99,17 +96,21 @@
   * [Render](api-reference/prompts/render.md)
 * [Guardrails](api-reference/evals.md)
 
-## Cookbooks
+***
 
-* [Few-Shot Prompting](cookbooks/few-shot-prompting.md)
-* [A/B Test Prompts and Models](cookbooks/a-b-test-prompts-and-models.md)
-* [Enforcing JSON Schema with Anyscale & Together](cookbooks/enforcing-json-schema-with-anyscale-and-together.md)
-* [Tackling Rate Limiting](cookbooks/tackling-rate-limiting.md)
-* [Function Calling](cookbooks/function-calling.md)
-* [Image Generation](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb)
-* [Llama 3 on Portkey + Together AI](cookbooks/llama-3-on-portkey-+-together-ai.md)
-* [Detecting Emotions with GPT-4o](cookbooks/emotions-with-gpt-4o.md)
-* [Introduction to GPT-4o](cookbooks/introduction-to-gpt-4o.md)
+* [Practitioners' Cookbooks](practitioners-cookbooks/README.md)
+  * [Quickstarts](practitioners-cookbooks/quickstarts/README.md)
+    * [A/B Test Prompts and Models](practitioners-cookbooks/quickstarts/a-b-test-prompts-and-models.md)
+    * [Tackling Rate Limiting](practitioners-cookbooks/quickstarts/tackling-rate-limiting.md)
+    * [Function Calling](practitioners-cookbooks/quickstarts/function-calling.md)
+    * [Image Generation](https://github.com/Portkey-AI/portkey-cookbook/blob/main/examples/image-generation.ipynb)
+  * [Integrations](practitioners-cookbooks/integrations/README.md)
+    * [Llama 3 on Portkey + Together AI](practitioners-cookbooks/integrations/llama-3-on-portkey-+-together-ai.md)
+    * [Introduction to GPT-4o](practitioners-cookbooks/integrations/introduction-to-gpt-4o.md)
+  * [How-tos](practitioners-cookbooks/how-tos/README.md)
+    * [Few-Shot Prompting](practitioners-cookbooks/how-tos/few-shot-prompting.md)
+    * [Enforcing JSON Schema with Anyscale & Together](practitioners-cookbooks/how-tos/enforcing-json-schema-with-anyscale-and-together.md)
+    * [Detecting Emotions with GPT-4o](practitioners-cookbooks/how-tos/emotions-with-gpt-4o.md)
 
 ## Support
 

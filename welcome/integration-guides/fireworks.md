@@ -327,7 +327,7 @@ main()
 
 ## Fireworks Function Calling
 
-Portkey also supports function calling mode on Fireworks. [Explore this cookbook for a deep dive and examples](../../cookbooks/function-calling.md).
+Portkey also supports function calling mode on Fireworks. [Explore this cookbook for a deep dive and examples](../../practitioners-cookbooks/quickstarts/function-calling.md).
 
 ## Managing Fireworks Prompts
 
