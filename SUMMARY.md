@@ -116,6 +116,13 @@
     * [Few-Shot Prompting](guides/practitioners-cookbooks/how-tos/few-shot-prompting.md)
     * [Enforcing JSON Schema with Anyscale & Together](guides/practitioners-cookbooks/how-tos/enforcing-json-schema-with-anyscale-and-together.md)
     * [Detecting Emotions with GPT-4o](guides/practitioners-cookbooks/how-tos/emotions-with-gpt-4o.md)
+    * [Build an article suggestion app with Supabase pgvector, and Portkey](guides/practitioners-cookbooks/how-tos/build-an-article-suggestion-app-with-supabase-pgvector-and-portkey.md)
+    * [Setting up resilient Load balancers with failure-mitigating Fallbacks](guides/practitioners-cookbooks/how-tos/setting-up-resilient-load-balancers-with-failure-mitigating-fallbacks.md)
+    * [Run Portkey on Prompts from Langchain Hub](guides/practitioners-cookbooks/how-tos/run-portkey-on-prompts-from-langchain-hub.md)
+    * [Smart Fallback with Model-Optimized Prompts](guides/practitioners-cookbooks/how-tos/smart-fallback-with-model-optimized-prompts.md)
+    * [How to use OpenAI SDK with Portkey Prompt Templates](guides/practitioners-cookbooks/how-tos/how-to-use-openai-sdk-with-portkey-prompt-templates.md)
+    * [Setup OpenAI -> Azure OpenAI Fallback](guides/practitioners-cookbooks/how-tos/setup-openai-greater-than-azure-openai-fallback.md)
+    * [Fallback from SDXL to Dall-e-3](guides/practitioners-cookbooks/how-tos/fallback-from-sdxl-to-dall-e-3.md)
 
 ## Support
 
