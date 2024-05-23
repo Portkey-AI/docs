@@ -27,6 +27,7 @@
   * [Fireworks](welcome/integration-guides/fireworks.md)
   * [Jina AI](welcome/integration-guides/jina-ai.md)
   * [Ollama](welcome/integration-guides/ollama.md)
+  * [LocalAI](welcome/integration-guides/local-ai.md)
   * [Bring Your Own LLM](welcome/integration-guides/byollm.md)
   * [Segmind](welcome/integration-guides/segmind.md)
   * [Vercel](welcome/integration-guides/vercel.md)
