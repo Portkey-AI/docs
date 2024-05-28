@@ -1,14 +1,14 @@
 # Predibase
 
-Portkey provides a robust and secure gateway to facilitate the integration of various **open source** as well as **fine-tuned LLMs** into your apps, including your [**models on Predibase**](https://predibase.com/).
-
-With Portkey, you can take advantage of features like fast AI gateway, caching, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) system.
+Portkey provides a robust and secure gateway to seamlessly integrate **open-source** and **fine-tuned** LLMs from Predibase into your applications. With Portkey, you can leverage powerful features like fast AI gateway, caching, observability, prompt management, and more, while securely managing your LLM API keys through a virtual key system.
 
 ## Portkey SDK Integration with Predibase
 
 Using Portkey, you can call your Predibase models in the familar **OpenAI-spec** and try out your existing pipelines on Predibase fine-tuned models with 2 LOC change.
 
 ### **1. Install the Portkey SDK**
+
+Install the Portkey SDK in your project using npm or pip:
 
 {% tabs %}
 {% tab title="NodeJS" %}
@@ -26,7 +26,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Set up Portkey with your virtual key as part of the initialization configuration. Grab your [Predibase API key](https://app.predibase.com/), and add it to [Portkey vault](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) to get an associated virtual key.
+Create a virtual key in the Portkey vault by adding your [Predibase API key](https://app.predibase.com/settings). Then, initialize the Portkey client with your virtual key:
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -83,9 +83,9 @@ portkey = OpenAI(
 Predibase offers LLMs like **Llama 3**, **Mistral**, **Gemma**, etc. on its [serverless infra](https://docs.predibase.com/user-guide/inference/models#serverless-endpoints) that you can query instantly.
 
 {% hint style="info" %}
-#### **Passing Predibase Tenand ID**
+#### **Sending Predibase Tenand ID**
 
-To make a successful Predibase request, you are required to also pass your **account tenant ID**. With Portkey, you can send [**your Tenand ID**](https://app.predibase.com/settings) with the **`user`** param while making your request.
+Predibase expects your **account tenant ID** along with the API key in each request. With Portkey, you can send [**your Tenand ID**](https://app.predibase.com/settings) with the **`user`** param while making your request.
 {% endhint %}
 
 {% tabs %}
@@ -127,23 +127,21 @@ print(completion)
 
 ### 4. Invoke Predibase Fine-Tuned Models
 
-With Portkey, you can send your Predibase fine-tune adapter details with the `model` param directly while making a request.
+With Portkey, you can send your fine-tune model & adapter details directly with the `model` param while making a request.
 
 {% hint style="info" %}
 The format is:
 
-> **`model = <base_model>:<adapter-repo-name/adapter-version-number>`**
-
-So, if your base model is **llama-3-8b**, and adapter repo name is **portkey**, you can pass the following directly in the model param to start querying your fine-tuned model:
-
-> **`model = "llama-3-8b:portkey/1"`**
+**`model = <base_model>:<adapter-repo-name/adapter-version-number>`**
 {% endhint %}
+
+For example, if your base model is `llama-3-8b` and the adapter repo name is `sentiment-analysis`, you can make a request like this:
 
 {% tabs %}
 {% tab title="Portkey OR OpenAI NodeJS SDK" %}
 <pre class="language-javascript"><code class="lang-javascript">const chatCompletion = await portkey.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
-<strong>    model: 'llama-3-8b:portkey/1',
+<strong>    model: 'llama-3-8b:sentiment-analysis/1',
 </strong><strong>    user: 'PREDIBASE_TENANT_ID'
 </strong>});
 
@@ -154,7 +152,7 @@ console.log(chatCompletion.choices);
 {% tab title="Portkey OR OpenAI Python SDK" %}
 <pre class="language-python"><code class="lang-python">completion = portkey.chat.completions.create(
     messages= [{ "role": 'user', "content": 'Say this is a test' }],
-<strong>    model= 'llama-3-8b:portkey/1',
+<strong>    model= 'llama-3-8b:sentiment-analysis/1',
 </strong><strong>    user= "PREDIBASE_TENANT_ID"
 </strong>)
 
@@ -169,7 +167,7 @@ print(completion)
 <strong>  -H "x-portkey-virtual-key: $PREDIBASE_VIRTUAL_KEY" \
 </strong>  -d '{
     "messages": [{"role": "user","content": "Hello!"}],
-<strong>    "model": "llama-3-8b:portkey/1",
+<strong>    "model": "llama-3-8b:sentiment-analysis/1",
 </strong><strong>    "user": "PREDIBASE_TENANT_ID"
 </strong>  }'
 </code></pre>
@@ -178,19 +176,17 @@ print(completion)
 
 ***
 
-## Routing to Dedicated Deployments
+### Routing to Dedicated Deployments
 
-Using Portkey, you can easily route to your dedicatedly deployed models as well, without changing anything!
+Using Portkey, you can easily route to your dedicatedly deployed models as well. Just pass the dedicated deployment name in the `model` param:
 
 {% hint style="info" %}
-Just pass the dedicated deployment in the `model` param
-
-> **`model = "my-dedicated-mistral-deployment-name"`**
+**`model = "my-dedicated-mistral-deployment-name"`**
 {% endhint %}
 
 ### JSON Schema Mode
 
-You can enforce JSON schema for all Predibase models - just set the `response_format` to to `json_object` and pass the relevant schema while making your request. Portkey logs will show your JSON output separately
+You can enforce JSON schema for all Predibase models - just set the `response_format` to `json_object` and pass the relevant schema while making your request. Portkey logs will show your JSON output separately
 
 {% tabs %}
 {% tab title="Portkey OR OpenAI NodeJS SDK" %}
