@@ -79,6 +79,10 @@
   * [Private Cloud Deployments](product/enterprise-offering/private-cloud-deployments/README.md)
     * [Architecture](product/enterprise-offering/private-cloud-deployments/architecture.md)
     * [AWS](product/enterprise-offering/private-cloud-deployments/aws.md)
+    * [GCP](product/enterprise-offering/private-cloud-deployments/gcp.md)
+    * [Azure](product/enterprise-offering/private-cloud-deployments/azure.md)
+    * [Cloudflare Workers](product/enterprise-offering/private-cloud-deployments/cloudflare-workers.md)
+    * [F5 App Stack](product/enterprise-offering/private-cloud-deployments/f5-app-stack.md)
 * [Open Source](open-source.md)
 
 ## API Reference
