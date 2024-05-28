@@ -18,6 +18,7 @@
   * [Together AI](welcome/integration-guides/together-ai.md)
   * [Perplexity AI](welcome/integration-guides/perplexity-ai.md)
   * [Mistral AI](welcome/integration-guides/mistral-ai.md)
+  * [Predibase](welcome/integration-guides/predibase.md)
   * [Anyscale](welcome/integration-guides/anyscale-llama2-mistral-zephyr.md)
   * [Stability AI](welcome/integration-guides/stability-ai.md)
   * [Nomic](welcome/integration-guides/nomic.md)
