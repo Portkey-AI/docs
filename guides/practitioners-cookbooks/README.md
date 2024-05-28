@@ -21,15 +21,15 @@ layout:
 
 ## Trending
 
-* [Run Gateway on prompts from Langchain hub](https://github.com/Portkey-AI/gateway/blob/cookbook/examples/howtos/run-gateway-on-prompts-from-langchain-hub.md)
-* [Use Porkey Gateway with Vercel's AI SDK](https://github.com/Portkey-AI/gateway/blob/cookbook/examples/integrations/vercel-ai.md)
-* [Set up fallback from SDXL to Dall-E-3](https://github.com/Portkey-AI/gateway/blob/cookbook/examples/howtos/fallback-from-stable-diffusion-to-dall-e.ipynb)
+* [Run Gateway on prompts from Langchain hub](how-tos/run-portkey-on-prompts-from-langchain-hub.md)
+* [Use Porkey Gateway with Vercel's AI SDK](integrations/vercel-ai.md)
+* [Set up fallback from SDXL to Dall-E-3](how-tos/fallback-from-sdxl-to-dall-e-3.md)
 
 ## Latest
 
-* [Fallback from OpenAI to Azure OpenAI](https://github.com/Portkey-AI/gateway/blob/cookbook/examples/howtos/fallback-from-openai-to-azure.ipynb)
-* [Set up automatic retries for failed requests](https://github.com/Portkey-AI/gateway/blob/cookbook/examples/quickstarts/trigger-automatic-retries-on-llm-failures.md)
-* [Call Llama 3 on Groq](https://github.com/Portkey-AI/gateway/blob/cookbook/examples/quickstarts/llama-3-on-groq.ipynb)
+* [Fallback from OpenAI to Azure OpenAI](how-tos/setup-openai-greater-than-azure-openai-fallback.md)
+* [Set up automatic retries for failed requests](quickstarts/trigger-automatic-retries-on-llm-failures.md)
+* [Call Llama 3 on Groq](quickstarts/llama-3-on-groq.md)
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h3>Quickstarts</h3></td><td>Easy to use guides on all Portkey features for Observability, Gateway, Prompts, and more</td><td><a href="quickstarts/">quickstarts</a></td></tr><tr><td><h3>Integrations</h3></td><td>Using Portkey's product suite with different LLM providers, frameworks, and libraries</td><td><a href="integrations/">integrations</a></td></tr><tr><td><h3>How-tos</h3></td><td>Explore how Portkey can help in use cases like RAG, Agents, Search, and more</td><td><a href="how-tos/">how-tos</a></td></tr></tbody></table>
 
