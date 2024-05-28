@@ -11,7 +11,7 @@ The architecture comprises:
 * **Data Plane** (In Customer VPC): Hosts the AI gateway with an attached cache and optionally a log store.
 * **Control Plane** (In Portkey VPC): Hosts the Control Panel UI, the metrics store, a transactional DB and optionally the log store.
 
-
+<figure><img src="../../../.gitbook/assets/Pasted image 20240525181638.png" alt=""><figcaption><p>Deployment modes for Portkey Enterprise (Private Cloud)</p></figcaption></figure>
 
 All the metrics, logs, prompts and other data stored in the Control Plane is encrypted and stored in an isolated data shard. The Customer can optionally provide their own encryption keys from a KMS. Portkey connect to AWS KMS and provides envelope encryption across the Control Plane.
 
