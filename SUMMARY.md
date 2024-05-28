@@ -76,6 +76,9 @@
   * [Budget Limits](https://portkey.ai/docs/product/ai-gateway-streamline-llm-integrations/virtual-keys/budget-limits-enterprise-feature)
   * [Security @ Portkey](product/enterprise-offering/security-portkey.md)
   * [Logs Export](https://portkey.ai/docs/product/observability-modern-monitoring-for-llms/logs-export)
+  * [Private Cloud Deployments](product/enterprise-offering/private-cloud-deployments/README.md)
+    * [Architecture](product/enterprise-offering/private-cloud-deployments/architecture.md)
+    * [AWS](product/enterprise-offering/private-cloud-deployments/aws.md)
 * [Open Source](open-source.md)
 
 ## API Reference
