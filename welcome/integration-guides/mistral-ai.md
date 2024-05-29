@@ -82,6 +82,48 @@ print(completion)
 {% endtab %}
 {% endtabs %}
 
+### 4. Invoke Codestral Requests
+
+Using Portkey, you can also call Mistral API's new Codestral endpoint! Just pass the Codestral URL `https://codestral.mistral.ai/v1` with the `customHost` property
+
+{% tabs %}
+{% tab title="NodeJS SDK" %}
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
+ 
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY", // defaults to process.env["PORTKEY_API_KEY"]
+    virtualKey: "MISTRAL_VIRTUAL_KEY", // Your Mistral AI Virtual Key,
+<strong>    customHost: "https://codestral.mistral.ai/v1" // Route to the new Codestral URL
+</strong>})
+
+const codeCompletion = await portkey.chat.completions.create({
+<strong>    model: "codestral-latest",
+</strong>    messages: [{"role": "user", "content": "Write a minimalist Python code to validate the proof for the special number 1729"}]
+});
+
+console.log(codeCompletion.choices[0].message.content);
+</code></pre>
+{% endtab %}
+
+{% tab title="Python SDK" %}
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
+    virtual_key="MISTRAL_VIRTUAL_KEY",  # Replace with your virtual key for Mistral AI
+    custom_host="https://codestral.mistral.ai/v1" # Route to the new Codestral URL
+)
+
+code_completion = portkey.chat.completions.create(
+<strong>    model="codestral-latest",
+</strong>    messages=[{"role": "user", "content": "Write a minimalist Python code to validate the proof for the special number 1729"}]
+)
+
+print(code_completion.choices[0].message.content)
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
 ## Managing Mistral AI Prompts
 
 You can manage all prompts to Mistral AI in the [Prompt Library](../../product/prompt-library.md). All the current models of Mistral AI are supported and you can easily start testing different prompts.
