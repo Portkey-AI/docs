@@ -82,7 +82,7 @@ print(completion)
 {% endtab %}
 {% endtabs %}
 
-### 4. Invoke Codestral Requests
+### Invoke Codestral Requests
 
 Using Portkey, you can also call Mistral API's new Codestral endpoint! Just pass the Codestral URL `https://codestral.mistral.ai/v1` with the `customHost` property
 
