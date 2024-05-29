@@ -82,18 +82,20 @@ print(completion)
 {% endtab %}
 {% endtabs %}
 
-### Invoke Codestral Requests
+***
 
-Using Portkey, you can also call Mistral API's new Codestral endpoint! Just pass the Codestral URL `https://codestral.mistral.ai/v1` with the `customHost` property
+## Invoke Codestral Requests
+
+Using Portkey, you can also call Mistral API's new Codestral endpoint. Just pass the Codestral URL `https://codestral.mistral.ai/v1` with the `customHost` property
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
 <pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai'
  
 const portkey = new Portkey({
-    apiKey: "PORTKEY_API_KEY", // defaults to process.env["PORTKEY_API_KEY"]
-    virtualKey: "MISTRAL_VIRTUAL_KEY", // Your Mistral AI Virtual Key,
-<strong>    customHost: "https://codestral.mistral.ai/v1" // Route to the new Codestral URL
+    apiKey: "PORTKEY_API_KEY",
+    virtualKey: "MISTRAL_VIRTUAL_KEY",
+<strong>    customHost: "https://codestral.mistral.ai/v1"
 </strong>})
 
 const codeCompletion = await portkey.chat.completions.create({
@@ -109,10 +111,10 @@ console.log(codeCompletion.choices[0].message.content);
 <pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
 
 portkey = Portkey(
-    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    virtual_key="MISTRAL_VIRTUAL_KEY",  # Replace with your virtual key for Mistral AI
-    custom_host="https://codestral.mistral.ai/v1" # Route to the new Codestral URL
-)
+    api_key="PORTKEY_API_KEY", 
+    virtual_key="MISTRAL_VIRTUAL_KEY",
+<strong>    custom_host="https://codestral.mistral.ai/v1"
+</strong>)
 
 code_completion = portkey.chat.completions.create(
 <strong>    model="codestral-latest",
@@ -123,6 +125,12 @@ print(code_completion.choices[0].message.content)
 </code></pre>
 {% endtab %}
 {% endtabs %}
+
+#### Your Codestral requests will show up on Portkey logs with the code snippets rendered beautifully!
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-05-29 at 23.16.22@2x.png" alt=""><figcaption></figcaption></figure>
+
+***
 
 ## Managing Mistral AI Prompts
 
