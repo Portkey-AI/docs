@@ -104,6 +104,8 @@
   * [Prompt Completion](api-reference/prompts/prompt-completion.md)
   * [Render](api-reference/prompts/render.md)
 * [Guardrails](api-reference/evals.md)
+* [Virtual Keys](api-reference/virtual-keys.md)
+* [Configs](api-reference/configs.md)
 
 ## Guides
 
