@@ -195,10 +195,10 @@ const portkey = new Portkey({
 {% endtab %}
 
 {% tab title="Python" %}
-<pre class="language-python"><code class="lang-python">import Portkey from 'portkey-ai'
- 
-const portkey = new Portkey({
-    api_key = "PORTKEY_API_KEY",
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key = "PORTKEY_API_KEY",  
 <strong>    provider = "azure-openai",
 </strong><strong>    azure_resource_name = "AZURE_RESOURCE_NAME",
 </strong><strong>    azure_deploymend_id = "AZURE_DEPLOYMENT_NAME",
