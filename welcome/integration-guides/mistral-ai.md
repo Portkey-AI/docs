@@ -14,13 +14,13 @@ Add the Portkey SDK to your application to interact with Mistral AI's API throug
 
 {% tabs %}
 {% tab title="NodeJS" %}
-```javascript
+```bash
 npm install --save portkey-ai
 ```
 {% endtab %}
 
 {% tab title="Python" %}
-```python
+```bash
 pip install portkey-ai
 ```
 {% endtab %}
@@ -54,16 +54,20 @@ portkey = Portkey(
 {% endtab %}
 {% endtabs %}
 
-### **3. Invoke Chat Completions with** Mistral AI
+### **3.1. Invoke Chat Completions with** Mistral AI
 
 Use the Portkey instance to send requests to Mistral AI. You can also override the virtual key directly in the API call if needed.
+
+{% hint style="info" %}
+You can also call the new Codestral model here!
+{% endhint %}
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
 ```javascript
 const chatCompletion = await portkey.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
-    model: 'mistral-medium',
+    model: 'codestral-latest',
 });
 
 console.log(chatCompletion.choices);
@@ -74,7 +78,7 @@ console.log(chatCompletion.choices);
 ```python
 completion = portkey.chat.completions.create(
     messages= [{ "role": 'user', "content": 'Say this is a test' }],
-    model= 'mistral-medium'
+    model= 'codestral-latest'
 )
 
 print(completion)
@@ -84,9 +88,9 @@ print(completion)
 
 ***
 
-## Invoke Codestral Requests
+## Invoke Codestral Endpoint
 
-Using Portkey, you can also call Mistral API's new Codestral endpoint. Just pass the Codestral URL `https://codestral.mistral.ai/v1` with the `customHost` property
+Using Portkey, you can also call Mistral API's new Codestral endpoint. Just pass the Codestral URL `https://codestral.mistral.ai/v1` with the `customHost` property.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -129,6 +133,14 @@ print(code_completion.choices[0].message.content)
 #### Your Codestral requests will show up on Portkey logs with the code snippets rendered beautifully!
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-05-29 at 23.16.22@2x.png" alt=""><figcaption></figcaption></figure>
+
+## Codestral v/s Mistral API Endpoint
+
+Here's a handy guide for when you might want to make your requests to the Codestral endpoint v/s the original Mistral API endpoint:
+
+<figure><img src="../../.gitbook/assets/CleanShot 2024-05-30 at 08.07.22@2x.png" alt=""><figcaption></figcaption></figure>
+
+[For more, check out Mistral's Code Generation guide here](https://docs.mistral.ai/capabilities/code\_generation/#operation/listModels).
 
 ***
 
