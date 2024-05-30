@@ -35,15 +35,23 @@ Maintaining the transactional database in the control plane is crucial for sever
 
 ## Data flow between Customer Cloud and Portkey Cloud
 
-1. **AI gateway will send anonymised request metrics to the analytics store**. This contains information such as model used, prompt IDs, configs used, tokens, cost, request timings that are then made available on Portkey's analytics dashboards. Sample data that is sent.\
+1. **AI gateway will send anonymised request metrics to the analytics store**. This contains information such as model used, prompt IDs, configs used, tokens, cost, request timings that are then made available on Portkey's analytics dashboards. [Sample data that is sent](architecture.md#sample-files).\
 
 2.  **AI Gateway maintains a sync with the Control Plane** through a heartbeat to update the cache stores every 30 seconds. Data for prompt updates, config updates, virtual keys, and API keys are fetched, decrypted and stored in the gateway's cache.\
 
 
     During any LLM call, the AI Gateway directly utilizes data stored in cache.\
 
-3. **If Logs are stored in Customer Cloud**: Portkey's UI will make a call to the AI gateway to fetch a log by id when a customer views it on the dashboard. **If Logs are stored in Portkey Cloud**: The AI gateway will encrypt and send the log to be stored in the Portkey Logs store. In this case, no inbound connection is needed from Portkey to Customer Cloud. \[Sample Log Data]
+3. **If Logs are stored in Customer Cloud**: Portkey's UI will make a call to the AI gateway to fetch a log by id when a customer views it on the dashboard. **If Logs are stored in Portkey Cloud**: The AI gateway will encrypt and send the log to be stored in the Portkey Logs store. In this case, no inbound connection is needed from Portkey to Customer Cloud. [Sample Log Data](architecture.md#sample-files)
 
 ## New features and patch management
 
 Portkey is able to launch newer features to the Customer's deployment automatically, for most features. For anything that involves changes on the AI Gateway, new releases and patches will be made available through the container registry.
+
+
+
+### Sample Files
+
+{% file src="../../../.gitbook/assets/sample_log_file.json" %}
+
+{% file src="../../../.gitbook/assets/metric.json" %}
