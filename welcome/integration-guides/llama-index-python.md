@@ -1,26 +1,53 @@
 # LlamaIndex (Python)
 
-The **Portkey x LlamaIndex** integration brings advanced AI gateway capabilities and full-stack observability to LlamaIndex, making it a breeze to build production-ready Llamaindex apps.
+The **Portkey x LlamaIndex** integration brings advanced AI gateway capabilities and full-stack observability to apps built on LlamaIndex.
 
-In a nutshell, Portkey extends the familiar OpenAI schema to make Llamaindex work with **200+ LLMs** without having to import different classes for each provider or having to configuring your code separately. And by doing that, Portkey makes your Llamaindex calls reliable, fast, and cost-efficient, along with logging all calls to help you debug errors and get granular insights.
+In a nutshell, Portkey extends the familiar OpenAI schema to make Llamaindex work with **200+ LLMs** without the need for importing different classes for each provider or having to configure your code separately. Portkey makes your Llamaindex apps _reliable_, _fast_, and _cost-efficient_.
 
-## Quick Start
+## Getting Started
 
-1. Import the `OpenAI` class in Llamaindex, along with Portkey's helper functions `createHeaders` and `PORTKEY_GATEWAY_URL`
-2. Configure your model details separately following Portkey's [Config object schema](../../api-reference/config-object.md) - this is where you can define provider and model name, model parameters, set up fallbacks / retries / etc, and even pass your prompt templates saved on Portkey!
-3. Pass your Config details along with the necessary headers while instantiating your OpenAI client
-
-That's it!
-
-## Install the Portkey SDK
+### 1. Install the Portkey SDK
 
 ```bash
 pip install -U portkey-ai
 ```
 
-## Integrate OpenAI
+### 2. Import the necessary classes and functions
 
-Here are basic examples on using the `complete` and `chat` methods with `streaming` on & off.
+Import the **`OpenAI`** class in Llamaindex as you normally would, along with Portkey's helper functions **`createHeaders`** and **`PORTKEY_GATEWAY_URL`**
+
+<pre class="language-python"><code class="lang-python">from llama_index.llms.openai import OpenAI
+<strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+</strong></code></pre>
+
+### 3. Configure model details
+
+Configure your model details using Portkey's [**Config object schema**](../../api-reference/config-object.md). This is where you can define the provider and model name, model parameters, set up fallbacks, retries, and more.
+
+<pre class="language-python"><code class="lang-python">config = {
+<strong>    "provider":"openai",
+</strong><strong>    "api_key":"YOUR_OPENAI_API_KEY",
+</strong>    "override_params": {
+<strong>        "model":"gpt-4o",
+</strong>        "max_tokens":64
+    }
+}
+</code></pre>
+
+### 4. Pass Config details to OpenAI client with necessary headers
+
+<pre class="language-python"><code class="lang-python">portkey = OpenAI(
+<strong>    api_base=PORTKEY_GATEWAY_URL,
+</strong><strong>    default_headers=createHeaders(
+</strong><strong>        api_key="YOUR_PORTKEY_API_KEY",
+</strong><strong>        config=config
+</strong><strong>    )
+</strong>)
+</code></pre>
+
+## Example: OpenAI
+
+Here are basic integrations examples on using the `complete` and `chat` methods with `streaming` on & off.
 
 {% tabs %}
 {% tab title="Chat + Streaming" %}
@@ -135,32 +162,40 @@ asyncio.run(main())
 {% endtab %}
 {% endtabs %}
 
+***
+
 ## Enabling Portkey Features
 
-By routing your Llamaindex requests through Portkey, you get the following 6 production-grade features:
+By routing your LlamaIndex requests through Portkey, you get access to the following production-grade features:
 
-1. Interoperability
-2. Caching
-3. Reliability
-4. Observability
-5. Continuous Improvement
-6. Security & Compliance
+* **Interoperability**: Call various LLMs like Anthropic, Gemini, Mistral, Azure OpenAI, Google Vertex AI, and AWS Bedrock with minimal code changes.
+* **Caching**: Speed up your requests and save money on LLM calls by storing past responses in the Portkey cache. Choose between Simple and Semantic cache modes.
+* **Reliability**: Set up fallbacks between different LLMs or providers, load balance your requests across multiple instances or API keys, set automatic retries, and request timeouts.
+* **Observability**: Portkey automatically logs all the key details about your requests, including cost, tokens used, response time, request and response bodies, and more. Send custom metadata and trace IDs for better analytics and debugging.
+* **Continuous Improvement**: Improve your LlamaIndex app by capturing qualitative & quantitative user feedback on your requests.
+* **Security & Compliance**: Set budget limits on provider API keys and implement fine-grained user roles and permissions for both the app and the Portkey APIs.
 
-Let's explore each.
-
-As you will see below, much of these features are driven by Portkey's Config architecture. On the Portkey app, we make it very easy to help you create, manage, and version Configs so that you can reference them easily here.
+Much of these features are driven by **Portkey's Config architecture**. On the Portkey app, we make it easy to help you _create_, _manage_, and _version_ your Configs so that you can reference them easily in Llamaindex.
 
 ## Saving Configs in the Portkey App
 
-Just go to Portkey app and you can save all of the Config snippets shown in the examples below and reference them with just a slug.
+Head over to the Configs tab in Portkey app where you can save various provider Configs along with the reliability and caching features. Each Config has an associated slug that you can reference in your Llamaindex code.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-06-01 at 00.18.08@2x.png" alt=""><figcaption></figcaption></figure>
 
+[**Explore Config documentation here**](../../product/ai-gateway-streamline-llm-integrations/configs.md).
+
+***
+
 ## Interoperability - Calling Anthropic, Gemini, Mistral, and more
 
-Now that we have the OpenAI code up and running, let's see how you can use Portkey to send the request across multiple LLMs - we'll show **Anthropic**, **Gemini**, and **Mistral**. For the full list of providers & LLMs supported, check out [this doc](../../guides/practitioners-cookbooks/integrations/).
+Now that we have the OpenAI code up and running, let's see how you can use Portkey to send the request across multiple LLMs - we'll show **Anthropic**, **Gemini**, and **Mistral**. For the full list of providers & LLMs supported, check out [**this doc**](../../guides/practitioners-cookbooks/integrations/).
 
-For each provider, it is just a matter of changing 3 lines of code in the Config. Change the provider name, change the API key, and change the model name, that's it!
+Switching providers just requires **changing 3 lines of code:**
+
+1. Change the `provider name`
+2. Change the `API key`, and
+3. Change the `model name`
 
 {% tabs %}
 {% tab title="Anthropic" %}
@@ -269,16 +304,12 @@ print(resp)
 {% endtab %}
 {% endtabs %}
 
-## Save Configs in Portkey App
-
-The Configs that you are defining in the above (and below) examples - you can also create, manage, and version them in the Portkey app! This makes it eas
-
-Let's see how you can send the same requests across Azure OpenAI, Google Vertex AI, and AWS Bedrock.
+### Calling Azure, Google Vertex, AWS Bedrock
 
 {% hint style="info" %}
-We recommend to save your cloud details to Portkey vault and get a corresponding Virtual Key. This reduces the hassle of remembering deployment name, resource name, api version for Azure, and similarly region, access key, project id details etc for Bedrock and Vertex.\
-\
-[Explore the Virtual Key documentation here](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/).
+We recommend saving your cloud details to [**Portkey vault**](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) and getting a corresponding Virtual Key.&#x20;
+
+[**Explore the Virtual Key documentation here**](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/)**.**
 {% endhint %}
 
 {% tabs %}
@@ -380,8 +411,6 @@ print(resp)
 {% endtab %}
 {% endtabs %}
 
-As you can see across ALL these examples, it is ONLY the `config` that's changing, while the rest of the code stays identical. This will continue for other Portkey features as well!
-
 ## Caching
 
 You can speed up your requests and save money on your LLM requests by storing past responses in the Portkey cache. There are 2 cache modes:
@@ -389,7 +418,7 @@ You can speed up your requests and save money on your LLM requests by storing pa
 * **Simple:** Matches requests verbatim. Perfect for repeated, identical prompts. Works on **all models** including image generation models.
 * **Semantic:** Matches responses for requests that are semantically similar. Ideal for denoising requests with extra prepositions, pronouns, etc. Works on any model available on **`/chat/completions`** or **`/completions`** routes.
 
-To enable Portkey cache, just add the `cache` params to your [config object](https://portkey.ai/docs/api-reference/config-object#cache-object-details).
+To enable Portkey cache, just add the **`cache`** params to your [config object](https://portkey.ai/docs/api-reference/config-object#cache-object-details).
 
 {% tabs %}
 {% tab title="Simple Cache Config" %}
@@ -425,11 +454,11 @@ To enable Portkey cache, just add the `cache` params to your [config object](htt
 {% endtab %}
 {% endtabs %}
 
-[For more cache settings, check out the documentation here](../../product/ai-gateway-streamline-llm-integrations/cache-simple-and-semantic.md).
+[**For more cache settings, check out the documentation here**](../../product/ai-gateway-streamline-llm-integrations/cache-simple-and-semantic.md)**.**
 
 ## Reliability
 
-Set up fallbacks between different LLMs or providers, load balance your requests across multiple instances or API keys, set automatic retries, or set request timeouts - all again set through Configs. Here's how:
+Set up fallbacks between different LLMs or providers, load balance your requests across multiple instances or API keys, set automatic retries, or set request timeouts - all set through **Configs**.
 
 {% tabs %}
 {% tab title="Fallback from OpenAI to Anthropic" %}
@@ -499,13 +528,17 @@ config = {
 {% endtab %}
 {% endtabs %}
 
-Explore deeper documentation for each feature here - [Fallbacks](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md), [Loadbalancing](../../product/ai-gateway-streamline-llm-integrations/load-balancing.md), [Retries](../../product/ai-gateway-streamline-llm-integrations/automatic-retries.md), [Timeouts](../../product/ai-gateway-streamline-llm-integrations/request-timeouts.md).
+Explore deeper documentation for each feature here - [**Fallbacks**](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md), [**Loadbalancing**](../../product/ai-gateway-streamline-llm-integrations/load-balancing.md), [**Retries**](../../product/ai-gateway-streamline-llm-integrations/automatic-retries.md), [**Timeouts**](../../product/ai-gateway-streamline-llm-integrations/request-timeouts.md).
 
 ## Observability
 
-Portkey automatically logs all the key details about your requests automatically - cost, tokens used, response time, request and response bodies, and more. Not just that, using Portkey, you can also send custom metadata with each of your requests to further segment your logs on Portkey for better analytics. Similarly, if you are maintaining a chat session with a single user, or maintaing any kind of long context, you can also trace multiple requests to a single trace ID and filter or view them separately in Portkey logs.
+Portkey automatically logs all the key details about your requests, including cost, tokens used, response time, request and response bodies, and more.
 
-Custom Metadata and Trace ID information is sent in headers.
+Using Portkey, you can also send custom metadata with each of your requests to further segment your logs for better analytics. Similarly, you can also trace multiple requests to a single trace ID and filter or view them separately in Portkey logs.
+
+{% hint style="info" %}
+**Custom Metadata and Trace ID information is sent in `default_headers`.**
+{% endhint %}
 
 {% tabs %}
 {% tab title="Sending Custom Metadata" %}
@@ -565,7 +598,7 @@ print(resp)
 {% endtab %}
 {% endtabs %}
 
-When you do this, Portkey will show you these details separately for each log, and let you filter the logs & analytics on them easily:
+#### Portkey shows these details separately for each log:
 
 <div align="left">
 
@@ -575,9 +608,9 @@ When you do this, Portkey will show you these details separately for each log, a
 
 ## Continuous Improvement
 
-Now that you know how to trace & log your Llamaindex requests to Portkey, you can also start capturing the user feedback on your requests - it's very easy!
+Now that you know how to trace & log your Llamaindex requests to Portkey, you can also start capturing user feedback to improve your app!
 
-Just make sure to add trace ID to your requests, and you can just append qualitative as well as quantitative feedback with `portkey.feedback.create` method:
+You can append qualitative as well as quantitative feedback to any `trace ID` with the `portkey.feedback.create` method:
 
 {% tabs %}
 {% tab title="Adding Feedback" %}
@@ -606,16 +639,22 @@ print(feedback)
 
 ## Security & Compliance
 
-When you onboard more team members to your Llamaindex app - you may not want to share all of your secrets with everyone, or give all team members permissions to edit your various Configs and just restrict them to do generations. Using Portkey, you can set budget limits on provide API keys, and implement fine-grained user roles and permissions for both the app and the Portkey APIs.
+When you onboard more team members to help out on your Llamaindex app - permissioning, budgeting, and access management can become a mess! Using Portkey, you can set **budget limits** on provide API keys and implement **fine-grained user roles** and **permissions** to:
+
+* **Control access**: Restrict team members' access to specific features, Configs, or API endpoints based on their roles and responsibilities.
+* **Manage costs**: Set budget limits on API keys to prevent unexpected expenses and ensure that your LLM usage stays within your allocated budget.
+* **Ensure compliance**: Implement strict security policies and audit trails to maintain compliance with industry regulations and protect sensitive data.
+* **Simplify onboarding**: Streamline the onboarding process for new team members by assigning them appropriate roles and permissions, eliminating the need to share sensitive API keys or secrets.
+* **Monitor usage**: Gain visibility into your team's LLM usage, track costs, and identify potential security risks or anomalies through comprehensive monitoring and reporting.
 
 <figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 [**Read more about Portkey's Security & Enterprise offerings here**](../../product/enterprise-offering/).
 
 ## Join Portkey Community
 
-On the Portkey Discord, you will often find engineers discussing what they are building on top of Llamaindex and help each other out. Join the community to connect with other practitioners and troubleshoot your queries!
+Join the Portkey Discord to connect with other practitioners, discuss your LlamaIndex projects, and get help troubleshooting your queries.
 
 [**Link to Discord**](https://portkey.ai/community)
+
+For more detailed information on each feature and how to use them, please refer to the [Portkey Documentation](https://portkey.ai/docs).
