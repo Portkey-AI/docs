@@ -9,7 +9,7 @@
   * [Azure OpenAI](welcome/integration-guides/azure-openai.md)
   * [Langchain (Python)](welcome/integration-guides/langchain-python.md)
   * [Langchain (JS/TS)](welcome/integration-guides/langchain-js.md)
-  * [Llama Index (Python)](welcome/integration-guides/llama-index-python.md)
+  * [LlamaIndex (Python)](welcome/integration-guides/llama-index-python.md)
   * [Anthropic](welcome/integration-guides/anthropic.md)
   * [Cohere](welcome/integration-guides/cohere.md)
   * [Google Palm](welcome/integration-guides/google-palm.md)
