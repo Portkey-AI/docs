@@ -1,6 +1,6 @@
 # LlamaIndex (Python)
 
-The **Portkey x LlamaIndex** integration brings advanced AI gateway capabilities and full-stack observability to apps built on LlamaIndex.
+The **Portkey x LlamaIndex** integration brings advanced **AI gateway** capabilities, full-stack **observability**, and **prompt management** to apps built on LlamaIndex.
 
 In a nutshell, Portkey extends the familiar OpenAI schema to make Llamaindex work with **200+ LLMs** without the need for importing different classes for each provider or having to configure your code separately. Portkey makes your Llamaindex apps _reliable_, _fast_, and _cost-efficient_.
 
@@ -168,12 +168,13 @@ asyncio.run(main())
 
 By routing your LlamaIndex requests through Portkey, you get access to the following production-grade features:
 
-* **Interoperability**: Call various LLMs like Anthropic, Gemini, Mistral, Azure OpenAI, Google Vertex AI, and AWS Bedrock with minimal code changes.
-* **Caching**: Speed up your requests and save money on LLM calls by storing past responses in the Portkey cache. Choose between Simple and Semantic cache modes.
-* **Reliability**: Set up fallbacks between different LLMs or providers, load balance your requests across multiple instances or API keys, set automatic retries, and request timeouts.
-* **Observability**: Portkey automatically logs all the key details about your requests, including cost, tokens used, response time, request and response bodies, and more. Send custom metadata and trace IDs for better analytics and debugging.
-* **Continuous Improvement**: Improve your LlamaIndex app by capturing qualitative & quantitative user feedback on your requests.
-* **Security & Compliance**: Set budget limits on provider API keys and implement fine-grained user roles and permissions for both the app and the Portkey APIs.
+1. [**Interoperability**](llama-index-python.md#id-1.-interoperability-calling-anthropic-gemini-mistral-and-more): Call various LLMs like Anthropic, Gemini, Mistral, Azure OpenAI, Google Vertex AI, and AWS Bedrock with minimal code changes.
+2. [**Caching**](llama-index-python.md#id-2.-caching): Speed up your requests and save money on LLM calls by storing past responses in the Portkey cache. Choose between Simple and Semantic cache modes.
+3. [**Reliability**](llama-index-python.md#id-3.-reliability): Set up fallbacks between different LLMs or providers, load balance your requests across multiple instances or API keys, set automatic retries, and request timeouts.
+4. [**Observability**](llama-index-python.md#id-4.-observability): Portkey automatically logs all the key details about your requests, including cost, tokens used, response time, request and response bodies, and more. Send custom metadata and trace IDs for better analytics and debugging.
+5. [**Prompt Management**](llama-index-python.md#id-5.-prompt-management): Use Portkey as a centralized hub to store, version, and experiment with prompts across multiple LLMs, and seamlessly retrieve them in your LlamaIndex app for easy integration.
+6. [**Continuous Improvement**](llama-index-python.md#id-6.-continuous-improvement): Improve your LlamaIndex app by capturing qualitative & quantitative user feedback on your requests.
+7. [**Security & Compliance**](llama-index-python.md#id-7.-security-and-compliance): Set budget limits on provider API keys and implement fine-grained user roles and permissions for both the app and the Portkey APIs.
 
 Much of these features are driven by **Portkey's Config architecture**. On the Portkey app, we make it easy to help you _create_, _manage_, and _version_ your Configs so that you can reference them easily in Llamaindex.
 
@@ -187,7 +188,7 @@ Head over to the Configs tab in Portkey app where you can save various provider 
 
 ***
 
-## Interoperability - Calling Anthropic, Gemini, Mistral, and more
+## 1. Interoperability - Calling Anthropic, Gemini, Mistral, and more
 
 Now that we have the OpenAI code up and running, let's see how you can use Portkey to send the request across multiple LLMs - we'll show **Anthropic**, **Gemini**, and **Mistral**. For the full list of providers & LLMs supported, check out [**this doc**](../../guides/practitioners-cookbooks/integrations/).
 
@@ -411,12 +412,56 @@ print(resp)
 {% endtab %}
 {% endtabs %}
 
-## Caching
+### Calling Local or Privately Hosted Models like Ollama
+
+Check out [**Portkey docs for Ollama**](ollama.md) and [**other privately hosted models**](byollm.md).
+
+{% tabs %}
+{% tab title="Ollama" %}
+<pre class="language-python"><code class="lang-python">from llama_index.llms.openai import OpenAI
+from llama_index.core.llms import ChatMessage
+from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+
+<strong>config = {
+</strong><strong>    "provider":"ollama",
+</strong><strong>    "custom_host":"https://7cc4-3-235-157-146.ngrok-free.app", # Your Ollama ngrok URL
+</strong><strong>    "override_params": {
+</strong><strong>        "model":"llama3"
+</strong><strong>    }    
+</strong><strong>}
+</strong>
+#### You can also reference a saved Config instead ####
+#### config = "pc-azure-xx"
+
+portkey = OpenAI(
+    api_base=PORTKEY_GATEWAY_URL,
+    default_headers=createHeaders(
+        api_key="YOUR_PORTKEY_API_KEY",
+        config=config
+    )
+)
+
+messages = [
+    ChatMessage(role="system", content="You are a pirate with a colorful personality"),
+    ChatMessage(role="user", content="What is your name"),
+]
+
+resp = portkey.chat(messages)
+print(resp)
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+[**Explore full list of the providers supported on Portkey here**](../../guides/practitioners-cookbooks/integrations/).
+
+***
+
+## 2. Caching
 
 You can speed up your requests and save money on your LLM requests by storing past responses in the Portkey cache. There are 2 cache modes:
 
 * **Simple:** Matches requests verbatim. Perfect for repeated, identical prompts. Works on **all models** including image generation models.
-* **Semantic:** Matches responses for requests that are semantically similar. Ideal for denoising requests with extra prepositions, pronouns, etc. Works on any model available on **`/chat/completions`** or **`/completions`** routes.
+* **Semantic:** Matches responses for requests that are semantically similar. Ideal for denoising requests with extra prepositions, pronouns, etc.
 
 To enable Portkey cache, just add the **`cache`** params to your [config object](https://portkey.ai/docs/api-reference/config-object#cache-object-details).
 
@@ -456,7 +501,9 @@ To enable Portkey cache, just add the **`cache`** params to your [config object]
 
 [**For more cache settings, check out the documentation here**](../../product/ai-gateway-streamline-llm-integrations/cache-simple-and-semantic.md)**.**
 
-## Reliability
+***
+
+## 3. Reliability
 
 Set up fallbacks between different LLMs or providers, load balance your requests across multiple instances or API keys, set automatic retries, or set request timeouts - all set through **Configs**.
 
@@ -530,7 +577,9 @@ config = {
 
 Explore deeper documentation for each feature here - [**Fallbacks**](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md), [**Loadbalancing**](../../product/ai-gateway-streamline-llm-integrations/load-balancing.md), [**Retries**](../../product/ai-gateway-streamline-llm-integrations/automatic-retries.md), [**Timeouts**](../../product/ai-gateway-streamline-llm-integrations/request-timeouts.md).
 
-## Observability
+***
+
+## 4. Observability
 
 Portkey automatically logs all the key details about your requests, including cost, tokens used, response time, request and response bodies, and more.
 
@@ -606,7 +655,77 @@ print(resp)
 
 </div>
 
-## Continuous Improvement
+[**Check out Observability docs here.**](../../product/observability-modern-monitoring-for-llms/)
+
+***
+
+## 5. Prompt Management
+
+Portkey features an advanced Prompts platform tailor-made for better prompt engineering. With Portkey, you can:
+
+* **Store Prompts with Access Control and Version Control:** Keep all your prompts organized in a centralized location, easily track changes over time, and manage edit/view permissions for your team.
+* **Parameterize Prompts**: Define variables and [mustache-approved tags](../../product/prompt-library/prompt-templates.md#templating-engine) within your prompts, allowing for dynamic value insertion when calling LLMs. This enables greater flexibility and reusability of your prompts.
+* **Experiment in a Sandbox Environment**: Quickly iterate on different LLMs and parameters to find the optimal combination for your use case, without modifying your LlamaIndex code.
+
+#### Here's how you can leverage Portkey's Prompt Management in your LlamaIndex application:
+
+1. Create your prompt template on the Portkey app, and save it to get an associated **`Prompt ID`**
+2. Before making a Llamaindex request, render the prompt template using the Portkey SDK
+3. Transform the retrieved prompt to be compatible with LlamaIndex and send the request!
+
+#### Example: Using a Portkey Prompt Template in LlamaIndex
+
+{% tabs %}
+{% tab title="Portkey Prompts in LlamaIndex" %}
+<pre class="language-python"><code class="lang-python">import json
+import os
+from llama_index.llms.openai import OpenAI
+from llama_index.core.llms import ChatMessage
+<strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders, Portkey
+</strong>
+###  Initialize Portkey client with API key
+
+client = Portkey(api_key=os.environ.get("PORTKEY_API_KEY"))
+
+### Render the prompt template with your prompt ID and variables
+
+<strong>prompt_template = client.prompts.render(
+</strong><strong>    prompt_id="pp-prompt-id",
+</strong><strong>    variables={ "movie":"Dune 2" }
+</strong><strong>).data.dict()
+</strong>
+config = {
+    "virtual_key":"GROQ_VIRTUAL_KEY", # You need to send the virtual key separately
+<strong>    "override_params":{
+</strong><strong>        "model":prompt_template["model"], # Set the model name based on the value in the prompt template
+</strong><strong>        "temperature":prompt_template["temperature"] # Similarly, you can also set other model params
+</strong><strong>    }
+</strong>}
+
+portkey = OpenAI(
+<strong>    api_base=PORTKEY_GATEWAY_URL,
+</strong><strong>    default_headers=createHeaders(
+</strong><strong>        api_key=os.environ.get("PORTKEY_API_KEY"),
+</strong><strong>        config=config
+</strong><strong>    )
+</strong>)
+
+### Transform the rendered prompt into LlamaIndex-compatible format
+
+<strong>messages = [ChatMessage(content=msg["content"], role=msg["role"]) for msg in prompt_template["messages"]]
+</strong>
+resp = portkey.chat(messages)
+print(resp)
+
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+[**Explore Prompt Management docs here**](../../product/prompt-library.md).
+
+***
+
+## 6. Continuous Improvement
 
 Now that you know how to trace & log your Llamaindex requests to Portkey, you can also start capturing user feedback to improve your app!
 
@@ -637,7 +756,9 @@ print(feedback)
 
 [**Check out the Feedback documentation for a deeper dive**](../../product/observability-modern-monitoring-for-llms/feedback.md).
 
-## Security & Compliance
+***
+
+## 7. Security & Compliance
 
 When you onboard more team members to help out on your Llamaindex app - permissioning, budgeting, and access management can become a mess! Using Portkey, you can set **budget limits** on provide API keys and implement **fine-grained user roles** and **permissions** to:
 
@@ -650,6 +771,8 @@ When you onboard more team members to help out on your Llamaindex app - permissi
 <figure><img src="../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 
 [**Read more about Portkey's Security & Enterprise offerings here**](../../product/enterprise-offering/).
+
+***
 
 ## Join Portkey Community
 
