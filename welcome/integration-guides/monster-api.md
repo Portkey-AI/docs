@@ -99,7 +99,7 @@ Once you're ready with your prompt, you can use the `portkey.prompts.completions
 | Model Name          | Model String to Use in API calls      |
 | ------------------- | ------------------------------------- |
 | TinyLlama 1.1B      | `TinyLlama/TinyLlama-1.1B-Chat-v1.0`  |
-| Phi2                | `microsoft/phi2`                      |
+| Phi3                | `microsoft/phi3`                      |
 | Zephyr 7B           | `HuggingFaceH4/zephyr-7b-beta`        |
 | Mistral 7B Instruct | `mistralai/Mistral-7B-Instruct-v0.2.` |
 
