@@ -96,12 +96,7 @@ Once you're ready with your prompt, you can use the `portkey.prompts.completions
 
 ## Supported Models
 
-| Model Name          | Model String to Use in API calls      |
-| ------------------- | ------------------------------------- |
-| TinyLlama 1.1B      | `TinyLlama/TinyLlama-1.1B-Chat-v1.0`  |
-| Phi3                | `microsoft/phi3`                      |
-| Zephyr 7B           | `HuggingFaceH4/zephyr-7b-beta`        |
-| Mistral 7B Instruct | `mistralai/Mistral-7B-Instruct-v0.2.` |
+<table><thead><tr><th width="302">Model Name</th><th>Model String to Use in API calls</th></tr></thead><tbody><tr><td>TinyLlama 1.1B</td><td><code>TinyLlama/TinyLlama-1.1B-Chat-v1.0</code></td></tr><tr><td>Phi3</td><td><code>microsoft/Phi-3-mini-4k-instruct</code></td></tr><tr><td>Zephyr 7B</td><td><code>HuggingFaceH4/zephyr-7b-beta</code></td></tr><tr><td>Mistral 7B Instruct</td><td><code>mistralai/Mistral-7B-Instruct-v0.2</code></td></tr><tr><td>Llama 3 8B</td><td><code>meta-llama/Meta-Llama-3-8B-Instruct</code></td></tr></tbody></table>
 
 ## Next Steps
 
