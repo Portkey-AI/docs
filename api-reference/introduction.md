@@ -48,4 +48,4 @@ Learn more [here](../welcome/integration-guides/openai.md).
 
 **Ideal for:** applications that prefer RESTful services. The base URL for all REST API requests is `https://api.portkey.ai/v1`, with an [authentication](authentication.md) header.
 
-Learn more [here](chat-completions.md).
+Learn more [here](../endpoints/chat-completions.md).

@@ -86,7 +86,7 @@ print(completion)
 
 ## LocalAI Endpoints Supported
 
-<table data-header-hidden><thead><tr><th width="533">Endpoint</th><th>Portkey API Reference</th></tr></thead><tbody><tr><td><code>/chat/completions</code> (Chat, Vision, Tools support)</td><td><a href="../../api-reference/chat-completions.md">Doc</a></td></tr><tr><td><code>/images/generations</code></td><td><a href="../../api-reference/completions-1.md">Doc</a></td></tr><tr><td><code>/embeddings</code></td><td><a href="../../api-reference/embeddings.md">Doc</a></td></tr><tr><td><code>/audio/transcriptions</code></td><td><a href="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md">Doc</a></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="533">Endpoint</th><th>Portkey API Reference</th></tr></thead><tbody><tr><td><code>/chat/completions</code> (Chat, Vision, Tools support)</td><td><a href="../../endpoints/chat-completions.md">Doc</a></td></tr><tr><td><code>/images/generations</code></td><td><a href="../../endpoints/completions-1.md">Doc</a></td></tr><tr><td><code>/embeddings</code></td><td><a href="../../endpoints/embeddings.md">Doc</a></td></tr><tr><td><code>/audio/transcriptions</code></td><td><a href="../../product/ai-gateway-streamline-llm-integrations/multimodal-capabilities/vision-1.md">Doc</a></td></tr></tbody></table>
 
 ## Next Steps
 

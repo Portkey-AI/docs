@@ -76,7 +76,7 @@ In this configuration, `{{few_shot_examples}}` is a placeholder for the few-shot
 
 ### Deploying the Prompt with Portkey
 
-Deploying your prompt template to an API is extremely easy with Portkey. You can use our [Prompt Completions API](../../../api-reference/prompts/prompt-completion.md) to use the prompt we created.
+Deploying your prompt template to an API is extremely easy with Portkey. You can use our [Prompt Completions API](../../../endpoints/prompts/prompt-completion.md) to use the prompt we created.
 
 {% tabs %}
 {% tab title="Python" %}

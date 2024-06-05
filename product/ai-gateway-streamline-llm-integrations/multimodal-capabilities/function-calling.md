@@ -238,7 +238,7 @@ print(completion)
 {% endtab %}
 {% endtabs %}
 
-#### [API Reference](../../../api-reference/chat-completions.md#id-4.-functions)
+#### [API Reference](../../../endpoints/chat-completions.md#id-4.-functions)
 
 On completion, the request will get logged in the logs UI where the tools and functions can be viewed. Portkey will automatically format the JSON blocks in the input and output which makes a great debugging experience.
 

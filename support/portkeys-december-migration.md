@@ -1,4 +1,6 @@
-# Portkey's December Migration
+# December '23 Migration
+
+
 
 > **Date: 8th Dec, 2023**
 
@@ -300,16 +302,16 @@ main();
 {% endtab %}
 {% endtabs %}
 
-{% content-ref url="../api-reference/chat-completions.md" %}
-[chat-completions.md](../api-reference/chat-completions.md)
+{% content-ref url="../endpoints/chat-completions.md" %}
+[chat-completions.md](../endpoints/chat-completions.md)
 {% endcontent-ref %}
 
-{% content-ref url="../api-reference/completions.md" %}
-[completions.md](../api-reference/completions.md)
+{% content-ref url="../endpoints/completions.md" %}
+[completions.md](../endpoints/completions.md)
 {% endcontent-ref %}
 
-{% content-ref url="../api-reference/gateway-for-other-apis.md" %}
-[gateway-for-other-apis.md](../api-reference/gateway-for-other-apis.md)
+{% content-ref url="../endpoints/gateway-for-other-apis.md" %}
+[gateway-for-other-apis.md](../endpoints/gateway-for-other-apis.md)
 {% endcontent-ref %}
 
 ### Simlarly, for Prompts
@@ -355,8 +357,8 @@ print(prompt_completion)
 {% endtab %}
 {% endtabs %}
 
-{% content-ref url="../api-reference/prompts/" %}
-[prompts](../api-reference/prompts/)
+{% content-ref url="../endpoints/prompts/" %}
+[prompts](../endpoints/prompts/)
 {% endcontent-ref %}
 
 ***

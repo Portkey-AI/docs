@@ -365,7 +365,7 @@ Portkey's fast AI gateway captures the information about the request on your Por
 
 <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Log view for an image generation request on OpenAI</p></figcaption></figure>
 
-More information on image generation is available in the [API Reference](../../api-reference/completions-1.md#create-image).
+More information on image generation is available in the [API Reference](../../endpoints/completions-1.md#create-image).
 
 ### Audio - Transcription, Translation, and Text-to-Speech
 

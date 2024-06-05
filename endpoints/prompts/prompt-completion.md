@@ -6,37 +6,35 @@
 
 Creates a completion for the given prompt ID created in Portkey through the Prompts tab.
 
-{% swagger method="post" path="/prompts/:id/completions" baseUrl="https://api.portkey.ai/v1" summary="Creates a completion for the selected prompt ID" %}
-{% swagger-description %}
+## Creates a completion for the selected prompt ID
 
-{% endswagger-description %}
+<mark style="color:green;">`POST`</mark> `https://api.portkey.ai/v1/prompts/:id/completions`
 
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-The prompt ID to use for the completion request.
-{% endswagger-parameter %}
+#### Path Parameters
 
-{% swagger-parameter in="body" name="variables" type="Object" required="true" %}
-The variables mentioned in the prompt template being used
-{% endswagger-parameter %}
+| Name                                 | Type   | Description                                      |
+| ------------------------------------ | ------ | ------------------------------------------------ |
+| id<mark style="color:red;">\*</mark> | String | The prompt ID to use for the completion request. |
 
-{% swagger-parameter in="body" name="hyperparameters" type="Multiple" %}
-Add any hyperparameters to the request to override the ones set in the prompt definition
-{% endswagger-parameter %}
+#### Request Body
 
-{% swagger-parameter in="body" name="stream" type="boolean" %}
-Incrementally stream the response using server-sent events. Defaults to false
-{% endswagger-parameter %}
+| Name                                        | Type     | Description                                                                              |
+| ------------------------------------------- | -------- | ---------------------------------------------------------------------------------------- |
+| variables<mark style="color:red;">\*</mark> | Object   | The variables mentioned in the prompt template being used                                |
+| hyperparameters                             | Multiple | Add any hyperparameters to the request to override the ones set in the prompt definition |
+| stream                                      | boolean  | Incrementally stream the response using server-sent events. Defaults to false            |
 
-{% swagger-response status="200: OK" description="" %}
+{% tabs %}
+{% tab title="200: OK " %}
 
-{% endswagger-response %}
-{% endswagger %}
+{% endtab %}
+{% endtabs %}
 
 The API expects the prompt ID, prompt variables and optionally any hyperparameters to override for this request. It returns the [chat completion](../chat-completions.md) or [completion](../completions.md) object in the unified format which is OpenAI signature compliant.
 
 ## SDK Usage
 
-The `prompts.completions.create` method in the [Portkey SDK](../portkey-sdk-client.md) provides a way to generate a prompt completion.
+The `prompts.completions.create` method in the [Portkey SDK](../../api-reference/portkey-sdk-client.md) provides a way to generate a prompt completion.
 
 ### Method Signature
 

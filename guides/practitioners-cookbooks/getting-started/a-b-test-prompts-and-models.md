@@ -69,7 +69,7 @@ We've created a load balanced config that will route 50% of the traffic to each 
 
 ### 3. Make requests using this config
 
-Lets use this config to start making requests from our application. We will use the [prompt completions API](../../../api-reference/prompts/prompt-completion.md) to make the requests and add the config in our headers.
+Lets use this config to start making requests from our application. We will use the [prompt completions API](../../../endpoints/prompts/prompt-completion.md) to make the requests and add the config in our headers.
 
 {% tabs %}
 {% tab title="NodeJS" %}

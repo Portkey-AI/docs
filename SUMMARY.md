@@ -89,23 +89,26 @@
 
 * [Introduction](api-reference/introduction.md)
 * [Authentication](api-reference/authentication.md)
-* [Portkey API Headers](api-reference/portkey-api-headers.md)
-* [Portkey SDK Client](api-reference/portkey-sdk-client.md)
+* [Headers](api-reference/headers.md)
 * [Config Object](api-reference/config-object.md)
-* [Chat Completions](api-reference/chat-completions.md)
-* [Completions](api-reference/completions.md)
-* [Image Generation](api-reference/completions-1.md)
-* [Embeddings](api-reference/embeddings.md)
-* [Feedback](api-reference/feedback.md)
-* [Logs](api-reference/logs.md)
-* [Gateway for Other APIs](api-reference/gateway-for-other-apis.md)
 * [Response Schema](api-reference/response-schema.md)
-* [Prompts](api-reference/prompts/README.md)
-  * [Prompt Completion](api-reference/prompts/prompt-completion.md)
-  * [Render](api-reference/prompts/render.md)
-* [Guardrails](api-reference/evals.md)
-* [Virtual Keys](api-reference/virtual-keys.md)
-* [Configs](api-reference/configs.md)
+* [SDK](api-reference/portkey-sdk-client.md)
+
+## Endpoints
+
+* [Chat Completions](endpoints/chat-completions.md)
+* [Completions](endpoints/completions.md)
+* [Image Generation](endpoints/completions-1.md)
+* [Embeddings](endpoints/embeddings.md)
+* [Feedback](endpoints/feedback.md)
+* [Logs](endpoints/logs.md)
+* [Prompts](endpoints/prompts/README.md)
+  * [Prompt Completion](endpoints/prompts/prompt-completion.md)
+  * [Render](endpoints/prompts/render.md)
+* [Guardrails](endpoints/evals.md)
+* [Virtual Keys](endpoints/virtual-keys.md)
+* [Configs](endpoints/configs.md)
+* [Gateway for Other APIs](endpoints/gateway-for-other-apis.md)
 
 ## Guides
 
