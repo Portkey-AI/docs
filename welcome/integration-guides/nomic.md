@@ -6,8 +6,8 @@ Nomic has especially become popular due to it's superior embeddings and is now a
 
 With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) system.
 
-{% hint style="success" %}
-Provider Slug**:**<mark style="color:blue;">**`nomic`**</mark>
+{% hint style="info" %}
+Provider Slug**: **<mark style="color:blue;">**`nomic`**</mark>
 {% endhint %}
 
 ## Portkey SDK Integration with Nomic

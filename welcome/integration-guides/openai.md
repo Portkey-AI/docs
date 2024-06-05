@@ -20,8 +20,8 @@ layout:
 
 Portkey has native integrations with OpenAI SDKs for Node.js, Python, and its REST APIs. For OpenAI integration using other frameworks, explore our partnerships, including [Langchain](langchain-python.md), [LlamaIndex](llama-index-python.md), among [others](./).
 
-{% hint style="success" %}
-Provider Slug**:**<mark style="color:blue;">**`openai`**</mark>
+{% hint style="info" %}
+Provider Slug**: **<mark style="color:blue;">**`openai`**</mark>
 {% endhint %}
 
 ## Using the Portkey Gateway

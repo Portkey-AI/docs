@@ -4,8 +4,8 @@ Portkey provides a robust and secure gateway to facilitate the integration of va
 
 With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) system.
 
-{% hint style="success" %}
-Provider Slug**: **<mark style="color:blue;">**`together-ai`**</mark>
+{% hint style="info" %}
+Provider Slug**:  **<mark style="color:blue;">**`together-ai`**</mark>
 {% endhint %}
 
 ## Portkey SDK Integration with Together AI Models
