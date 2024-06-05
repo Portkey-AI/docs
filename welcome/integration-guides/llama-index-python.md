@@ -64,6 +64,9 @@ from llama_index.core.llms import ChatMessage
 </strong><strong>    }
 </strong><strong>}
 </strong>
+#### You can also reference a saved Config ####
+#### config = "pc-anthropic-xx"
+
 <strong>portkey = OpenAI(
 </strong><strong>    api_base=PORTKEY_GATEWAY_URL,
 </strong><strong>    default_headers=createHeaders(
@@ -104,6 +107,9 @@ for r in resp:
 </strong><strong>    }
 </strong><strong>}
 </strong>
+#### You can also reference a saved Config ####
+#### config = "pc-anthropic-xx"
+
 <strong>portkey = OpenAI(
 </strong><strong>    api_base=PORTKEY_GATEWAY_URL,
 </strong><strong>    default_headers=createHeaders(
@@ -139,6 +145,9 @@ from llama_index.llms.openai import OpenAI
 </strong><strong>    }
 </strong><strong>}
 </strong>
+#### You can also reference a saved Config ####
+#### config = "pc-anthropic-xx"
+
 async def main():
 <strong>    portkey = OpenAI(
 </strong><strong>        api_base=PORTKEY_GATEWAY_URL,
@@ -184,7 +193,60 @@ Head over to the Configs tab in Portkey app where you can save various provider 
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-06-01 at 00.18.08@2x.png" alt=""><figcaption></figcaption></figure>
 
-[**Explore Config documentation here**](../../product/ai-gateway-streamline-llm-integrations/configs.md).
+## Overriding a Saved Config
+
+If you want to use a saved Config from the Portkey app in your LlamaIndex code but need to modify certain parts of it before making a request, you can easily achieve this using Portkey's Configs API. This approach allows you to leverage the convenience of saved Configs while still having the flexibility to adapt them to your specific needs.
+
+#### Here's an example of how you can fetch a saved Config using the Configs API and override the `model` parameter:
+
+{% tabs %}
+{% tab title="Overriding Model in a Saved Config" %}
+<pre class="language-python"><code class="lang-python">from llama_index.llms.openai import OpenAI
+from llama_index.core.llms import ChatMessage
+from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
+import requests
+import os
+
+<strong>def create_config(config_slug,model):
+</strong><strong>    url = f'https://api.portkey.ai/v1/configs/{config_slug}'
+</strong><strong>    headers = {
+</strong><strong>        'x-portkey-api-key': os.environ.get("PORTKEY_API_KEY"),
+</strong><strong>        'content-type': 'application/json'
+</strong><strong>    }
+</strong><strong>    response = requests.get(url, headers=headers).json().get('data').get('config')
+</strong><strong>    response['override_params']['model']=model
+</strong><strong>    return response
+</strong>
+<strong>config=create_config("pc-llamaindex-xx","gpt-4-turbo")
+</strong>
+portkey = OpenAI(
+    api_base=PORTKEY_GATEWAY_URL,
+<strong>    default_headers=createHeaders(
+</strong><strong>        api_key=os.environ.get("PORTKEY_API_KEY"),
+</strong><strong>        config=config
+</strong><strong>    )
+</strong>)
+
+messages = [ChatMessage(role="user", content="1729")]
+
+resp = portkey.chat(messages)
+print(resp)
+
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+In this example:
+
+1. We define a helper function `get_customized_config` that takes a `config_slug` and a `model` as parameters.
+2. Inside the function, we make a GET request to the Portkey Configs API endpoint to fetch the saved Config using the provided `config_slug`.
+3. We extract the `config` object from the API response.
+4. We update the `model` parameter in the `override_params` section of the Config with the provided `custom_model`.
+5. Finally, we return the customized Config.
+
+We can then use this customized Config when initializing the OpenAI client from LlamaIndex, ensuring that our specific `model` override is applied to the saved Config.
+
+For more details on working with Configs in Portkey, refer to the [**Config documentation**.](../../product/ai-gateway-streamline-llm-integrations/configs.md)
 
 ***
 
