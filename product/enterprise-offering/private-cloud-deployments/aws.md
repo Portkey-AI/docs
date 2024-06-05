@@ -207,3 +207,51 @@ Ensure the Portkey control plane can access the service either over the internet
 **Through VPC Peering:**
 
 Set up VPC peering between your AWS account and the control plane's AWS account. Requires manual setup by Portkey Team.
+
+## Required Permissions
+
+To ensure the smooth operation of Portkey AI in your private cloud deployment on AWS, specific permissions are required based on the type of log store you are using. Below are the details for S3 or MongoDB compliant databases.
+
+**S3 Bucket**
+
+If using S3 as the log store, the following IAM policy permissions are required:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::YOUR_BUCKET_NAME",
+                "arn:aws:s3:::YOUR_BUCKET_NAME/*"
+            ]
+        }
+    ]
+}
+```
+
+Please replace `YOUR_BUCKET_NAME` with your actual bucket name.
+
+**MongoDB Compliant Database**
+
+If using a MongoDB compliant database, ensure the AI Gateway has access to the database. The database user should have following role:
+
+```json
+{
+    "roles": [
+        {
+            "role": "readWrite",
+            "db": "YOUR_DATABASE_NAME"
+        }
+    ]
+}
+```
+
+The `readWrite` role provides the necessary read and write access to the specified database. Please replace YOUR\_DATABASE\_NAME with your actual database name.
