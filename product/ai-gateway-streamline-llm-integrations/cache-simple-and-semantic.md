@@ -155,7 +155,84 @@ main()
 
 ***
 
+## Cache Namespace: Simplified Cache Partitioning
 
+Portkey generally partitions the cache along all the values passed in your request header. With a custom cache namespace, you can now ignore metadata and other headers, and only partition the cache based on the custom strings that you send.
+
+This allows you to have finer control over your cached data and optimize your cache hit ratio.
+
+### How It Works
+
+To use Cache Namespaces, simply include the `x-portkey-cache-namespace` header in your API requests, followed by any custom string value. Portkey will then use this namespace string as the sole basis for partitioning the cache, disregarding all other headers, including metadata.
+
+For example, if you send the following header:
+
+```bash
+"x-portkey-cache-namespace: user-123"
+```
+
+Portkey will cache the response under the namespace `user-123`, ignoring any other headers or metadata associated with the request.
+
+{% tabs %}
+{% tab title="Node" %}
+<pre class="language-typescript"><code class="lang-typescript">import Portkey from 'portkey-ai';
+
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY",
+    config: "pc-cache-xxx",
+    virtualKey: "open-ai-xxx"
+})
+
+async function main(){
+    const response = await portkey.chat.completions.create({
+        messages: [{ role: 'user', content: 'Hello' }],
+        model: 'gpt-4',
+    }, {
+<strong>        cacheNamespace: 'user-123'
+</strong>    });
+}
+
+main()
+</code></pre>
+
+In this example, the response will be cached under the namespace `user-123`, ignoring any other headers or metadata.
+{% endtab %}
+
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+    virtual_key="open-ai-xxx",
+    config="pp-cache-xxx" 
+)
+
+response = portkey.with_options(
+<strong>    cache_namespace = "user-123"
+</strong>).chat.completions.create(
+    messages = [{ "role": 'user', "content": 'Hello!' }],
+    model = 'gpt-4'
+)
+</code></pre>
+
+In this example, the response will be cached under the namespace `user-123`, ignoring any other headers or metadata.
+{% endtab %}
+
+{% tab title="REST" %}
+<pre class="language-bash"><code class="lang-bash">curl https://api.portkey.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+  -H "x-portkey-virtual-key: open-ai-xxx" \
+  -H "x-portkey-config: cache-config-xxx" \
+<strong>  -H "x-portkey-cache-namespace: user-123" \
+</strong>  -d '{
+    "messages": [{"role": "user","content": "Hello!"}]
+  }'
+</code></pre>
+
+In this example, the response will be cached under the namespace `user-123`, ignoring any other headers or metadata.
+{% endtab %}
+{% endtabs %}
 
 ***
 
