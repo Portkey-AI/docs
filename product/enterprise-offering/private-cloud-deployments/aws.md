@@ -254,4 +254,14 @@ If using a MongoDB compliant database, ensure the AI Gateway has access to the d
 }
 ```
 
-The `readWrite` role provides the necessary read and write access to the specified database. Please replace YOUR\_DATABASE\_NAME with your actual database name.
+The `readWrite` role provides the necessary read and write access to the specified database. Please replace `YOUR_DATABASE_NAME` with your actual database name.
+
+**Cache Store - Redis**
+
+The Portkey Gateway image ships with a redis installed. You can choose to use the inbuilt redis or connect to an outside Redis instance.
+
+1. **Redis as Part of the Image:**\
+   No additional permissions or networking configurations are required.
+2.  **Separate Redis Instance:**
+
+    The gateway requires permissions to perform read and write operations on the Redis instance. The redis connections can be configured with or without TLS.
