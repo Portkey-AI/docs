@@ -4,6 +4,10 @@ Portkey provides a robust and secure gateway to facilitate the integration of va
 
 With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) system.
 
+{% hint style="success" %}
+Provider Slug**:**<mark style="color:blue;">**`groq`**</mark>
+{% endhint %}
+
 ## Portkey SDK Integration with Groq Models
 
 Portkey provides a consistent API to interact with models from various providers. To integrate Groq with Portkey:

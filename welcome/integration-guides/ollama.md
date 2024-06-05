@@ -2,6 +2,10 @@
 
 Portkey provides a robust and secure gateway to facilitate the integration of various Large Language Models (LLMs) into your applications, including your **locally hosted models through Ollama**.
 
+{% hint style="success" %}
+Provider Slug**:**<mark style="color:blue;">**`ollama`**</mark>
+{% endhint %}
+
 ## Portkey SDK Integration with Ollama Models
 
 Portkey provides a consistent API to interact with models from various providers. To integrate Ollama with Portkey:

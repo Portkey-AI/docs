@@ -2,6 +2,10 @@
 
 Portkey provides a robust and secure gateway to seamlessly integrate **open-source** and **fine-tuned** LLMs from Predibase into your applications. With Portkey, you can leverage powerful features like fast AI gateway, caching, observability, prompt management, and more, while securely managing your LLM API keys through a virtual key system.
 
+{% hint style="success" %}
+Provider Slug**:**<mark style="color:blue;">**`predibase`**</mark>
+{% endhint %}
+
 ## Portkey SDK Integration with Predibase
 
 Using Portkey, you can call your Predibase models in the familar **OpenAI-spec** and try out your existing pipelines on Predibase fine-tuned models with 2 LOC change.

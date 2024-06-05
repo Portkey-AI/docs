@@ -8,6 +8,10 @@ description: >-
 
 Portkey's suite of features - AI gateway, observability, prompt management, and continuous fine-tuning are all enabled for the OSS models (Llama2, Mistral, Zephyr, and more) available on Anyscale endpoints.
 
+{% hint style="success" %}
+Provider Slug**: **<mark style="color:blue;">**`anyscale`**</mark>
+{% endhint %}
+
 ## Portkey SDK Integration with Anyscale
 
 ### **1. Install the Portkey SDK**
