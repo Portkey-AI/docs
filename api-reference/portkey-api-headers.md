@@ -26,8 +26,8 @@ In addition to the API key, you must provide information about the AI provider y
 Example:
 
 ```bash
-"x-portkey-provider: openai" \
-"Authorization: Bearer $OPENAI_API_KEY" \
+"x-portkey-provider: openai"
+"Authorization: Bearer $OPENAI_API_KEY"
 ```
 
 **2.2. Virtual Key (`x-portkey-virtual-key`)**
@@ -38,7 +38,7 @@ Example:
 Example:
 
 ```bash
-"x-portkey-virtual-key: your_virtual_key_here" \
+"x-portkey-virtual-key: your_virtual_key_here"
 ```
 
 **2.3. Config (`x-portkey-config`)**
@@ -50,13 +50,13 @@ Example:
 Example with JSON Object:
 
 ```bash
-'x-portkey-config: {"provider": "openai", "api_key": "OPENAI_API_KEY"}' \
+"x-portkey-config: {"provider": "openai", "api_key": "OPENAI_API_KEY"}"
 ```
 
 Example with Config ID:
 
 ```bash
-'x-portkey-config: pp-config-xx' \
+"x-portkey-config: pp-config-xx"
 ```
 
 **2.4. Custom Host (`x-portkey-custom-host`) + Provider (x-portkey-provider) + Authentication Header**
@@ -79,7 +79,7 @@ There are additional optional Portkey headers that enable various features and e
 Example:
 
 ```bash
-"x-portkey-trace-id: your_custom_trace_id" \
+"x-portkey-trace-id: your_custom_trace_id"
 ```
 
 #### 2. Metadata (`x-portkey-metadata`)
@@ -94,25 +94,59 @@ Example:
 
 #### 3. Cache Force Refresh (`x-portkey-cache-force-refresh`)
 
-* `x-portkey-cache-force-refresh`: Forces a cache refresh for your request by making a new API call and storing the updated value. See the caching documentation for more information.  ([Docs](../product/ai-gateway-streamline-llm-integrations/cache-simple-and-semantic.md))
+* `x-portkey-cache-force-refresh`: Forces a cache refresh for your request by making a new API call and storing the updated value. Expects `true` or `false` See the caching documentation for more information.  ([Docs](../product/ai-gateway-streamline-llm-integrations/cache-simple-and-semantic.md))
 
 Example:
 
 ```bash
-"x-portkey-cache-force-refresh: true" \
+"x-portkey-cache-force-refresh: true"
 ```
 
-#### 4. Forward Headers (`x-portkey-forward-headers`)
+#### 4. Cache Namespace (`x-portkey-cache-namespace`)
 
-* `x-portkey-forward-headers`: Allows you to forward sensitive headers directly to your model's API without any processing by Portkey. ([Docs](https://portkey.ai/docs/welcome/integration-guides/byollm#forward-sensitive-headers-securely))
+* `x-portkey-cache-namespace`: Partition your cache store based on custom strings, ignoring metadata and other headers.
 
 Example:
 
 ```bash
-"x-portkey-forward-headers: ["X-Custom-Header", "Another-Header"]" \
+"x-portkey-cache-namespace: any_string"
 ```
+
+#### 5. Forward Headers (`x-portkey-forward-headers`)
+
+* `x-portkey-forward-headers`: Allows you to forward sensitive headers directly to your model's API without any processing by Portkey. Expects an `array of strings`. ([Docs](https://portkey.ai/docs/welcome/integration-guides/byollm#forward-sensitive-headers-securely))
+
+Example:
+
+```bash
+"x-portkey-forward-headers: ["X-Custom-Header", "Another-Header"]"
+```
+
+#### 6. Cloud-Specific Headers (`Azure`, `Google`, `AWS`)
+
+* Pass more configuration headers for `Azure OpenAI`, `Google Vertex AI`, or `AWS Bedrock`
+
+**Azure**
+
+* `x-portkey-azure-resource-name`, `x-portkey-azure-deployment-id`, `x-portkey-azure-api-version`, `api-key`
+
+**Google Vertex AI**
+
+* `x-portkey-vertex-project-id`, `x-portkey-vertex-region`
+
+**AWS Bedrock**
+
+* `x-portkey-aws-session-token`, `x-portkey-aws-secret-access-key`, `x-portkey-aws-region`, `x-portkey-aws-session-token`
 
 ***
+
+## List of All Headers
+
+For a comprehensive list of all available parameters and their detailed descriptions, please refer to the Portkey SDK Client documentation.
+
+{% content-ref url="portkey-sdk-client.md" %}
+[portkey-sdk-client.md](portkey-sdk-client.md)
+{% endcontent-ref %}
 
 ## Using Headers in SDKs
 
@@ -167,9 +201,3 @@ completion = portkey.with_options(
 </code></pre>
 {% endtab %}
 {% endtabs %}
-
-For a comprehensive list of all available parameters and their detailed descriptions, please refer to the Portkey SDK Client documentation.
-
-{% content-ref url="portkey-sdk-client.md" %}
-[portkey-sdk-client.md](portkey-sdk-client.md)
-{% endcontent-ref %}

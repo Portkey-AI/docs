@@ -187,7 +187,7 @@ const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY",
 <strong>    provider: "azure-openai",
 </strong><strong>    azureResourceName: "AZURE_RESOURCE_NAME",
-</strong><strong>    azureDeploymendId: "AZURE_DEPLOYMENT_NAME",
+</strong><strong>    azureDeploymentId: "AZURE_DEPLOYMENT_NAME",
 </strong><strong>    azureApiVersion: "AZURE_API_VERSION",
 </strong><strong>    authorization: "Bearer API_KEY"
 </strong>})
@@ -201,7 +201,7 @@ portkey = Portkey(
     api_key = "PORTKEY_API_KEY",  
 <strong>    provider = "azure-openai",
 </strong><strong>    azure_resource_name = "AZURE_RESOURCE_NAME",
-</strong><strong>    azure_deploymend_id = "AZURE_DEPLOYMENT_NAME",
+</strong><strong>    azure_deployment_id = "AZURE_DEPLOYMENT_NAME",
 </strong><strong>    azure_api_version = "AZURE_API_VERSION",
 </strong><strong>    authorization = "Bearer API_KEY"
 </strong>)
