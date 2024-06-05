@@ -35,7 +35,7 @@
   * [Segmind](welcome/integration-guides/segmind.md)
   * [Stability AI](welcome/integration-guides/stability-ai.md)
   * [Together AI](welcome/integration-guides/together-ai.md)
-  * [ZhipuAI / ChatGLM / BigModel](welcome/integration-guides/predibase-1.md)
+  * [ZhipuAI / ChatGLM / BigModel](welcome/integration-guides/zhipu.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
 
 ## Product
