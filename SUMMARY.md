@@ -16,9 +16,10 @@
   * [Langchain (JS/TS)](welcome/integration-guides/langchain-js.md)
   * [LlamaIndex (Python)](welcome/integration-guides/llama-index-python.md)
   * [Autogen](welcome/integration-guides/autogen.md)
-  * [Promptfoo](welcome/integration-guides/promptfoo.md)
   * [Instructor](welcome/integration-guides/instructor.md)
+  * [Promptfoo](welcome/integration-guides/promptfoo.md)
   * [Vercel](welcome/integration-guides/vercel.md)
+  * [Bring Your Own LLM](welcome/integration-guides/byollm.md)
   * [Anyscale](welcome/integration-guides/anyscale-llama2-mistral-zephyr.md)
   * [Fireworks](welcome/integration-guides/fireworks.md)
   * [Cohere](welcome/integration-guides/cohere.md)
@@ -34,7 +35,7 @@
   * [Segmind](welcome/integration-guides/segmind.md)
   * [Stability AI](welcome/integration-guides/stability-ai.md)
   * [Together AI](welcome/integration-guides/together-ai.md)
-  * [Bring Your Own LLM](welcome/integration-guides/byollm.md)
+  * [ZhipuAI / ChatGLM / BigModel](welcome/integration-guides/predibase-1.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
 
 ## Product
