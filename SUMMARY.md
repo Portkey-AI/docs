@@ -145,6 +145,7 @@
   * [How to use OpenAI SDK with Portkey Prompt Templates](guides/use-cases/how-to-use-openai-sdk-with-portkey-prompt-templates.md)
   * [Setup OpenAI -> Azure OpenAI Fallback](guides/use-cases/setup-openai-greater-than-azure-openai-fallback.md)
   * [Fallback from SDXL to Dall-e-3](guides/use-cases/fallback-from-sdxl-to-dall-e-3.md)
+  * [Comparing Top10 LMSYS Models with Portkey](guides/use-cases/comparing-top10-lmsys-models-with-portkey.md)
 
 ## Support
 
