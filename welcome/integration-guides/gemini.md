@@ -104,8 +104,8 @@ Simply include your Gemini system prompt as part of the `{"role":"system"}` mess
 
 Portkey supports function calling mode on Google's Gemini Models. Explore this :arrow\_down: Cookbook for a deep dive and examples:
 
-{% content-ref url="../../guides/practitioners-cookbooks/getting-started/function-calling.md" %}
-[function-calling.md](../../guides/practitioners-cookbooks/getting-started/function-calling.md)
+{% content-ref url="../../guides/getting-started/function-calling.md" %}
+[function-calling.md](../../guides/getting-started/function-calling.md)
 {% endcontent-ref %}
 
 ## Managing Google Gemini Prompts

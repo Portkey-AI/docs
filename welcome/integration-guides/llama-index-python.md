@@ -252,7 +252,7 @@ For more details on working with Configs in Portkey, refer to the [**Config docu
 
 ## 1. Interoperability - Calling Anthropic, Gemini, Mistral, and more
 
-Now that we have the OpenAI code up and running, let's see how you can use Portkey to send the request across multiple LLMs - we'll show **Anthropic**, **Gemini**, and **Mistral**. For the full list of providers & LLMs supported, check out [**this doc**](../../guides/practitioners-cookbooks/integrations/).
+Now that we have the OpenAI code up and running, let's see how you can use Portkey to send the request across multiple LLMs - we'll show **Anthropic**, **Gemini**, and **Mistral**. For the full list of providers & LLMs supported, check out [**this doc**](../../guides/integrations/).
 
 Switching providers just requires **changing 3 lines of code:**
 
@@ -514,7 +514,7 @@ print(resp)
 {% endtab %}
 {% endtabs %}
 
-[**Explore full list of the providers supported on Portkey here**](../../guides/practitioners-cookbooks/integrations/).
+[**Explore full list of the providers supported on Portkey here**](../../guides/integrations/).
 
 ***
 
