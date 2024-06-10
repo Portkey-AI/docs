@@ -6,11 +6,11 @@ description: Integrate Portkey and analyze your first LLM call in 2 minutes!
 
 ## 1. Get your Portkey API Key
 
-[Create](https://app.portkey.ai/signup) or [log in](https://app.portkey.ai/login) to your Portkey account. Grab your account's API key in the menu on your profile icon.
+[Create](https://app.portkey.ai/signup) or [log in](https://app.portkey.ai/login) to your Portkey account. Grab your account's API key from the "Settings" page.
 
 <div align="left" data-full-width="false">
 
-<figure><img src="../.gitbook/assets/portkey_api_key.gif" alt="" width="563"><figcaption><p>Copy your Portkey account API key</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/New API Key.gif" alt="" width="563"><figcaption><p>Copy your Portkey account API key</p></figcaption></figure>
 
 </div>
 
