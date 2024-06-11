@@ -6,8 +6,8 @@ You can capture this feedback on a generation or conversation level and analyze 
 
 `POST /feedback`
 
-{% swagger src="../.gitbook/assets/openapi (5).yaml" path="/feedback" method="post" %}
-[openapi (5).yaml](<../.gitbook/assets/openapi (5).yaml>)
+{% swagger src="broken-reference" path="/feedback" method="post" %}
+[Broken file](broken-reference)
 {% endswagger %}
 
 The Feedback API allows you to gather weighted feedback from users on any generation or conversation at any stage within your app. By incorporating custom metadata, you can tag and analyze feedback more effectively.
@@ -82,8 +82,8 @@ send_feedback()
 
 `PUT /feedback/{id}`
 
-{% swagger src="../.gitbook/assets/openapi (5).yaml" path="/feedback/{id}" method="put" %}
-[openapi (5).yaml](<../.gitbook/assets/openapi (5).yaml>)
+{% swagger src="broken-reference" path="/feedback/{id}" method="put" %}
+[Broken file](broken-reference)
 {% endswagger %}
 
 The Update Feedback API allows you to update existing feedback details

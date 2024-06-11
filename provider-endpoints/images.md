@@ -12,7 +12,7 @@ layout:
     visible: true
 ---
 
-# Image Generation
+# Images
 
 ## Create Image
 
@@ -20,11 +20,9 @@ layout:
 
 Generate images using the selected provider and model
 
-{% swagger src="../.gitbook/assets/openapi.yaml" path="/images/generations" method="post" %}
-[openapi.yaml](../.gitbook/assets/openapi.yaml)
+{% swagger src="https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml" path="/images/generations" method="post" %}
+[https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml](https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml)
 {% endswagger %}
-
-
 
 Pass the config parameters for the request in the headers as defined [here](../product/ai-gateway-streamline-llm-integrations/configs.md).
 
@@ -137,7 +135,15 @@ curl "https://api.portkey.ai/v1/images/generations" \
 
 The response will conform to the Image Generation Object schema from the Portkey API, typically including the generated image based on the prompt and the selected model.
 
+***
 
+{% swagger src="https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml" path="/images/edits" method="post" %}
+[https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml](https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml)
+{% endswagger %}
+
+{% swagger src="https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml" path="/images/variations" method="post" %}
+[https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml](https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml)
+{% endswagger %}
 
 Reference:
 

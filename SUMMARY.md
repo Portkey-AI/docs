@@ -110,7 +110,6 @@
   * [Messages](provider-endpoints/assistants/messages.md)
   * [Runs](provider-endpoints/assistants/runs.md)
   * [Run Steps](provider-endpoints/assistants/run-steps.md)
-  * [Streaming](provider-endpoints/assistants/streaming.md)
 * [Completions](provider-endpoints/completions.md)
 * [Gateway for Other APIs](provider-endpoints/gateway-for-other-apis.md)
 

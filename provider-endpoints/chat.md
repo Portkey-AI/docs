@@ -6,8 +6,8 @@
 
 Generate a chat message completion from the selected LLM.
 
-{% swagger src="../.gitbook/assets/openapi.yaml" path="/chat/completions" method="post" expanded="false" %}
-[openapi.yaml](../.gitbook/assets/openapi.yaml)
+{% swagger src="https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml" path="/chat/completions" method="post" %}
+[https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml](https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml)
 {% endswagger %}
 
 The body is similar to the [chat completion request](https://platform.openai.com/docs/api-reference/chat/create) of OpenAI and the response will be the [Chat Completion Object](https://platform.openai.com/docs/api-reference/chat/object). When choosing `stream:true` the response will be a stream of [Chat Completion Chunk](https://platform.openai.com/docs/api-reference/chat/streaming) objects.

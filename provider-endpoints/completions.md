@@ -20,8 +20,8 @@ layout:
 
 Generate text completions using the selected Large Language Model (LLM).
 
-{% swagger src="../.gitbook/assets/openapi.yaml" path="/completions" method="post" %}
-[openapi.yaml](../.gitbook/assets/openapi.yaml)
+{% swagger src="https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml" path="/completions" method="post" %}
+[https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml](https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml)
 {% endswagger %}
 
 The [request body](https://platform.openai.com/docs/api-reference/completions/create) for this endpoint is structured to generate text completions based on a given prompt and model selection. The response will be a [Completion Object](https://platform.openai.com/docs/api-reference/completions/object).

@@ -6,8 +6,8 @@
 
 Generate embeddings using the selected Large Language Model (LLM).
 
-{% swagger src="../.gitbook/assets/openapi.yaml" path="/embeddings" method="post" %}
-[openapi.yaml](../.gitbook/assets/openapi.yaml)
+{% swagger src="https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml" path="/embeddings" method="post" %}
+[https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml](https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml)
 {% endswagger %}
 
 This endpoint allows you to generate embeddings for text inputs using a specific model. The response will be an Embedding Object consistent with [OpenAI's Embedding Object](https://platform.openai.com/docs/api-reference/embeddings/object) format.
@@ -113,4 +113,3 @@ get_embeddings_with_config()
 #### Response Format
 
 The response will conform to the Embedding Object schema from the Portkey API, typically including a list of embedding vectors consistent with the format provided by OpenAI for embedding objects.
-
