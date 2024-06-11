@@ -29,22 +29,22 @@ Portkey makes it easy to create prompts through the playground.
 We'll start by clicking **Create** on the **Prompts** **tab** and create the first prompt for OpenAI's gpt-3.5-turbo.
 
 {% hint style="info" %}
-You'll notice that I'd already created [virtual keys](../../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for OpenAI and Google in my account. You can create them by going to the **Virtual Keys** tab and adding your API keys to Portkey's vault - this also ensures that your original API keys remain secure.
+You'll notice that I'd already created [virtual keys](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for OpenAI and Google in my account. You can create them by going to the **Virtual Keys** tab and adding your API keys to Portkey's vault - this also ensures that your original API keys remain secure.
 {% endhint %}
 
 Let's start with a simple prompt. We can always improve it iteratively. You'll notice that we've added variables to it for `title` and `num_sections` which we'll populate through the API later on.
 
-<figure><img src="../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 Great, this is setup and ready now.&#x20;
 
 The gemini model doesn't need a `system` prompt, so we can ignore it and create a prompt like this.
 
-<figure><img src="../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Write the config for a 50-50 test
 
-To run the experiment, lets create a [config](../../../product/ai-gateway-streamline-llm-integrations/configs.md) in Portkey that can automatically route requests between these 2 prompts.
+To run the experiment, lets create a [config](../../product/ai-gateway-streamline-llm-integrations/configs.md) in Portkey that can automatically route requests between these 2 prompts.
 
 We pulled the `id` for both these prompts from our Prompts list page and will use them in our config. This is what it finally looks like.
 
@@ -65,11 +65,11 @@ We pulled the `id` for both these prompts from our Prompts list page and will us
 
 We've created a load balanced config that will route 50% of the traffic to each of the 2 prompt IDs mentioned in it. We can save this config and fetch its ID.
 
-<figure><img src="../../../.gitbook/assets/image (25).png" alt=""><figcaption><p>Create the config and fetch the ID</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption><p>Create the config and fetch the ID</p></figcaption></figure>
 
 ### 3. Make requests using this config
 
-Lets use this config to start making requests from our application. We will use the [prompt completions API](../../../endpoints/prompts/prompt-completion.md) to make the requests and add the config in our headers.
+Lets use this config to start making requests from our application. We will use the [prompt completions API](../../portkey-endpoints/prompts/prompt-completion.md) to make the requests and add the config in our headers.
 
 {% tabs %}
 {% tab title="NodeJS" %}
@@ -179,7 +179,7 @@ curl -X POST "https://api.portkey.ai/v1/feedback" \
 
 We can now compare the feedback for the 2 prompts from our feedback dashboard
 
-<figure><img src="../../../.gitbook/assets/prompt-ab (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/prompt-ab (1).gif" alt=""><figcaption></figcaption></figure>
 
 We find that the `gpt-3.5-turbo` prompt is at 4.71 average feedback after 20 attempts, while `gemini-pro` is at 4.11. While we definitely need more data and examples, let's assume for now that we wanted to start directing more traffic to it.
 

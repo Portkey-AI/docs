@@ -30,7 +30,7 @@ Creates a completion for the given prompt ID created in Portkey through the Prom
 {% endtab %}
 {% endtabs %}
 
-The API expects the prompt ID, prompt variables and optionally any hyperparameters to override for this request. It returns the [chat completion](../chat-completions.md) or [completion](../completions.md) object in the unified format which is OpenAI signature compliant.
+The API expects the prompt ID, prompt variables and optionally any hyperparameters to override for this request. It returns the [chat completion](../../provider-endpoints/chat.md) or [completion](../../provider-endpoints/completions.md) object in the unified format which is OpenAI signature compliant.
 
 ## SDK Usage
 

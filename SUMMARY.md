@@ -95,21 +95,35 @@
 * [Response Schema](api-reference/response-schema.md)
 * [SDK](api-reference/portkey-sdk-client.md)
 
-## Endpoints
+## Provider Endpoints
 
-* [Chat Completions](endpoints/chat-completions.md)
-* [Completions](endpoints/completions.md)
-* [Image Generation](endpoints/completions-1.md)
-* [Embeddings](endpoints/embeddings.md)
-* [Feedback](endpoints/feedback.md)
-* [Logs](endpoints/logs.md)
-* [Prompts](endpoints/prompts/README.md)
-  * [Prompt Completion](endpoints/prompts/prompt-completion.md)
-  * [Render](endpoints/prompts/render.md)
-* [Guardrails](endpoints/evals.md)
-* [Virtual Keys](endpoints/virtual-keys.md)
-* [Configs](endpoints/configs.md)
-* [Gateway for Other APIs](endpoints/gateway-for-other-apis.md)
+* [Chat](provider-endpoints/chat.md)
+* [Embeddings](provider-endpoints/embeddings.md)
+* [Images](provider-endpoints/images.md)
+* [Audio](provider-endpoints/audio.md)
+* [Fine-tuning](provider-endpoints/fine-tuning.md)
+* [Batch](provider-endpoints/batch.md)
+* [Files](provider-endpoints/files.md)
+* [Moderations](provider-endpoints/moderations.md)
+* [Assistants](provider-endpoints/assistants/README.md)
+  * [Threads](provider-endpoints/assistants/threads.md)
+  * [Messages](provider-endpoints/assistants/messages.md)
+  * [Runs](provider-endpoints/assistants/runs.md)
+  * [Run Steps](provider-endpoints/assistants/run-steps.md)
+  * [Streaming](provider-endpoints/assistants/streaming.md)
+* [Completions](provider-endpoints/completions.md)
+* [Gateway for Other APIs](provider-endpoints/gateway-for-other-apis.md)
+
+## Portkey Endpoints
+
+* [Configs](portkey-endpoints/configs.md)
+* [Feedback](portkey-endpoints/feedbacks.md)
+* [Guardrails](portkey-endpoints/guardrails.md)
+* [Logs](portkey-endpoints/logs.md)
+* [Prompts](portkey-endpoints/prompts/README.md)
+  * [Prompt Completion](portkey-endpoints/prompts/prompt-completion.md)
+  * [Render](portkey-endpoints/prompts/render.md)
+* [Virtual Keys](portkey-endpoints/virtual-keys.md)
 
 ## Guides
 
@@ -150,7 +164,7 @@
 ## Support
 
 * [Contact Us](support/contact-us.md)
-* [Join Portkey on Discord](support/join-portkey-on-discord.md)
+* [Developer Forum](support/developer-forum.md)
 * [Common Errors & Resolutions](support/common-errors-and-resolutions.md)
 * [December '23 Migration](support/portkeys-december-migration.md)
 * [Changelog](https://new.portkey.ai/)

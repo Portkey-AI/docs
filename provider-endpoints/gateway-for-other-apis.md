@@ -1,10 +1,10 @@
 # Gateway for Other APIs
 
-The LLM providers you're using might support other endpoints than the one's supported by Portkey. The gateway support directly proxying the requests for them.
+The LLM providers you're using might support other endpoints than the one's supported by Portkey. The gateway supports directly proxying the requests for them.
 
 #### You can call the endpoint by adding it after `https://api.portkey.ai/v1`
 
-We identify the provider and parameters needed based on the `mode` or the `virtual_key` passed in the header or the config object.
+We identify the provider and parameters needed based on the `provider` or the `virtual_key` passed in the header or in the config object.
 
 ### Example
 
@@ -22,7 +22,7 @@ curl --request POST \
      --header 'accept: application/json' \
      --header 'content-type: application/json' \
      --header 'x-portkey-api-key: $PORTKEY_API_KEY' \
-     --header 'x-portkey-virtual-key: $VIRTUAL_KEY' \
+     --header 'x-portkey-virtual-key: $COHERE_VIRTUAL_KEY' \
      --data '
 {
   "return_documents": false,
@@ -39,7 +39,7 @@ curl --request POST \
 '
 ```
 
-**Sample cURL request using mode**
+**Sample cURL request using provider**
 
 ```bash
 curl --request POST \

@@ -302,16 +302,16 @@ main();
 {% endtab %}
 {% endtabs %}
 
-{% content-ref url="../endpoints/chat-completions.md" %}
-[chat-completions.md](../endpoints/chat-completions.md)
+{% content-ref url="../provider-endpoints/chat.md" %}
+[chat.md](../provider-endpoints/chat.md)
 {% endcontent-ref %}
 
-{% content-ref url="../endpoints/completions.md" %}
-[completions.md](../endpoints/completions.md)
+{% content-ref url="../provider-endpoints/completions.md" %}
+[completions.md](../provider-endpoints/completions.md)
 {% endcontent-ref %}
 
-{% content-ref url="../endpoints/gateway-for-other-apis.md" %}
-[gateway-for-other-apis.md](../endpoints/gateway-for-other-apis.md)
+{% content-ref url="../provider-endpoints/gateway-for-other-apis.md" %}
+[gateway-for-other-apis.md](../provider-endpoints/gateway-for-other-apis.md)
 {% endcontent-ref %}
 
 ### Simlarly, for Prompts
@@ -357,8 +357,8 @@ print(prompt_completion)
 {% endtab %}
 {% endtabs %}
 
-{% content-ref url="../endpoints/prompts/" %}
-[prompts](../endpoints/prompts/)
+{% content-ref url="../portkey-endpoints/prompts/" %}
+[prompts](../portkey-endpoints/prompts/)
 {% endcontent-ref %}
 
 ***

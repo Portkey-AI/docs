@@ -100,4 +100,4 @@ You'll find more information in the relevant sections:
 2. [Add gateway configs to your Stability AI requests](../../product/ai-gateway-streamline-llm-integrations/configs.md)
 3. [Tracing Stability AI's requests](../../product/observability-modern-monitoring-for-llms/traces.md)
 4. [Setup a fallback from OpenAI to Stability](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md)
-5. [Image generation API Reference](../../endpoints/completions-1.md)
+5. [Image generation API Reference](../../provider-endpoints/images.md)

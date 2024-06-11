@@ -1,4 +1,4 @@
-# Chat Completions
+# Chat
 
 ## Create Chat Completion
 
@@ -6,7 +6,7 @@
 
 Generate a chat message completion from the selected LLM.
 
-{% swagger src="../.gitbook/assets/openapi.yaml" path="/chat/completions" method="post" %}
+{% swagger src="../.gitbook/assets/openapi.yaml" path="/chat/completions" method="post" expanded="false" %}
 [openapi.yaml](../.gitbook/assets/openapi.yaml)
 {% endswagger %}
 
@@ -38,7 +38,7 @@ portkey.with_options(**configParams).chat.completions.create(**requestParams);
 {% endtab %}
 {% endtabs %}
 
-For REST API examples, scroll [here](chat-completions.md#rest-api-example).
+For REST API examples, scroll [here](chat.md#rest-api-example).
 
 ### Parameters
 

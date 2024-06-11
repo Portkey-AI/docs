@@ -139,4 +139,4 @@ You'll find more information in the relevant sections:
 2. [Add gateway configs to your Segmind requests](../../product/ai-gateway-streamline-llm-integrations/configs.md)
 3. [Tracing Segmind's requests](../../product/observability-modern-monitoring-for-llms/traces.md)
 4. [Setup a fallback from OpenAI to Segmind](../../product/ai-gateway-streamline-llm-integrations/fallbacks.md)
-5. [Image generation API Reference](../../endpoints/completions-1.md)
+5. [Image generation API Reference](../../provider-endpoints/images.md)

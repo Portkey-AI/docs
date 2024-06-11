@@ -191,7 +191,7 @@ print(completion.choices)
 {% endtab %}
 {% endtabs %}
 
-For more, check out the [`chat completions`](../../endpoints/chat-completions.md) and [`completions`](../../endpoints/completions.md) API reference docs.
+For more, check out the [`chat completions`](../../provider-endpoints/chat.md) and [`completions`](../../provider-endpoints/completions.md) API reference docs.
 
 ## Using Anthropic Vision Models
 
