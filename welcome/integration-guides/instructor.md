@@ -79,7 +79,7 @@ console.log(user);
 {% endtab %}
 {% endtabs %}
 
-### Caching Your Reuqests
+### Caching Your Requests
 
 Let's now bring down the cost of running your Instructor pipeline with Portkey caching. You can just create a Config object where you define your cache setting:
 
