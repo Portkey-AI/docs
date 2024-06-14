@@ -24,7 +24,7 @@ Generate images using the selected provider and model
 [https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml](https://raw.githubusercontent.com/Portkey-AI/openapi/master/openapi.yaml)
 {% endswagger %}
 
-Pass the config parameters for the request in the headers as defined [here](../product/ai-gateway-streamline-llm-integrations/configs.md).
+Pass the config parameters for the request in the headers as defined [here](../../product/ai-gateway-streamline-llm-integrations/configs.md).
 
 Portkey automatically transforms the parameters for image models according the parameters accepted by them.
 
@@ -147,4 +147,4 @@ The response will conform to the Image Generation Object schema from the Portkey
 
 Reference:
 
-[Image generation using OpenAI](../welcome/integration-guides/openai.md#image-generation)
+[Image generation using OpenAI](../../welcome/integration-guides/openai.md#image-generation)
