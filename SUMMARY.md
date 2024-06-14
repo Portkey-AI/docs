@@ -100,6 +100,7 @@
 * [Chat](provider-endpoints/chat.md)
 * [Embeddings](provider-endpoints/embeddings.md)
 * [Images](provider-endpoints/images/README.md)
+  * [Create Image](provider-endpoints/images/create-image.md)
   * [Create Image Edit](provider-endpoints/images/create-image-edit.md)
   * [Create Image Variation](provider-endpoints/images/create-image-variation.md)
 * [Audio](provider-endpoints/audio/README.md)

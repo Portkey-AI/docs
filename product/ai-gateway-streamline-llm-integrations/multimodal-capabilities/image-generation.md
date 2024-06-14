@@ -125,8 +125,8 @@ curl "https://api.portkey.ai/v1/chat/completions" \
 
 #### API Reference
 
-{% content-ref url="../../../provider-endpoints/images/" %}
-[images](../../../provider-endpoints/images/)
+{% content-ref url="../../../provider-endpoints/images/create-image.md" %}
+[create-image.md](../../../provider-endpoints/images/create-image.md)
 {% endcontent-ref %}
 
 On completion, the request will get logged in the logs UI where the image can be viewed.&#x20;
