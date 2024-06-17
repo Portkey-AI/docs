@@ -1,20 +1,7 @@
 # Enterprise Offering
 
-## Portkey Enterprise Features
+<table><thead><tr><th width="58" align="right"></th><th></th></tr></thead><tbody><tr><td align="right">☁️</td><td><strong>Private Cloud Deployments</strong><br>Deploy Portkey in your own private cloud for enhanced security and control</td></tr><tr><td align="right">🗓️</td><td><strong>Custom Retention Periods</strong><br>Set custom retention periods for different users to meet your data storage requirements</td></tr><tr><td align="right">💳</td><td><strong>Budget Limits on Keys</strong><br>Set monthly or custom budget limits on LLM usage, at provider or Portkey key level</td></tr><tr><td align="right">⏱️</td><td><strong>Custom Rate Limits</strong><br>Programatically set rate limits at API key level and prevent abuse</td></tr><tr><td align="right">🚦</td><td><strong>Advanced Routing</strong><br>Route requests based on your custom-defined criteria</td></tr><tr><td align="right">🗄️</td><td><strong>Data Isolation</strong><br>Ensure the highest level of data privacy &#x26; security with isolated storage infra</td></tr><tr><td align="right">📑</td><td><strong>SOC 2, GDPR, ISO27001, HIPAA Compliances &#x26; Certificates</strong><br>Portkey complies with the most demanding industry standards so you don't have to</td></tr><tr><td align="right">🤝</td><td><strong>Custom BAAs</strong><br>Protect sensitive healthcare data with BAAs tailored to your org's requirements</td></tr><tr><td align="right">🔒</td><td><strong>SSO (Okta, Microsoft, etc)</strong><br>Portkey has seamless integrations with your preferred Single Sign-On (SSO) providers</td></tr><tr><td align="right">❄️</td><td><strong>Export to Data lakes</strong><br>Easily export all your data to your preferred data lake for long-term storage</td></tr><tr><td align="right">∞</td><td><strong>Unlimited Prompts</strong><br>Create &#x26; manage an unlimited prompt templates on Portkey</td></tr><tr><td align="right">⏰</td><td><strong>Unlimited Cache TTL</strong><br>Leverage unlimited caching with customizable Time-to-Live (TTL) settings</td></tr></tbody></table>
 
-|                                                         |
-| ------------------------------------------------------- |
-| Private Cloud Deployments                               |
-| Unlimited Logs and Custom Retention Periods             |
-| Budget Limits on Keys                                   |
-| Custom Rate Limits                                      |
-| Advanced Routing                                        |
-| Data Isolation                                          |
-| SOC 2, GDPR, ISO27001, HIPAA Compliances & Certificates |
-| Custom BAAs                                             |
-| SSO (Okta, Microsoft, etc)                              |
-| Export to Data lakes                                    |
-| Unlimited Prompts                                       |
-| Unlimited Cache TTL                                     |
+## Interested? Schedule a Call Below
 
-<table data-view="cards"><thead><tr><th></th><th data-type="content-ref"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h2>Chat with us</h2></td><td></td><td><a href="https://calendly.com/rohit-portkey/noam">https://calendly.com/rohit-portkey/noam</a></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
+{% embed url="https://calendly.com/rohit-portkey/noam" %}
