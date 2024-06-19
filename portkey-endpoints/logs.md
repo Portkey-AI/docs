@@ -14,30 +14,26 @@ layout:
 
 # Logs
 
-{% hint style="success" %}
-This API is an Enterprise only API. Please reach out to us at hello@portkey.ai to enable it for your use case
-{% endhint %}
-
 ## Create a Log
 
-`POST /v1/logs`
+API Reference: `POST /v1/logs`
 
 Stores a log object into the Portkey log store
 
 The log object being stored in Portkey follows a specific format comprising of 3 parts:
 
 1. **`request`** containing
-    - `url`
-    - `provider`
-    - `headers`,
-    - `method` (defaults to `post`)
-    - `body`
-2. **`response`** containing 
-    - `status` (defaults to 200)
-    - `headers`
-    - `body`
-    - `time` (response latency)
-    -  `streamingMode` (defaults to false)
+   * `url`
+   * `provider`
+   * `headers`,
+   * `method` (defaults to `post`)
+   * `body`
+2. **`response`** containing
+   * `status` (defaults to 200)
+   * `headers`
+   * `body`
+   * `time` (response latency)
+   * `streamingMode` (defaults to false)
 3. **`metadata`** containing organization, user and request specific information including the `traceId` and `spanId` optionally.
 
 ```javascript
@@ -80,3 +76,4 @@ The log object being stored in Portkey follows a specific format comprising of 3
 ### Response Format
 
 The API will respond with a `200` acknowledging that the log has been stored and will be available on your dashboard soon.
+

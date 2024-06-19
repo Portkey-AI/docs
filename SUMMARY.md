@@ -160,14 +160,25 @@
 
 ## Portkey Endpoints
 
-* [Configs](portkey-endpoints/configs.md)
-* [Feedback](portkey-endpoints/feedbacks.md)
+* [Configs](portkey-endpoints/configs/README.md)
+  * [Create Config](portkey-endpoints/configs/create-config.md)
+  * [List Configs](portkey-endpoints/configs/list-configs.md)
+  * [Retrieve Config](portkey-endpoints/configs/retrieve-config.md)
+  * [Update Config](portkey-endpoints/configs/update-config.md)
+* [Feedback](portkey-endpoints/feedbacks/README.md)
+  * [Create Feedback](portkey-endpoints/feedbacks/create-feedback.md)
+  * [Update Feedback](portkey-endpoints/feedbacks/update-feedback.md)
 * [Guardrails](portkey-endpoints/guardrails.md)
 * [Logs](portkey-endpoints/logs.md)
 * [Prompts](portkey-endpoints/prompts/README.md)
   * [Prompt Completion](portkey-endpoints/prompts/prompt-completion.md)
   * [Render](portkey-endpoints/prompts/render.md)
-* [Virtual Keys](portkey-endpoints/virtual-keys.md)
+* [Virtual Keys](portkey-endpoints/virtual-keys/README.md)
+  * [Create Virtual Key](portkey-endpoints/virtual-keys/create-virtual-key.md)
+  * [List Virtual Keys](portkey-endpoints/virtual-keys/list-virtual-keys.md)
+  * [Retrieve Virtual Key](portkey-endpoints/virtual-keys/retrieve-virtual-key.md)
+  * [Update Virtual Key](portkey-endpoints/virtual-keys/update-virtual-key.md)
+  * [Delete Virtual Key](portkey-endpoints/virtual-keys/delete-virtual-key.md)
 
 ## Guides
 

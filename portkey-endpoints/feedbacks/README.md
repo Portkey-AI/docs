@@ -4,13 +4,11 @@ Feedback in Portkey provide a simple way to get weighted feedback from customers
 
 You can capture this feedback on a generation or conversation level and analyze it based on custom tags by adding meta data to the relevant request.
 
-`POST /feedback`
-
-{% swagger src="broken-reference" path="/feedback" method="post" %}
-[Broken file](broken-reference)
-{% endswagger %}
-
 The Feedback API allows you to gather weighted feedback from users on any generation or conversation at any stage within your app. By incorporating custom metadata, you can tag and analyze feedback more effectively.
+
+## API Reference
+
+[Create Feedback](create-feedback.md) | [Update Feedback](update-feedback.md)
 
 ## SDK Usage
 
@@ -79,11 +77,5 @@ send_feedback()
 ```
 {% endtab %}
 {% endtabs %}
-
-`PUT /feedback/{id}`
-
-{% swagger src="broken-reference" path="/feedback/{id}" method="put" %}
-[Broken file](broken-reference)
-{% endswagger %}
 
 The Update Feedback API allows you to update existing feedback details
