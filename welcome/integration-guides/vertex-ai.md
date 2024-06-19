@@ -54,6 +54,21 @@ portkey = Portkey(
 </strong>)
 </code></pre>
 {% endtab %}
+
+{% tab title="OpenAI Node SDK" %}
+<pre class="language-typescript"><code class="lang-typescript">import OpenAI from "openai";
+import { PORTKEY_GATEWAY_URL, createHeaders } from "portkey-ai";
+
+const portkey = new OpenAI({
+  baseURL: PORTKEY_GATEWAY_URL,
+  defaultHeaders: createHeaders({
+    apiKey: "PORTKEY_API_KEY",
+<strong>    virtualKey: "PORTKEY_VERTEX_VIRTUAL_KEY",
+</strong><strong>    authorization: "Bearer $GCLOUD AUTH PRINT-ACCESS-TOKEN"
+</strong>  }),
+});
+</code></pre>
+{% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
@@ -87,6 +102,21 @@ console.log(chatCompletion.choices);
 
 print(completion)
 </code></pre>
+{% endtab %}
+
+{% tab title="OpenAI Node SDK" %}
+```typescript
+async function main() {
+  const response = await portkey.chat.completions.create({
+    messages: [{ role: "user", content: "1729" }],
+    model: "gemini-1.5-flash-001",
+    max_tokens: 128,
+  });
+  console.log(response.choices[0].message.content);
+}
+
+main();
+```
 {% endtab %}
 {% endtabs %}
 
@@ -148,6 +178,35 @@ completion = portkey.chat.completions.create(
 )
 
 print(completion)
+</code></pre>
+{% endtab %}
+
+{% tab title="OpenAI Node SDK" %}
+<pre class="language-typescript"><code class="lang-typescript">import OpenAI from "openai";
+import { PORTKEY_GATEWAY_URL, createHeaders } from "portkey-ai";
+
+const portkey = new OpenAI({
+  baseURL: PORTKEY_GATEWAY_URL,
+  defaultHeaders: createHeaders({
+    apiKey: "PORTKEY_API_KEY",
+<strong>    provider: "vertex-ai",
+</strong><strong>    vertexRegion: "us-central1",
+</strong><strong>    vertexProjectId: "xxx"
+</strong><strong>    authorization: "Bearer $GCLOUD AUTH PRINT-ACCESS-TOKEN",
+</strong>    // forwardHeaders: ["authorization"] // You can also directly forward the auth token to Google
+  }),
+});
+
+async function main() {
+  const response = await portkey.chat.completions.create({
+    messages: [{ role: "user", content: "1729" }],
+    model: "gemini-1.5-flash-001",
+    max_tokens: 32,
+  });
+  console.log(response.choices[0].message.content);
+}
+
+main();
 </code></pre>
 {% endtab %}
 
