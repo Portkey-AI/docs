@@ -179,6 +179,17 @@
   * [Retrieve Virtual Key](portkey-endpoints/virtual-keys/retrieve-virtual-key.md)
   * [Update Virtual Key](portkey-endpoints/virtual-keys/update-virtual-key.md)
   * [Delete Virtual Key](portkey-endpoints/virtual-keys/delete-virtual-key.md)
+* [Admin](portkey-endpoints/admin/README.md)
+  * [Users](portkey-endpoints/admin/users/README.md)
+    * [Retrieve a User](portkey-endpoints/admin/users/retrieve-a-user.md)
+    * [Retrieve All Users](portkey-endpoints/admin/users/retrieve-all-users.md)
+    * [Update a User](portkey-endpoints/admin/users/update-a-user.md)
+    * [Remove a User](portkey-endpoints/admin/users/remove-a-user.md)
+  * [User Invites](portkey-endpoints/admin/user-invites/README.md)
+    * [Invite a User](portkey-endpoints/admin/user-invites/invite-a-user.md)
+    * [Retrieve an Invite](portkey-endpoints/admin/user-invites/retrieve-an-invite.md)
+    * [Retrieve All User Invites](portkey-endpoints/admin/user-invites/retrieve-all-user-invites.md)
+    * [Delete a User Invite](portkey-endpoints/admin/user-invites/delete-a-user-invite.md)
 
 ## Guides
 
