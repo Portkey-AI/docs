@@ -59,36 +59,28 @@ These can be stored & fetched from a vault as well
 
 ```yaml
 environment:
+  ...
   data:
-    SERVICE_NAME: "gateway_enterprise"
-    PORTKEY_CLIENT_AUTH: "<client key shared by Portkey>"
-    PORTKEY_ORGANISATION_ID: "<your_organisation_id>"
-    ORGANISATIONS_TO_SYNC="<comma separated if multiple>"
-    LOG_STORE: "<your_log_store>"
-    # If you're using MongoDB as Logs Store
-    MONGO_DB_CONNECTION_URL: "<your_mongo_db_url>"
-    MONGO_DATABASE: "<your_mongo_db>"
-    MONGO_COLLECTION_NAME: "<your_mongo_collection>"
-    # If you're using GCS as Logs Store
-    GCS_BUCKET: "<your_gcs_bucket>"
-    GCS_CREDENTIALS_JSON: "<your_gcs_credentials_json>"
-    # Analytics Store credentials shared by Portkey
-    ANALYTICS_STORE: "<your_analytics_store>"
-    ANALYTICS_STORE_USER: "<your_clickhouse_user>"
-    ANALYTICS_STORE_PASSWORD: "<your_clickhouse_password>"
-    ANALYTICS_STORE_HOST: "<your_clickhouse_host>"
-    ANALYTICS_STORE_TABLE: "<your_clickhouse_log_table>"
-    ANALYTICS_STORE_FEEDBACK_TABLE: "<your_clickhouse_feedback_table>"
-    # Your cache details
-    CACHE_STORE: "<your_cache_store>"
-    REDIS_URL: "<your_redis_url>"
-    REDIS_TLS_ENABLED: "<true or false>"
-    # For semantic cache, when using Pinecone
-    PINECONE_NAMESPACE="<your_pinecone_namespace>"
-    PINECONE_INDEX_HOST="<pinecode_index_host>"
-    PINECONE_API_KEY="<pinecone>"       
-    SEMCACHE_OPENAI_EMBEDDINGS_API_KEY="<open_ai_key_for_embeddings>"
-    SEMCACHE_OPENAI_EMBEDDINGS_MODEL= "text-embedding-3-small"
+    SERVICE_NAME: 
+    LOG_STORE: 
+    MONGO_DB_CONNECTION_URL: 
+    MONGO_DATABASE: 
+    MONGO_COLLECTION_NAME: 
+    LOG_STORE_REGION: 
+    LOG_STORE_ACCESS_KEY: 
+    LOG_STORE_SECRET_KEY: 
+    LOG_STORE_GENERATIONS_BUCKET: 
+    ANALYTICS_STORE: 
+    ANALYTICS_STORE_ENDPOINT: 
+    ANALYTICS_STORE_USER: 
+    ANALYTICS_STORE_PASSWORD: 
+    ANALYTICS_LOG_TABLE: 
+    ANALYTICS_FEEDBACK_TABLE: 
+    CACHE_STORE: 
+    REDIS_URL: 
+    REDIS_TLS_ENABLED: 
+    PORTKEY_CLIENT_AUTH: 
+    ORGANISATIONS_TO_SYNC: 
 ```
 
 **Notes on the Log Store**
@@ -109,8 +101,10 @@ MONGO_COLLECTION_NAME:
 If the `LOG_STORE` is `gcs`, the following values are mandatory:
 
 ```yaml
-GCS_BUCKET:
-GCS_CREDENTIALS_JSON:
+LOG_STORE_REGION: 
+LOG_STORE_ACCESS_KEY: 
+LOG_STORE_SECRET_KEY: 
+LOG_STORE_GENERATIONS_BUCKET: 
 ```
 
 _You need to generate the Access Key and Secret Key from the respective providers._
@@ -129,6 +123,13 @@ REDIS_TLS_ENABLED:
 **Notes on Analytics Store**
 
 This is hosted in Portkey’s control plane and these credentials will be shared by the Portkey team.
+
+The following are mandatory and are shared by the Portkey Team.
+
+```
+PORTKEY_CLIENT_AUTH:
+ORGANISATIONS_TO_SYNC:
+```
 
 ### Step 3: Deploy Using Helm Charts
 

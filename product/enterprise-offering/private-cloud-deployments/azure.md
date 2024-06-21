@@ -100,23 +100,24 @@ environment:
 
 `LOG_STORE` can be:
 
-* Azure Blob Storage (`azure`)
-* Azure Cosmos DB (`cosmos`)
+* `s3`, for Azure Blob Storage
+* `mongo`, for Azure Cosmos DB
 
-If the `LOG_STORE` is `cosmos`, the following environment variables are needed:
+If the `LOG_STORE` is `mongo`, the following environment variables are needed:
 
 ```yaml
-COSMOS_DB_CONNECTION_URL: 
-COSMOS_DATABASE:
-COSMOS_COLLECTION_NAME:
+MONGO_DB_CONNECTION_URL: 
+MONGO_DATABASE:
+MONGO_COLLECTION_NAME:
 ```
 
-If the `LOG_STORE` is `azure`, the following values are mandatory:
+If the `LOG_STORE` is `s3`, the following values are mandatory:
 
 ```yaml
-AZURE_STORAGE_ACCOUNT_NAME:
-AZURE_STORAGE_ACCOUNT_KEY:
-AZURE_CONTAINER_NAME:
+LOG_STORE_REGION: 
+LOG_STORE_ACCESS_KEY: 
+LOG_STORE_SECRET_KEY: 
+LOG_STORE_GENERATIONS_BUCKET:
 ```
 
 _You need to generate the Access Key and Secret Key from the respective providers._
@@ -135,6 +136,13 @@ REDIS_TLS_ENABLED:
 **Notes on Analytics Store**
 
 This is hosted in Portkey’s control plane and these credentials will be shared by the Portkey team.
+
+The following are mandatory and are shared by the Portkey Team.
+
+```
+PORTKEY_CLIENT_AUTH:
+ORGANISATIONS_TO_SYNC:
+```
 
 ### Step 3: Deploy Using Helm Charts
 
