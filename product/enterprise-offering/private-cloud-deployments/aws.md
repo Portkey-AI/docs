@@ -47,38 +47,28 @@ The Portkey team will share the credentials for your image
 
 ```yaml
 environment:
+  ...
   data:
-    SERVICE_NAME: "gateway_enterprise"
-    PORTKEY_CLIENT_AUTH: "<client key shared by Portkey>"
-    PORTKEY_ORGANISATION_ID: "<your_organisation_id>"
-    ORGANISATIONS_TO_SYNC="<comma separated if multiple>"
-    LOG_STORE: "<your_log_store>"
-    # If you're using MongoDB as Logs Store
-    MONGO_DB_CONNECTION_URL: "<your_mongo_db_url>"
-    MONGO_DATABASE: "<your_mongo_db>"
-    MONGO_COLLECTION_NAME: "<your_mongo_collection>"
-    # If you're using S3-compatible store as Logs Store
-    S3_REGION: "<your_s3_region>"
-    S3_ACCESS_KEY: "<your_s3_access_key>"
-    S3_SECRET_KEY: "<your_s3_secret_key>"
-    S3_GENERATIONS_BUCKET: "<your_s3_bucket>"
-    # Analytics Store credentials shared by Portkey
-    ANALYTICS_STORE: "<your_analytics_store>"
-    ANALYTICS_STORE_USER: "<your_clickhouse_user>"
-    ANALYTICS_STORE_PASSWORD: "<your_clickhouse_password>"
-    ANALYTICS_STORE_HOST: "<your_clickhouse_host>"
-    ANALYTICS_STORE_TABLE: "<your_clickhouse_log_table>"
-    ANALYTICS_STORE_FEEDBACK_TABLE: "<your_clickhouse_feedback_table>"
-    # Your cache details
-    CACHE_STORE: "<your_cache_store>"
-    REDIS_URL: "<your_redis_url>"
-    REDIS_TLS_ENABLED: "<true or false>"
-    # For semantic cache, when using Pinecone
-    PINECONE_NAMESPACE="<your_pinecone_namespace>"
-    PINECONE_INDEX_HOST="<pinecode_index_host>"
-    PINECONE_API_KEY="<pinecone>"       
-    SEMCACHE_OPENAI_EMBEDDINGS_API_KEY="<open_ai_key_for_embeddings>"
-    SEMCACHE_OPENAI_EMBEDDINGS_MODEL= "text-embedding-3-small"
+    SERVICE_NAME: 
+    LOG_STORE: 
+    MONGO_DB_CONNECTION_URL: 
+    MONGO_DATABASE: 
+    MONGO_COLLECTION_NAME: 
+    LOG_STORE_REGION: 
+    LOG_STORE_ACCESS_KEY: 
+    LOG_STORE_SECRET_KEY: 
+    LOG_STORE_GENERATIONS_BUCKET: 
+    ANALYTICS_STORE: 
+    ANALYTICS_STORE_ENDPOINT: 
+    ANALYTICS_STORE_USER: 
+    ANALYTICS_STORE_PASSWORD: 
+    ANALYTICS_LOG_TABLE: 
+    ANALYTICS_FEEDBACK_TABLE: 
+    CACHE_STORE: 
+    REDIS_URL: 
+    REDIS_TLS_ENABLED: 
+    PORTKEY_CLIENT_AUTH: 
+    ORGANISATIONS_TO_SYNC: 
 ```
 
 **Notes on the Log Store** `LOG_STORE` can be
@@ -97,10 +87,10 @@ MONGO_COLLECTION_NAME:
 If the `LOG_STORE` is `s3` or `wasabi` or `gcs`, the following values are mandatory
 
 ```
-S3_REGION:
-S3_ACCESS_KEY:
-S3_SECRET_KEY:
-S3_GENERATIONS_BUCKET:
+LOG_STORE_REGION: 
+LOG_STORE_ACCESS_KEY: 
+LOG_STORE_SECRET_KEY: 
+LOG_STORE_GENERATIONS_BUCKET:
 ```
 
 All the above mentioned are S3 Compatible document storages and interoperable with S3 API. You need to generate the `Access Key` and `Secret Key` from the respective providers.
@@ -117,6 +107,15 @@ REDIS_TLS_ENABLED:
 `REDIS_URL` defaults to `redis://redis:6379` and `REDIS_TLS_ENABLED` defaults to `false`.
 
 **Notes on Analytics Store** This is hosted in Portkey’s control plane and these credentials will be shared by the Portkey team.
+
+
+
+The following are mandatory and are shared by the Portkey Team.
+
+```
+PORTKEY_CLIENT_AUTH:
+ORGANISATIONS_TO_SYNC:
+```
 
 ### Step 3: Deploy using Helm Charts
 
