@@ -190,6 +190,17 @@
     * [Retrieve an Invite](portkey-endpoints/admin/user-invites/retrieve-an-invite.md)
     * [Retrieve All User Invites](portkey-endpoints/admin/user-invites/retrieve-all-user-invites.md)
     * [Delete a User Invite](portkey-endpoints/admin/user-invites/delete-a-user-invite.md)
+  * [Workspaces](portkey-endpoints/admin/workspaces/README.md)
+    * [Create Workspace](portkey-endpoints/admin/workspaces/create-workspace.md)
+    * [Retrieve All Workspaces](portkey-endpoints/admin/workspaces/retrieve-all-workspaces.md)
+    * [Retrieve a Workspace](portkey-endpoints/admin/workspaces/retrieve-a-workspace.md)
+    * [Update Workspace](portkey-endpoints/admin/workspaces/update-workspace.md)
+  * [Workspace Members](portkey-endpoints/admin/workspace-members/README.md)
+    * [Add a Workspace Member](portkey-endpoints/admin/workspace-members/add-a-workspace-member.md)
+    * [Retrieve All Workspace Members](portkey-endpoints/admin/workspace-members/retrieve-all-workspace-members.md)
+    * [Retrieve a Workspace Member](portkey-endpoints/admin/workspace-members/retrieve-a-workspace-member.md)
+    * [Update Workspace Member](portkey-endpoints/admin/workspace-members/update-workspace-member.md)
+    * [Remove Workspace Member](portkey-endpoints/admin/workspace-members/remove-workspace-member.md)
 
 ## Guides
 
