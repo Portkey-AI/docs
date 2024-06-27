@@ -193,7 +193,7 @@ const portkey = new Portkey({
 </strong><strong>    azureResourceName: "AZURE_RESOURCE_NAME",
 </strong><strong>    azureDeploymentId: "AZURE_DEPLOYMENT_NAME",
 </strong><strong>    azureApiVersion: "AZURE_API_VERSION",
-</strong><strong>    authorization: "Bearer API_KEY"
+</strong><strong>    Authorization: "Bearer API_KEY"
 </strong>})
 </code></pre>
 {% endtab %}
@@ -207,7 +207,7 @@ portkey = Portkey(
 </strong><strong>    azure_resource_name = "AZURE_RESOURCE_NAME",
 </strong><strong>    azure_deployment_id = "AZURE_DEPLOYMENT_NAME",
 </strong><strong>    azure_api_version = "AZURE_API_VERSION",
-</strong><strong>    authorization = "Bearer API_KEY"
+</strong><strong>    Authorization = "Bearer API_KEY"
 </strong>)
 </code></pre>
 {% endtab %}

@@ -5,7 +5,7 @@ Portkey provides a robust and secure gateway to facilitate the integration of va
 With Portkey, you can take advantage of features like fast AI gateway access, observability, prompt management, and more, all while ensuring the secure management of your LLM API keys through a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) system.
 
 {% hint style="info" %}
-Provider Slug**: **<mark style="color:blue;">**`gemini`**</mark>
+Provider Slug**: **<mark style="color:blue;">**`google`**</mark>
 {% endhint %}
 
 ## Portkey SDK Integration with Google Gemini Models

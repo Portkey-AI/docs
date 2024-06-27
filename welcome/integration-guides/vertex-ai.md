@@ -149,7 +149,7 @@ const portkey = new Portkey({
 <strong>    vertexProjectId: "sample-55646",
 </strong><strong>    vertexRegion: "us-central1",
 </strong><strong>    provider:"vertex_ai",
-</strong><strong>    authorization: "VERTEX_AI_ACCESS_TOKEN"
+</strong><strong>    Authorization: "$GCLOUD AUTH PRINT-ACCESS-TOKEN"
 </strong>})
 
 const chatCompletion = await portkey.chat.completions.create({
@@ -169,7 +169,7 @@ portkey = Portkey(
 <strong>    vertex_project_id="sample-55646",
 </strong><strong>    vertex_region="us-central1",
 </strong><strong>    provider="vertex_ai",
-</strong><strong>    authorization="VERTEX_AI_ACCESS_TOKEN"
+</strong><strong>    Authorization="$GCLOUD AUTH PRINT-ACCESS-TOKEN"
 </strong>)
 
 completion = portkey.chat.completions.create(
@@ -192,7 +192,7 @@ const portkey = new OpenAI({
 <strong>    provider: "vertex-ai",
 </strong><strong>    vertexRegion: "us-central1",
 </strong><strong>    vertexProjectId: "xxx"
-</strong><strong>    authorization: "Bearer $GCLOUD AUTH PRINT-ACCESS-TOKEN",
+</strong><strong>    Authorization: "Bearer $GCLOUD AUTH PRINT-ACCESS-TOKEN",
 </strong>    // forwardHeaders: ["authorization"] // You can also directly forward the auth token to Google
   }),
 });
