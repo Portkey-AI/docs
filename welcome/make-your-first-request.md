@@ -66,7 +66,7 @@ Portkey is ISO:27001 and SOC 2 certified. We're also GDPR compliant. This is pro
 
 If you're still worried about your data passing through Portkey, we recommend one of the below options:
 
-1. On request, we can enable a feature that does NOT store any of your request and response boby objects in the Portkey datastores or our logs.
+1. On request, we can enable a feature that does NOT store any of your request and response body objects in the Portkey datastores or our logs.
 2. For enterprises, we offer managed hosting to deploy Portkey inside private clouds.
 
 If you need to talk about these options, feel free to drop us a note on hello@portkey.ai
@@ -85,6 +85,6 @@ We do not impose **any explicit timeout** for our free OR paid plans currently. 
 
 Yes! We support registrations with Microsoft accounts - this is currently in beta. Please reach out on support@portkey.ai or [request on Discord](https://discord.gg/kXYKpPGasJ) for access to MS login.
 
-### Where can I reach you you?
+### Where can I reach you?
 
 We're available all the time on [Discord](https://discord.gg/DD7vgKK299), or on our support email - support@portkey.ai
