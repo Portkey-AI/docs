@@ -101,43 +101,43 @@ const chatCompletion = await portkey.chat.completions.create({
     max_tokens: 250 // Required field for Anthropic
 });
 
-console.log(chatCompletion.choices);
+console.log(chatCompletion.choices[0].message.content);
 ```
 {% endtab %}
 
 {% tab title="Python SDK" %}
 ```python
-completion = portkey.chat.completions.create(
+chat_completion = portkey.chat.completions.create(
     messages= [{ "role": 'user', "content": 'Say this is a test' }],
     model= 'claude-3-opus-20240229',
     max_tokens=250 # Required field for Anthropic
 )
     
-print(completion.choices)
+print(chat_completion.choices[0].message.content)
 ```
 {% endtab %}
 
 {% tab title="OpenAI Python SDK" %}
 ```python
-message = client.chat.completions.create(
+chat_completion = client.chat.completions.create(
     messages = [{ "role": 'user', "content": 'Say this is a test' }],
     model = 'claude-3-opus-20240229',
     max_tokens = 250
 )
 
-print(message.content)
+print(chat_completion.choices[0].message.content)
 ```
 {% endtab %}
 
 {% tab title="OpenAI Node SDK" %}
 ```typescript
 async function main() {
-    const msg = await client.chat.completions.create({
+    const chatCompletion = await client.chat.completions.create({
         model: "claude-3-opus-20240229",
         max_tokens: 1024,
         messages: [{ role: "user", content: "Hello, Claude" }],
     });
-    console.log(msg);
+    console.log(chatCompletion.choices[0].message.content);
 }
 
 main();
