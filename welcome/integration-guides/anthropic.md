@@ -21,23 +21,11 @@ Add the Portkey SDK to your application to interact with Anthropic's API through
 ```bash
 npm install --save portkey-ai
 ```
-
-And if you want to use Portkey with the Anthropic SDK,
-
-```bash
-npm install @anthropic-ai/sdk
-```
 {% endtab %}
 
 {% tab title="Python" %}
 ```bash
 pip install portkey-ai
-```
-
-And if you want to use Portkey with the Anthropic SDK,
-
-```bash
-pip install anthropic
 ```
 {% endtab %}
 {% endtabs %}
@@ -73,7 +61,7 @@ portkey = Portkey(
 <pre class="language-python"><code class="lang-python">from openai import OpenAI
 <strong>from portkey_ai import PORTKEY_GATEWAY_URL, createHeaders
 </strong>
-client = Portkey(
+client = OpenAI(
     api_key="ANTHROPIC_API_KEY",
 <strong>    base_url=PORTKEY_GATEWAY_URL,
 </strong><strong>    default_headers=createHeaders(
