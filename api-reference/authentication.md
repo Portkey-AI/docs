@@ -4,11 +4,7 @@ To ensure secure access to Portkey's APIs, authentication is required for all re
 
 ## Obtaining Your API Key
 
-Your Portkey API key is the primary credential for authentication. To find it:
-
-1. Log in to your Portkey account.
-2. Navigate to the dropdown menu in the profile section.
-3. Locate and copy your API key.
+[Create](https://app.portkey.ai/signup) or [log in](https://app.portkey.ai/login) to your Portkey account. Grab your account's API key from the "Settings" page -> "API Keys" tab.
 
 ## Authentication with SDKs
 

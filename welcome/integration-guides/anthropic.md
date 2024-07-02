@@ -183,7 +183,7 @@ For more, check out the [`chat completions`](../../provider-endpoints/chat.md) a
 
 ## Using Anthropic Vision Models
 
-Portkey's multimodal Gateway fully supports Anthropic's vision models `claude-3-sonnet`, `claude-3-haiku`, and `claude-3-opus`
+Portkey's multimodal Gateway fully supports Anthropic's vision models `claude-3-sonnet`, `claude-3-haiku`,  `claude-3-opus`, and the newest `claude-3.5-sonnet`.
 
 For more info, check out this guide:
 
