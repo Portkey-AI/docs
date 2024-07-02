@@ -4,6 +4,10 @@ description: Easily access your Portkey logs data for further analysis and repor
 
 # Logs Export
 
+{% hint style="success" %}
+Logs export feature is only available for [**Portkey Pro**](https://portkey.ai/pricing) users.
+{% endhint %}
+
 At Portkey, we understand the importance of data analysis and reporting for businesses and teams. That's why we provide a comprehensive logs export feature for our paid users. With this feature, you can easily request and obtain your Portkey logs data in a **structured JSON** format, allowing you to gain valuable insights into your LLM usage, performance, costs, and more.
 
 ## Requesting Logs Export
@@ -13,9 +17,7 @@ To submit a data export request, simply follow these steps:
 1. Ensure you are an admin of your organization on Portkey.
 2. Send an email to [support@portkey.ai](mailto:support@portkey.ai) with the subject line `Logs Export - [Your_Organization_Name]`.
 3. In the email body,
-   * Specify the **time frame** for which you require the logs data.&#x20;
-     * **Dev plan** supports logs export of **last 3** days
-     * **Pro plan** supports logs export of **last 30** days
+   * Specify the **time frame** for which you require the logs data. **Pro plan** supports logs export of **last 30** days.
    * Share names of the **specific columns** you require (see the "[Exported Data](logs-export.md#exported-data)" section below for a complete list of available columns).
 4. Our team will process your request and provide you with the exported logs data in JSON format.
 
