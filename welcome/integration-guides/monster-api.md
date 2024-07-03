@@ -100,9 +100,7 @@ Once you're ready with your prompt, you can use the `portkey.prompts.completions
 
 ## Supported Models
 
-<table><thead><tr><th width="302">Model Name</th><th>Model String to Use in API calls</th></tr></thead><tbody><tr><td>TinyLlama 1.1B</td><td><code>TinyLlama/TinyLlama-1.1B-Chat-v1.0</code></td></tr><tr><td>Phi3</td><td><code>microsoft/Phi-3-mini-4k-instruct</code></td></tr><tr><td>Mistral 7B Instruct</td><td><code>mistralai/Mistral-7B-Instruct-v0.2</code></td></tr><tr><td>Llama 3 8B</td><td><code>meta-llama/Meta-Llama-3-8B-Instruct</code></td></tr></tbody></table>
-
-[For the latest list of supported models, please refer to the Monster API documentation](https://developer.monsterapi.ai/reference/generate\_v1\_generate\_post).
+[Find the latest list of supported models here.](https://llm.monsterapi.ai/docs)
 
 ## Next Steps
 
