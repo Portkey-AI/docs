@@ -23,6 +23,7 @@
   * [Anyscale](welcome/integration-guides/anyscale-llama2-mistral-zephyr.md)
   * [Fireworks](welcome/integration-guides/fireworks.md)
   * [Cohere](welcome/integration-guides/cohere.md)
+  * [Deepinfra](welcome/integration-guides/deepinfra.md)
   * [Google Palm](welcome/integration-guides/google-palm.md)
   * [Jina AI](welcome/integration-guides/jina-ai.md)
   * [LocalAI](welcome/integration-guides/local-ai.md)
