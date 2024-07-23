@@ -92,12 +92,13 @@
 * [Introduction](api-reference/introduction.md)
 * [Authentication](api-reference/authentication.md)
 * [Headers](api-reference/headers.md)
-* [Config Object](api-reference/config-object.md)
 * [Response Schema](api-reference/response-schema.md)
+* [Gateway Config Object](api-reference/config-object.md)
 * [SDK](api-reference/portkey-sdk-client.md)
 
 ## Provider Endpoints
 
+* [Supported Providers](provider-endpoints/supported-providers.md)
 * [Chat](provider-endpoints/chat.md)
 * [Embeddings](provider-endpoints/embeddings.md)
 * [Images](provider-endpoints/images/README.md)
