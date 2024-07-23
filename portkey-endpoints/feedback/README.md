@@ -59,7 +59,7 @@ await sendFeedback();
 
 {% tab title="Python" %}
 ```python
-from portkey import Portkey
+from portkey_ai import Portkey
 
 # Initialize the Portkey client
 portkey = Portkey(
@@ -69,8 +69,8 @@ portkey = Portkey(
 # Send feedback
 def send_feedback():
     portkey.feedback.create(
-        'trace_id'= 'REQUEST_TRACE_ID',
-        'value'= 0  # For thumbs down
+        trace_id= 'REQUEST_TRACE_ID',
+        value= 0  # For thumbs down
     )
 
 send_feedback()
