@@ -4,9 +4,70 @@ Manage unpredictable LLM latencies effectively with Portkey's **Request Timeouts
 
 ## Enabling Request Timeouts
 
-You can enable request timeouts by setting them in Configs. Request timeouts are set at either (1) strategy level, or (2) target level.
+You can enable request timeouts while **making your request** or you can **set them in Configs**.&#x20;
 
-Use the `request_timeout` parameter, and specify the time in **milliseconds** (`integer)`&#x20;
+{% hint style="info" %}
+Request timeouts are specified in **milliseconds** (`integer)`&#x20;
+{% endhint %}
+
+### While Making Request
+
+Set request timeout while instantiating your Portkey client or if you're using the REST API, send the `x-portkey-request-timeout` header.
+
+{% tabs %}
+{% tab title="Python" %}
+<pre class="language-python"><code class="lang-python">from portkey_ai import Portkey
+
+# Construct a client with a virtual key
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+    virtual_key="VIRTUAL_KEY",
+<strong>    request_timeout=3000
+</strong>)
+
+completion = portkey.chat.completions.create(
+    messages = [{ "role": 'user', "content": 'Say this is a test' }],
+    model = 'gpt-4o-mini'
+)
+</code></pre>
+{% endtab %}
+
+{% tab title="Node" %}
+<pre class="language-javascript"><code class="lang-javascript">import Portkey from 'portkey-ai';
+
+// Construct a client with a virtual key
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY",
+    virtualKey: "VIRTUAL_KEY",
+<strong>    requestTimeout: 3000
+</strong>})
+
+const chatCompletion = await portkey.chat.completions.create({
+    messages: [{ role: 'user', content: 'Say this is a test' }],
+    model: 'gpt-4o-mini',
+});
+
+console.log(chatCompletion.choices);
+</code></pre>
+{% endtab %}
+
+{% tab title="REST" %}
+<pre class="language-bash"><code class="lang-bash">curl "https://api.portkey.ai/v1/chat/completions" \
+  -H "Content-Type: application/json" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+  -H "x-portkey-virtual-key: openai-virtual-key" \
+<strong>  -H "x-portkey-request-timeout:5000" \
+</strong>  -d '{
+    "model": "gpt-4o-mini",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+</code></pre>
+{% endtab %}
+{% endtabs %}
+
+### With Configs
+
+In Configs, request timeouts are set at either (1) strategy level, or (2) target level.
 
 For a 10-second timeout, it will be:
 
@@ -118,4 +179,4 @@ While the request timeout is a powerful feature to help you gracefully handle un
 
 1. Ensure that you are setting reasonable timeouts - for example, models like `gpt-4` often have sub-10-second response times
 2. Ensure that you gracefully handle 408 errors for whenever a request does get timed out - you can inform the user to rerun their query and setup some neat interactions on your app
-3. For streaming requests, the timeout will not be triggered if it gets atleast a chunk before the specified duration.
+3. For streaming requests, the timeout will not be triggered if it gets **atleast a chunk** before the specified duration.
