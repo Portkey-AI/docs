@@ -1,4 +1,4 @@
-# AI Gateway - Streamline LLM Integrations
+# AI Gateway
 
 Portkey provides the world's fastest multimodal AI gateway that enables working with multiple LLM providers as well as different modalities very easy. The gateway providers features to improve your app's reliability, cost efficiency and accuracy.
 
@@ -23,6 +23,10 @@ npx @portkey-ai/gateway
 ```
 
 [**Contribute here**](https://github.com/portkey-ai/gateway).
+
+{% hint style="success" %}
+While you're here, why not [give us a star](https://github.com/Portkey-AI/gateway)? It helps us a lot!
+{% endhint %}
 
 <figure><img src="../../.gitbook/assets/Rubeus Social Share (2).png" alt=""><figcaption></figcaption></figure>
 

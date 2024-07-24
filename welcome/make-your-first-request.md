@@ -16,7 +16,7 @@ description: Integrate Portkey and analyze your first LLM call in 2 minutes!
 
 ## 2. Integrate Portkey
 
-Portkey offers a variety of integration options, including SDKs, REST APIs, and native connections with platforms like OpenAI, Langchain, and LlamaIndex, among others.&#x20;
+Portkey offers a variety of integration options, including SDKs, REST APIs, and native connections with platforms like OpenAI, Langchain, and LlamaIndex, among others.
 
 ### Through the OpenAI SDK
 
@@ -40,7 +40,7 @@ Once, the integration is ready, you can view the requests reflect on your Portke
 
 ### Other Integration Guides
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Azure OpenAI</h4></td><td><a href="integration-guides/azure-openai.md">azure-openai.md</a></td></tr><tr><td><h4>Anthropic</h4></td><td><a href="integration-guides/anthropic.md">anthropic.md</a></td></tr><tr><td><h4>Langchain</h4></td><td><a href="integration-guides/langchain-python.md">langchain-python.md</a></td></tr><tr><td><h4>LlamaIndex</h4></td><td><a href="integration-guides/llama-index-python.md">llama-index-python.md</a></td></tr><tr><td><h4>Ollama</h4></td><td><a href="broken-reference">Broken link</a></td></tr><tr><td><h4>Others</h4></td><td><a href="../provider-endpoints/gateway-for-other-apis.md">gateway-for-other-apis.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Azure OpenAI</strong></td><td><a href="integration-guides/azure-openai.md">azure-openai.md</a></td></tr><tr><td><strong>Anthropic</strong></td><td><a href="integration-guides/anthropic.md">anthropic.md</a></td></tr><tr><td><strong>Langchain</strong></td><td><a href="integration-guides/langchain-python.md">langchain-python.md</a></td></tr><tr><td><strong>LlamaIndex</strong></td><td><a href="integration-guides/llama-index-python.md">llama-index-python.md</a></td></tr><tr><td><strong>Ollama</strong></td><td><a href="broken-reference/">broken-reference</a></td></tr><tr><td><strong>Others</strong></td><td><a href="../provider-endpoints/gateway-for-other-apis.md">gateway-for-other-apis.md</a></td></tr></tbody></table>
 
 ## 3. Next Steps
 
@@ -49,6 +49,10 @@ Now that you're up and running with Portkey, you can dive into the various Portk
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-type="content-ref"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Observability</td><td><a href="../product/observability-modern-monitoring-for-llms/">observability-modern-monitoring-for-llms</a></td><td></td></tr><tr><td>AI Gateway</td><td></td><td><a href="../product/ai-gateway-streamline-llm-integrations/">ai-gateway-streamline-llm-integrations</a></td></tr><tr><td>Prompt Library</td><td></td><td><a href="../product/prompt-library.md">prompt-library.md</a></td></tr><tr><td>Autonomous Fine-Tuning</td><td></td><td><a href="../product/autonomous-fine-tuning.md">autonomous-fine-tuning.md</a></td></tr></tbody></table>
 
 ***
+
+{% hint style="success" %}
+While you're here, why not [give us a star](https://github.com/Portkey-AI/gateway)? It helps us a lot!
+{% endhint %}
 
 ## FAQs
 
