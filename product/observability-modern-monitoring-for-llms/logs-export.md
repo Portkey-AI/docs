@@ -5,7 +5,7 @@ description: Easily access your Portkey logs data for further analysis and repor
 # Logs Export
 
 {% hint style="success" %}
-Logs export feature is only available for [**Portkey Pro**](https://portkey.ai/pricing) users.
+Logs export feature is only available for [**Pro**](https://portkey.ai/pricing)[**duction**](https://portkey.ai/pricing) and [**Enterpris**](https://portkey.ai/docs/product/enterprise-offering)[**e**](https://portkey.ai/docs/product/enterprise-offering) users.
 {% endhint %}
 
 At Portkey, we understand the importance of data analysis and reporting for businesses and teams. That's why we provide a comprehensive logs export feature for our paid users. With this feature, you can easily request and obtain your Portkey logs data in a **structured JSON** format, allowing you to gain valuable insights into your LLM usage, performance, costs, and more.

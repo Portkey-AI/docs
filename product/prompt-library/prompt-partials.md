@@ -1,5 +1,9 @@
 # Prompt Partials
 
+{% hint style="success" %}
+This feature is available on all Portkey [plans](https://portkey.ai/pricing).
+{% endhint %}
+
 With Prompt Partials, you can save your commonly used templates (which could be your instruction set, data structure explanation, examples etc.) separately from your prompts and flexibly incorporate them wherever required.
 
 Partials can also serve as a global variable store. You can define common variables that are used across multiple of your prompt template and can reference or update them easily.

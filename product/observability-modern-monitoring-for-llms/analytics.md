@@ -1,5 +1,13 @@
 # Analytics
 
+{% hint style="success" %}
+This feature is available for all plans:-
+
+* [Developer](https://app.portkey.ai/): 30 days retention
+* [Production](https://app.portkey.ai/): 365 days retention
+* [Enterprise](https://portkey.ai/docs/product/enterprise-offering): Unlimited
+{% endhint %}
+
 As soon as you integrate Portkey, you can start to view detailed & real-time analytics on cost, latency and accuracy across all your LLM requests.
 
 The analytics dashboard provides an interactive interface to understand your LLM application  Here, you can see various graphs and metrics related to requests to different LLMs, costs, latencies, tokens, user activity, feedback, cache hits, errors, and much more.

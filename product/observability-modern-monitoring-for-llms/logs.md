@@ -1,5 +1,13 @@
 # Logs
 
+{% hint style="success" %}
+This feature is available for all plans:-
+
+* [Developer](https://app.portkey.ai/): 10k Logs / Month with 3 day Log Retention
+* [Production](https://app.portkey.ai/): 100k Logs / Month + $9 for additional 100k  with 30 Days Log Retention
+* [Enterprise](https://portkey.ai/docs/product/enterprise-offering): Unlimited
+{% endhint %}
+
 The Logs section presents a chronological list of all the requests processed through Portkey. Each log entry provides useful data such as the timestamp, request type, LLM used, tokens generated, and cost. For [multimodal models](../ai-gateway-streamline-llm-integrations/multimodal-capabilities/), Logs will also show the image sent with vision/image models, as well as the image generated.
 
 By clicking on an entry, a side panel opens up, revealing the entire raw data with the request and response objects.

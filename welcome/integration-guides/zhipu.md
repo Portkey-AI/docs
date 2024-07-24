@@ -30,7 +30,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Create a virtual key in the Portkey vault by adding your ZhipuAI API key. Then, initialize the Portkey client with your virtual key:
+To use ZhipuAI / ChatGLM / BigModel with Portkey, [get your API key from here](https://bigmodel.cn/usercenter/apikeys), then add it to Portkey to create the virtual key.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}

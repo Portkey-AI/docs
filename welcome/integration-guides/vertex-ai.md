@@ -32,7 +32,11 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for Vertex AI in the UI.
+To integrate Vertex AI with Portkey, you'll need your **`Vertex Project Id`** & **`Vertex Region`**, with which you can set up the Virtual key.
+
+[Here's a guide on how to find your Vertex Project details](vertex-ai.md#how-to-find-your-google-vertex-credentials).&#x20;
+
+If you are integrating through Service Account File, [refer to this guide](vertex-ai.md#get-your-vertex-service-account-json).
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -228,6 +232,23 @@ main();
 {% endtabs %}
 
 For further questions on custom Vertex AI deployments or fine-grained access tokens, reach out to us on support@portkey.ai
+
+***
+
+## How to Find Your Google Vertex Project Details
+
+To obtain your **Vertex Project ID and Region,** [navigate to Google Vertex Dashboard](https://console.cloud.google.com/vertex-ai).&#x20;
+
+* You can copy the **Project ID** located at the top left corner of your screen.&#x20;
+* Find the **Region dropdown** on the same page to get your Vertex Region.
+
+<figure><img src="../../.gitbook/assets/Portkey Group (7).png" alt=""><figcaption></figcaption></figure>
+
+### **Get Your Vertex Service Account JSON**
+
+* [Follow this process](https://cloud.google.com/iam/docs/keys-create-delete) to get your Service Account JSON.
+
+***
 
 ## Next Steps
 

@@ -1,5 +1,11 @@
 # Cache (Simple & Semantic)
 
+{% hint style="success" %}
+**Semantic** caching is available for [**Production**](https://portkey.ai/pricing) and [**Enterprise**](https://portkey.ai/docs/product/enterprise-offering) users.&#x20;
+
+**Simple** caching is available for all plans.
+{% endhint %}
+
 Speed up and save money on your LLM requests by storing past responses in the Portkey cache. There are 2 cache modes:
 
 * **Simple:** Matches requests verbatim. Perfect for repeated, identical prompts. Works on **all models** including image generation models.

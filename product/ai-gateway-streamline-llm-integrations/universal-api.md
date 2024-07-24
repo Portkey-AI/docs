@@ -1,5 +1,9 @@
 # Universal API
 
+{% hint style="success" %}
+This feature is available on all Portkey plans.
+{% endhint %}
+
 Portkey's Universal API provides a consistent interface to integrate a wide range of modalities (text, vision, audio) and LLMs (hosted OR local) into your apps. So, instead of maintaining separate integrations for different multimodal LLMs, you can interact with models from OpenAI, Anthropic, Meta, Cohere, Mistral, and many more (100+ models, 15+ providers) - all  using a common, unified API signature.
 
 ### Portkey Follows OpenAI Spec

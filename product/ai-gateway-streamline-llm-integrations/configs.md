@@ -1,5 +1,9 @@
 # Configs
 
+{% hint style="success" %}
+This feature is available on all Portkey plans.
+{% endhint %}
+
 Configs streamline your Gateway management, enabling you to programmatically control various aspects like fallbacks, load balancing, retries, caching, and more.&#x20;
 
 A configuration is a JSON object that can be used to define routing rules for all the requests coming to your gateway. You can configure multiple configs and use them in your requests.

@@ -38,7 +38,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for MonsterAPI in the UI.
+To use Monster API with Portkey, [get your API key from here,](https://monsterapi.ai/user/dashboard) then add it to Portkey to create the virtual key.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -49,17 +49,6 @@ const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY", // defaults to process.env["PORTKEY_API_KEY"]
     virtualKey: "VIRTUAL_KEY" // Your MonsterAPI Virtual Key
 })
-```
-{% endtab %}
-
-{% tab title="Python SDK" %}
-```python
-from portkey_ai import Portkey
-
-portkey = Portkey(
-    api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    virtual_key="VIRTUAL_KEY"   # Replace with your virtual key for MonsterAPI
-)
 ```
 {% endtab %}
 {% endtabs %}

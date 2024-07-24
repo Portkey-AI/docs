@@ -1,5 +1,9 @@
 # Request Timeouts
 
+{% hint style="success" %}
+This feature is available on all Portkey [plans](https://portkey.ai/pricing).
+{% endhint %}
+
 Manage unpredictable LLM latencies effectively with Portkey's **Request Timeouts**. This feature allows automatic termination of requests that exceed a specified duration, letting you gracefully handle errors or make another, faster request.&#x20;
 
 ## Enabling Request Timeouts

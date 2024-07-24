@@ -32,7 +32,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for Groq in the UI.
+To use Groq with Portkey, [get your API key from here](https://console.groq.com/keys), then add it to Portkey to create the virtual key.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -100,8 +100,6 @@ Once you're ready with your prompt, you can use the `portkey.prompts.completions
 | Llama3 70B   | `llama3-70b-8192`                |
 | Mixtral 8x7b | `mixtral-8x7b-32768`             |
 | Gemma 7b     | `gemma-7b-it`                    |
-
-## Next Steps
 
 The complete list of features supported in the SDK are available on the link below.
 

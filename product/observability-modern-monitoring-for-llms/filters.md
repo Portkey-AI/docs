@@ -1,5 +1,9 @@
 # Filters
 
+{% hint style="success" %}
+This feature is available on all Portkey plans.
+{% endhint %}
+
 You can filter analytics & logs by the following parameters:
 
 1. **Model Used**: The AI provider and the model used.

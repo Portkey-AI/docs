@@ -1,5 +1,9 @@
 # Feedback
 
+{% hint style="success" %}
+This feature is available on all Portkey plans.
+{% endhint %}
+
 Portkey's Feedback APIs provide a simple way to get weighted feedback from customers on any request you served, at any stage in your app.&#x20;
 
 You can capture this feedback on a request or conversation level and analyze it by adding meta data to the relevant request.

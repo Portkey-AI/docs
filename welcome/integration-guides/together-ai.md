@@ -32,7 +32,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for Together AI in the UI.
+To use Together AI with Portkey, [get your API key from here](https://api.together.ai/settings/api-keys). Then add it to Portkey to create the virtual key
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -91,6 +91,8 @@ print(completion)
 You can manage all prompts to Together AI in the [Prompt Library](../../product/prompt-library.md). All the current models of Together AI are supported and you can easily start testing different prompts.
 
 Once you're ready with your prompt, you can use the `portkey.prompts.completions.create` interface to use the prompt in your application.
+
+
 
 ## Next Steps
 

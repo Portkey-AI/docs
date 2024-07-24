@@ -403,7 +403,9 @@ Let's explore each method in more detail.
 
 ### Using Virtual Keys
 
-When selecting OpenAI from the dropdown menu while creating a virtual key, Portkey automatically displays optional fields for the organization ID and project ID alongside the API key field. You can add all the details in one place and obtain a virtual key that can be used throughout Portkey.
+When selecting OpenAI from the dropdown menu while creating a virtual key, Portkey automatically displays optional fields for the organization ID and project ID alongside the API key field.&#x20;
+
+[Get your OpenAI API key from here](https://platform.openai.com/api-keys), then add it to Portkey to create the virtual key that can be used throughout Portkey.
 
 <figure><img src="../../.gitbook/assets/CleanShot 2024-05-20 at 08.35.21@2x.png" alt=""><figcaption></figcaption></figure>
 

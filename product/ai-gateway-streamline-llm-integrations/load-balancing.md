@@ -1,5 +1,9 @@
 # Load Balancing
 
+{% hint style="success" %}
+This feature is available on all Portkey [plans](https://portkey.ai/pricing).
+{% endhint %}
+
 Load Balancing feature efficiently distributes network traffic across multiple LLMs. This ensures high availability and optimal performance of your generative AI apps, preventing any single LLM from becoming a performance bottleneck.&#x20;
 
 ### Enable Load Balancing

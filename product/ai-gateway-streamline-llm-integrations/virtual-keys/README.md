@@ -1,5 +1,9 @@
 # Virtual Keys
 
+{% hint style="success" %}
+This feature is available on all Portkey [plans](https://portkey.ai/pricing).
+{% endhint %}
+
 Portkey's virtual key system allows you to securely store your LLM API keys in our vault, utilizing a unique virtual identifier to streamline API key management.
 
 This feature also provides the following benefits:

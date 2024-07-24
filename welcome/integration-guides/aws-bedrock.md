@@ -32,9 +32,9 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for AWS Bedrock in the UI.
+To integrate AWS Bedrock with Portkey, you need the `AWS Secret Access Key`, `AWS Access Key Id`, and `AWS Region` with which you can create your Virtual key on Portkey.
 
-You can navigate to the Virtual Keys tab of your Portkey account and create a Key for AWS Bedrock that'll make it easier to make calls. You'll need the `AWS Secret Access Key` and `AWS Access Key Id` to create the virtual key.
+[Here's a guide on where to find your AWS credentials on AWS](aws-bedrock.md#how-to-find-your-aws-credentials).
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -194,11 +194,32 @@ client = Portkey(
 {% endtab %}
 {% endtabs %}
 
+***
 
-
-### Supported Models
+## Supported Models
 
 {% embed url="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns" %}
+
+***
+
+## How to Find Your AWS Credentials
+
+[Navigate here in the AWS Management Console](https://us-east-1.console.aws.amazon.com/iam/home#/security\_credentials) to obtain your **AWS Access Key ID** and **AWS** **Secret Access Key.**&#x20;
+
+* In the console, you'll find the '**Access keys'** section. Click on '**Create access key**'.&#x20;
+* Copy the `Secret Access Key` once it is generated, and you can view the `Access Key ID` along with it.&#x20;
+
+<figure><img src="../../.gitbook/assets/Portkey Group (5).png" alt=""><figcaption></figcaption></figure>
+
+* On the same [page](https://us-east-1.console.aws.amazon.com/iam/home#/security\_credentials) under the '**Access keys'** section, where you created your Secret Access key, you will also find your **Access Key ID.**&#x20;
+
+<figure><img src="../../.gitbook/assets/Portkey Group (6).png" alt=""><figcaption></figcaption></figure>
+
+* And lastly, get Your **`AWS Region`** from the Home Page of[ AWS Bedrock](https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/overview) as shown in the image below.
+
+<figure><img src="../../.gitbook/assets/Portkey Group (3).png" alt=""><figcaption></figcaption></figure>
+
+***
 
 ## Next Steps
 

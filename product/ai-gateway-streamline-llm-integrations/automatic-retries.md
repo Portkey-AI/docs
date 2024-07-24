@@ -1,5 +1,9 @@
 # Automatic Retries
 
+{% hint style="success" %}
+This feature is available on all Portkey [plans](https://portkey.ai/pricing).
+{% endhint %}
+
 LLM APIs often have inexplicable failures. With Portkey, you can rescue a substantial number of your requests with our in-built automatic retries feature.&#x20;
 
 * Automatic retries are triggered **up to 5 times**

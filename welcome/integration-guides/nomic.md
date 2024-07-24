@@ -16,15 +16,13 @@ Portkey provides a consistent API to interact with embedding models from various
 
 ### 1. Create a Virtual Key for Nomic in your Portkey account
 
-You can head over to the virtual keys tab and create one for Nomic. This will be then used to make API requests to Nomic without needing the protected API key.
+You can head over to the virtual keys tab and create one for Nomic. This will be then used to make API requests to Nomic without needing the protected API key. [Grab your Nomic API key from here](https://atlas.nomic.ai/data/randomesid/org/keys).
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Create a virtual key for Nomic in Portkey</p></figcaption></figure>
 
 ### 2. Install the Portkey SDK and Initialize with this Virtual Key
 
-Add the Portkey SDK to your application to interact with Nomic's API through Portkey's gateway. Set up Portkey with your virtual key as part of the initialization configuration.
-
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for Azure in the UI.
+Add the Portkey SDK to your application to interact with Nomic's API through Portkey's gateway.&#x20;
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}

@@ -32,7 +32,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with Anyscale Virtual Key**
 
-Set up the Portkey instance with your Anyscale virtual key as part of the initialization configuration. (Create virtual key for Anyscale [here](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/))
+To use Anyscale with Portkey, [get your Anyscale API key from here](https://console.anyscale.com/v2/api-keys), then add it to Portkey to create the virtual key.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}

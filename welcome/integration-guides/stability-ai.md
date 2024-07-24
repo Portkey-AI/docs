@@ -32,7 +32,7 @@ pip install portkey-ai
 
 ### 2. Initialize Portkey with the Virtual Key
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for Stability AI in your Portkey account.
+To use Stability AI with Portkey, [get your API key from here](https://platform.stability.ai/account/keys).  Then add it to Portkey to create the virtual key
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}

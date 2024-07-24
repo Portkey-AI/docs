@@ -32,7 +32,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Set up Portkey with your virtual key as part of the initialization configuration. You can create a [virtual key](../../product/ai-gateway-streamline-llm-integrations/virtual-keys/) for Anthropic in the UI.
+To use Anthropic with Portkey, [get your Anthropic API key from here](https://console.anthropic.com/settings/keys), then add it to Portkey to create your Anthropic virtual key.
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -179,9 +179,7 @@ print(completion.choices)
 {% endtab %}
 {% endtabs %}
 
-For more, check out the [`chat completions`](../../provider-endpoints/chat.md) and [`completions`](../../provider-endpoints/completions.md) API reference docs.
-
-## Using Anthropic Vision Models
+For more, check out the [`chat completions`](../../provider-endpoints/chat.md) and [`completions`](../../provider-endpoints/completions.md) API reference docs.Using Anthropic Vision Models
 
 Portkey's multimodal Gateway fully supports Anthropic's vision models `claude-3-sonnet`, `claude-3-haiku`,  `claude-3-opus`, and the newest `claude-3.5-sonnet`.
 

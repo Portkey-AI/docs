@@ -30,7 +30,7 @@ pip install portkey-ai
 
 ### **2. Initialize Portkey with the Virtual Key**
 
-Create a virtual key in the Portkey vault by adding your [Predibase API key](https://app.predibase.com/settings). Then, initialize the Portkey client with your virtual key:
+To use Predibase with Portkey, [get your API key from here](https://app.predibase.com/settings), then add it to Portkey to create the virtual key.&#x20;
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}

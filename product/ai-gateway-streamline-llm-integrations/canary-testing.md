@@ -1,5 +1,9 @@
 # Canary Testing
 
+{% hint style="success" %}
+This feature is available on all Portkey [plans](https://portkey.ai/pricing).
+{% endhint %}
+
 You can use Portkey's AI gateway to also canary test new models or prompts in different environments. This uses the same techniques as [load balancing](load-balancing.md) but to achieve a different outcome.
 
 ### Example: Test Llama2 on 5% of the traffic

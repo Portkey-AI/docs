@@ -4,7 +4,11 @@ description: >-
   SDKs
 ---
 
-# Retrieve Prompt Templates
+# Retrieve Prompts
+
+{% hint style="success" %}
+This feature is available on all Portkey [plans](https://portkey.ai/pricing).
+{% endhint %}
 
 You can retrieve your saved prompts on Portkey using the `/prompts/$PROMPT_ID/render` endpoint. Portkey returns a JSON containing your prompt or messages body along with all the saved parameters that you can directly use in any request.
 
