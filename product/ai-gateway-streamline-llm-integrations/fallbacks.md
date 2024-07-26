@@ -12,21 +12,24 @@ The Fallback feature allows you to specify a list of providers/models in a prior
 
 To enable fallbacks, you can modify the [config object](../../api-reference/config-object.md) to include the `fallback` mode.
 
-Here's a quick example of a config to **fallback** to Anthropic's `claude-v1` if OpenAI's `gpt-3.5-turbo` fails.
+Here's a quick example of a config to **fallback** to Anthropic's `claude-3.5-sonnet` if OpenAI's `gpt-4o` fails.
 
 ```json
 {
   "strategy": {
-      "mode": "fallback",
+      "mode": "fallback"
   },
   "targets": [
     {
       "virtual_key": "openai-virtual-key",
+      "override_params": {
+          "model": "gpt-4o"
+      }
     },
     {
       "virtual_key": "anthropic-virtual-key",
       "override_params": {
-          "model": "claude-1"
+          "model": "claude-3.5-sonnet-20240620"
       }
     }
   ]
