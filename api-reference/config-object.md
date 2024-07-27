@@ -1,4 +1,4 @@
-# Config Object
+# Gateway Config Object
 
 The `config` object is used to configure API interactions with various providers. It supports multiple modes such as single provider access, load balancing between providers, and fallback strategies.
 
@@ -210,6 +210,29 @@ You can find more examples of schemas [below](config-object.md#examples).
 | ----------------- | ------------------------------- | ---------------- | -------- | ----------- | --------------- |
 | `attempts`        | Number of retry attempts        | integer          | Yes      | -           | -               |
 | `on_status_codes` | Status codes to trigger retries | array of strings | No       | -           | Optional        |
+
+### Cloud Provider Params (Azure OpenAI, Google Vertex, AWS Bedrock)
+
+#### Azure OpenAI
+
+| Key Name              | Type                        | Required |
+| --------------------- | --------------------------- | -------- |
+| `azure_resource_name` | string                      | No       |
+| `azure_deployment_id` | string                      | No       |
+| `azure_api_version`   | string                      | No       |
+| `azure_model_name`    | string                      | No       |
+| `Authorization`       | string ("Bearer $API\_KEY") | No       |
+
+#### Google Vertex AI
+
+| Key Name            | Type   | Required |
+| ------------------- | ------ | -------- |
+| `vertex_project_id` | string | No       |
+| `vertex_region`     | string | No       |
+
+#### AWS Bedrock
+
+<table><thead><tr><th width="274">Key Name</th><th>Type</th><th>Required</th></tr></thead><tbody><tr><td><code>aws_access_key_id</code></td><td>string</td><td>No</td></tr><tr><td><code>aws_secret_access_key</code></td><td>string</td><td>No</td></tr><tr><td><code>aws_region</code></td><td>string</td><td>No</td></tr><tr><td><code>aws_session_token</code></td><td>string</td><td>No</td></tr></tbody></table>
 
 ### Notes
 

@@ -1,4 +1,4 @@
-# Portkey API Headers
+# Headers
 
 When making requests to the Portkey API, you need to include specific headers to authenticate your requests, specify the provider, and configure various features. This guide explains the essential and optional headers you can use to build applications on top of Portkey.
 
@@ -112,7 +112,17 @@ Example:
 "x-portkey-cache-namespace: any_string"
 ```
 
-#### 5. Forward Headers (`x-portkey-forward-headers`)
+#### 5. Request Timeout (`x-portkey-request-timeout`)
+
+* `x-portkey-request-timeout`: Set timeout after which a request automatically terminates. The time is set in milliseconds.
+
+Example:
+
+```bash
+"x-portkey-request-timeout: 3000"
+```
+
+#### 6. Forward Headers (`x-portkey-forward-headers`)
 
 * `x-portkey-forward-headers`: Allows you to forward sensitive headers directly to your model's API without any processing by Portkey. Expects an `array of strings`. ([Docs](https://portkey.ai/docs/welcome/integration-guides/byollm#forward-sensitive-headers-securely))
 
@@ -122,13 +132,13 @@ Example:
 "x-portkey-forward-headers: ["X-Custom-Header", "Another-Header"]"
 ```
 
-#### 6. Cloud-Specific Headers (`Azure`, `Google`, `AWS`)
+#### 7. Cloud-Specific Headers (`Azure`, `Google`, `AWS`)
 
 * Pass more configuration headers for `Azure OpenAI`, `Google Vertex AI`, or `AWS Bedrock`
 
 **Azure**
 
-* `x-portkey-azure-resource-name`, `x-portkey-azure-deployment-id`, `x-portkey-azure-api-version`, `api-key`
+* `x-portkey-azure-resource-name`, `x-portkey-azure-deployment-id`, `x-portkey-azure-api-version`, `Authorization`, `x-portkey-azure-model-name`
 
 **Google Vertex AI**
 

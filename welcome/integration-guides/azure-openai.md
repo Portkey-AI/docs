@@ -19,18 +19,15 @@ Portkey provides a consistent API to interact with models from various providers
 
 ### First, add your Azure details to Portkey's Virtual Keys
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (2).png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
+<figure><img src="../../.gitbook/assets/CleanShot 2024-07-27 at 13.30.46@2x.png" alt=""><figcaption></figcaption></figure>
 
 **Here's a step-by-step guide:**
 
 1. Request access to Azure OpenAI [here](https://aka.ms/oai/access).
 2. Create a resource in the Azure portal [here](https://portal.azure.com/?microsoft\_azure\_marketplace\_ItemHideKey=microsoft\_openai\_tip#create/Microsoft.CognitiveServicesOpenAI). (This will be your **Resource Name**)
 3. Deploy a model in Azure OpenAI Studio [here](https://oai.azure.com/). (This will be your **Deployment Name)**
-4. Now, on Azure OpenAI studio, go to any playground (chat or completions), click on a UI element called "View code". Note down the API version & API key from here. (This will be your **Azure API Version** & **Azure API Key**)
+4. Select your `Foundation Model` from the dropdowon on the modal.
+5. Now, on Azure OpenAI studio, go to any playground (chat or completions), click on a UI element called "View code". Note down the API version & API key from here. (This will be your **Azure API Version** & **Azure API Key**)
 
 When you input these details, the foundation model will be auto populated. More details in [this guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal).&#x20;
 
@@ -179,7 +176,8 @@ In a typical Azure OpenAI request,&#x20;
 | `AZURE RESOURCE NAME`   | `azureResourceName`                   | `azure_resource_name`                  | `x-portkey-azure-resource-name` |
 | `AZURE DEPLOYMENT NAME` | `azureDeploymentId`                   | `azure_deployment_id`                  | `x-portkey-azure-deployment-id` |
 | `API VERSION`           | `azureApiVersion`                     | `azure_api_version`                    | `x-portkey-azure-api-version`   |
-| `AZURE API KEY`         | `Authorization: "Bearer + {API_KEY}"` | `Authorization = "Bearer + {API_KEY}"` | `api-key`                       |
+| `AZURE API KEY`         | `Authorization: "Bearer + {API_KEY}"` | `Authorization = "Bearer + {API_KEY}"` | `Authorization`                 |
+| `AZURE MODEL NAME`      | `azureModelName`                      | `azure_model_name`                     | `x-portkey-azure-model-name`    |
 
 ### Example
 
@@ -193,6 +191,7 @@ const portkey = new Portkey({
 </strong><strong>    azureResourceName: "AZURE_RESOURCE_NAME",
 </strong><strong>    azureDeploymentId: "AZURE_DEPLOYMENT_NAME",
 </strong><strong>    azureApiVersion: "AZURE_API_VERSION",
+</strong><strong>    azureModelName: "AZURE_MODEL_NAME"
 </strong><strong>    Authorization: "Bearer API_KEY"
 </strong>})
 </code></pre>
@@ -207,6 +206,7 @@ portkey = Portkey(
 </strong><strong>    azure_resource_name = "AZURE_RESOURCE_NAME",
 </strong><strong>    azure_deployment_id = "AZURE_DEPLOYMENT_NAME",
 </strong><strong>    azure_api_version = "AZURE_API_VERSION",
+</strong><strong>    azure_model_name = "AZURE_MODEL_NAME",
 </strong><strong>    Authorization = "Bearer API_KEY"
 </strong>)
 </code></pre>
@@ -220,7 +220,8 @@ curl https://api.portkey.ai/v1/chat/completions \
   -H "x-portkey-api-key: $PORTKEY_API_KEY" \
   -H "x-portkey-provider: azure-openai" \
   -H "x-portkey-azure-resource-name: $AZURE_RESOURCE_NAME" \
-  -H "x-portkey-azure-deployment-id": $AZURE_DEPLOYMENY_ID" \
+  -H "x-portkey-azure-deployment-id: $AZURE_DEPLOYMENY_ID" \
+  -H "x-portkey-azure-model-name: $AZURE_MODEL_NAME" \
   -H "x-portkey-azure-api-version: $AZURE_API_VERSION" \
   -d '{
     "model": "gpt-4o",
@@ -244,6 +245,7 @@ const portkey = new Portkey({
     azureResourceName: "AZURE_RESOURCE_NAME",
     azureDeploymendId: "AZURE_DEPLOYMENT_NAME",
     azureApiVersion: "AZURE_API_VERSION",
+    azureModelName: "AZURE_MODEL_NAME",
 <strong>    authorization: "Bearer JWT_KEY", // Pass your JWT here
 </strong><strong>    forwardHeaders: [ "authorization" ]
 </strong>})
@@ -259,6 +261,7 @@ const portkey = new Portkey({
     azure_resource_name = "AZURE_RESOURCE_NAME",
     azure_deploymend_id = "AZURE_DEPLOYMENT_NAME",
     azure_api_version = "AZURE_API_VERSION",
+    azure_model_name = "AZURE_MODEL_NAME",
 <strong>    authorization = "Bearer API_KEY", # Pass your JWT here
 </strong><strong>    forward_headers= [ "authorization" ]
 </strong>)
