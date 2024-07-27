@@ -216,7 +216,7 @@ portkey = Portkey(
 ```bash
 curl https://api.portkey.ai/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "api-key: Bearer $AZURE_OPENAI_API_KEY" \
+  -H "Authorization: Bearer $AZURE_OPENAI_API_KEY" \
   -H "x-portkey-api-key: $PORTKEY_API_KEY" \
   -H "x-portkey-provider: azure-openai" \
   -H "x-portkey-azure-resource-name: $AZURE_RESOURCE_NAME" \
