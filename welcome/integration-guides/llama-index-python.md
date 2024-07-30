@@ -213,9 +213,10 @@ import os
 </strong><strong>        'x-portkey-api-key': os.environ.get("PORTKEY_API_KEY"),
 </strong><strong>        'content-type': 'application/json'
 </strong><strong>    }
-</strong><strong>    response = requests.get(url, headers=headers).json().get('data').get('config')
-</strong><strong>    response['override_params']['model']=model
-</strong><strong>    return response
+</strong><strong>    response = requests.get(url, headers=headers).json()
+</strong><strong>    config = json.loads(response['config'])
+</strong><strong>    config['override_params']['model']=model
+</strong><strong>    return config
 </strong>
 <strong>config=create_config("pc-llamaindex-xx","gpt-4-turbo")
 </strong>
