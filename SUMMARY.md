@@ -91,6 +91,7 @@
 
 * [Introduction](api-reference/introduction.md)
 * [Authentication](api-reference/authentication.md)
+* [OpenAPI Specification](https://github.com/Portkey-AI/openapi)
 * [Headers](api-reference/headers.md)
 * [Response Schema](api-reference/response-schema.md)
 * [Gateway Config Object](api-reference/config-object.md)
