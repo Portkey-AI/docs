@@ -10,9 +10,9 @@ description: >-
 This feature is in beta and available to select users. To enable it for your org, ping us on the [Portkey Discord](https://portkey.ai/community).
 {% endhint %}
 
-LLMs are brittle - not just in API uptimes or their inexplicable 400/500 errors, but also in their core behavior. You can get a response with a <mark style="color:green;">`200`</mark> status code that completely errors out for your app's pipeline due to mismatched output. With Portkey's Guardrails, we now complete the loop on building robust & reliable AI apps that behave **EXACTLY** as you want, every time.
+LLMs are brittle - not just in API uptimes or their inexplicable <mark style="color:red;">`400`</mark>/<mark style="color:red;">`500`</mark> errors, but also in their core behavior. You can get a response with a <mark style="color:green;">`200`</mark> status code that completely errors out for your app's pipeline due to mismatched output. With Portkey's Guardrails, we now complete the loop on building robust & reliable AI apps that behave **EXACTLY** as you want, every time.
 
-Using Portkey's Guardrail platform, you can now verify your LLM inputs AND outputs to be adhering to your specifed checks; and since Guardrails are built on top of our [Gateway](https://github.com/portkey-ai/gateway), you can orchestrate your request exactly the way you want - with actions ranging from `denying the request`, `logging the guardrail result`, `creating an evals dataset`, `falling back to another LLM or prompt`, `retrying the request`, and more.
+Using Portkey's Guardrail platform, you can now verify your LLM inputs AND outputs to be adhering to your specifed checks; and since Guardrails are built on top of our [Gateway](https://github.com/portkey-ai/gateway), you can orchestrate your request exactly the way you want - with actions ranging from _denying the request_, _logging the guardrail result_, _creating an evals dataset_, _falling back to another LLM or prompt_, _retrying the request_, and more.
 
 #### Examples of Guardrails Portkey offers:
 
@@ -23,12 +23,12 @@ Using Portkey's Guardrail platform, you can now verify your LLM inputs AND outpu
 
 Portkey currently offers 20+ deterministic guardrails like the ones described above as well as LLM-based guardrails like `Detect Gibberish`, `Scan for prompt injection`, and more.&#x20;
 
-#### Browse the full list of supported Guardrail checks here.
+#### [Browse the full list of supported Guardrail checks here.](list-of-guardrail-checks/)
 
 {% hint style="success" %}
 Portkey also integrates with your favourite Guardrail platforms like [Aporia](https://www.aporia.com/), [SydeLabs](https://sydelabs.ai/), [Pillar Security](https://www.pillar.security/) and more. Just add their API keys to Portkey and you can enable their guardrails policies on your Portkey calls! \
 \
-More details on Guardrail Partners here.
+[More details on Guardrail Partners here.](list-of-guardrail-checks/)
 {% endhint %}
 
 ***
@@ -65,7 +65,7 @@ Each Guardrail Check has a custom input field based on its usecase — just add 
 * A check ONLY returns a boolean (**`Yes`**/**`No`**) verdict.
 {% endhint %}
 
-Here is a list of all the Guardrail checks available on Portkey and what they do.
+[Here is a list of all the Guardrail checks available on Portkey and what they do.](list-of-guardrail-checks/)
 
 ***
 
