@@ -19,7 +19,7 @@ With Prompt Templates, you can seamlessly create and manage your LLM prompts in 
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
@@ -89,11 +89,11 @@ You can directly pass your data object containing all the variable/tags info (in
 
 **For example, here's a prompt partial containing the key instructions for an AI support bot:**
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **And the prompt template uses the partial like this:**
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **We can pass the data object inside the variables:**
 

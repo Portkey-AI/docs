@@ -45,7 +45,7 @@ Portkey offers a comprehensive Role-Based Access Control (RBAC) system that allo
 
 You can easily add team members to your organization and assign them appropriate roles based on their responsibilities. Portkey's user-friendly interface simplifies the process of inviting users and managing their roles, ensuring that the right people have access to the right resources.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Team Management on the Portkey UI</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (42).png" alt=""><figcaption><p>Team Management on the Portkey UI</p></figcaption></figure>
 
 ## 3. Secure and Customizable API Key Management
 
