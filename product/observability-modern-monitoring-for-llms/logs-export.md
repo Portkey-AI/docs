@@ -21,6 +21,10 @@ To submit a data export request, simply follow these steps:
    * Share names of the **specific columns** you require (see the "[Exported Data](logs-export.md#exported-data)" section below for a complete list of available columns).
 4. Our team will process your request and provide you with the exported logs data in JSON format.
 
+{% hint style="warning" %}
+Note: Porktye only returns the data in a `JSONL` format and does not  support exports in any other formats (like `CSV`) at the moment.
+{% endhint %}
+
 ## Exported Data
 
 The exported logs data will include the following columns:
