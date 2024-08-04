@@ -133,7 +133,7 @@ On completion, the request will get logged in the logs UI where the image can be
 
 (_Note that providers may remove the hosted image after a period of time, so some logs might only contain the url_)
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Supported Providers and Models
 
