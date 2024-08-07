@@ -51,7 +51,7 @@ Now that you're up and running with Portkey, you can dive into the various Portk
 ***
 
 {% hint style="success" %}
-While you're here, why not [give us a star](https://github.com/Portkey-AI/gateway)? It helps us a lot!
+While you're here, why not [give us a star](https://git.new/ai-gateway-docs)? It helps us a lot!
 {% endhint %}
 
 ## FAQs

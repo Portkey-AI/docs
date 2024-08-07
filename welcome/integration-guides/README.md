@@ -40,5 +40,5 @@ Portkey has native integrations with the following frameworks. Click to read the
 Have a suggestion for an integration with Portkey? Tell us on [Discord](https://discord.gg/DD7vgKK299), or drop a message on support@portkey.ai.
 
 {% hint style="success" %}
-While you're here, why not [give us a star](https://github.com/Portkey-AI/gateway)? It helps us a lot!
+While you're here, why not [give us a star](https://git.new/ai-gateway-docs)? It helps us a lot!
 {% endhint %}

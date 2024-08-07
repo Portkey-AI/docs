@@ -15,7 +15,7 @@ Here's a quick example to **load balance 75-25** between an OpenAI and an Azure 
 ```json
 {
   "strategy": {
-      "mode": "loadbalance",
+      "mode": "loadbalance"
   },
   "targets": [
     {

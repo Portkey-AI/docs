@@ -25,7 +25,7 @@ npx @portkey-ai/gateway
 [**Contribute here**](https://github.com/portkey-ai/gateway).
 
 {% hint style="success" %}
-While you're here, why not [give us a star](https://github.com/Portkey-AI/gateway)? It helps us a lot!
+While you're here, why not [give us a star](https://git.new/ai-gateway-docs)? It helps us a lot!
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/Rubeus Social Share (2).png" alt=""><figcaption></figcaption></figure>

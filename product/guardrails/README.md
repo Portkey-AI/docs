@@ -79,7 +79,7 @@ This is where you will define a basic orchestration logic for your Guardrail.
 Guardrail is created to validate **ONLY ONE OF** the **`Input`** or the **`Output`**. The Actions set here will also apply only to either the **`request`** or the **`response`**.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### There are 4 Types of Guardrail Actions
 

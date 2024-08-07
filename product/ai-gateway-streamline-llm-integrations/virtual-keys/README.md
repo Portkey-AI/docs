@@ -52,7 +52,7 @@ const portkey = new Portkey({
 {% tab title="Python" %}
 ```python
 # Construct a client with a virtual key
-const portkey = Portkey(
+portkey = Portkey(
     api_key="PORTKEY_API_KEY",
     virtual_key="VIRTUAL_KEY"
 )

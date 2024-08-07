@@ -38,6 +38,13 @@
   * [Together AI](welcome/integration-guides/together-ai.md)
   * [ZhipuAI / ChatGLM / BigModel](welcome/integration-guides/zhipu.md)
   * [Suggest a new integration!](welcome/integration-guides/suggest-a-new-integration.md)
+* [Agents](welcome/agents/README.md)
+  * [Autogen](welcome/agents/autogen.md)
+  * [Control Flow](welcome/agents/control-flow.md)
+  * [CrewAI](welcome/agents/crewai.md)
+  * [Llama Agents](welcome/agents/llama-agents.md)
+  * [Phidata](welcome/agents/phidata.md)
+  * [Bring Your own Agents](welcome/agents/bring-your-own-agents.md)
 
 ## Product
 

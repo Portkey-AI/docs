@@ -38,7 +38,7 @@ const portkey = new Portkey({
 
 {% tab title="Python" %}
 ```python
-const portkey = Portkey(
+portkey = Portkey(
     api_key="PORTKEY_API_KEY",
     config="pc-***" # Supports a string config id or a config object
 )

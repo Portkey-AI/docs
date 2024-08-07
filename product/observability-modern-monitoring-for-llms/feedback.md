@@ -42,7 +42,7 @@ portkey.feedback.create({
 
 {% tab title="Python" %}
 ```python
-const portkey = Portkey(
+portkey = Portkey(
     api_key="PORTKEY_API_KEY",
     virtual_key="VIRTUAL_KEY"
 )
