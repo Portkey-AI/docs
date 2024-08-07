@@ -128,12 +128,18 @@ Now, you can use Configs to add **Guardrail checks** & **actions** to your reque
 
 ### Guardrail Behaviour on the Gateway
 
-Based on,
+For **asynchronous** guardrails (`async=`<mark style="color:green;">`TRUE`</mark>), Portkey returns the standard, default status codes from the LLM providers — this is because the Guardrails verdict is not affecting how you orchestrate your requests. Portkey will only log the Guardrail result for you.
+
+But for **synchronous** requests (`async=`<mark style="color:red;">`FALSE`</mark>), Portkey can orchestrate your requests based on the Guardrail verdict. The behaviour is dependent on the following:
 
 * Guardrail Check Verdict (<mark style="color:green;">**`PASS`**</mark> or <mark style="color:red;">**`FAIL`**</mark>) AND
-* Guardrail Action: DENY Setting (<mark style="color:green;">**`TRUE`**</mark> or <mark style="color:red;">**`FALSE`**</mark>)
+* Guardrail Action — DENY Setting (<mark style="color:green;">**`TRUE`**</mark> or <mark style="color:red;">**`FALSE`**</mark>)
 
 Portkey sends different **`request status codes`** corresponding to your set Guardrail behaviour.
+
+{% hint style="info" %}
+For requests where `async=`<mark style="color:red;">`FALSE`</mark>
+{% endhint %}
 
 | Guardrail Verdict                            | DENY Setting                                 | Returned Status Code                         | Description                                                                                                                                                                                                                      |
 | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
