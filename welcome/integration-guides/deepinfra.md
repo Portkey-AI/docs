@@ -28,9 +28,9 @@ pip install portkey-ai
 {% endtab %}
 {% endtabs %}
 
-### **2. Initialize Portkey with Deepinfra Key**
+### **2. Initialize Portkey with the Virtual Key**
 
-[Grab your Deepinfra key](https://deepinfra.com/dash/api\_keys) and pass it with `Authorization` param along with the provider slug.
+To use Deepinfra with Virtual Key, [get your API key from here](https://deepinfra.com/dash/api\_keys).  Then add it to Portkey to create the virtual key
 
 {% tabs %}
 {% tab title="NodeJS SDK" %}
@@ -39,8 +39,7 @@ import Portkey from 'portkey-ai'
  
 const portkey = new Portkey({
     apiKey: "PORTKEY_API_KEY", // defaults to process.env["PORTKEY_API_KEY"]
-    provider: "deepinfra",
-    Authorization: "$DEEPINFRA_API_KEY"
+    virtualKey: "VIRTUAL_KEY" // Your Deepinfra Virtual Key
 })
 ```
 {% endtab %}
@@ -51,8 +50,7 @@ from portkey_ai import Portkey
 
 portkey = Portkey(
     api_key="PORTKEY_API_KEY",  # Replace with your Portkey API key
-    provider="deepinfra",
-    Authorization="$DEEPINFRA_API_KEY"
+    virtual_key="DEEPINFRA_VIRTUAL_KEY"
 )
 ```
 {% endtab %}
