@@ -139,15 +139,15 @@ On completion, the request will get logged in the logs UI where the image can be
 
 The following providers are supported for image generation with more providers getting added soon. Please raise a [request](../../../welcome/integration-guides/suggest-a-new-integration.md) or a [PR](https://github.com/Portkey-AI/gateway/pulls) to add model or provider to the AI gateway.
 
-| Provider                                                            | Models                                                   | Functions                    |
-| ------------------------------------------------------------------- | -------------------------------------------------------- | ---------------------------- |
-| [OpenAI](../../../welcome/integration-guides/openai.md)             | `dall-e-2`, `dall-e-3`                                   | Create Image (text to image) |
-| [Azure OpenAI](../../../welcome/integration-guides/azure-openai.md) | `dall-e-2`, `dall-e-3`                                   | Create Image (text to image) |
-| [Stability](../../../welcome/integration-guides/stability-ai.md)    | `stable-diffusion-v1-6`, `stable-diffusion-xl-1024-v1-0` | Create Image (text to image) |
-| Replicate (Coming Soon)                                             |                                                          |                              |
-| Monster API (Coming Soon)                                           |                                                          |                              |
-| Segmind (Coming Soon)                                               |                                                          |                              |
-| Together AI (Coming Soon)                                           |                                                          |                              |
+| Provider                                                            | Models                                                       | Functions                    |
+| ------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------- |
+| [OpenAI](../../../welcome/integration-guides/openai.md)             | `dall-e-2`, `dall-e-3`                                       | Create Image (text to image) |
+| [Azure OpenAI](../../../welcome/integration-guides/azure-openai.md) | `dall-e-2`, `dall-e-3`                                       | Create Image (text to image) |
+| [Stability](../../../welcome/integration-guides/stability-ai.md)    | `stable-diffusion-v1-6`, `stable-diffusion-xl-1024-v1-0`     | Create Image (text to image) |
+| Segmind                                                             | [Refer here](../../../welcome/integration-guides/segmind.md) | Create Image (text to image) |
+| Together AI (Coming Soon)                                           |                                                              |                              |
+| Monster API (Coming Soon)                                           |                                                              |                              |
+| Replicate (Coming Soon)                                             |                                                              |                              |
 
 ### Cookbook
 
