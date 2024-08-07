@@ -14,6 +14,8 @@ LLMs are brittle - not just in API uptimes or their inexplicable <mark style="co
 
 Using Portkey's Guardrail platform, you can now verify your LLM inputs AND outputs to be adhering to your specifed checks; and since Guardrails are built on top of our [Gateway](https://github.com/portkey-ai/gateway), you can orchestrate your request exactly the way you want - with actions ranging from _denying the request_, _logging the guardrail result_, _creating an evals dataset_, _falling back to another LLM or prompt_, _retrying the request_, and more.
 
+<figure><img src="../../.gitbook/assets/guardrails-icon.png" alt=""><figcaption></figcaption></figure>
+
 #### Examples of Guardrails Portkey offers:
 
 * **Regex match** - Check if the request or response text matches a regex pattern
