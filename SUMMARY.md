@@ -257,6 +257,7 @@
   * [Setup OpenAI -> Azure OpenAI Fallback](guides/use-cases/setup-openai-greater-than-azure-openai-fallback.md)
   * [Fallback from SDXL to Dall-e-3](guides/use-cases/fallback-from-sdxl-to-dall-e-3.md)
   * [Comparing Top10 LMSYS Models with Portkey](guides/use-cases/comparing-top10-lmsys-models-with-portkey.md)
+  * [Build a chatbot using Portkey's Prompt Templates](guides/use-cases/build-a-chatbot-using-portkeys-prompt-templates.md)
 
 ## Support
 

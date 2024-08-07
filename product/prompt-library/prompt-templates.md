@@ -146,6 +146,37 @@ Whenever any changes are made to your prompt template, Portkey saves your change
 
 You can **`Restore`** or **`Publish`** any of the previous versions by clicking on the elipsis.
 
+***
+
+## Using Different Prompt Versions
+
+By default, when you pass the `PROMPT_ID` in `prompts.completions.create` method, Portkey sends the request to the `Published` version of your prompt.
+
+But, you can also call any of the other prompt versions (that you can see on the right side bar) by appending their version numbers with the `PROMPT_ID` slug.
+
+**For example,**
+
+<pre class="language-python"><code class="lang-python">response = portkey.prompts.completions.create(
+<strong>    prompt_id="pp-classification-prompt<a data-footnote-ref href="#user-content-fn-1">@12</a>",
+</strong>    variables={ }
+)
+</code></pre>
+
+Here, I am sending my request to **Version #12** of my prompt template. Portkey also has the **`latest`** tag that will always send the request to the **latest available version** of your prompt, regardless if it's published or not.
+
+<pre><code>response = portkey.prompts.completions.create(
+<strong>    prompt_id="pp-classification-prompt@<a data-footnote-ref href="#user-content-fn-2">latest</a>",
+</strong>    variables={ }
+)
+</code></pre>
+
+{% hint style="info" %}
+* **`latest`** refers to the last version of prompt, it may not be the same as the **`Published`** version of your prompt.
+* When no suffix is provided, Portkey defaults to send the request to the `Published` version of the prompt
+{% endhint %}
+
+This feature allows you to easily switch between different versions of your prompts for experimenting or specific use cases without affecting your production environment.
+
 ### Publishing Prompts
 
 Updating the Prompt does not automatically update your prompt in production. While updating, you can tick **`Publish prompt changes`** which will also update your prompt deployment to the latest version.
@@ -155,3 +186,7 @@ Updating the Prompt does not automatically update your prompt in production. Whi
 <figure><img src="../../.gitbook/assets/image (5).png" alt="" width="563"><figcaption></figcaption></figure>
 
 </div>
+
+[^1]: This is the version number as visible on the right side bar of Portkey prompt playground
+
+[^2]: latest tag will always send the request to the latest version of your prompt

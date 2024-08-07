@@ -10,7 +10,7 @@ Partials can also serve as a global variable store. You can define common variab
 
 ## Creating Partials
 
-Partials are directly accessible from the Promps Page:
+Partials are directly accessible from the Prompts Page:
 
 <figure><img src="../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
