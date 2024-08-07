@@ -102,6 +102,7 @@
     * [Cloudflare Workers](product/enterprise-offering/private-cloud-deployments/cloudflare-workers.md)
     * [F5 App Stack](product/enterprise-offering/private-cloud-deployments/f5-app-stack.md)
 * [Open Source](open-source.md)
+* [Product Feature Comparison](product/product-feature-comparison.md)
 
 ## API Reference
 
