@@ -20,7 +20,7 @@ Go ahead and create a Next.js application, and install `ai` and `portkey-ai` as 
 ```sh
 pnpm dlx create-next-app my-ai-app
 cd my-ai-app
-pnpm install ai portkey-ai
+pnpm install ai @ai-sdk/openai portkey-ai
 ```
 
 #### 2. Add Authentication keys to `.env`
@@ -44,14 +44,19 @@ For this example, create a route handler at `app/api/chat/route.ts` that calls G
 
 ```ts
 // filename="app/api/chat/route.ts"
-import { OpenAIStream, StreamingTextResponse } from 'ai';
-import { Portkey } from 'portkey-ai';
+import { streamText } from 'ai';
+import { createOpenAI } from '@ai-sdk/openai';
+import { createHeaders, PORTKEY_GATEWAY_URL } from 'portkey-ai';
 
-// Create a Portkey API client
-const portkey = new Portkey({
-  apiKey: process.env.PORTKEY_API_KEY,
-  virtualKey: process.env.OPENAI_VIRTUAL_KEY
-});
+// Create a OpenAI client
+const client = createOpenAI({
+    baseURL: PORTKEY_GATEWAY_URL,
+    apiKey: "xx",
+    headers: createHeaders({
+        apiKey: "PORTKEY_API_KEY",
+        virtualKey: "OPENAI_VIRTUAL_KEY"
+    }),
+})
 
 // Set the runtime to edge for best performance
 export const runtime = 'edge';
@@ -59,23 +64,18 @@ export const runtime = 'edge';
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  // Call GPT-4
-  const response = await portkey.chat.completions.create({
-    model: 'gpt-4',
-    stream: true,
+  // Invoke Chat Completion
+  const response = await streamText({
+    model: client('gpt-3.5-turbo'),
     messages
-  });
+  })
 
-  // Convert the response into a friendly text-stream
-  const stream = OpenAIStream(response);
   // Respond with the stream
-  return new StreamingTextResponse(stream);
+  return response.toTextStreamResponse();
 }
 ```
 
-The Vercel AI SDK provides [`OpenAIStream`](https://sdk.vercel.ai/docs/api-reference/providers/openai-stream) function that decodes the text tokens in the `response` and encodes them properly for simple consumption. The [`StreamingTextResponse`](https://sdk.vercel.ai/docs/api-reference/streaming-text-response) class utility extends the Node/Edge Runtime `Response` class with default headers.
-
-Portkey follows the same signature as OpenAI SDK but extends it to work with **100+ LLMs**. Here, the chat completion call will be sent to the `gpt-4` model, and the response will be streamed to your Next.js app.
+Portkey follows the same signature as OpenAI SDK but extends it to work with **100+ LLMs**. Here, the chat completion call will be sent to the `gpt-3.5-turbo` model, and the response will be streamed to your Next.js app.
 
 #### 4. Switch from OpenAI to Anthropic
 
@@ -86,32 +86,35 @@ Let’s see how you can switch from GPT-4 to Claude-3-Opus by updating 2 lines o
 1. Add your Anthropic API key or AWS Bedrock secrets to Portkey’s Virtual Keys
 2. Update the virtual key while instantiating your Portkey client
 3. Update the model name while making your `/chat/completions` call
+4. Add maxTokens field inside streamText invocation (Anthropic requires this field)
 
 Let’s see it in action:
 
 ```tsx
+const client = createOpenAI({
+    baseURL: PORTKEY_GATEWAY_URL,
+    apiKey: "xx",
+    headers: createHeaders({
+        apiKey: "PORTKEY_API_KEY",
+        virtualKey: "ANTHROPIC_VIRTUAL_KEY"
+    }),
+})
+
 // Set the runtime to edge for best performance
 export const runtime = 'edge';
-
-// Create a Portkey API client
-const portkey = new Portkey({
-  apiKey: process.env.PORTKEY_API_KEY,
-  virtualKey: process.env.ANTHROPIC_VIRTUAL_KEY
-});
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
-  // Switch from GPT-4 to Claude-3-Opus
-  const response = await portkey.chat.completions.create({
-    model: 'claude-3-opus-20240229',
-    max_tokens: 512
-    stream: true,
-    messages
-  });
+  // Invoke Chat Completion
+  const response = await streamText({
+    model: client('claude-3-opus-20240229'),
+    messages,
+    maxTokens: 200
+  })
 
-  const stream = OpenAIStream(response);
-  return new StreamingTextResponse(stream);
+  // Respond with the stream
+  return response.toTextStreamResponse();
 }
 ```
 
@@ -120,18 +123,33 @@ export async function POST(req: Request) {
 Similarly, you can just add your [Google AI Studio API key](https://aistudio.google.com/app/) to Portkey and call Gemini 1.5:
 
 ```tsx
-const portkey = new Portkey({
-  apiKey: process.env.PORTKEY_API_KEY,
-  virtualKey: process.env.GOOGLE_VIRTUAL_KEY
-});
-  const response = await portkey.chat.completions.create({
-    model: 'gemini-1.5-pro-latest,
-    stream: true,
+const client = createOpenAI({
+    baseURL: PORTKEY_GATEWAY_URL,
+    apiKey: "xx",
+    headers: createHeaders({
+        apiKey: "PORTKEY_API_KEY",
+        virtualKey: "GEMINI_VIRTUAL_KEY"
+    }),
+})
+
+// Set the runtime to edge for best performance
+export const runtime = 'edge';
+
+export async function POST(req: Request) {
+  const { messages } = await req.json();
+
+  // Invoke Chat Completion
+  const response = await streamText({
+    model: client('gemini-1.5-flash'),
     messages
-  });
+  })
+
+  // Respond with the stream
+  return response.toTextStreamResponse();
+}
 ```
 
-The same will follow for all the other providers like **Azure**, **Mistral**, **Anyscale**, **Together**, and more.
+The same will follow for all the other providers like **Azure**, **Mistral**, **Anyscale**, **Together**, and [more](https://docs.portkey.ai/docs/provider-endpoints/supported-providers).
 
 #### 6. Wire up the UI
 
@@ -173,25 +191,26 @@ Portkey logs all the requests you’re sending to help you debug errors, and get
 
 You can enhance the logging by tracing certain requests, passing custom metadata or user feedback.
 
-![rolling logs and cachescreents](https://portkey.ai/blog/content/images/2024/04/logs.gif)
+![rolling logs and cachescreens](https://portkey.ai/blog/content/images/2024/04/logs.gif)
 
 **Segmenting Requests with Metadata**
 
-On Portkey, while making a `chat.completions` call, you can pass any `{"key":"value"}` pairs. Portkey segments the requests based on the metadata to give you granular insights.
+While Creating the Client, you can pass any `{"key":"value"}` pairs inside the metadata header. Portkey segments the requests based on the metadata to give you granular insights.
 
 ```tsx
-const response = await portkey.chat.completions.create(
-  {
-    model: 'gpt-4',
-    messages: [{ role: 'user', content: 'How do I optimise auditorium for maximum occupancy?' }]
-  },
-  {
-    metadata: {
-      user_name: 'john doe',
-      organization_name: 'acme'
-    }
-  }
-);
+const client = createOpenAI({
+    baseURL: PORTKEY_GATEWAY_URL,
+    apiKey: "xx",
+    headers: createHeaders({
+        apiKey: {PORTKEY_API_KEY},
+        virtualKey: {GEMINI_VIRTUAL_KEY},
+        metadata: {
+          _user: 'john doe',
+          organization_name: 'acme',
+          custom_key: 'custom_value'
+        }
+    }),
+})
 ```
 
 Learn more about [tracing](https://portkey.ai/docs/product/observability-modern-monitoring-for-llms/traces) and [feedback](https://portkey.ai/docs/product/observability-modern-monitoring-for-llms/feedback).
@@ -212,28 +231,19 @@ For example, for setting up a fallback from OpenAI to Anthropic, the Gateway Con
 }
 ```
 
-You can save this Config in Portkey app and get an associated Config ID that you can pass while instantiating your Portkey client:
+You can save this Config in Portkey app and get an associated Config ID that you can pass while instantiating your LLM client:
 
 #### 2. Apply Config to the Route Handler
 
 ```tsx
-const portkey = new Portkey({
-  apiKey: process.env.PORTKEY_API_KEY,
-  config: 'CONFIG_ID'
-});
-
-export async function POST(req: Request) {
-  const { messages } = await req.json();
-
-  const response = await portkey.chat.completions.create({
-    model: 'gpt-4',
-    stream: true,
-    messages
-  });
-
-  const stream = OpenAIStream(response);
-  return new StreamingTextResponse(stream);
-}
+const client = createOpenAI({
+    baseURL: PORTKEY_GATEWAY_URL,
+    apiKey: "xx",
+    headers: createHeaders({
+        apiKey: {PORTKEY_API_KEY},
+        config: {CONFIG_ID}
+    }),
+})
 ```
 
 #### 3. Handle Rate Limit Errors
@@ -253,7 +263,7 @@ For example, to route your requests between 1 OpenAI and 2 Azure OpenAI accounts
 }
 ```
 
-Save this Config in the Portkey app and pass it while instantiating the Portkey client, just like we did above.
+Save this Config in the Portkey app and pass it while instantiating the LLM Client, just like we did above.
 
 Portkey can also trigger [automatic retries](https://portkey.ai/docs/product/ai-gateway-streamline-llm-integrations/automatic-retries), set [request timeouts](https://portkey.ai/docs/product/ai-gateway-streamline-llm-integrations/request-timeouts), and more.
 
@@ -269,7 +279,7 @@ For Q\&A use cases, cache hit rates go as high as 50%. To enable semantic cachin
 }
 ```
 
-Same as above, you can save your cache Config in the Portkey app, and reference the Config ID while instantiating the Portkey client.
+Same as above, you can save your cache Config in the Portkey app, and reference the Config ID while instantiating the LLM Client.
 
 Moreover, you can set the `max-age` of the cache and force refresh a cache. See the [docs](https://portkey.ai/docs/product/ai-gateway-streamline-llm-integrations/cache-simple-and-semantic) for more information.
 
@@ -288,21 +298,28 @@ To create a Prompt Template,
 #### Trigger the Prompt in the Route Handler
 
 ```js
+import Portkey from 'portkey-ai'
+
 const portkey = new Portkey({
-  apiKey: process.env.PORTKEY_API_KEY
-});
+    apiKey: "PORTKEY_API_KEY"
+})
+
 
 export async function POST(req: Request) {
-  const { variable_content } = await req.json();
+  const { movie } = await req.json();
 
-  const response = await portkey.prompts.completions.create({
-    promptID: 'pp-vercel-app-f36a02',
-    variables: { variable_name: 'variable_content' }, // string
-    stream: true
-  });
+  const moviePromptRender = await portkey.prompts.render({
+        promptID: "PROMPT_ID",
+        variables: { "movie": movie }
+    })
+  const messages = moviePromptRender.data.messages
 
-  const stream = OpenAIStream(response);
-  return new StreamingTextResponse(stream);
+  const response = await streamText({
+    model: client('gemini-1.5-flash'),
+    messages
+  })
+
+  return response.toTextStreamResponse();
 }
 ```
 
