@@ -12,9 +12,7 @@ layout:
     visible: true
 ---
 
-# Logs
-
-## Create a Log
+# Insert a Log
 
 API Reference: `POST /v1/logs`
 
