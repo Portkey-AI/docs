@@ -10,9 +10,11 @@ description: Integrate Portkey and analyze your first LLM call in 2 minutes!
 
 <div align="left" data-full-width="false">
 
-<figure><img src="../.gitbook/assets/New API Key.gif" alt="" width="563"><figcaption><p>Copy your Portkey account API key</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/CleanShot 2024-08-09 at 17.02.20.gif" alt=""><figcaption><p>Copy your Portkey account API key</p></figcaption></figure>
 
 </div>
+
+Based on your access level, you might see the relevant permissions on the API key modal - tick the ones you'd like, name your API key, and save it.
 
 ## 2. Integrate Portkey
 

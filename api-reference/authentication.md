@@ -4,7 +4,11 @@ To ensure secure access to Portkey's APIs, authentication is required for all re
 
 ## Obtaining Your API Key
 
-[Create](https://app.portkey.ai/signup) or [log in](https://app.portkey.ai/login) to your Portkey account. Grab your account's API key from the "Settings" page -> "API Keys" tab.
+[Create](https://app.portkey.ai/signup) or [log in](https://app.portkey.ai/login) to your Portkey account. Grab your account's API key from the "Settings" page.
+
+<figure><img src="../.gitbook/assets/CleanShot 2024-08-09 at 17.02.20.gif" alt=""><figcaption></figcaption></figure>
+
+Based on your access level, you might see the relevant permissions on the API key modal - tick the ones you'd like, name your API key, and save it.
 
 ## Authentication with SDKs
 
